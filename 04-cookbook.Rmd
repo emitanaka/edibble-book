@@ -1,0 +1,13 @@
+# Cookbook {#cookbook}
+
+
+This chapter presents a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in basic terminology (see Section \@ref(terminology)).
+
+## Completely randomised design 
+
+The basic ingredients of a completely randomised design, commonly abbreviated as CRD, are:
+
+* two factors: experimental units and treatments 
+* completely unstructured experiment
+* there is no requirement of units being balanced.
+

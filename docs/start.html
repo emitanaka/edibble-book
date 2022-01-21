@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Getting started | The Grammar of Experimental Designs</title>
+<meta name="author" content="Emi Tanaka">
+<meta name="description" content="The experimental planning in this book is supported by the edibble R-package and its extensions. The edibble system is built on the principle that the system must make it easy to recover...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Getting started | The Grammar of Experimental Designs">
+<meta property="og:type" content="book">
+<meta property="og:description" content="The experimental planning in this book is supported by the edibble R-package and its extensions. The edibble system is built on the principle that the system must make it easy to recover...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Getting started | The Grammar of Experimental Designs">
+<meta name="twitter:description" content="The experimental planning in this book is supported by the edibble R-package and its extensions. The edibble system is built on the principle that the system must make it easy to recover...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Fira%20Sans-0.4.0/font.css" rel="stylesheet">
+<link href="libs/_Fira%20Code-0.4.0/font.css" rel="stylesheet">
+<link href="libs/_Alegreya-0.4.0/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Grammar of Experimental Designs</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></li>
+<li><a class="active" href="start.html"><span class="header-section-number">2</span> Getting started</a></li>
+<li><a class="" href="people.html"><span class="header-section-number">3</span> Roles of people involved in the experiment</a></li>
+<li><a class="" href="cookbook.html"><span class="header-section-number">4</span> Cookbook</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/emitanaka/edibble-book">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="start" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Getting started<a class="anchor" aria-label="anchor" href="#start"><i class="fas fa-link"></i></a>
+</h1>
+<p>The experimental planning in this book is supported by the <code>edibble</code> R-package and its extensions. The <code>edibble</code> system is built on the principle that the system must make it easy to recover experimental context by encouraging the user to be explicit about experimental details. To get started with using the system, you need to first load the package:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://edibble.emitanaka.org/">edibble</a></span><span class="op">)</span></code></pre></div>
+<div id="setting-the-experimental-structure-and-context" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Setting the experimental structure and context<a class="anchor" aria-label="anchor" href="#setting-the-experimental-structure-and-context"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the <code>edibble</code> system, an experiment design is built step-by-step. In the first step, you start with initialising the design by using the <code><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design()</a></code> where the user can supply an optional title of the experiment. All subsequent steps are best specified after using the pipe operator (<code>%&gt;%</code>) re-exported from the <code>magrittr</code> package or the native pipe operator (<code>|&gt;</code>) available from R version 4.1 onwards. For example, below we carry out the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>initiate an experiment called “My first experiment” via <code><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design()</a></code>;</li>
+<li>set 24 pots with <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code>; and then</li>
+<li>set treatments with 3 levels: 2 bacterial strains (PM398 and ZNP1) and no innoculation with <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code>.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mydesign1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My first experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pot <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>innoculation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PM398"</span>, <span class="st">"ZNP1"</span>, <span class="st">"none"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>These steps create and modify a so-called “edibble design” (<code>edbl_design</code>) object that is used to represent an <em>intermediate construct of an experimental design</em>. The arguments in the functions <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code> and <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code> employ the convention that the left hand side (LHS) is the name of the factor and the input on the right hand side (RHS) defines the levels. If the RHS is a single integer then it’s assumed to be the number of levels and if it’s a vector then it’s the name of the levels.</p>
+<p>The print out of this object, as seen below, is displayed like a tree summarising the variables defined thus far.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mydesign1</span></code></pre></div>
+<pre><code>## My first experiment
+## ├─pot (24 levels)
+## └─innoculation (3 levels)</code></pre>
+<p>If you view the print out in the terminal or console, you will actually see that text are color coded so it’s easier to distinguish between the type of variables (e.g. unit or treatment). The above print out in a terminal will be viewed like below. These colors are customisable as discussed in Section <a href="start.html#aes-custom">2.4</a>.</p>
+<div class="inline-figure">
+<img src="figures/terminal-output-for-edbl-graph.svg"><!-- -->
+</div>
+<p>The argument names in <code>set_units</code> and <code>set_trts</code> are not fixed, so you could easily change the name of the units or treatment to something more meaningful. Below we have another experiment which has a <em>statistically equivalent experimental structure</em> as the previous experiment (24 units and 3 levels of treatment), but it “reads” as a different experimental context – a typical user will realise that the experimental units are pigs and treatments are diet.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mydesign2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My second experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pig <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">mydesign2</span></code></pre></div>
+<pre><code>## My second experiment
+## ├─pig (24 levels)
+## └─diet (3 levels)</code></pre>
+<p>You can define more than one unit factor or treatment factor. For example below, it reads as that there are: 3 pens (named “North,” “Shade” and “Meadow”), 18 pigs, 3 type of diets and 2 types of supplement given at a frequency of either daily or weekly.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My experiment with multiple factors"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"Shade"</span>, <span class="st">"Meadow"</span><span class="op">)</span>,
+            pig <span class="op">=</span> <span class="fl">18</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span>,
+           supplement <span class="op">=</span> <span class="fl">2</span>, 
+           <span class="co"># frequency of supplements:</span>
+           frequency <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"daily"</span>, <span class="st">"weekly"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## My experiment with multiple factors
+## ├─pen (3 levels)
+## ├─pig (18 levels)
+## ├─diet (3 levels)
+## ├─supplement (2 levels)
+## └─frequency (2 levels)</code></pre>
+<div id="a-viable-experimental-design" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> A viable experimental design<a class="anchor" aria-label="anchor" href="#a-viable-experimental-design"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="understanding-the-experimental-context" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Understanding the experimental context<a class="anchor" aria-label="anchor" href="#understanding-the-experimental-context"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="fitting-a-variety-of-mental-mode" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Fitting a variety of mental mode<a class="anchor" aria-label="anchor" href="#fitting-a-variety-of-mental-mode"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+</div>
+<div id="map-trts" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Mapping treatment to units<a class="anchor" aria-label="anchor" href="#map-trts"><i class="fas fa-link"></i></a>
+</h2>
+<p>The above code creates an object that represents an intermediate construct of an experimental design. To complete the specification of a minimum experimental design, we still need to specify:</p>
+<ul>
+<li>the mapping of the treatments to units, which is achieved using <code><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts()</a></code>, and</li>
+<li>how the treatments are actually allocated to units via <code><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts()</a></code>.</li>
+</ul>
+<p>These step may feel redundant in experiments where there is exactly one unit factor and one treatment factor but it’s required for further generalisation to other experimental structures. In addition, it serves to re-enforce the specific actions to the user.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My first animal experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pig <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pig</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span>order <span class="op">=</span> <span class="st">"random"</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> </code></pre></div>
+<p>Once a minimum viable experimental design has been specified, then you can generate the experimental design table (or tibble) called <code>edibble</code> by parsing the object to <code><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table()</a></code>.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="va">des</span><span class="op">)</span></code></pre></div>
+<pre><code>## # My first animal experiment 
+## # An edibble: 24 x 2
+##           pig     diet
+##    &lt;unit(24)&gt; &lt;trt(3)&gt;
+##  1      pig1  high-fat
+##  2      pig2  low-fat 
+##  3      pig3  low-fat 
+##  4      pig4  low-fat 
+##  5      pig5  standard
+##  6      pig6  high-fat
+##  7      pig7  standard
+##  8      pig8  high-fat
+##  9      pig9  standard
+## 10      pig10 standard
+## # … with 14 more rows</code></pre>
+<div id="treatment-allotment" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> Treatment allotment<a class="anchor" aria-label="anchor" href="#treatment-allotment"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">diet_design</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"A valid nested design"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fl">6</span>,
+              pig <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">pen</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span>order <span class="op">=</span> <span class="st">"systematic"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+    <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pig</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A valid nested design 
+## # An edibble: 18 x 3
+##          pen        pig     diet
+##    &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt;
+##  1      pen1      pig1  high-fat
+##  2      pen1      pig2  low-fat 
+##  3      pen1      pig3  standard
+##  4      pen2      pig4  high-fat
+##  5      pen2      pig5  low-fat 
+##  6      pen2      pig6  standard
+##  7      pen3      pig7  high-fat
+##  8      pen3      pig8  low-fat 
+##  9      pen3      pig9  standard
+## 10      pen4      pig10 high-fat
+## 11      pen4      pig11 low-fat 
+## 12      pen4      pig12 standard
+## 13      pen5      pig13 high-fat
+## 14      pen5      pig14 low-fat 
+## 15      pen5      pig15 standard
+## 16      pen6      pig16 high-fat
+## 17      pen6      pig17 low-fat 
+## 18      pen6      pig18 standard</code></pre>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span></code></pre></div>
+<pre><code>## # A valid nested design 
+## # An edibble: 18 x 3
+##          pen        pig     diet
+##    &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt;
+##  1      pen1      pig1  high-fat
+##  2      pen1      pig2  high-fat
+##  3      pen1      pig3  high-fat
+##  4      pen2      pig4  low-fat 
+##  5      pen2      pig5  low-fat 
+##  6      pen2      pig6  low-fat 
+##  7      pen3      pig7  standard
+##  8      pen3      pig8  standard
+##  9      pen3      pig9  standard
+## 10      pen4      pig10 high-fat
+## 11      pen4      pig11 high-fat
+## 12      pen4      pig12 high-fat
+## 13      pen5      pig13 low-fat 
+## 14      pen5      pig14 low-fat 
+## 15      pen5      pig15 low-fat 
+## 16      pen6      pig16 standard
+## 17      pen6      pig17 standard
+## 18      pen6      pig18 standard</code></pre>
+</div>
+</div>
+<div id="a-viable-experimental-design-1" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> A viable experimental design<a class="anchor" aria-label="anchor" href="#a-viable-experimental-design-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>A viable experimental design is only specified if the relationship between the variables can be reconciled to a single observational unit. For example below</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"An invalid unit structure"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fl">6</span>,
+            pig <span class="op">=</span> <span class="fl">18</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## # An invalid unit structure 
+## # An edibble: 0 x 2
+## # … with 2 variables: pen &lt;unit(6)&gt;, pig &lt;unit(18)&gt;</code></pre>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="va">pig</span>,
+            manager <span class="op">=</span> <span class="va">pen</span><span class="op">)</span> </code></pre></div>
+<pre><code>## # A valid nested design 
+## # An edibble: 18 x 5
+##          pen        pig     diet weight manager
+##    &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt; &lt;rcrd&gt;  &lt;rcrd&gt;
+##  1      pen1      pig1  high-fat      ■       ■
+##  2      pen1      pig2  high-fat      ■       x
+##  3      pen1      pig3  high-fat      ■       x
+##  4      pen2      pig4  low-fat       ■       ■
+##  5      pen2      pig5  low-fat       ■       x
+##  6      pen2      pig6  low-fat       ■       x
+##  7      pen3      pig7  standard      ■       ■
+##  8      pen3      pig8  standard      ■       x
+##  9      pen3      pig9  standard      ■       x
+## 10      pen4      pig10 high-fat      ■       ■
+## 11      pen4      pig11 high-fat      ■       x
+## 12      pen4      pig12 high-fat      ■       x
+## 13      pen5      pig13 low-fat       ■       ■
+## 14      pen5      pig14 low-fat       ■       x
+## 15      pen5      pig15 low-fat       ■       x
+## 16      pen6      pig16 standard      ■       ■
+## 17      pen6      pig17 standard      ■       x
+## 18      pen6      pig18 standard      ■       x</code></pre>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="va">pig</span>,
+            manager <span class="op">=</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/expect_rcrds.html">expect_rcrds</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/simulate_rcrds.html">simulate_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="fu">sim_normal</span><span class="op">(</span><span class="op">~</span><span class="va">diet</span> <span class="op">+</span> <span class="va">pen</span> <span class="op">+</span> <span class="va">pig</span>, sd <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+                   <span class="fu">params</span><span class="op">(</span><span class="st">"mean"</span>, 
+                          diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span> <span class="op">=</span> <span class="fl">300</span>,
+                                    <span class="st">"low-fat"</span> <span class="op">=</span> <span class="fl">50</span>,
+                                   <span class="st">"standard"</span> <span class="op">=</span> <span class="fl">150</span><span class="op">)</span>,
+                          pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pen4"</span> <span class="op">=</span> <span class="op">-</span><span class="fl">270</span><span class="op">)</span>,
+                          pig <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">18</span><span class="op">)</span><span class="op">)</span>,
+                 manager <span class="op">=</span> <span class="fu">sim_form</span><span class="op">(</span><span class="op">~</span><span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+                   <span class="fu">params</span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"John"</span>, <span class="st">"Mary"</span>, <span class="st">"Jane"</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
+                 .seed <span class="op">=</span> <span class="fl">1</span>, .censor <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">pen</span>, <span class="va">weight</span>, color <span class="op">=</span> <span class="va">diet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </code></pre></div>
+<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
+<div class="inline-figure"><img src="figures/unnamed-chunk-12-1.png" width="672"></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"McIntyre (1955)"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>plant <span class="op">=</span> <span class="fl">8</span>,
+            position <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,
+            leaf <span class="op">=</span> <span class="op">~</span><span class="va">plant</span><span class="op">:</span><span class="va">position</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>light <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">light</span> <span class="op">~</span> <span class="va">leaf</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span> </code></pre></div>
+</div>
+<div id="aes-custom" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Aesthetic customisations<a class="anchor" aria-label="anchor" href="#aes-custom"><i class="fas fa-link"></i></a>
+</h2>
+<p>The edibble system offers you many levels of aesthetic customisations. These customisation are mostly frivolous and serve as means for users to customise elements visually to their liking. The level of aethetic customisation in the edibble system is probably of little value in the grand aim of constructing an experimental design, but if a user finds the developer’s default choice is not to their liking, at least they have the ability to modify it.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></div>
+<div class="next"><a href="people.html"><span class="header-section-number">3</span> Roles of people involved in the experiment</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#start"><span class="header-section-number">2</span> Getting started</a></li>
+<li>
+<a class="nav-link" href="#setting-the-experimental-structure-and-context"><span class="header-section-number">2.1</span> Setting the experimental structure and context</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#a-viable-experimental-design"><span class="header-section-number">2.1.1</span> A viable experimental design</a></li>
+<li><a class="nav-link" href="#understanding-the-experimental-context"><span class="header-section-number">2.1.2</span> Understanding the experimental context</a></li>
+<li><a class="nav-link" href="#fitting-a-variety-of-mental-mode"><span class="header-section-number">2.1.3</span> Fitting a variety of mental mode</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#map-trts"><span class="header-section-number">2.2</span> Mapping treatment to units</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#treatment-allotment"><span class="header-section-number">2.2.1</span> Treatment allotment</a></li></ul>
+</li>
+<li><a class="nav-link" href="#a-viable-experimental-design-1"><span class="header-section-number">2.3</span> A viable experimental design</a></li>
+<li><a class="nav-link" href="#aes-custom"><span class="header-section-number">2.4</span> Aesthetic customisations</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/emitanaka/edibble-book/blob/main/docs/02-edibble.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/emitanaka/edibble-book/edit/main/docs/02-edibble.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-01-21.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

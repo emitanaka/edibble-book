@@ -1,0 +1,36 @@
+bookdown::bs4_book:
+  css: style.css
+  repo: 
+    base: "https://github.com/emitanaka/edibble-book"
+    branch: main
+    subdir: docs
+  theme:
+    primary: "#637238"   # default .rmdnote = blue
+    danger:  "#dc3545"   # default .rmdcaution = red
+    success: "#198754"   # default .rmdimportant = green
+    info:    "#0dcaf0"   # default .rmdtip = cyan
+    warning: "#ffc107"   # default .rmdwarning = yellow
+    heading_font:
+      google: Alegreya
+    base_font:
+      google: Fira Sans
+    code_font:
+      google: Fira Code
+    
+# bookdown::gitbook:
+#   css: style.css
+#   config:
+#     toc:
+#       before: |
+#         <li><a href="./">The Grammar of Experimental Design</a></li>
+#       after: |
+#         <li><a href="https://github.com/emitanaka/edibble-book" target="blank">Published with bookdown</a></li>
+#     edit: https://github.com/emitanaka/edibble-book/edit/master/%s
+    #download: ["pdf", "epub"]
+#bookdown::pdf_book:
+#  includes:
+#   in_header: preamble.tex
+#  latex_engine: xelatex
+#  citation_package: natbib
+#  keep_tex: yes
+#bookdown::epub_book: default

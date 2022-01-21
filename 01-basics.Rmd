@@ -1,0 +1,96 @@
+# The basics of experimental designs {#basics}
+
+
+```{r components, include = FALSE}
+eunit1 <- function() '<i class="fas fa-seedling"></i>'
+eunit2 <- function() '<i class="fas fa-wine-bottle"></i>'
+eunit3 <- function() '<i class="fas fa-laptop"></i>'
+```
+
+::: {.blockquote}
+"If the design of an experiment is faulty, any method of interpretation which makes it out to be decisive must be faulty too."
+
+--Fisher, 1935, Design of Experiments
+:::
+
+There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by @Fisher1935-qc, @Bailey2008-gw, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment. 
+
+Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You'll therefore find that most experiments in this book are **comparative experiments**. 
+
+At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter \@ref(people). 
+
+All experiments have a cost whether that be financial, resources, time or other. We can consider the **experimental cost** as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite -- you only have one chance to do the experiment -- so it's absolutely essential that you plan, design and execute the experiment well.
+
+Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter X and present how to get started with the `edibble` system to construct experimental design in Chapter \@ref(start).
+ 
+Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
+ 
+::: {.rmdnote}
+
+**Scenario 1: plant growth**  `r eunit1()` 
+Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.
+
+:::
+
+::: {.rmdnote}
+
+**Scenario 2: wine tasting** `r eunit2()`
+A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine. 
+
+:::
+
+::: {.rmdnote}
+
+**Scenario 3: new classification method** `r eunit3()`
+A new statistical method is proposed as a better alternative for classification of cellular type. A number of simulation, based on a number of public benchmark  datasets, was carried out to compare the method under different metrics. 
+
+:::
+ 
+ 
+
+## Basic terminology {#terminology}
+
+The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are fundamental terms that are commonly understood across domains:
+
+* **treatments**: the whole set of experimental conditions in which the units are subjected to,
+* **experimental unit**: the smallest unit in which the treatment can independently be applied,
+* **observational unit**: the smallest unit in which the response is measured on,
+* **block** or **cluster**: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,
+* **design**: the intended allotment of treatment to units, 
+* **plan** or **layout**: the actual allocation of treatment to units,
+* **experimental structure**: the arrangements or constrains of experimental factors -- the structure can be broadly categorised as: 
+  * **unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on;
+  * **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors,
+* **balanced experiment**: refers to when the replication of the treatments are equal
+* **orthogonal design**: FIXME: not really a fundamental term
+
+::: {.rmdnote .example}
+
+**(plant growth)**: 
+
+* The experimental aim is to study the effects of plant growth of four particular bacterial strains. 
+* The experimental units are ... 
+:::
+
+
+Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter \@ref(cookbook).
+
+
+## Randomisation
+
+## Replications, Repetition and Duplication
+
+
+### Pseudo-replications
+
+## Summary
+
+The major concepts this chapter covered are:
+
+* basic statistical terminology for experimental design 
+* importance of replication and randomisation in experiments 
+* pitfalls of pseudo-replication 
+
+## Exercises
+
+1. A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.
