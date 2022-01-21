@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>The Grammar of Experimental Designs</title>
+<title>Preface | The Grammar of Experimental Designs</title>
 <meta name="author" content="Emi Tanaka">
-<meta name="description" content="This book teaches principles and practice of constructing experimental designs.">
+<meta name="description" content="Please note that the book is a work-in-progress. This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="The Grammar of Experimental Designs">
+<meta property="og:title" content="Preface | The Grammar of Experimental Designs">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This book teaches principles and practice of constructing experimental designs.">
+<meta property="og:description" content="Please note that the book is a work-in-progress. This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Grammar of Experimental Designs">
-<meta name="twitter:description" content="This book teaches principles and practice of constructing experimental designs.">
+<meta name="twitter:title" content="Preface | The Grammar of Experimental Designs">
+<meta name="twitter:description" content="Please note that the book is a work-in-progress. This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Fira%20Sans-0.4.0/font.css" rel="stylesheet">
@@ -42,8 +42,8 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">The Grammar of Experimental Designs</a></li>
-<li><a class="" href="preface.html">Preface</a></li>
+<li><a class="" href="index.html">The Grammar of Experimental Designs</a></li>
+<li><a class="active" href="preface.html">Preface</a></li>
 <li><a class="" href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></li>
 <li><a class="" href="start.html"><span class="header-section-number">2</span> Getting started</a></li>
 <li><a class="" href="people.html"><span class="header-section-number">3</span> Roles of people involved in the experiment</a></li>
@@ -55,19 +55,35 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="the-grammar-of-experimental-designs" class="section level1 unnumbered">
-<h1>The Grammar of Experimental Designs<a class="anchor" aria-label="anchor" href="#the-grammar-of-experimental-designs"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="preface" class="section level1 unnumbered">
+<h1>Preface<a class="anchor" aria-label="anchor" href="#preface"><i class="fas fa-link"></i></a>
 </h1>
-<p>Hi there! This book is a work-in-progress.</p>
-<p>The book will include about the basics of experimental design and how to get started with the <code>edibble</code> R-package and its extensions to plan, design and simulate experiments.</p>
-<p>An experimental design is a huge field, and no doubt I know only a small portion of it. So if you find mistakes or I’m not giving enough due attention or credit to an important concept, please feel to let me know.</p>
+<p><strong>Please note that the book is a work-in-progress.</strong></p>
+<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
+<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
+<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
+<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>
+  ggplot2.discrete.fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#c8008f"</span>, <span class="st">"#008a25"</span><span class="op">)</span>,
+    <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fl">8</span>, <span class="st">"Set2"</span><span class="op">)</span>
+  <span class="op">)</span>,
+  ggplot2.discrete.colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#c8008f"</span>, <span class="st">"#008a25"</span><span class="op">)</span>,
+    <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fl">8</span>, <span class="st">"Dark2"</span><span class="op">)</span>
+  <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="preface.html">Preface</a></div>
+<div class="prev"><a href="index.html">The Grammar of Experimental Designs</a></div>
+<div class="next"><a href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#the-grammar-of-experimental-designs">The Grammar of Experimental Designs</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#preface">Preface</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

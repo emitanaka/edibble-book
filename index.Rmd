@@ -17,6 +17,13 @@ knitr::opts_chunk$set(fig.path = "figures/",
                       fig.retina = 2)
 ```
 
+# `r rmarkdown::metadata$title` {-}
+
+Hi there! This book is a work-in-progress. 
+
+The book will include about the basics of experimental design and how to get started with the `edibble` R-package and its extensions to plan, design and simulate experiments. 
+
+An experimental design is a huge field, and no doubt I know only a small portion of it. So if you find mistakes or I'm not giving enough due attention or credit to an important concept, please feel to let me know. 
 
 # Preface {-}
 
