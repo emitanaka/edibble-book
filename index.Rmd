@@ -15,6 +15,7 @@ github-repo: emitanaka/edibble-book
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.path = "figures/",
                       fig.retina = 2)
+set.seed(1)
 ```
 
 # `r rmarkdown::metadata$title` {-}

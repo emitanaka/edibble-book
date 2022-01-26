@@ -18,3 +18,9 @@ aes-custom
 people
 cookbook
 completely-randomised-design
+randomised-complete-block-design
+latin-square-design
+factorial-design
+split-plot-design
+graeco-latin-square-design
+youden-square-design

@@ -1,13 +1,101 @@
 # Cookbook {#cookbook}
 
+```{r, include = FALSE}
+set.seed(1)
+```
+
+::: {.blockquote}
+Good design considers units and treatments first, and then allocates treatments to units. It does not choose from a menu of named designs. 
+
+-- Bailey, 2008, Design of Comparative experiments
+:::
+
 
 This chapter presents a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in basic terminology (see Section \@ref(terminology)).
 
+It is well understood that an experimental design shouldn't just be simply selected from a recipe. Nonetheless, the use of named experimental designs are prevalent and so a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `prep_classical_` to prepare the code in terms of the fundamental system. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `make_classical()`, but again I discourage you to use these approaches to generate a proper design. 
+
+Named experimental design are handy in succinctly describing the experimental structure and treatment allotment to units, but you lose the direct association to the fundamental components that make up the experimental design. This can obscure seeing the association between different named experimental designs. Another reason that I discourage you to use named experimental designs is that it encourages users to fit the experimental resources to suit one of the named experimental design. In other words, the primal goal is no longer about fitting an appropriate design for the given experimental resources but it becomes about adjusting your resources to fit the design. This is not to say that experimental resources cannot be modified for a more desirable design. 
+
+
+
 ## Completely randomised design 
 
-The basic ingredients of a completely randomised design, commonly abbreviated as CRD, are:
+A completely randomised design, commonly abbreviated as CRD, contain two factors: experimental units and treatments with a completely unstructured experiment (i.e. no grouping for the factors).
 
-* two factors: experimental units and treatments 
-* completely unstructured experiment
-* there is no requirement of units being balanced.
+You can call on `prep_classical_crd()` to see the code in the terms of the fundamental system. If you omit the argument values, then a random number will be selected for you.
+
+```{r, comment = ""}
+prep_classical_crd(t = 5, n = 30, seed = 1)
+```
+
+If you want to generate the design table, then you can use the `make_classical()` function parsing the short name of the named experimental design. There are three outputs shown by default: 
+
+(i) `info`: selected information about the named experimental design, 
+(ii) `code`: the code in terms of the fundamental system, and
+(iii) `table`: the design table.
+
+Below we choose not to print any output.
+
+```{r}
+crd <- make_classical("crd", t = 5, n = 30, seed = 1, .output = FALSE)
+```
+
+You can quickly plot the design using the `autoplot()` in the `deggust` package. 
+
+```{r autoplot-crd, fig.height = 4, fig.width = 5}
+deggust::autoplot(crd)
+```
+
+
+
+## Randomised complete block design
+
+```{r, comment = ""}
+rcbd <- make_classical("rcbd", .output = "code")
+```
+
+```{r autoplot-rcbd, fig.height = 6, fig.width = 6}
+deggust::autoplot(rcbd)
+```
+
+## Latin square design
+
+```{r, comment = ""}
+lsd <- make_classical("lsd", t = 6, .output = "code")
+```
+
+```{r autoplot-lsd, fig.height = 6, fig.width = 6}
+deggust::autoplot(lsd)
+```
+
+## Factorial design
+
+```{r, comment = ""}
+fac <- make_classical("factorial", .output = "code")
+```
+
+## Split-plot design
+
+```{r, comment = ""}
+spd <- make_classical("split", .output = "code")
+```
+
+
+## Graeco-Latin square design
+
+```{r, comment = ""}
+graeco <- make_classical("graeco", .output = "code")
+```
+
+
+## Youden square design
+
+```{r, comment = ""}
+youden <- make_classical("youden", .output = "code")
+```
+
+```{r autoplot-youden}
+deggust::autoplot(youden)
+```
 

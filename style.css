@@ -14,8 +14,14 @@ pre code {
 }
 
 /* Treatment allotment prints out in a new pre --- can it be modified? */
-/* .sourceCode ~ pre:not(:first-child) {
+.sourceCode ~ pre:not(:first-child) {
     margin: 0 -0.5rem 0rem -0.5rem;
 }
 
-*/
+.sourceCode ~ pre:last-child {
+    margin: 0 -0.5rem 1rem -0.5rem;
+}
+
+div.sourceCode {
+  margin-top: 1rem!important;
+}
