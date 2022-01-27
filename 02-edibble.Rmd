@@ -182,3 +182,11 @@ df <- start_design("McIntyre (1955)") %>%
 ## Aesthetic customisations {#aes-custom}
 
 The edibble system offers you many levels of aesthetic customisations. These customisation are mostly frivolous and serve as means for users to customise elements visually to their liking. The level of aethetic customisation in the edibble system is probably of little value in the grand aim of constructing an experimental design, but if a user finds the developer's default choice is not to their liking, at least they have the ability to modify it.  
+
+
+## Visualisation 
+
+```{r}
+library(deggust)
+```
+

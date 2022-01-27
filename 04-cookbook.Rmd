@@ -40,7 +40,7 @@ crd <- takeout(menu_crd(t = 5, n = 30, seed = 1))
 You can quickly plot the design using the `autoplot()` in the `deggust` package. 
 
 ```{r autoplot-crd, fig.height = 4, fig.width = 5}
-deggust::autoplot(crd)
+autoplot(crd)
 ```
 
 
@@ -48,12 +48,12 @@ deggust::autoplot(crd)
 ## Randomised complete block design
 
 ```{r, comment = ""}
-rcbd <- takeout(menu_rcbd(t = 5, r = 3))
+rcbd <- takeout(menu_rcbd(t = 5, r = 6))
 examine_recipe(rcbd)
 ```
 
 ```{r autoplot-rcbd, fig.height = 6, fig.width = 6}
-deggust::autoplot(rcbd)
+autoplot(rcbd)
 ```
 
 ## Latin square design
@@ -64,7 +64,7 @@ examine_recipe(lsd)
 ```
 
 ```{r autoplot-lsd, fig.height = 6, fig.width = 6}
-deggust::autoplot(lsd)
+autoplot(lsd)
 ```
 
 ## Factorial design
@@ -75,7 +75,7 @@ examine_recipe(fac)
 ```
 
 ```{r autoplot-fac, fig.height = 6, fig.width = 6}
-deggust::autoplot(fac)
+autoplot(fac)
 ```
 
 ## Split-plot design
@@ -102,6 +102,6 @@ examine_recipe(youden)
 ```
 
 ```{r autoplot-youden}
-deggust::autoplot(youden)
+autoplot(youden)
 ```
 

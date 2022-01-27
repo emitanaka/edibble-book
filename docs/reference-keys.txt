@@ -15,6 +15,7 @@ map-trts
 treatment-allotment
 a-viable-experimental-design-1
 aes-custom
+visualisation
 people
 cookbook
 completely-randomised-design
