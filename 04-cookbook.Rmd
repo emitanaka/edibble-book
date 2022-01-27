@@ -85,12 +85,20 @@ spd <- takeout(menu_split())
 examine_recipe(spd)
 ```
 
+```{r autoplot-spd, fig.height = 6, fig.width = 6}
+autoplot(spd)
+```
+
 
 ## Graeco-Latin square design
 
 ```{r, comment = ""}
 graeco <- takeout(menu_graeco())
 examine_recipe(graeco)
+```
+
+```{r autoplot-graeco, fig.height = 6, fig.width = 6}
+autoplot(graeco)
 ```
 
 

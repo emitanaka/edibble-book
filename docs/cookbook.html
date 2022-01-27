@@ -160,12 +160,15 @@
              trt2 ~ subplot) %&gt;%
   assign_trts("random", seed = 11) %&gt;%
   serve_table()</code></pre>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">spd</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/autoplot-spd-1.png" width="576"></div>
 </div>
 <div id="graeco-latin-square-design" class="section level2" number="4.6">
 <h2>
 <span class="header-section-number">4.6</span> Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_graeco.html">menu_graeco</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Graeco-Latin Square Design") %&gt;%
@@ -178,12 +181,15 @@
              trt2 ~ unit) %&gt;%
   assign_trts("random", seed = 304) %&gt;%
   serve_table()</code></pre>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/autoplot-graeco-1.png" width="576"></div>
 </div>
 <div id="youden-square-design" class="section level2" number="4.7">
 <h2>
 <span class="header-section-number">4.7</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">youden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_youden.html">menu_youden</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Youden Square Design") %&gt;%
@@ -194,7 +200,7 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 160) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-youden-1.png" width="672"></div>
 
@@ -239,7 +245,7 @@ Fisher, Ronald. 1935. <em>The Design of Experiments</em>. Oliver; Boyd.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-01-27.</p>
+    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-01-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
