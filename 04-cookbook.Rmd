@@ -13,7 +13,7 @@ Good design considers units and treatments first, and then allocates treatments 
 
 This chapter presents a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in basic terminology (see Section \@ref(terminology)).
 
-It is well understood that an experimental design shouldn't just be simply selected from a recipe. Nonetheless, the use of named experimental designs are prevalent and so a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `prep_classical_` to prepare the code in terms of the fundamental system. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `make_classical()`, but again I discourage you to use these approaches to generate a proper design. 
+It is well understood that an experimental design shouldn't just be simply selected from a recipe. Nonetheless, the use of named experimental designs are prevalent and so a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `menu_` to prepare the recipe code. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `takeout()`, but again I discourage you to use these approaches to generate a proper design. 
 
 Named experimental design are handy in succinctly describing the experimental structure and treatment allotment to units, but you lose the direct association to the fundamental components that make up the experimental design. This can obscure seeing the association between different named experimental designs. Another reason that I discourage you to use named experimental designs is that it encourages users to fit the experimental resources to suit one of the named experimental design. In other words, the primal goal is no longer about fitting an appropriate design for the given experimental resources but it becomes about adjusting your resources to fit the design. This is not to say that experimental resources cannot be modified for a more desirable design. 
 
@@ -23,22 +23,18 @@ Named experimental design are handy in succinctly describing the experimental st
 
 A completely randomised design, commonly abbreviated as CRD, contain two factors: experimental units and treatments with a completely unstructured experiment (i.e. no grouping for the factors).
 
-You can call on `prep_classical_crd()` to see the code in the terms of the fundamental system. If you omit the argument values, then a random number will be selected for you.
+You can call on `menu_crd()` to see the code in the terms of the fundamental system. If you omit the argument values, then a random number will be selected for you.
 
 ```{r, comment = ""}
-prep_classical_crd(t = 5, n = 30, seed = 1)
+menu_crd(t = 5, n = 30, seed = 1)
 ```
 
-If you want to generate the design table, then you can use the `make_classical()` function parsing the short name of the named experimental design. There are three outputs shown by default: 
-
-(i) `info`: selected information about the named experimental design, 
-(ii) `code`: the code in terms of the fundamental system, and
-(iii) `table`: the design table.
+If you want to generate the design table, then you can use the `takeout()` function parsing the named design object created by the set of `menu_` functions. 
 
 Below we choose not to print any output.
 
 ```{r}
-crd <- make_classical("crd", t = 5, n = 30, seed = 1, .output = FALSE)
+crd <- takeout(menu_crd(t = 5, n = 30, seed = 1))
 ```
 
 You can quickly plot the design using the `autoplot()` in the `deggust` package. 
@@ -52,7 +48,8 @@ deggust::autoplot(crd)
 ## Randomised complete block design
 
 ```{r, comment = ""}
-rcbd <- make_classical("rcbd", .output = "code")
+rcbd <- takeout(menu_rcbd(t = 5, r = 3))
+examine_recipe(rcbd)
 ```
 
 ```{r autoplot-rcbd, fig.height = 6, fig.width = 6}
@@ -62,7 +59,8 @@ deggust::autoplot(rcbd)
 ## Latin square design
 
 ```{r, comment = ""}
-lsd <- make_classical("lsd", t = 6, .output = "code")
+lsd <- takeout(menu_lsd(t = 6))
+examine_recipe(lsd)
 ```
 
 ```{r autoplot-lsd, fig.height = 6, fig.width = 6}
@@ -72,27 +70,35 @@ deggust::autoplot(lsd)
 ## Factorial design
 
 ```{r, comment = ""}
-fac <- make_classical("factorial", .output = "code")
+fac <- takeout(menu_factorial(trt = c(3, 2)))
+examine_recipe(fac)
+```
+
+```{r autoplot-fac, fig.height = 6, fig.width = 6}
+deggust::autoplot(fac)
 ```
 
 ## Split-plot design
 
 ```{r, comment = ""}
-spd <- make_classical("split", .output = "code")
+spd <- takeout(menu_split())
+examine_recipe(spd)
 ```
 
 
 ## Graeco-Latin square design
 
 ```{r, comment = ""}
-graeco <- make_classical("graeco", .output = "code")
+graeco <- takeout(menu_graeco())
+examine_recipe(graeco)
 ```
 
 
 ## Youden square design
 
 ```{r, comment = ""}
-youden <- make_classical("youden", .output = "code")
+youden <- takeout(menu_youden())
+examine_recipe(youden)
 ```
 
 ```{r autoplot-youden}
