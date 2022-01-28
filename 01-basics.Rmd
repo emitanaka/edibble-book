@@ -8,7 +8,7 @@ eunit3 <- function() '<i class="fas fa-laptop"></i>'
 ```
 
 ::: {.blockquote}
-"If the design of an experiment is faulty, any method of interpretation which makes it out to be decisive must be faulty too."
+If the design of an experiment is faulty, any method of interpretation which makes it out to be decisive must be faulty too.
 
 --Fisher, 1935, Design of Experiments
 :::

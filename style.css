@@ -25,3 +25,42 @@ pre code {
 div.sourceCode {
   margin-top: 1rem!important;
 }
+
+.blockquote {
+  background: #d0f0c0;
+	padding: 25px;
+	font-size: 0.8rem;
+}
+
+.blockquote p {
+	text-align: right;
+	padding: 0;
+	color: #195905;
+  display: block;
+}
+
+.blockquote p:first-child {
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+/***
+
+.blockquote p:first-child:before, .blockquote p:first-child:after {
+	content: '”';
+	font-size: 1.5rem;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #195905;
+	font-weight:bold;
+	vertical-align:top;
+	line-height:0.8
+}
+
+.blockquote p:first-child:before {
+	content: '“';
+	position:absolute;
+	left:0;
+	top:-2px;
+}
+
+***/

@@ -5,6 +5,8 @@ bookdown::bs4_book:
     branch: main
     subdir: docs
   theme:
+    # version doesn't seem to be working
+    version: 5
     primary: "#637238"   # default .rmdnote = blue
     danger:  "#dc3545"   # default .rmdcaution = red
     success: "#198754"   # default .rmdimportant = green
@@ -15,8 +17,8 @@ bookdown::bs4_book:
     base_font:
       google: Fira Sans
     code_font:
-      google: Fira Code
-    
+      google: Fira Mono
+      
 # bookdown::gitbook:
 #   css: style.css
 #   config:
