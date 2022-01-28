@@ -101,6 +101,16 @@ examine_recipe(graeco)
 autoplot(graeco)
 ```
 
+## Hyper-Graeco-Latin square design
+
+```{r, comment = ""}
+hyper_graeco <- takeout(menu_hyper_graeco())
+examine_recipe(hyper_graeco)
+```
+
+```{r autoplot-hyper-graeco, fig.height = 6, fig.width = 6}
+autoplot(hyper_graeco)
+```
 
 ## Youden square design
 
