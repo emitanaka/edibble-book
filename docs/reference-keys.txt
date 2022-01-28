@@ -24,4 +24,5 @@ latin-square-design
 factorial-design
 split-plot-design
 graeco-latin-square-design
+hyper-graeco-latin-square-design
 youden-square-design

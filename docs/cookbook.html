@@ -116,8 +116,8 @@
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">lsd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Latin Square Design") %&gt;%
   set_units(row = 6,
-            column = 6,
-            unit = ~row:column) %&gt;%
+            col = 6,
+            unit = ~row:col) %&gt;%
   set_trts(trt = 6) %&gt;%
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 108) %&gt;%
@@ -173,8 +173,8 @@
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Graeco-Latin Square Design") %&gt;%
   set_units(row = 6,
-            column = 6,
-            unit = ~row:column) %&gt;%
+            col = 6,
+            unit = ~row:col) %&gt;%
   set_trts(trt1 = 6,
            trt2 = 6) %&gt;%
   allot_trts(trt1 ~ unit,
@@ -185,22 +185,43 @@
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-graeco-1.png" width="576"></div>
 </div>
-<div id="youden-square-design" class="section level2" number="4.7">
+<div id="hyper-graeco-latin-square-design" class="section level2" number="4.7">
 <h2>
-<span class="header-section-number">4.7</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> Hyper-Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#hyper-graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">hyper_graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_hyper_graeco.html">menu_hyper_graeco</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
+<pre><code>start_design("Hyper-Graeco-Latin Square Design") %&gt;%
+  set_units(block1 = 6,
+            block2 = 6,
+            block3 = 6,
+            block4 = 6,
+            unit = ~block1:block2:block3:block4) %&gt;%
+  set_trts(trt = 6) %&gt;%
+  allot_trts(trt ~ unit) %&gt;%
+  assign_trts("random", seed = 313) %&gt;%
+  serve_table()</code></pre>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/autoplot-hyper-graeco-1.png" width="576"></div>
+</div>
+<div id="youden-square-design" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">youden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_youden.html">menu_youden</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Youden Square Design") %&gt;%
-  set_units(row = 16,
-            column = 6,
-            unit = ~row:column) %&gt;%
-  set_trts(trt = 16) %&gt;%
+  set_units(row = 13,
+            col = 3,
+            unit = ~row:col) %&gt;%
+  set_trts(trt = 13) %&gt;%
   allot_trts(trt ~ unit) %&gt;%
-  assign_trts("random", seed = 160) %&gt;%
+  assign_trts("random", seed = 782) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-youden-1.png" width="672"></div>
 
@@ -227,7 +248,8 @@ Fisher, Ronald. 1935. <em>The Design of Experiments</em>. Oliver; Boyd.
 <li><a class="nav-link" href="#factorial-design"><span class="header-section-number">4.4</span> Factorial design</a></li>
 <li><a class="nav-link" href="#split-plot-design"><span class="header-section-number">4.5</span> Split-plot design</a></li>
 <li><a class="nav-link" href="#graeco-latin-square-design"><span class="header-section-number">4.6</span> Graeco-Latin square design</a></li>
-<li><a class="nav-link" href="#youden-square-design"><span class="header-section-number">4.7</span> Youden square design</a></li>
+<li><a class="nav-link" href="#hyper-graeco-latin-square-design"><span class="header-section-number">4.7</span> Hyper-Graeco-Latin square design</a></li>
+<li><a class="nav-link" href="#youden-square-design"><span class="header-section-number">4.8</span> Youden square design</a></li>
 </ul>
 
       <div class="book-extra">
