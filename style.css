@@ -13,6 +13,14 @@ pre code {
   white-space: inherit;
 }
 
+p {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 /* Treatment allotment prints out in a new pre --- can it be modified? */
 .sourceCode ~ pre:not(:first-child) {
     margin: 0 -0.5rem 0rem -0.5rem;
@@ -29,7 +37,7 @@ div.sourceCode {
 .blockquote {
   background: #d0f0c0;
 	padding: 25px;
-	font-size: 0.8rem;
+	font-size: 1rem;
 }
 
 .blockquote p {
@@ -64,3 +72,38 @@ div.sourceCode {
 }
 
 ***/
+
+/*** callout blocks as inspired by quarto ***/
+
+.callout, .callout-noicon {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.25rem;
+    border-left: 5px solid;
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.4em 0.7em;
+}
+
+.callout p:first-child {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+
+div.note.callout {
+    border-left-color: var(--primary);
+}
+div.danger.callout {
+    border-left-color: var(--danger);
+}
+div.success.callout {
+    border-left-color: var(--success);
+}
+div.info.callout {
+    border-left-color: var(--info);
+}
+div.warning.callout {
+    border-left-color: var(--warning);
+}

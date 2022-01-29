@@ -25,23 +25,24 @@ Doing an experimental well requires a good understanding of the subject matter s
  
 Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
  
-::: {.rmdnote}
+::: {.callout .note}
 
 **Scenario 1: plant growth**  `r eunit1()` 
 Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.
 
 :::
 
-::: {.rmdnote}
+::: {.callout .note}
 
 **Scenario 2: wine tasting** `r eunit2()`
 A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine. 
 
 :::
 
-::: {.rmdnote}
+::: {.callout .note}
 
-**Scenario 3: new classification method** `r eunit3()`
+Scenario 3: new classification method `r eunit3()`
+
 A new statistical method is proposed as a better alternative for classification of cellular type. A number of simulation, based on a number of public benchmark  datasets, was carried out to compare the method under different metrics. 
 
 :::

@@ -26,3 +26,4 @@ split-plot-design
 graeco-latin-square-design
 hyper-graeco-latin-square-design
 youden-square-design
+scenario-3-new-classification-method
