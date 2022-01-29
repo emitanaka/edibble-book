@@ -65,8 +65,10 @@ The so-called grammar of experimental designs is a term that is heavily influenc
 <span class="header-section-number">3.1</span> Fundamental terminology<a class="anchor" aria-label="anchor" href="#fundamental-terminology"><i class="fas fa-link"></i></a>
 </h2>
 <p>Section <a href="basics.html#terminology">1.1</a> describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a <strong>factor</strong> in the design. The two primary roles of a factor are <strong>treatments</strong> and <strong>units</strong>; under this categorisation blocks, experimental unit and observational unit are all just units – the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
-<p>In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of graphs: factor and level graphs. In the <strong>factor graph</strong>, every factor is represented as a single node. Every factor has a finite number of levels and each of these levels is represented as a single node in the <strong>level graph</strong>.</p>
-
+<p>In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, <span class="math inline">\(G_F = (V(G_F), E(G_F))\)</span> and <span class="math inline">\(G_L = (V(G_L), E(G_L))\)</span>, where <span class="math inline">\(V(G_F)\)</span> and <span class="math inline">\(V(G_L)\)</span> are sets of vertices and <span class="math inline">\(E(G_F)\)</span> and <span class="math inline">\(E(G_L)\)</span> are sets of edges. We refer <span class="math inline">\(G_F\)</span> and <span class="math inline">\(G_L\)</span> as factor graph and level graph, respetively. In the <strong>factor graph</strong>, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the <strong>level graph</strong>.</p>
+<div id="htmlwidget-06af97c16532fd1f09d2" style="width:100%;height:200px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-06af97c16532fd1f09d2">{"x":{"nodes":{"id":[1,2,3,4],"name":["mainplot","subplot","irrigation","fertilizer"],"class":["edbl_unit","edbl_unit","edbl_trt","edbl_trt"],"n":[4,12,2,2],"group":["unit","unit","trt","trt"],"label":["mainplot","subplot","irrigation","fertilizer"],"shape":["circle","circle","diamond","diamond"]},"edges":{"from":[1,3,4],"to":[2,1,2],"alloc":[null,1,2],"var_from":["mainplot","irrigation","fertilizer"],"var_to":["subplot","mainplot","subplot"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","id":"id"},"manipulation":{"enabled":false},"layout":{"randomSeed":3},"edges":{"id":"id","arrows":"to"},"interaction":{"dragNodes":false,"dragView":false,"hover":false,"keyboard":false,"multiselect":false,"navigationButtons":false,"selectable":false,"zoomView":false,"zoomSpeed":1}},"groups":["unit","trt"],"width":"100%","height":"200px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":{"text":"Factor graph for a split plot design","style":"font-weight:bold;text-align:center;"},"submain":{"text":"","style":""},"footer":{"text":"","style":""},"background":"rgba(0, 0, 0, 0)","tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-e9fb5207def2e25aa0d4" style="width:100%;height:400px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e9fb5207def2e25aa0d4">{"x":{"nodes":{"idvar":[1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,3,3,4,4],"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"name":["mainplot1","mainplot2","mainplot3","mainplot4","subplot1","subplot2","subplot3","subplot4","subplot5","subplot6","subplot7","subplot8","subplot9","subplot10","subplot11","subplot12","rainfed","irrigated","brand-A","brand-B"],"label":["mainplot1","mainplot2","mainplot3","mainplot4","subplot1","subplot2","subplot3","subplot4","subplot5","subplot6","subplot7","subplot8","subplot9","subplot10","subplot11","subplot12","rainfed","irrigated","brand-A","brand-B"],"var":["mainplot","mainplot","mainplot","mainplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","irrigation","irrigation","fertilizer","fertilizer"],"group":["mainplot","mainplot","mainplot","mainplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","subplot","irrigation","irrigation","fertilizer","fertilizer"],"shape":["circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","diamond","diamond","diamond","diamond"]},"edges":{"from":[1,1,1,2,2,2,3,3,3,4,4,4,17,18,18,17,20,19,20,20,19,19,19,20,19,20,20,19],"to":[5,6,7,8,9,10,11,12,13,14,15,16,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],"alloc":[null,null,null,null,null,null,null,null,null,null,null,null,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2],"lvl_from":["mainplot1","mainplot1","mainplot1","mainplot2","mainplot2","mainplot2","mainplot3","mainplot3","mainplot3","mainplot4","mainplot4","mainplot4","rainfed","irrigated","irrigated","rainfed","brand-B","brand-A","brand-B","brand-B","brand-A","brand-A","brand-A","brand-B","brand-A","brand-B","brand-B","brand-A"],"lvl_to":["subplot1","subplot2","subplot3","subplot4","subplot5","subplot6","subplot7","subplot8","subplot9","subplot10","subplot11","subplot12","mainplot1","mainplot2","mainplot3","mainplot4","subplot1","subplot2","subplot3","subplot4","subplot5","subplot6","subplot7","subplot8","subplot9","subplot10","subplot11","subplot12"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","id":"id"},"manipulation":{"enabled":false},"layout":{"randomSeed":1},"edges":{"id":"id","arrows":"to"},"interaction":{"dragNodes":false,"dragView":false,"hover":false,"keyboard":false,"multiselect":false,"navigationButtons":false,"selectable":false,"zoomView":false,"zoomSpeed":1}},"groups":["mainplot","subplot","irrigation","fertilizer"],"width":"100%","height":"400px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":{"text":"Level graph for a split plot design","style":"font-weight:bold;text-align:center;"},"submain":{"text":"","style":""},"footer":{"text":"","style":""},"background":"rgba(0, 0, 0, 0)","tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
   <div class="chapter-nav">
@@ -98,6 +100,34 @@ The so-called grammar of experimental designs is a term that is heavily influenc
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

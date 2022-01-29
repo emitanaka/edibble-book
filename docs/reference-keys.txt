@@ -1,4 +1,3 @@
-exm:unlabeled-div-1
 basics
 terminology
 randomisation
@@ -17,6 +16,7 @@ a-viable-experimental-design-1
 aes-custom
 visualisation
 grammar
+fundamental-terminology
 people
 cookbook
 completely-randomised-design
@@ -27,4 +27,3 @@ split-plot-design
 graeco-latin-square-design
 hyper-graeco-latin-square-design
 youden-square-design
-fundamental-terminology

@@ -17,17 +17,21 @@ Henceforth, "grammar" refers to the grammar of experimental designs.
 
 Section \@ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental unit and observational unit are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
 
-In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of graphs: factor and level graphs. In the **factor graph**, every factor is represented as a single node. Every factor has a finite number of levels and each of these levels is represented as a single node in the **level graph**.
+In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, $G_F = (V(G_F), E(G_F))$ and $G_L = (V(G_L), E(G_L))$, where $V(G_F)$ and $V(G_L)$ are sets of vertices and $E(G_F)$ and $E(G_L)$ are sets of edges. We refer $G_F$ and $G_L$ as factor graph and level graph, respetively. In the **factor graph**, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the **level graph**.
 
-```{r edibble-graph, message = FALSE, include = FALSE}
-des <- start_design("Factor graph for a split plot design") %>%
-  set_units(mainplot = 18,
-             subplot = nested_in(mainplot, 7)) %>%
-  set_trts(trt1 = 2,
-           trt2 = 7) %>%
-  allot_trts(trt1 ~ mainplot,
-             trt2 ~ subplot) %>%
+
+```{r edibble-graph, message = FALSE, echo = FALSE}
+des <- start_design("Split plot design") %>%
+  set_units(mainplot = 4,
+             subplot = nested_in(mainplot, 3)) %>%
+  set_trts(irrigation = c("rainfed", "irrigated"),
+           fertilizer = c("brand-A", "brand-B")) %>%
+  allot_trts(irrigation ~ mainplot,
+             fertilizer ~ subplot) %>%
   assign_trts("random", seed = 592)
-plot(des)
+plot(des, view = "static", seed = 3, height = "200px",
+     title = c("Factor graph for a split plot design" = "font-weight:bold;text-align:center;"))
+plot(des, which = "levels", view = "static", height = "400px", seed = 1,
+     title = c("Level graph for a split plot design" = "font-weight:bold;text-align:center;"))
 ```
 

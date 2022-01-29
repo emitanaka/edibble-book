@@ -45,7 +45,6 @@ A large-scale experiment was conducted to discern whether expensive wines are go
 
 :::
  
- 
 
 ## Basic terminology {#terminology}
 
@@ -67,7 +66,8 @@ The field of experimental design is large and is applied to many domains. While 
 * **balanced experiment**: refers to when the replication of the treatments are equal
 * **orthogonal design**
 
-::: {.rmdnote .example}
+
+::: {.callout .note}
 
 **(plant growth)**: 
 

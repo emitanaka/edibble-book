@@ -11,7 +11,6 @@ link-citations: yes
 github-repo: emitanaka/edibble-book
 ---
 
-
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.path = "figures/",
                       fig.retina = 2,
@@ -22,7 +21,11 @@ set.seed(1)
 
 # `r rmarkdown::metadata$title` {-}
 
+::: {.callout .warning}
+
 Hi there! This book is a work-in-progress. 
+
+:::
 
 The book will include about the basics of experimental design and how to get started with the `edibble` R-package and its extensions to plan, design and simulate experiments. 
 

@@ -84,24 +84,68 @@ div.sourceCode {
     border-top: 1px solid #dee2e6;
     border-bottom: 1px solid #dee2e6;
     padding: 0.4em 0.7em;
+    padding-left: 2em;
+    position: relative;
 }
 
+.callout {
+  padding-left: 2em;
+}
 
-div.note.callout {
+div.callout::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0.75em;
+  left: 0.5em;
+}
+div.warning.callout::before {
+    content: "\f071";
+    color: var(--warning);
+}
+div.danger.callout::before {
+    content: "\f057";
+    color: var(--danger);
+}
+div.success.callout::before {
+    content: "\f058";
+    color: var(--success);
+}
+div.info.callout::before {
+    content: "\f05a";
+    color: var(--info);
+}
+div.note.callout::before {
+    content: "\f14b";
+    color: var(--primary);
+}
+div.note.callout,div.note.callout-noicon {
     border-left-color: var(--primary);
 }
-.note.callout strong {
+.note.callout strong,div.note.callout-noicon strong {
     color: var(--primary)!important;
 }
-div.danger.callout {
+div.danger.callout,div.danger.callout-noicon {
     border-left-color: var(--danger);
 }
-div.success.callout {
+.danger.callout strong,.danger.callout-noicon strong {
+    color: var(--danger);
+}
+div.success.callout,div.success.callout-noicon {
     border-left-color: var(--success);
 }
-div.info.callout {
+.success.callout strong,.success.callout-noicon strong{
+    color: var(--success);
+}
+div.info.callout,div.info.callout-noicon {
     border-left-color: var(--info);
 }
-div.warning.callout {
+.info.callout strong,.info.callout-noicon strong {
+    color: var(--info);
+}
+div.warning.callout,div.warning.callout-noicon {
     border-left-color: var(--warning);
+}
+.warning.callout strong, .warning.callout-noicon strong{
+    color: var(--warning);
 }
