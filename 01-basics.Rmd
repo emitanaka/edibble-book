@@ -17,11 +17,11 @@ There are many articles and books dedicated to explaining the concepts of experi
 
 Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You'll therefore find that most experiments in this book are **comparative experiments**. 
 
-At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter \@ref(people). 
+At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well.  We touch more on this in Chapter \@ref(people). 
 
 All experiments have a cost whether that be financial, resources, time or other. We can consider the **experimental cost** as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite -- you only have one chance to do the experiment -- so it's absolutely essential that you plan, design and execute the experiment well.
 
-Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter X and present how to get started with the `edibble` system to construct experimental design in Chapter \@ref(start).
+Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter \@ref(context), describe a system that  encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter \@ref(grammar), implemented as the `edibble` R-package and present how to get started with the `edibble` system to construct experimental design in Chapter \@ref(start).
  
 Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
  
@@ -34,16 +34,14 @@ Microbes have a potential for promoting plant growth by increasing abiotic stres
 
 ::: {.callout .note}
 
-**Scenario 2: wine tasting** `r eunit2()`
+**Scenario 2: wine tasting `r eunit2()`**
 A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine. 
 
 :::
 
 ::: {.callout .note}
 
-Scenario 3: new classification method `r eunit3()`
-
-A new statistical method is proposed as a better alternative for classification of cellular type. A number of simulation, based on a number of public benchmark  datasets, was carried out to compare the method under different metrics. 
+**Scenario 3: new classification method `r eunit3()`** A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark  datasets, was carried out to compare the method under different metrics. 
 
 :::
  
@@ -51,19 +49,23 @@ A new statistical method is proposed as a better alternative for classification 
 
 ## Basic terminology {#terminology}
 
-The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are fundamental terms that are commonly understood across domains:
+The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:
 
 * **treatments**: the whole set of experimental conditions in which the units are subjected to,
 * **experimental unit**: the smallest unit in which the treatment can independently be applied,
 * **observational unit**: the smallest unit in which the response is measured on,
 * **block** or **cluster**: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,
-* **design**: the intended allotment of treatment to units, 
-* **plan** or **layout**: the actual allocation of treatment to units,
+* **design**: the allocation of treatment to units, 
+* **plan** or **layout**: the actual assignment of treatment to units, and
 * **experimental structure**: the arrangements or constrains of experimental factors -- the structure can be broadly categorised as: 
-  * **unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on;
-  * **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors,
+  * **unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on; and
+  * **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.
+  
+
+
+
 * **balanced experiment**: refers to when the replication of the treatments are equal
-* **orthogonal design**: FIXME: not really a fundamental term
+* **orthogonal design**
 
 ::: {.rmdnote .example}
 

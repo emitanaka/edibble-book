@@ -16,6 +16,7 @@ treatment-allotment
 a-viable-experimental-design-1
 aes-custom
 visualisation
+grammar
 people
 cookbook
 completely-randomised-design
@@ -26,4 +27,4 @@ split-plot-design
 graeco-latin-square-design
 hyper-graeco-latin-square-design
 youden-square-design
-scenario-3-new-classification-method
+fundamental-terminology

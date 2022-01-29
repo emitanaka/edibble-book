@@ -41,7 +41,15 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 1</span> The basics of experimental designs</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">The Grammar of Experimental Designs</a></li>
+<li><a class="" href="preface.html">Preface</a></li>
+<li><a class="active" href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></li>
+<li><a class="" href="start.html"><span class="header-section-number">2</span> Getting started</a></li>
+<li><a class="" href="grammar.html"><span class="header-section-number">3</span> The Grammar of Experimental Designs</a></li>
+<li><a class="" href="people.html"><span class="header-section-number">4</span> Roles of people involved in the experiment</a></li>
+<li><a class="" href="cookbook.html"><span class="header-section-number">5</span> Cookbook</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/emitanaka/edibble-book">View book source <i class="fab fa-github"></i></a></p>
@@ -58,27 +66,26 @@
 </div>
 <p>There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by <span class="citation">Fisher (<a href="cookbook.html#ref-Fisher1935-qc" role="doc-biblioref">1935</a>)</span>, <span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span>, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment.</p>
 <p>Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You’ll therefore find that most experiments in this book are <strong>comparative experiments</strong>.</p>
-<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter <a href="people.html#people">3</a>.</p>
+<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter <a href="people.html#people">4</a>.</p>
 <p>All experiments have a cost whether that be financial, resources, time or other. We can consider the <strong>experimental cost</strong> as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite – you only have one chance to do the experiment – so it’s absolutely essential that you plan, design and execute the experiment well.</p>
-<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter X and present how to get started with the <code>edibble</code> system to construct experimental design in Chapter <a href="start.html#start">2</a>.</p>
+<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter <a href="#context"><strong>??</strong></a>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter <a href="grammar.html#grammar">3</a>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in Chapter <a href="start.html#start">2</a>.</p>
 <p>Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn’t serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.</p>
 <div class="callout note">
 <p><strong>Scenario 1: plant growth</strong> <i class="fas fa-seedling"></i>
 Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.</p>
 </div>
 <div class="callout note">
-<p><strong>Scenario 2: wine tasting</strong> <i class="fas fa-wine-bottle"></i>
+<p><strong>Scenario 2: wine tasting <i class="fas fa-wine-bottle"></i></strong>
 A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine.</p>
 </div>
 <div class="callout note">
-<p>Scenario 3: new classification method <i class="fas fa-laptop"></i></p>
-<p>A new statistical method is proposed as a better alternative for classification of cellular type. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
+<p><strong>Scenario 3: new classification method <i class="fas fa-laptop"></i></strong> A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
 </div>
 <div id="terminology" class="section level2" number="1.1">
 <h2>
 <span class="header-section-number">1.1</span> Basic terminology<a class="anchor" aria-label="anchor" href="#terminology"><i class="fas fa-link"></i></a>
 </h2>
-<p>The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are fundamental terms that are commonly understood across domains:</p>
+<p>The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
 <ul>
 <li>
 <strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
@@ -89,22 +96,21 @@ A large-scale experiment was conducted to discern whether expensive wines are go
 <li>
 <strong>block</strong> or <strong>cluster</strong>: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,</li>
 <li>
-<strong>design</strong>: the intended allotment of treatment to units,</li>
+<strong>design</strong>: the allocation of treatment to units,</li>
 <li>
-<strong>plan</strong> or <strong>layout</strong>: the actual allocation of treatment to units,</li>
+<strong>plan</strong> or <strong>layout</strong>: the actual assignment of treatment to units, and</li>
 <li>
 <strong>experimental structure</strong>: the arrangements or constrains of experimental factors – the structure can be broadly categorised as:
 <ul>
 <li>
-<strong>unit structure</strong>: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on;</li>
+<strong>unit structure</strong>: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on; and</li>
 <li>
-<strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors,</li>
+<strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.</li>
 </ul>
 </li>
 <li>
 <strong>balanced experiment</strong>: refers to when the replication of the treatments are equal</li>
-<li>
-<strong>orthogonal design</strong>: FIXME: not really a fundamental term</li>
+<li><strong>orthogonal design</strong></li>
 </ul>
 <div class="rmdnote example">
 <p><span id="exm:unlabeled-div-1" class="example"><strong>Example 1.1  </strong></span><strong>(plant growth)</strong>:</p>
@@ -113,7 +119,7 @@ A large-scale experiment was conducted to discern whether expensive wines are go
 <li>The experimental units are …</li>
 </ul>
 </div>
-<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter <a href="cookbook.html#cookbook">4</a>.</p>
+<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter <a href="cookbook.html#cookbook">5</a>.</p>
 </div>
 <div id="randomisation" class="section level2" number="1.2">
 <h2>
@@ -151,15 +157,25 @@ A large-scale experiment was conducted to discern whether expensive wines are go
 </div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="preface.html">Preface</a></div>
+<div class="next"><a href="start.html"><span class="header-section-number">2</span> Getting started</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basics"><span class="header-section-number">1</span> The basics of experimental designs</a></li>
+<li><a class="nav-link" href="#terminology"><span class="header-section-number">1.1</span> Basic terminology</a></li>
+<li><a class="nav-link" href="#randomisation"><span class="header-section-number">1.2</span> Randomisation</a></li>
+<li>
+<a class="nav-link" href="#replications-repetition-and-duplication"><span class="header-section-number">1.3</span> Replications, Repetition and Duplication</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#pseudo-replications"><span class="header-section-number">1.3.1</span> Pseudo-replications</a></li></ul>
+</li>
+<li><a class="nav-link" href="#summary"><span class="header-section-number">1.4</span> Summary</a></li>
+<li><a class="nav-link" href="#exercises"><span class="header-section-number">1.5</span> Exercises</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/emitanaka/edibble-book/blob/main/docs/01-basics.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/emitanaka/edibble-book/edit/main/docs/01-basics.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

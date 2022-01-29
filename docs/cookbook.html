@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Cookbook | The Grammar of Experimental Designs</title>
+<title>Chapter 5 Cookbook | The Grammar of Experimental Designs</title>
 <meta name="author" content="Emi Tanaka">
 <meta name="description" content="Good design considers units and treatments first, and then allocates treatments to units. It does not choose from a menu of named designs. – Bailey, 2008, Design of Comparative experiments This...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Cookbook | The Grammar of Experimental Designs">
+<meta property="og:title" content="Chapter 5 Cookbook | The Grammar of Experimental Designs">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Good design considers units and treatments first, and then allocates treatments to units. It does not choose from a menu of named designs. – Bailey, 2008, Design of Comparative experiments This...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Cookbook | The Grammar of Experimental Designs">
+<meta name="twitter:title" content="Chapter 5 Cookbook | The Grammar of Experimental Designs">
 <meta name="twitter:description" content="Good design considers units and treatments first, and then allocates treatments to units. It does not choose from a menu of named designs. – Bailey, 2008, Design of Comparative experiments This...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -41,16 +41,24 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 4</span> Cookbook</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">The Grammar of Experimental Designs</a></li>
+<li><a class="" href="preface.html">Preface</a></li>
+<li><a class="" href="basics.html"><span class="header-section-number">1</span> The basics of experimental designs</a></li>
+<li><a class="" href="start.html"><span class="header-section-number">2</span> Getting started</a></li>
+<li><a class="" href="grammar.html"><span class="header-section-number">3</span> The Grammar of Experimental Designs</a></li>
+<li><a class="" href="people.html"><span class="header-section-number">4</span> Roles of people involved in the experiment</a></li>
+<li><a class="active" href="cookbook.html"><span class="header-section-number">5</span> Cookbook</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/emitanaka/edibble-book">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cookbook" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cookbook" class="section level1" number="5">
 <h1>
-<span class="header-section-number">4</span> Cookbook<a class="anchor" aria-label="anchor" href="#cookbook"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> Cookbook<a class="anchor" aria-label="anchor" href="#cookbook"><i class="fas fa-link"></i></a>
 </h1>
 <div class="blockquote">
 <p>Good design considers units and treatments first, and then allocates treatments to units. It does not choose from a menu of named designs.</p>
@@ -59,13 +67,13 @@
 <p>This chapter presents a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in basic terminology (see Section <a href="basics.html#terminology">1.1</a>).</p>
 <p>It is well understood that an experimental design shouldn’t just be simply selected from a recipe. Nonetheless, the use of named experimental designs are prevalent and so a compromising approach is used in the <code>edibble</code> system. For every named experimental design presented, there will be a function prefixed by <code>menu_</code> to prepare the recipe code. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using <code><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout()</a></code>, but again I discourage you to use these approaches to generate a proper design.</p>
 <p>Named experimental design are handy in succinctly describing the experimental structure and treatment allotment to units, but you lose the direct association to the fundamental components that make up the experimental design. This can obscure seeing the association between different named experimental designs. Another reason that I discourage you to use named experimental designs is that it encourages users to fit the experimental resources to suit one of the named experimental design. In other words, the primal goal is no longer about fitting an appropriate design for the given experimental resources but it becomes about adjusting your resources to fit the design. This is not to say that experimental resources cannot be modified for a more desirable design.</p>
-<div id="completely-randomised-design" class="section level2" number="4.1">
+<div id="completely-randomised-design" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">4.1</span> Completely randomised design<a class="anchor" aria-label="anchor" href="#completely-randomised-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Completely randomised design<a class="anchor" aria-label="anchor" href="#completely-randomised-design"><i class="fas fa-link"></i></a>
 </h2>
 <p>A completely randomised design, commonly abbreviated as CRD, contain two factors: experimental units and treatments with a completely unstructured experiment (i.e. no grouping for the factors).</p>
 <p>You can call on <code><a href="https://edibble.emitanaka.org/reference/menu_crd.html">menu_crd()</a></code> to see the code in the terms of the fundamental system. If you omit the argument values, then a random number will be selected for you.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_crd.html">menu_crd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, n <span class="op">=</span> <span class="fl">30</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Completely Randomised Design") %&gt;%
   set_units(unit = 30) %&gt;%
@@ -75,18 +83,18 @@
   serve_table()</code></pre>
 <p>If you want to generate the design table, then you can use the <code><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout()</a></code> function parsing the named design object created by the set of <code>menu_</code> functions.</p>
 <p>Below we choose not to print any output.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">crd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_crd.html">menu_crd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, n <span class="op">=</span> <span class="fl">30</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>You can quickly plot the design using the <code><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot()</a></code> in the <code>deggust</code> package.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">crd</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-crd-1.png" width="480"></div>
+<div class="inline-figure"><img src="figures/autoplot-crd-1.png" width="480"></div>
 </div>
-<div id="randomised-complete-block-design" class="section level2" number="4.2">
+<div id="randomised-complete-block-design" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">4.2</span> Randomised complete block design<a class="anchor" aria-label="anchor" href="#randomised-complete-block-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Randomised complete block design<a class="anchor" aria-label="anchor" href="#randomised-complete-block-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rcbd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_rcbd.html">menu_rcbd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, r <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">rcbd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Randomised Complete Block Design") %&gt;%
@@ -96,15 +104,15 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 326) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">rcbd</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-rcbd-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-rcbd-1.png" width="576"></div>
 </div>
-<div id="latin-square-design" class="section level2" number="4.3">
+<div id="latin-square-design" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">4.3</span> Latin square design<a class="anchor" aria-label="anchor" href="#latin-square-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Latin square design<a class="anchor" aria-label="anchor" href="#latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lsd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_lsd.html">menu_lsd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">lsd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Latin Square Design") %&gt;%
@@ -115,15 +123,15 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 108) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">lsd</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-lsd-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-lsd-1.png" width="576"></div>
 </div>
-<div id="factorial-design" class="section level2" number="4.4">
+<div id="factorial-design" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">4.4</span> Factorial design<a class="anchor" aria-label="anchor" href="#factorial-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Factorial design<a class="anchor" aria-label="anchor" href="#factorial-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_factorial.html">menu_factorial</a></span><span class="op">(</span>trt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">fac</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Factorial Design") %&gt;%
@@ -133,15 +141,15 @@
   allot_trts(~unit) %&gt;%
   assign_trts("random", seed = 883) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">fac</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-fac-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-fac-1.png" width="576"></div>
 </div>
-<div id="split-plot-design" class="section level2" number="4.5">
+<div id="split-plot-design" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">4.5</span> Split-plot design<a class="anchor" aria-label="anchor" href="#split-plot-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Split-plot design<a class="anchor" aria-label="anchor" href="#split-plot-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">spd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_split.html">menu_split</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">spd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Split-Plot Design | Split-Unit Design") %&gt;%
@@ -153,15 +161,15 @@
              trt2 ~ subplot) %&gt;%
   assign_trts("random", seed = 11) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">spd</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-spd-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-spd-1.png" width="576"></div>
 </div>
-<div id="graeco-latin-square-design" class="section level2" number="4.6">
+<div id="graeco-latin-square-design" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">4.6</span> Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#graeco-latin-square-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_graeco.html">menu_graeco</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Graeco-Latin Square Design") %&gt;%
@@ -174,15 +182,15 @@
              trt2 ~ unit) %&gt;%
   assign_trts("random", seed = 304) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-graeco-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-graeco-1.png" width="576"></div>
 </div>
-<div id="hyper-graeco-latin-square-design" class="section level2" number="4.7">
+<div id="hyper-graeco-latin-square-design" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">4.7</span> Hyper-Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#hyper-graeco-latin-square-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> Hyper-Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#hyper-graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hyper_graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_hyper_graeco.html">menu_hyper_graeco</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Hyper-Graeco-Latin Square Design") %&gt;%
@@ -195,15 +203,15 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 313) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-hyper-graeco-1.png" width="576"></div>
+<div class="inline-figure"><img src="figures/autoplot-hyper-graeco-1.png" width="576"></div>
 </div>
-<div id="youden-square-design" class="section level2" number="4.8">
+<div id="youden-square-design" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">4.8</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">youden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_youden.html">menu_youden</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Youden Square Design") %&gt;%
@@ -214,22 +222,44 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 782) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="edibble-book_files/figure-html/autoplot-youden-1.png" width="672"></div>
+<div class="inline-figure"><img src="figures/autoplot-youden-1.png" width="672"></div>
 
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bailey2008-gw" class="csl-entry">
+Bailey, Rosemary. 2008. <em>Design of Comparative Experiments</em>.
+</div>
+<div id="ref-Fisher1935-qc" class="csl-entry">
+Fisher, Ronald. 1935. <em>The Design of Experiments</em>. Oliver; Boyd.
+</div>
+<div id="ref-Wilkinson2005-oz" class="csl-entry">
+Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. Springer.
+</div>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
+<div class="prev"><a href="people.html"><span class="header-section-number">4</span> Roles of people involved in the experiment</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cookbook"><span class="header-section-number">5</span> Cookbook</a></li>
+<li><a class="nav-link" href="#completely-randomised-design"><span class="header-section-number">5.1</span> Completely randomised design</a></li>
+<li><a class="nav-link" href="#randomised-complete-block-design"><span class="header-section-number">5.2</span> Randomised complete block design</a></li>
+<li><a class="nav-link" href="#latin-square-design"><span class="header-section-number">5.3</span> Latin square design</a></li>
+<li><a class="nav-link" href="#factorial-design"><span class="header-section-number">5.4</span> Factorial design</a></li>
+<li><a class="nav-link" href="#split-plot-design"><span class="header-section-number">5.5</span> Split-plot design</a></li>
+<li><a class="nav-link" href="#graeco-latin-square-design"><span class="header-section-number">5.6</span> Graeco-Latin square design</a></li>
+<li><a class="nav-link" href="#hyper-graeco-latin-square-design"><span class="header-section-number">5.7</span> Hyper-Graeco-Latin square design</a></li>
+<li><a class="nav-link" href="#youden-square-design"><span class="header-section-number">5.8</span> Youden square design</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://github.com/emitanaka/edibble-book/blob/main/docs/04-cookbook.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/emitanaka/edibble-book/edit/main/docs/04-cookbook.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

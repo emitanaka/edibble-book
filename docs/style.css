@@ -86,14 +86,12 @@ div.sourceCode {
     padding: 0.4em 0.7em;
 }
 
-.callout p:first-child {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
 
 div.note.callout {
     border-left-color: var(--primary);
+}
+.note.callout strong {
+    color: var(--primary)!important;
 }
 div.danger.callout {
     border-left-color: var(--danger);
