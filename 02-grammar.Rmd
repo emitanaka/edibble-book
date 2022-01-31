@@ -17,8 +17,7 @@ Henceforth, "grammar" refers to the grammar of experimental designs.
 
 Section \@ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental unit and observational unit are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
 
-In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, $G_F = (V(G_F), E(G_F))$ and $G_L = (V(G_L), E(G_L))$, where $V(G_F)$ and $V(G_L)$ are sets of vertices and $E(G_F)$ and $E(G_L)$ are sets of edges. We refer $G_F$ and $G_L$ as factor graph and level graph, respetively. In the **factor graph**, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the **level graph**.
-
+In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, $G_F = (V(G_F), E(G_F))$ and $G_L = (V(G_L), E(G_L))$, where $V(G_F)$ and $V(G_L)$ are sets of vertices and $E(G_F)$ and $E(G_L)$ are sets of edges. We refer $G_F$ and $G_L$ as factor graph and level graph, respectively. In the **factor graph**, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the **level graph**.
 
 ```{r edibble-graph, message = FALSE, echo = FALSE}
 des <- start_design("Split plot design") %>%

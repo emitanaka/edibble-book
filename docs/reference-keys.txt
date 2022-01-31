@@ -23,6 +23,7 @@ completely-randomised-design
 randomised-complete-block-design
 latin-square-design
 factorial-design
+balanced-incomplete-block-design
 split-plot-design
 graeco-latin-square-design
 hyper-graeco-latin-square-design

@@ -48,7 +48,7 @@ autoplot(crd)
 ## Randomised complete block design
 
 ```{r, comment = ""}
-rcbd <- takeout(menu_rcbd(t = 5, r = 6))
+rcbd <- takeout(menu_rcbd(t = 6, r = 10))
 examine_recipe(rcbd)
 ```
 
@@ -78,10 +78,21 @@ examine_recipe(fac)
 autoplot(fac)
 ```
 
+## Balanced incomplete block design
+
+```{r}
+bibd <- takeout(menu_bibd(t = 5, r = 10, k = 4))
+examine_recipe(bibd)
+```
+```{r autoplot-bibd, fig.height = 6, fig.width = 6}
+autoplot(bibd)
+```
+
+
 ## Split-plot design
 
 ```{r, comment = ""}
-spd <- takeout(menu_split())
+spd <- takeout(menu_split(t1 = 2, t2 = 4, r = 10))
 examine_recipe(spd)
 ```
 
@@ -93,7 +104,7 @@ autoplot(spd)
 ## Graeco-Latin square design
 
 ```{r, comment = ""}
-graeco <- takeout(menu_graeco())
+graeco <- takeout(menu_graeco(t = 9))
 examine_recipe(graeco)
 ```
 
@@ -104,7 +115,7 @@ autoplot(graeco)
 ## Hyper-Graeco-Latin square design
 
 ```{r, comment = ""}
-hyper_graeco <- takeout(menu_hyper_graeco())
+hyper_graeco <- takeout(menu_hyper_graeco(t = 6))
 examine_recipe(hyper_graeco)
 ```
 
@@ -115,7 +126,7 @@ autoplot(hyper_graeco)
 ## Youden square design
 
 ```{r, comment = ""}
-youden <- takeout(menu_youden())
+youden <- takeout(menu_youden(nc = 4, t = 5))
 examine_recipe(youden)
 ```
 
