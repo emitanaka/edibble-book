@@ -5,6 +5,8 @@ replications-repetition-and-duplication
 pseudo-replications
 summary
 exercises
+grammar
+fundamental-terminology
 start
 setting-the-experimental-structure-and-context
 a-viable-experimental-design
@@ -15,9 +17,7 @@ treatment-allotment
 a-viable-experimental-design-1
 aes-custom
 visualisation
-grammar
-fundamental-terminology
-people
+management
 cookbook
 completely-randomised-design
 randomised-complete-block-design
