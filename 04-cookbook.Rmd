@@ -10,13 +10,19 @@ Good design considers units and treatments first, and then allocates treatments 
 -- Bailey, 2008, Design of Comparative experiments
 :::
 
+You shouldn't simply select an experimental design from a list of named designs. Every experiment requires a tailored design to properly suit the situation. This concept isn't unique to just experimental designs; take architecture for example where near identical "cookie-cutter" homes get built on masses to make development cheaper but it comes at a detrimental cost when it's not fit for the landscape. There's an economical cost that perhaps drive the use of cookie-cutter homes, but what's the cost of using carefully tailored experimental designs? That you have to _think more about the experiment_? It's a small cost if you think about the consequences of an ill-designed experiment. And I'm no real estate expert, but I wouldn't invest in a cheap home that's cutting corners to the point that it may have defects. 
 
-This chapter presents a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in basic terminology (see Section \@ref(terminology)).
+Named experimental design are handy in succinctly describing the experimental structure and treatment allotment to units, but you lose the direct association to the fundamental components that make up the experimental design. This can obscure seeing the association between different named experimental designs. The idea of the fundamental system in `edibble` is to encourage higher-order thinking from the user. 
 
-It is well understood that an experimental design shouldn't just be simply selected from a recipe. Nonetheless, the use of named experimental designs are prevalent and so a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `menu_` to prepare the recipe code. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `takeout()`, but again I discourage you to use these approaches to generate a proper design. 
+The use of named experimental designs is an endemic -- it will continue to be prevalent in the field.  So a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `menu_` that shows the recipe code in terms of the fundamental system. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `takeout()`, but again I discourage you to use these approaches to generate a proper design. 
 
-Named experimental design are handy in succinctly describing the experimental structure and treatment allotment to units, but you lose the direct association to the fundamental components that make up the experimental design. This can obscure seeing the association between different named experimental designs. Another reason that I discourage you to use named experimental designs is that it encourages users to fit the experimental resources to suit one of the named experimental design. In other words, the primal goal is no longer about fitting an appropriate design for the given experimental resources but it becomes about adjusting your resources to fit the design. This is not to say that experimental resources cannot be modified for a more desirable design. 
+The following sections present a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in fundamental system terms (see Section \@ref(grammar)). 
 
+::: {.callout .note}
+
+What are the differences between Latin square design, Graeco-Latin square design and Hyper-Graeco-Latin square design?
+
+:::
 
 
 ## Completely randomised design 
