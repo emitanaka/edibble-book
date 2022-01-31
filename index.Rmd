@@ -14,7 +14,7 @@ github-repo: emitanaka/edibble-book
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.path = "figures/",
                       fig.retina = 2,
-                      cache = TRUE, 
+                      cache = FALSE, 
                       cache.path = "cache/")
 set.seed(1)
 ```

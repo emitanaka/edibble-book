@@ -19,10 +19,10 @@ Section \@ref(terminology) describe the basic terminology used in the field of e
 
 In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, $G_F = (V(G_F), E(G_F))$ and $G_L = (V(G_L), E(G_L))$, where $V(G_F)$ and $V(G_L)$ are sets of vertices and $E(G_F)$ and $E(G_L)$ are sets of edges. We refer $G_F$ and $G_L$ as factor graph and level graph, respectively. In the **factor graph**, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the **level graph**.
 
-```{r edibble-graph, message = FALSE, echo = FALSE}
+```{r edibble-graph, message = FALSE, eval = FALSE}
 des <- start_design("Split plot design") %>%
   set_units(mainplot = 4,
-             subplot = nested_in(mainplot, 3)) %>%
+             subplot = nested_in(mainplot, 4)) %>%
   set_trts(irrigation = c("rainfed", "irrigated"),
            fertilizer = c("brand-A", "brand-B")) %>%
   allot_trts(irrigation ~ mainplot,

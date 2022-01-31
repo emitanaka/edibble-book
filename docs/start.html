@@ -20,8 +20,7 @@
 <link href="libs/_Fira%20Mono-0.4.0/font.css" rel="stylesheet">
 <link href="libs/_Alegreya-0.4.0/font.css" rel="stylesheet">
 <script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
-<script src="libs/vis-9.1.0/vis-network.min.js"></script><script src="libs/visNetwork-binding-2.1.0/visNetwork.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -246,27 +245,8 @@
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="va">pig</span>,
             manager <span class="op">=</span> <span class="va">pen</span><span class="op">)</span> </code></pre></div>
 <pre><code>## # A valid nested design 
-## # An edibble: 18 x 5
-##          pen        pig     diet weight manager
-##    &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt; &lt;rcrd&gt;  &lt;rcrd&gt;
-##  1      pen1      pig1  high-fat      ■       ■
-##  2      pen1      pig2  high-fat      ■       x
-##  3      pen1      pig3  high-fat      ■       x
-##  4      pen2      pig4  low-fat       ■       ■
-##  5      pen2      pig5  low-fat       ■       x
-##  6      pen2      pig6  low-fat       ■       x
-##  7      pen3      pig7  standard      ■       ■
-##  8      pen3      pig8  standard      ■       x
-##  9      pen3      pig9  standard      ■       x
-## 10      pen4      pig10 high-fat      ■       ■
-## 11      pen4      pig11 high-fat      ■       x
-## 12      pen4      pig12 high-fat      ■       x
-## 13      pen5      pig13 low-fat       ■       ■
-## 14      pen5      pig14 low-fat       ■       x
-## 15      pen5      pig15 low-fat       ■       x
-## 16      pen6      pig16 standard      ■       ■
-## 17      pen6      pig17 standard      ■       x
-## 18      pen6      pig18 standard      ■       x</code></pre>
+## # An edibble: 0 x 5
+## # … with 5 variables: pen &lt;unit(6)&gt;, pig &lt;unit(18)&gt;, diet &lt;trt(3)&gt;, weight &lt;rcrd&gt;, manager &lt;rcrd&gt;</code></pre>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="va">pig</span>,
@@ -282,10 +262,10 @@
                  manager <span class="op">=</span> <span class="fu">sim_form</span><span class="op">(</span><span class="op">~</span><span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
                    <span class="fu">params</span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"John"</span>, <span class="st">"Mary"</span>, <span class="st">"Jane"</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
                  .seed <span class="op">=</span> <span class="fl">1</span>, .censor <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<pre><code>## Warning in (function (n, mean = 0, sd = 1) : NAs produced</code></pre>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">pen</span>, <span class="va">weight</span>, color <span class="op">=</span> <span class="va">diet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </code></pre></div>
-<pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <div class="inline-figure"><img src="figures/unnamed-chunk-12-1.png" width="672"></div>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"McIntyre (1955)"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
@@ -349,7 +329,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-01-31.</p>
+    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-02-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
