@@ -498,6 +498,22 @@
         "viridisLite"
       ]
     },
+    "simulate": {
+      "Package": "simulate",
+      "Version": "0.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "simulate",
+      "RemoteUsername": "emitanaka",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "b64481e132119e8fd8e463056dbbd41dde771bc4",
+      "Hash": "f2df269e260b580fa95951af419b39eb",
+      "Requirements": [
+        "magrittr",
+        "rlang"
+      ]
+    },
     "stringi": {
       "Package": "stringi",
       "Version": "1.7.5",
