@@ -19,6 +19,11 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
+          
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, local::., any::curl
+          needs: website
 
       - uses: r-lib/actions/setup-renv@v1
 

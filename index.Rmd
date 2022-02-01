@@ -17,6 +17,8 @@ knitr::opts_chunk$set(fig.path = "figures/",
                       cache = FALSE, 
                       cache.path = "cache/")
 set.seed(1)
+library(edibble)
+library(deggust)
 ```
 
 # `r rmarkdown::metadata$title` {-}
