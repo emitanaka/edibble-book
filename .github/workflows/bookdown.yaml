@@ -21,7 +21,9 @@ jobs:
           use-public-rspm: true
           
       - name: Query dependencies
-        run: sudo apt-get install -y libcurl4-openssl-dev
+        run: > 
+          sudo apt-get install -y libcurl4-openssl-dev
+          sudo apt-get install libmagick++-dev
 
       - uses: r-lib/actions/setup-renv@v1
 
