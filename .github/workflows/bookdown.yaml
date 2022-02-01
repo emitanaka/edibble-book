@@ -32,6 +32,7 @@ jobs:
           remotes::install_github("emitanaka/edibble")
           remotes::install_github("emitanaka/deggust")
           install.packages("openxlsx")
+          install.packages("bslib")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-renv@v1
