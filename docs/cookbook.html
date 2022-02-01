@@ -87,11 +87,33 @@
   assign_trts("random", seed = 1) %&gt;%
   serve_table()</code></pre>
 <p>If you want to generate the design table, then you can use the <code><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout()</a></code> function parsing the named design object created by the set of <code>menu_</code> functions.</p>
-<p>Below we choose not to print any output.</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">crd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_crd.html">menu_crd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, n <span class="op">=</span> <span class="fl">30</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">crd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_crd.html">menu_crd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, n <span class="op">=</span> <span class="fl">30</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="va">crd</span></code></pre></div>
+<pre><code>## start_design("Completely Randomised Design") %&gt;%
+##   set_units(unit = 30) %&gt;%
+##   set_trts(trt = 5) %&gt;%
+##   allot_trts(trt ~ unit) %&gt;%
+##   assign_trts("random", seed = 1) %&gt;%
+##   serve_table() 
+## 
+## # Completely Randomised Design 
+## # An edibble: 30 x 2
+##          unit      trt
+##  * &lt;unit(30)&gt; &lt;trt(5)&gt;
+##  1     unit1      trt5
+##  2     unit2      trt3
+##  3     unit3      trt1
+##  4     unit4      trt5
+##  5     unit5      trt3
+##  6     unit6      trt5
+##  7     unit7      trt1
+##  8     unit8      trt1
+##  9     unit9      trt2
+## 10     unit10     trt2
+## # … with 20 more rows</code></pre>
 <p>You can quickly plot the design using the <code><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot()</a></code> in the <code>deggust</code> package.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">crd</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-crd-1.png" width="480"></div>
 </div>
@@ -99,7 +121,7 @@
 <h2>
 <span class="header-section-number">5.2</span> Randomised complete block design<a class="anchor" aria-label="anchor" href="#randomised-complete-block-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rcbd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_rcbd.html">menu_rcbd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">6</span>, r <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">rcbd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Randomised Complete Block Design") %&gt;%
@@ -109,7 +131,7 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 326) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">rcbd</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-rcbd-1.png" width="576"></div>
 </div>
@@ -117,7 +139,7 @@
 <h2>
 <span class="header-section-number">5.3</span> Latin square design<a class="anchor" aria-label="anchor" href="#latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lsd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_lsd.html">menu_lsd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">lsd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Latin Square Design") %&gt;%
@@ -128,7 +150,7 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 967) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">lsd</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-lsd-1.png" width="576"></div>
 </div>
@@ -136,7 +158,7 @@
 <h2>
 <span class="header-section-number">5.4</span> Factorial design<a class="anchor" aria-label="anchor" href="#factorial-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_factorial.html">menu_factorial</a></span><span class="op">(</span>trt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">fac</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Factorial Design") %&gt;%
@@ -146,7 +168,7 @@
   allot_trts(~unit) %&gt;%
   assign_trts("random", seed = 805) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">fac</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-fac-1.png" width="576"></div>
 </div>
@@ -154,7 +176,7 @@
 <h2>
 <span class="header-section-number">5.5</span> Balanced incomplete block design<a class="anchor" aria-label="anchor" href="#balanced-incomplete-block-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bibd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_bibd.html">menu_bibd</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, r <span class="op">=</span> <span class="fl">10</span>, k <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">bibd</span><span class="op">)</span></code></pre></div>
 <pre><code>## start_design("Balanced Incomplete Block Design") %&gt;%
@@ -164,7 +186,7 @@
 ##   allot_trts(trt ~ unit) %&gt;%
 ##   assign_trts("random", seed = 954) %&gt;%
 ##   serve_table()</code></pre>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">bibd</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-bibd-1.png" width="576"></div>
 </div>
@@ -172,7 +194,7 @@
 <h2>
 <span class="header-section-number">5.6</span> Split-plot design<a class="anchor" aria-label="anchor" href="#split-plot-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">spd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_split.html">menu_split</a></span><span class="op">(</span>t1 <span class="op">=</span> <span class="fl">2</span>, t2 <span class="op">=</span> <span class="fl">4</span>, r <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">spd</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Split-Plot Design | Split-Unit Design") %&gt;%
@@ -184,7 +206,7 @@
              trt2 ~ subplot) %&gt;%
   assign_trts("random", seed = 959) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">spd</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-spd-1.png" width="576"></div>
 </div>
@@ -192,7 +214,7 @@
 <h2>
 <span class="header-section-number">5.7</span> Strip-plot design<a class="anchor" aria-label="anchor" href="#strip-plot-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">strip</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_strip.html">menu_strip</a></span><span class="op">(</span>t1 <span class="op">=</span> <span class="fl">2</span>, t2 <span class="op">=</span> <span class="fl">4</span>, r <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">strip</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Strip-Plot Design | Strip-Unit Design") %&gt;%
@@ -206,7 +228,7 @@
              trt2 ~ col) %&gt;%
   assign_trts("random", seed = 942) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">strip</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-strip-1.png" width="576"></div>
 </div>
@@ -214,7 +236,7 @@
 <h2>
 <span class="header-section-number">5.8</span> Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_graeco.html">menu_graeco</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">9</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Graeco-Latin Square Design") %&gt;%
@@ -227,7 +249,7 @@
              trt2 ~ unit) %&gt;%
   assign_trts("random", seed = 787) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">graeco</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-graeco-1.png" width="576"></div>
 </div>
@@ -235,7 +257,7 @@
 <h2>
 <span class="header-section-number">5.9</span> Hyper-Graeco-Latin square design<a class="anchor" aria-label="anchor" href="#hyper-graeco-latin-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">hyper_graeco</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_hyper_graeco.html">menu_hyper_graeco</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Hyper-Graeco-Latin Square Design") %&gt;%
@@ -248,7 +270,7 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 160) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">hyper_graeco</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-hyper-graeco-1.png" width="576"></div>
 </div>
@@ -256,7 +278,7 @@
 <h2>
 <span class="header-section-number">5.10</span> Youden square design<a class="anchor" aria-label="anchor" href="#youden-square-design"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">youden</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/takeout.html">takeout</a></span><span class="op">(</span><span class="fu"><a href="https://edibble.emitanaka.org/reference/menu_youden.html">menu_youden</a></span><span class="op">(</span>nc <span class="op">=</span> <span class="fl">4</span>, t <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://edibble.emitanaka.org/reference/examine_recipe.html">examine_recipe</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <pre><code>start_design("Youden Square Design") %&gt;%
@@ -267,7 +289,7 @@
   allot_trts(trt ~ unit) %&gt;%
   assign_trts("random", seed = 645) %&gt;%
   serve_table()</code></pre>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">youden</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="figures/autoplot-youden-1.png" width="672"></div>
 

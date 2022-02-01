@@ -37,10 +37,9 @@ menu_crd(t = 5, n = 30, seed = 1)
 
 If you want to generate the design table, then you can use the `takeout()` function parsing the named design object created by the set of `menu_` functions. 
 
-Below we choose not to print any output.
-
 ```{r}
 crd <- takeout(menu_crd(t = 5, n = 30, seed = 1))
+crd
 ```
 
 You can quickly plot the design using the `autoplot()` in the `deggust` package. 
