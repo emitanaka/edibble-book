@@ -22,8 +22,7 @@ jobs:
           
       - name: Query dependencies
         run: |
-          install.packages('curl')
-
+          install.packages("curl")
 
       - uses: r-lib/actions/setup-renv@v1
 
