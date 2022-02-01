@@ -24,6 +24,14 @@ jobs:
         run: |
           sudo apt-get install -y libcurl4-openssl-dev
           sudo apt-get install libmagick++-dev
+          
+      - name: Query R dependencies
+        run: |
+          install.packages('remotes')
+          remotes::install_github("emitanaka/simulate")
+          remotes::install_github("emitanaka/edibble")
+          remotes::install_github("emitanaka/deggust")
+        shell: Rscript {0}
 
       - uses: r-lib/actions/setup-renv@v1
 
