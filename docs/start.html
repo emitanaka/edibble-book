@@ -282,13 +282,12 @@
                  manager <span class="op">=</span> <span class="fu">sim_form</span><span class="op">(</span><span class="op">~</span><span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
                    <span class="fu">params</span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"John"</span>, <span class="st">"Mary"</span>, <span class="st">"Jane"</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
                  .seed <span class="op">=</span> <span class="fl">1</span>, .censor <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></code></pre></div>
-<pre><code>## Loading required package: simulate</code></pre>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">pen</span>, <span class="va">weight</span>, color <span class="op">=</span> <span class="va">diet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </code></pre></div>
 <pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <div class="inline-figure"><img src="figures/unnamed-chunk-12-1.png" width="672"></div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"McIntyre (1955)"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>plant <span class="op">=</span> <span class="fl">8</span>,
             position <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,
@@ -308,7 +307,7 @@
 <h2>
 <span class="header-section-number">3.5</span> Visualisation<a class="anchor" aria-label="anchor" href="#visualisation"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://deggust.emitanaka.org">deggust</a></span><span class="op">)</span></code></pre></div>
 
 </div>
