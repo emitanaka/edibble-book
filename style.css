@@ -1,0 +1,151 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+p {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/* Treatment allotment prints out in a new pre --- can it be modified? */
+.sourceCode ~ pre:not(:first-child) {
+    margin: 0 -0.5rem 0rem -0.5rem;
+}
+
+.sourceCode ~ pre:last-child {
+    margin: 0 -0.5rem 1rem -0.5rem;
+}
+
+div.sourceCode {
+  margin-top: 1rem!important;
+}
+
+.blockquote {
+  background: #d0f0c0;
+	padding: 25px;
+	font-size: 1rem;
+}
+
+.blockquote p {
+	text-align: right;
+	padding: 0;
+	color: #195905;
+  display: block;
+}
+
+.blockquote p:first-child {
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+/***
+
+.blockquote p:first-child:before, .blockquote p:first-child:after {
+	content: '”';
+	font-size: 1.5rem;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #195905;
+	font-weight:bold;
+	vertical-align:top;
+	line-height:0.8
+}
+
+.blockquote p:first-child:before {
+	content: '“';
+	position:absolute;
+	left:0;
+	top:-2px;
+}
+
+***/
+
+/*** callout blocks as inspired by quarto ***/
+
+.callout, .callout-noicon {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.25rem;
+    border-left: 5px solid;
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.4em 0.7em;
+    padding-left: 2em;
+    position: relative;
+}
+
+.callout {
+  padding-left: 2em;
+}
+
+div.callout::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0.75em;
+  left: 0.5em;
+}
+div.warning.callout::before {
+    content: "\f071";
+    color: var(--warning);
+}
+div.danger.callout::before {
+    content: "\f057";
+    color: var(--danger);
+}
+div.success.callout::before {
+    content: "\f058";
+    color: var(--success);
+}
+div.info.callout::before {
+    content: "\f05a";
+    color: var(--info);
+}
+div.note.callout::before {
+    content: "\f14b";
+    color: var(--primary);
+}
+div.note.callout,div.note.callout-noicon {
+    border-left-color: var(--primary);
+}
+.note.callout strong,div.note.callout-noicon strong {
+    color: var(--primary)!important;
+}
+div.danger.callout,div.danger.callout-noicon {
+    border-left-color: var(--danger);
+}
+.danger.callout strong,.danger.callout-noicon strong {
+    color: var(--danger);
+}
+div.success.callout,div.success.callout-noicon {
+    border-left-color: var(--success);
+}
+.success.callout strong,.success.callout-noicon strong{
+    color: var(--success);
+}
+div.info.callout,div.info.callout-noicon {
+    border-left-color: var(--info);
+}
+.info.callout strong,.info.callout-noicon strong {
+    color: var(--info);
+}
+div.warning.callout,div.warning.callout-noicon {
+    border-left-color: var(--warning);
+}
+.warning.callout strong, .warning.callout-noicon strong{
+    color: var(--warning);
+}
