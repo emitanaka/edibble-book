@@ -33,6 +33,8 @@ jobs:
           remotes::install_github("emitanaka/deggust")
           install.packages("openxlsx")
           install.packages("bslib")
+          install.packages("downlit")
+          install.packages("xml2")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-renv@v1
