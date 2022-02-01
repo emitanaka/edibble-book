@@ -35,6 +35,7 @@ jobs:
           install.packages("bslib")
           install.packages("downlit")
           install.packages("xml2")
+          install.packages("visNetwork")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-renv@v1
