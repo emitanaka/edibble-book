@@ -2,8 +2,8 @@ bookdown::bs4_book:
   css: style.css
   repo: 
     base: "https://github.com/emitanaka/edibble-book"
-    branch: main
-    subdir: docs
+    branch: master
+    #subdir: docs
   theme:
     # version doesn't seem to be working
     version: 5
