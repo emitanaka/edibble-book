@@ -156,8 +156,8 @@
       "RemoteRepo": "edibble",
       "RemoteUsername": "emitanaka",
       "RemoteRef": "HEAD",
-      "RemoteSha": "455275a37c959e40c6750865e0cc7fca6179613c",
-      "Hash": "2e22c5b676e24df84a36047f424ac96b",
+      "RemoteSha": "d4d2a14bd1e5b344e492ea0227a3c6b62ce66089",
+      "Hash": "8ac3b6c995321f2b75b70d0ebb235425",
       "Requirements": [
         "AlgDesign",
         "cli",
@@ -390,10 +390,10 @@
     },
     "nestr": {
       "Package": "nestr",
-      "Version": "0.1.1",
+      "Version": "0.1.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9584efb5fdb2693a7e0814548098900d",
+      "Hash": "b76a3eda42ecd30c3e73fde8f111e122",
       "Requirements": [
         "magrittr",
         "rlang",
@@ -413,10 +413,10 @@
     },
     "pillar": {
       "Package": "pillar",
-      "Version": "1.6.5",
+      "Version": "1.7.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "464a3e015331eeb8efd1d239cad5128d",
+      "Hash": "51dfc97e1b7069e9f7e6f83f3589c22e",
       "Requirements": [
         "cli",
         "crayon",

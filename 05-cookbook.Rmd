@@ -142,12 +142,12 @@ autoplot(spd)
 
 ## Strip-plot design
 
-```{r, comment = ""}
-strip <- takeout(menu_strip(t1 = 2, t2 = 4, r = 10))
+```{r, comment = "", eval = FALSE}
+strip <- takeout(menu_strip(t1 = 2, t2 = 4, r = 1))
 examine_recipe(strip)
 ```
 
-```{r autoplot-strip, fig.height = 6, fig.width = 6}
+```{r autoplot-strip, fig.height = 6, fig.width = 6, eval = FALSE}
 autoplot(strip)
 ```
 

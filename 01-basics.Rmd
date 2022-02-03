@@ -17,7 +17,7 @@ There are many articles and books dedicated to explaining the concepts of experi
 
 Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You'll therefore find that most experiments in this book are **comparative experiments**. 
 
-At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well.  We touch more on this in Chapter \@ref(people). 
+At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well.  We touch more on this in Chapter \@ref(management). 
 
 All experiments have a cost whether that be financial, resources, time or other. We can consider the **experimental cost** as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite -- you only have one chance to do the experiment -- so it's absolutely essential that you plan, design and execute the experiment well.
 
@@ -62,9 +62,9 @@ The field of experimental design is large and is applied to many domains. While 
   
 
 
-
 * **balanced experiment**: refers to when the replication of the treatments are equal
 * **orthogonal design**
+* **complete design**
 
 
 ::: {.callout .note}

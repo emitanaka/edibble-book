@@ -63,6 +63,18 @@ start_design("My experiment with multiple factors") %>%
            frequency = c("daily", "weekly"))
 ```
 
+The unit and treatment factors do not need to be defined in one call. The ordering of the functions is commutative where the factor is not dependent directly on another factor. 
+
+```{r}
+start_design("My experiment with multiple factors") %>% 
+  set_units(pen = c("North", "Shade", "Meadow")) %>%
+  set_trts(diet = c("high-fat", "low-fat", "standard"),
+           supplement = 2) %>% 
+  # frequency of supplements
+  set_trts(frequency = c("daily", "weekly")) %>% 
+  set_units(pig = 18) 
+```
+
 ### A viable experimental design 
 
 ### Understanding the experimental context
