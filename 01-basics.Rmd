@@ -1,4 +1,4 @@
-# The basics of experimental designs {#basics}
+# Basics {#basics}
 
 
 ```{r components, include = FALSE}

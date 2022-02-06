@@ -1,4 +1,4 @@
-# The grammar of experimental designs {#grammar}
+# Grammar {#grammar}
 
 ::: blockquote
 

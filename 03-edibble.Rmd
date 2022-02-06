@@ -77,6 +77,21 @@ start_design("My experiment with multiple factors") %>%
 
 ### A viable experimental design 
 
+::: {.info.callout}
+
+A viable experimental design is only specified if the relationship between the variables can be reconciled to a single observational unit. 
+
+:::
+
+For example below 
+
+```{r}
+start_design("An invalid unit structure") %>% 
+  set_units(pen = 6,
+            pig = 18) %>% 
+  serve_table()
+```
+
 ### Understanding the experimental context
 
 ### Fitting a variety of mental mode 
@@ -133,32 +148,45 @@ diet_design(diet ~ pen)
 ```
 
 
-## A viable experimental design
-
-A viable experimental design is only specified if the relationship between the variables can be reconciled to a single observational unit. For example below 
-
-```{r}
-start_design("An invalid unit structure") %>% 
-  set_units(pen = 6,
-            pig = 18) %>% 
-  serve_table()
-```
 
 
+## Setting records with expectations
 
-
+The term "records", often abbreviated as `rcrd` in the `edibble` system, refers to any observational variables, including response variables. 
+Setting records is a way to describe the _intent_ of the observations that you will collect in the experiment. All records must be made on a unit. The primary way to set the record is using `set_rcrds()` where the LHS is the factor name of the record and the RHS is the unit factor on which the record will be measured. The LHS of the input in `set_rcrds()` follow the same pattern as `set_units()` and `set_trts()` as the LHS is the name of the new factor. In the example below, we are measuring `weight` and `sex` of the `pig` and recording the `manager` of each `pen`. In this example there are only 6 pens, therefore there should be only a maximum of 6 managers recorded. 
 
 ```{r}
-diet_design(diet ~ pen) %>% 
+desr <- diet_design(diet ~ pen) %>% 
   set_rcrds(weight = pig,
+            sex = pig,
             manager = pen) 
+
+desr
 ```
 
+Another equivalent way to set the record is using `set_rcrds_of()`. The format of the input is such that the unit factors are on the LHS and the RHS are character vectors of new record factor names. The reason that names are set as characters is because the factors in the RHS do not yet exist. In contrast, the RHS of the input in `set_rcrds()` is unquoted because those factors exist. The suffix `_of` in the function name is purposely chosen to signal that the pattern for the LHS no longer follows that of `set_rcrds()`, `set_trts()` and `set_units()` where the LHS is always a new factor name. 
+
+```{r, eval = FALSE}
+diet_design(diet ~ pen) %>% 
+  set_rcrds_of(pig = c("weight", "sex"),
+               pen = "manager")
+```
+
+You may choose to also set expecations of the record. For example, we assert below that the weight of a grown pig must be a minimum of 15 kg. 
+
+
 ```{r}
-dat <- diet_design(diet ~ pen) %>% 
-  set_rcrds(weight = pig,
-            manager = pen) %>% 
-  expect_rcrds(weight > 15) %>% 
+desre <- desr %>% 
+  expect_rcrds(weight > 15,
+               factor(sex, levels = c("F", "M")))
+```
+
+You might see that it is good principles to be explicit about the records but you may not feel motivated for such verbose coding. There are downstream benefits for this as explained in Sections \@ref(simulate) and \@ref(export). 
+
+## Simulating records {#simulate}
+
+```{r}
+dat <- desre %>% 
   simulate_rcrds(weight = sim_normal(~diet + pen + pig, sd = 25) %>% 
                    params("mean", 
                           diet = c("high-fat" = 300,
@@ -169,6 +197,8 @@ dat <- diet_design(diet ~ pen) %>%
                  manager = sim_form(~pen) %>% 
                    params(pen = sample(rep(c("John", "Mary", "Jane"), 2))),
                  .seed = 1, .censor = NA)
+
+dat
 ```
 
 
@@ -177,19 +207,8 @@ ggplot(dat, aes(pen, weight, color = diet)) +
   geom_point(size = 3) 
 ```
 
+## Exporting the design {#export}
 
-
-
-```{r}
-df <- start_design("McIntyre (1955)") %>% 
-  set_units(plant = 8,
-            position = 1:4,
-            leaf = ~plant:position) %>% 
-  set_trts(light = c("a", "b", "c", "d")) %>% 
-  allot_trts(light ~ leaf) %>% 
-  assign_trts() %>% 
-  serve_table() 
-```
 
 ## Aesthetic customisations {#aes-custom}
 
