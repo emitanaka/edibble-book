@@ -14,7 +14,9 @@ understanding-the-experimental-context
 fitting-a-variety-of-mental-mode
 map-trts
 treatment-allotment
-a-viable-experimental-design-1
+setting-records-with-expectations
+simulate
+export
 aes-custom
 visualisation
 management
