@@ -54,7 +54,8 @@ bookdown::bs4_book:
       - "Liberation Mono"
       - "Courier New"
       - monospace
-      
+  includes:
+    in_header: ga-script.html
 # bookdown::gitbook:
 #   css: style.css
 #   config:
