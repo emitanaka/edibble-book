@@ -156,8 +156,8 @@
       "RemoteRepo": "edibble",
       "RemoteUsername": "emitanaka",
       "RemoteRef": "HEAD",
-      "RemoteSha": "d4d2a14bd1e5b344e492ea0227a3c6b62ce66089",
-      "Hash": "8ac3b6c995321f2b75b70d0ebb235425",
+      "RemoteSha": "f5d1f8635e66a035b92a3ea55a2a4139dccf8ef8",
+      "Hash": "d16e08b567b2dee72183242312dea0b1",
       "Requirements": [
         "AlgDesign",
         "cli",
@@ -458,10 +458,10 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "1.0.0",
+      "Version": "1.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ec923a35ba44bc86fbf95dacaccf65da",
+      "Hash": "3bf0219f19d9f5b3c682acbb3546a151",
       "Requirements": []
     },
     "rmarkdown": {

@@ -142,13 +142,13 @@ autoplot(spd)
 
 ## Strip-plot design
 
-```{r, comment = "", eval = FALSE}
-strip <- takeout(menu_strip(t1 = 2, t2 = 4, r = 1))
+```{r, comment = ""}
+strip <- takeout(menu_strip(t1 = 3, t2 = 4, r = 9))
 examine_recipe(strip)
 ```
 
-```{r autoplot-strip, fig.height = 6, fig.width = 6, eval = FALSE}
-autoplot(strip)
+```{r autoplot-strip, fig.height = 6, fig.width = 6}
+autoplot(strip) + facet_wrap(~block, scales = "free")
 ```
 
 ## Graeco-Latin square design
