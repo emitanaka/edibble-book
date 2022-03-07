@@ -68,25 +68,25 @@
 <span class="header-section-number">3</span> Getting started<a class="anchor" aria-label="anchor" href="#start"><i class="fas fa-link"></i></a>
 </h1>
 <p>The experimental planning in this book is supported by the <code>edibble</code> R-package and its extensions. The <code>edibble</code> system is built on the principle that the system must make it easy to recover experimental context by encouraging the user to be explicit about experimental details. To get started with using the system, you need to first load the package:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://edibble.emitanaka.org/">edibble</a></span><span class="op">)</span></code></pre></div>
 <div id="setting-the-experimental-structure-and-context" class="section level2">
 <h2>
 <span class="header-section-number">3.1</span> Setting the experimental structure and context<a class="anchor" aria-label="anchor" href="#setting-the-experimental-structure-and-context"><i class="fas fa-link"></i></a>
 </h2>
-<p>In the <code>edibble</code> system, an experiment design is built step-by-step. In the first step, you start with initialising the design by using the <code><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design()</a></code> where the user can supply an optional title of the experiment. All subsequent steps are best specified after using the pipe operator (<code>%&gt;%</code>) re-exported from the <code>magrittr</code> package or the native pipe operator (<code>|&gt;</code>) available from R version 4.1 onwards. For example, below we carry out the following steps:</p>
+<p>In the <code>edibble</code> system, an experiment design is built step-by-step. In the first step, you start with initialising the design by using the <code><a href="https://edibble.emitanaka.org/reference/design.html">design()</a></code> where the user can supply an optional title of the experiment. All subsequent steps are best specified after using the pipe operator (<code>%&gt;%</code>) re-exported from the <code>magrittr</code> package or the native pipe operator (<code>|&gt;</code>) available from R version 4.1 onwards. For example, below we carry out the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>initiate an experiment called “My first experiment” via <code><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design()</a></code>;</li>
+<li>initiate an experiment called “My first experiment” via <code><a href="https://edibble.emitanaka.org/reference/design.html">design()</a></code>;</li>
 <li>set 24 pots with <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code>; and then</li>
 <li>set treatments with 3 levels: 2 bacterial strains (PM398 and ZNP1) and no innoculation with <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code>.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mydesign1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My first experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mydesign1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"My first experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pot <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>innoculation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PM398"</span>, <span class="st">"ZNP1"</span>, <span class="st">"none"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>These steps create and modify a so-called “edibble design” (<code>edbl_design</code>) object that is used to represent an <em>intermediate construct of an experimental design</em>. The arguments in the functions <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code> and <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code> employ the convention that the left hand side (LHS) is the name of the factor and the input on the right hand side (RHS) defines the levels. If the RHS is a single integer then it’s assumed to be the number of levels and if it’s a vector then it’s the name of the levels.</p>
 <p>The print out of this object, as seen below, is displayed like a tree summarising the variables defined thus far.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mydesign1</span></code></pre></div>
 <pre><code>## My first experiment
 ## ├─pot (24 levels)
@@ -96,8 +96,8 @@
 <img src="figures/terminal-output-for-edbl-graph.svg"><!-- -->
 </div>
 <p>The argument names in <code>set_units</code> and <code>set_trts</code> are not fixed, so you could easily change the name of the units or treatment to something more meaningful. Below we have another experiment which has a <em>statistically equivalent experimental structure</em> as the previous experiment (24 units and 3 levels of treatment), but it “reads” as a different experimental context – a typical user will realise that the experimental units are pigs and treatments are diet.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mydesign2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My second experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">mydesign2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"My second experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pig <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span>
 
@@ -106,8 +106,8 @@
 ## ├─pig (24 levels)
 ## └─diet (3 levels)</code></pre>
 <p>You can define more than one unit factor or treatment factor. For example below, it reads as that there are: 3 pens (named “North”, “Shade” and “Meadow”), 18 pigs, 3 type of diets and 2 types of supplement given at a frequency of either daily or weekly.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My experiment with multiple factors"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"My experiment with multiple factors"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"Shade"</span>, <span class="st">"Meadow"</span><span class="op">)</span>,
             pig <span class="op">=</span> <span class="fl">18</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span>,
@@ -121,8 +121,8 @@
 ## ├─supplement (2 levels)
 ## └─frequency (2 levels)</code></pre>
 <p>The unit and treatment factors do not need to be defined in one call. The ordering of the functions is commutative where the factor is not dependent directly on another factor.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My experiment with multiple factors"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"My experiment with multiple factors"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"North"</span>, <span class="st">"Shade"</span>, <span class="st">"Meadow"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span>,
            supplement <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
@@ -139,12 +139,12 @@
 <h3>
 <span class="header-section-number">3.1.1</span> A viable experimental design<a class="anchor" aria-label="anchor" href="#a-viable-experimental-design"><i class="fas fa-link"></i></a>
 </h3>
-<div class="info.callout">
+<div class="info callout">
 <p>A viable experimental design is only specified if the relationship between the variables can be reconciled to a single observational unit.</p>
 </div>
 <p>For example below</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"An invalid unit structure"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"An invalid unit structure"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fl">6</span>,
             pig <span class="op">=</span> <span class="fl">18</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -173,14 +173,14 @@
 <li>how the treatments are actually allocated to units via <code><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts()</a></code>.</li>
 </ul>
 <p>These step may feel redundant in experiments where there is exactly one unit factor and one treatment factor but it’s required for further generalisation to other experimental structures. In addition, it serves to re-enforce the specific actions to the user.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"My first animal experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"My first animal experiment"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pig <span class="op">=</span> <span class="fl">24</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pig</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span>order <span class="op">=</span> <span class="st">"random"</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> </code></pre></div>
 <p>Once a minimum viable experimental design has been specified, then you can generate the experimental design table (or tibble) called <code>edibble</code> by parsing the object to <code><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table()</a></code>.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="va">des</span><span class="op">)</span></code></pre></div>
 <pre><code>## # My first animal experiment 
 ## # An edibble: 24 x 2
@@ -188,22 +188,22 @@
 ##    &lt;unit(24)&gt; &lt;trt(3)&gt;
 ##  1      pig1  high-fat
 ##  2      pig2  low-fat 
-##  3      pig3  low-fat 
-##  4      pig4  low-fat 
-##  5      pig5  standard
-##  6      pig6  high-fat
+##  3      pig3  standard
+##  4      pig4  high-fat
+##  5      pig5  low-fat 
+##  6      pig6  standard
 ##  7      pig7  standard
 ##  8      pig8  high-fat
-##  9      pig9  standard
-## 10      pig10 standard
+##  9      pig9  low-fat 
+## 10      pig10 low-fat 
 ## # … with 14 more rows</code></pre>
 <div id="treatment-allotment" class="section level3">
 <h3>
 <span class="header-section-number">3.2.1</span> Treatment allotment<a class="anchor" aria-label="anchor" href="#treatment-allotment"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">diet_design</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://edibble.emitanaka.org/reference/start_design.html">start_design</a></span><span class="op">(</span><span class="st">"A valid nested design"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"A valid nested design"</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
     <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pen <span class="op">=</span> <span class="fl">6</span>,
               pig <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">pen</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
     <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>diet <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
@@ -235,7 +235,7 @@
 ## 16      pen6      pig16 high-fat
 ## 17      pen6      pig17 low-fat 
 ## 18      pen6      pig18 standard</code></pre>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A valid nested design 
 ## # An edibble: 18 x 3
@@ -267,7 +267,7 @@
 </h2>
 <p>The term “records”, often abbreviated as <code>rcrd</code> in the <code>edibble</code> system, refers to any observational variables, including response variables.
 Setting records is a way to describe the <em>intent</em> of the observations that you will collect in the experiment. All records must be made on a unit. The primary way to set the record is using <code><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds()</a></code> where the LHS is the factor name of the record and the RHS is the unit factor on which the record will be measured. The LHS of the input in <code><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds()</a></code> follow the same pattern as <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code> and <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code> as the LHS is the name of the new factor. In the example below, we are measuring <code>weight</code> and <code>sex</code> of the <code>pig</code> and recording the <code>manager</code> of each <code>pen</code>. In this example there are only 6 pens, therefore there should be only a maximum of 6 managers recorded.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">desr</span> <span class="op">&lt;-</span> <span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="va">pig</span>,
             sex <span class="op">=</span> <span class="va">pig</span>,
@@ -297,12 +297,12 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 ## 17      pen6      pig17 standard      ■      ■       x
 ## 18      pen6      pig18 standard      ■      ■       x</code></pre>
 <p>Another equivalent way to set the record is using <code><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds_of()</a></code>. The format of the input is such that the unit factors are on the LHS and the RHS are character vectors of new record factor names. The reason that names are set as characters is because the factors in the RHS do not yet exist. In contrast, the RHS of the input in <code><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds()</a></code> is unquoted because those factors exist. The suffix <code>_of</code> in the function name is purposely chosen to signal that the pattern for the LHS no longer follows that of <code><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds()</a></code>, <code><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts()</a></code> and <code><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units()</a></code> where the LHS is always a new factor name.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">diet_design</span><span class="op">(</span><span class="va">diet</span> <span class="op">~</span> <span class="va">pen</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds_of</a></span><span class="op">(</span>pig <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"weight"</span>, <span class="st">"sex"</span><span class="op">)</span>,
                pen <span class="op">=</span> <span class="st">"manager"</span><span class="op">)</span></code></pre></div>
 <p>You may choose to also set expecations of the record. For example, we assert below that the weight of a grown pig must be a minimum of 15 kg.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">desre</span> <span class="op">&lt;-</span> <span class="va">desr</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/expect_rcrds.html">expect_rcrds</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">&gt;</span> <span class="fl">15</span>,
                <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">sex</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"F"</span>, <span class="st">"M"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
@@ -312,7 +312,7 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 <h2>
 <span class="header-section-number">3.4</span> Simulating records<a class="anchor" aria-label="anchor" href="#simulate"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">desre</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
   <span class="fu"><a href="https://edibble.emitanaka.org/reference/simulate_rcrds.html">simulate_rcrds</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="fu">sim_normal</span><span class="op">(</span><span class="op">~</span><span class="va">diet</span> <span class="op">+</span> <span class="va">pen</span> <span class="op">+</span> <span class="va">pig</span>, sd <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op"><a href="https://edibble.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
                    <span class="fu">params</span><span class="op">(</span><span class="st">"mean"</span>, 
@@ -348,7 +348,7 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 ## 16      pen6      pig16 standard  140.       ■ John   
 ## 17      pen6      pig17 standard  149.       ■ John   
 ## 18      pen6      pig18 standard  178.       ■ John</code></pre>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">pen</span>, <span class="va">weight</span>, color <span class="op">=</span> <span class="va">diet</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </code></pre></div>
 <pre><code>## Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
@@ -369,8 +369,249 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 <h2>
 <span class="header-section-number">3.7</span> Visualisation<a class="anchor" aria-label="anchor" href="#visualisation"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://deggust.emitanaka.org">deggust</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="examples" class="section level2">
+<h2>
+<span class="header-section-number">3.8</span> Examples<a class="anchor" aria-label="anchor" href="#examples"><i class="fas fa-link"></i></a>
+</h2>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Exercise 8.5</strong></p>
+<p>In a biotechnology experiment, plants were grown in 90 pots. Five different quantities of potassium were randomized to the pots, so that each quantity was applied to the soil in 18 pots. After each of 15, 30 and 45 days, one plant was randomly chosen from each pot and removed; nine small pieces were cut from it to be used for tissue culture. Three different levels of nutrition were each applied to three of the pieces of each plant removed at each time. After a certain further length of time, the number of plantlets growing in each piece of tissue was counted.</p>
+</div>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Exercise 8.5"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>pot <span class="op">=</span> <span class="fl">90</span>,
+            plant <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">pot</span>, <span class="fl">3</span><span class="op">)</span>,
+            piece <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">plant</span>, <span class="fl">9</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>pottasium <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"q1"</span>, <span class="st">"q2"</span>, <span class="st">"q3"</span>, <span class="st">"q4"</span>, <span class="st">"q5"</span><span class="op">)</span>, 
+           nutrition <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">pottasium</span> <span class="op">~</span> <span class="va">pot</span>,
+             <span class="va">nutrition</span> <span class="op">~</span> <span class="va">piece</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>plantlets <span class="op">=</span> <span class="va">piece</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## # Bailey (2008) Exercise 8.5 
+## # An edibble: 2,430 x 6
+##           pot       plant      piece pottasium  nutrition plantlets
+##    &lt;unit(90)&gt; &lt;unit(270)&gt; &lt;unit(2k)&gt;  &lt;trt(5)&gt;   &lt;trt(3)&gt;    &lt;rcrd&gt;
+##  1       pot1      plant1    piece1         q2 nutrition1         ■
+##  2       pot1      plant1    piece2         q2 nutrition3         ■
+##  3       pot1      plant1    piece3         q2 nutrition3         ■
+##  4       pot1      plant1    piece4         q2 nutrition1         ■
+##  5       pot1      plant1    piece5         q2 nutrition2         ■
+##  6       pot1      plant1    piece6         q2 nutrition2         ■
+##  7       pot1      plant1    piece7         q2 nutrition2         ■
+##  8       pot1      plant1    piece8         q2 nutrition3         ■
+##  9       pot1      plant1    piece9         q2 nutrition1         ■
+## 10       pot1      plant2    piece10        q2 nutrition1         ■
+## # … with 2,420 more rows</code></pre>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Exercise 9.6</strong></p>
+<p>A horticultural research station intends to investigate the effects of two treatment factors on the total weight of apples produced from apple trees. One treatment factor is the method of thinning; that is, removing fruitlets at an early stage of development so that those remaining will be able to grow larger. There are five methods of thinning, coded as A,B,C,D,E. The second treatment factor is the type of grass to grow around the base of the tree to prevent the growth of weeds. There are five types of grass, coded as a,b,c,d,e. It is assumed that there is no interaction between method of thinning and type of grass. There are 25 trees available for the experiment. They are arranged in a 5×5 rectangle. Construct a suitable design.</p>
+</div>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Exercise 9.6"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>thinning <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span><span class="op">)</span>,
+           grass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>row <span class="op">=</span> <span class="fl">5</span>,
+            col <span class="op">=</span> <span class="fl">5</span>,
+            tree <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/crossed_by.html">crossed_by</a></span><span class="op">(</span><span class="va">row</span>, <span class="va">col</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>apple_weight_total <span class="op">=</span> <span class="va">tree</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_table.html">allot_table</a></span><span class="op">(</span><span class="va">thinning</span> <span class="op">~</span> <span class="va">tree</span>,
+              <span class="va">grass</span> <span class="op">~</span> <span class="va">tree</span><span class="op">)</span>
+
+<span class="fu"><a href="https://edibble.emitanaka.org/reference/anatomy.html">anatomy</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>## 
+## 
+## Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
+## 
+##  Source.unit df1 Source.trt     df2 aefficiency eefficiency order
+##  row           4 thinning#grass   4      0.5625      0.5000     2
+##  col           4 thinning#grass   4      0.5625      0.5000     2
+##  tree         16 thinning         4      1.0000      1.0000     1
+##                  grass            4      1.0000      1.0000     1
+##                  thinning#grass   8      0.2500      0.1000     2
+## 
+## Table of information (partially) aliased with previous sources derived from the same formula
+## 
+##  Source df Alias                    In  aefficiency eefficiency order
+##  grass  1  thinning                 trt      0.6400      0.6400     1
+##  grass  4  ## Information remaining trt      0.6923      0.3600     2
+## 
+## The design is not orthogonal</code></pre>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/bailey-ex-9-6-1.png" width="384"></div>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Exercise 9.6</strong></p>
+<p>A road safety organization wishes to compare four makes of car tyre. The organization has four test cars and four test drivers. One working day is needed to fit new tyres to a car, take it for an exhaustive test-drive, take relevant measurements on tyre treads, record all details of the test-drive, and prepare the car for the next session. The organization has only one week in which to perform its tests. To keep each car properly balanced, the organization has decided that all four tyres on a car at any one time should be of the same make. Construct a suitable design for this trial.</p>
+</div>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Tyre test"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>car <span class="op">=</span> <span class="fl">4</span>,
+            driver <span class="op">=</span> <span class="fl">4</span>,
+            day <span class="op">=</span> <span class="fl">5</span>,
+            test_drive <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/crossed_by.html">crossed_by</a></span><span class="op">(</span><span class="va">day</span>, <span class="va">car</span>, <span class="va">driver</span><span class="op">)</span>,
+            <span class="co">#tyre = nested_in(test_drive, 4)</span>
+            <span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>make <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="co">#set_rcrds(measure = tyre) %&gt;% </span>
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_table.html">allot_table</a></span><span class="op">(</span><span class="va">make</span> <span class="op">~</span> <span class="va">test_drive</span><span class="op">)</span>
+
+<span class="fu"><a href="https://edibble.emitanaka.org/reference/anatomy.html">anatomy</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>## 
+## 
+## Summary table of the decomposition for unit &amp; trt
+## 
+##  Source.unit df1 Source.trt df2 aefficiency eefficiency order
+##  car           3                                             
+##  driver        3                                             
+##  day           4                                             
+##  test_drive   69 make         3      1.0000      1.0000     1
+##                  Residual    66</code></pre>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/tyre-example-1.png" width="672"></div>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Example 10.19</strong></p>
+<p>A manufacturer of household appliances wants to find the best combination of wash temperature and drying temperature to produce unwrinkled cotton sheets at the end of the laundry session. He wants to compare four different wash temperatures and three different drying temperatures. He uses eight similar washing machines and six similar dryers. First, 48 cotton sheets are randomly allocated to the washing machines, six per machine. The wash temperatures are randomly allocated to the washing machines so that two machines are run at each temperature. After the wash, the six sheets in each machine are randomly allocated to the dryers, one per dryer. Then the drying temperatures are randomly allocated to the dryers so that two machines are run at each temperature. After the drying, all 48 sheets are scored by experts for how wrinkled they are.</p>
+</div>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Example 10.19"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>wash_temp <span class="op">=</span> <span class="fl">4</span>,
+           dry_temp <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>washer <span class="op">=</span> <span class="fl">8</span>,
+            dryer <span class="op">=</span> <span class="fl">6</span>,
+            sheet <span class="op">=</span> <span class="fl">48</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu">allot_units</span><span class="op">(</span><span class="va">washer</span> <span class="op">~</span> <span class="va">sheet</span>,
+              <span class="va">dryer</span> <span class="op">~</span> <span class="va">washer</span><span class="op">/</span><span class="va">sheet</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_trts.html">allot_trts</a></span><span class="op">(</span><span class="va">wash_temp</span> <span class="op">~</span> <span class="va">washer</span>,
+              <span class="va">dry_temp</span> <span class="op">~</span> <span class="va">dryer</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/assign_trts.html">assign_trts</a></span><span class="op">(</span><span class="st">"random"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu">assign_units</span><span class="op">(</span><span class="st">"random"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_rcrds.html">set_rcrds</a></span><span class="op">(</span>score <span class="op">=</span> <span class="va">sheet</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/serve_table.html">serve_table</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="https://edibble.emitanaka.org/reference/anatomy.html">anatomy</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>## 
+## 
+## Summary table of the decomposition for unit &amp; trt
+## 
+##  Source.unit df1 Source.trt         df2 aefficiency eefficiency order
+##  washer        7 wash_temp            3      1.0000      1.0000     1
+##                  Residual             4                              
+##  dryer         5 dry_temp             2      1.0000      1.0000     1
+##                  Residual             3                              
+##  sheet        35 wash_temp#dry_temp   6      1.0000      1.0000     1
+##                  Residual            29</code></pre>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/washer-example-1.png" width="672"></div>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Example 10.20</strong></p>
+<p>An agronomy institute in Brazil conducted a factorial experiment on beans. The treatment factors were cultivar (there were three cultivars), seeding (either conventional or with no tillage), and molybdenum (either applied or not). The experimental area was divided into four blocks. Each block was a 3×4 rectangle. The three rows were called strips; cultivars were applied to these. The four columns, which were called quarters, were grouped into two halves. The different seeding methods were used in the two halves of each block, and the Mo (molybdenum) was applied to one quarter in each half.</p>
+</div>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Example 10.20"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>cultivar <span class="op">=</span> <span class="fl">3</span>,
+           seeding <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"conventional"</span>, <span class="st">"no tillage"</span><span class="op">)</span>,
+           molybdenum <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"applied"</span>, <span class="st">"none"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>block <span class="op">=</span> <span class="fl">4</span>,
+            strip <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">block</span>, <span class="fl">3</span><span class="op">)</span>,
+            half <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">block</span>, <span class="fl">2</span><span class="op">)</span>,
+            quarter <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">half</span>, <span class="fl">2</span><span class="op">)</span>,
+            plot <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">block</span>, <span class="fu"><a href="https://edibble.emitanaka.org/reference/crossed_by.html">crossed_by</a></span><span class="op">(</span><span class="va">strip</span>, <span class="va">quarter</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_table.html">allot_table</a></span><span class="op">(</span><span class="va">cultivar</span> <span class="op">~</span> <span class="va">strip</span>,
+              <span class="va">seeding</span> <span class="op">~</span> <span class="va">half</span>,
+              <span class="va">molybdenum</span> <span class="op">~</span> <span class="va">quarter</span><span class="op">)</span> 
+
+<span class="va">df</span></code></pre></div>
+<pre><code>## # Bailey (2008) Example 10.20 
+## # An edibble: 48 x 8
+##     cultivar      seeding molybdenum     block      strip      half
+##     &lt;trt(3)&gt;     &lt;trt(2)&gt;   &lt;trt(2)&gt; &lt;unit(4)&gt; &lt;unit(12)&gt; &lt;unit(8)&gt;
+##  1 cultivar2 conventional    none       block1     strip1     half1
+##  2 cultivar1 conventional    none       block1     strip2     half1
+##  3 cultivar3 conventional    none       block1     strip3     half1
+##  4 cultivar2 conventional    applied    block1     strip1     half1
+##  5 cultivar1 conventional    applied    block1     strip2     half1
+##  6 cultivar3 conventional    applied    block1     strip3     half1
+##  7 cultivar2 no tillage      none       block1     strip1     half2
+##  8 cultivar1 no tillage      none       block1     strip2     half2
+##  9 cultivar3 no tillage      none       block1     strip3     half2
+## 10 cultivar2 no tillage      applied    block1     strip1     half2
+## # … with 38 more rows, and 2 more variables: quarter &lt;unit(16)&gt;,
+## #   plot &lt;unit(48)&gt;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/anatomy.html">anatomy</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
+<pre><code>## Warning in pstructure.formula(formulae[[1]], keep.order = keep.order, grandMean
+## = grandMean, : block:half is aliased with previous terms in the formula and has
+## been removed</code></pre>
+<pre><code>## 
+## 
+## Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
+## 
+##  Source.unit         df1 Source.trt                  df2 aefficiency
+##  block                 3                                            
+##  half[block]           4 seeding                       1      1.0000
+##                          Residual                      3            
+##  strip[block]          8 cultivar                      2      1.0000
+##                          Residual                      6            
+##  quarter[block:half]   8 molybdenum                    1      1.0000
+##                          seeding#molybdenum            1      1.0000
+##                          Residual                      6            
+##  plot[block]          24 cultivar#seeding              2      1.0000
+##                          cultivar#molybdenum           2      1.0000
+##                          cultivar#seeding#molybdenum   2      1.0000
+##                          Residual                     18            
+##  eefficiency order
+##                   
+##       1.0000     1
+##                   
+##       1.0000     1
+##                   
+##       1.0000     1
+##       1.0000     1
+##                   
+##       1.0000     1
+##       1.0000     1
+##       1.0000     1
+##                   
+## 
+## Table of information (partially) aliased with previous sources derived from the same formula
+## 
+##  Source      df Alias       In   aefficiency eefficiency order
+##  half[block] 4  half[block] unit      1.0000      1.0000     1
+##  half[block] 0  ## Aliased  unit      1.0000      1.0000     1</code></pre>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Exercise 10.5</strong></p>
+<p>In an experiment into the digestibility of stubble, four feed treatments are to be applied to sheep. There are 16 sheep, in four rooms of four animals each. There are four test periods of four weeks each, separated by two-week recovery periods. Each sheep is to be fed all treatments, one in each test period. During the recovery periods all animals will receive their usual feed, so that they will return to normal conditions before being subjected to a new treatment.</p>
+</div>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">des</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Exercise 10.5"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>feed <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>room <span class="op">=</span> <span class="fl">4</span>,
+            sheep <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/nested_in.html">nested_in</a></span><span class="op">(</span><span class="va">room</span>, <span class="fl">4</span><span class="op">)</span>,
+            period <span class="op">=</span> <span class="fl">4</span>,
+            unit <span class="op">=</span> <span class="fu"><a href="https://edibble.emitanaka.org/reference/crossed_by.html">crossed_by</a></span><span class="op">(</span><span class="va">period</span>, <span class="va">sheep</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/allot_table.html">allot_table</a></span><span class="op">(</span><span class="va">feed</span> <span class="op">~</span> <span class="va">unit</span><span class="op">)</span>
+
+<span class="co"># anatomy(des)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/autoplot.html">autoplot</a></span><span class="op">(</span><span class="va">des</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="figures/bailey-10.5-1.png" width="672"></div>
+<div class="callout note">
+<p><strong><span class="citation">Bailey (<a href="cookbook.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span> Exercise 10.6</strong></p>
+<p>An experiment was carried out to find out if so-called ‘non-herbicidal’ pesticides affect photosynthesis in plants. Six pesticides were compared: diuron, carbofuran, chlorpyrifos, tributyltin chloride, phorate and fonofos. Each of these was dissolved in water at five different concentrations. In addition, plain water was used as a control treatment. Two petri dishes were used for each treatment. Each petri dish was filled with pesticide solution or water. Five freshly cut leaves from mung beans were floated on the surface ofthe solution in each dish. After two hours, the chlorophyll fluorescence of each leaf was measured.</p>
+</div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://edibble.emitanaka.org/reference/design.html">design</a></span><span class="op">(</span><span class="st">"Bailey (2008) Exercise 10.6"</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_trts.html">set_trts</a></span><span class="op">(</span>pesticide <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"diuron"</span>, <span class="st">"carbofuran"</span>, <span class="st">"chlorpyrifos"</span>, <span class="st">"tributyltin chloride"</span>, 
+                         <span class="st">"phorate"</span>, <span class="st">"fonofos"</span><span class="op">)</span>,
+           concentration <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu">add_trts</span><span class="op">(</span>pesticide <span class="op">=</span> <span class="st">"none"</span>, concentration <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span> <span class="op"><a href="https://deggust.emitanaka.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://edibble.emitanaka.org/reference/set_units.html">set_units</a></span><span class="op">(</span>petri <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> <span class="fu">ntrts</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 
 </div>
 </div>
@@ -396,6 +637,7 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 <li><a class="nav-link" href="#export"><span class="header-section-number">3.5</span> Exporting the design</a></li>
 <li><a class="nav-link" href="#aes-custom"><span class="header-section-number">3.6</span> Aesthetic customisations</a></li>
 <li><a class="nav-link" href="#visualisation"><span class="header-section-number">3.7</span> Visualisation</a></li>
+<li><a class="nav-link" href="#examples"><span class="header-section-number">3.8</span> Examples</a></li>
 </ul>
 
       <div class="book-extra">
@@ -413,7 +655,7 @@ Setting records is a way to describe the <em>intent</em> of the observations tha
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-02-06.</p>
+    <p>"<strong>The Grammar of Experimental Designs</strong>" was written by Emi Tanaka. It was last built on 2022-03-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

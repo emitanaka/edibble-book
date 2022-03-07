@@ -19,6 +19,7 @@ simulate
 export
 aes-custom
 visualisation
+examples
 management
 cookbook
 completely-randomised-design
