@@ -9,18 +9,24 @@ Grammar  makes  language  expressive.  A  language  consisting  of  words and no
 :::
 
 Chapter \@ref(basics) described a number of basic terms and concepts in experimental designs. In this chapter, I dissect these basic terms in order to build the "grammar of experimental designs". 
-The so-called grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation as the `ggplot2` R-package [@ggplot2]. An overview of `ggplot2` is given in Section \@ref(ggplot). The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in \@ref(deggust). 
+The so-called grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation [@Wickham2010-kt] as the `ggplot2` R-package [@ggplot2]. An overview of `ggplot2` is given in Section \@ref(ggplot). The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in \@ref(deggust). 
 
-Henceforth, "grammar" refers to the grammar of experimental designs.
+Henceforth, "grammar" refers to the grammar of experimental designs unless explicitly stated otherwise.
 
 ## Fundamental terminology
 
-Section \@ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental unit and observational unit are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
+Section \@ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental units and observational units are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
+
+::: {.info .callout}
+
+In the grammar, the different types of units (block, cluster group, subject, plot, etc) are all classified as **units**. There are no explicit specification of what is an experimental, observational or blocking units as these can be determined implicitly by the relationship of the factors.
+
+:::
 
 In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, $G_F = (V(G_F), E(G_F))$ and $G_L = (V(G_L), E(G_L))$, where $V(G_F)$ and $V(G_L)$ are sets of vertices and $E(G_F)$ and $E(G_L)$ are sets of edges. We refer $G_F$ and $G_L$ as factor graph and level graph, respectively. In the **factor graph**, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the **level graph**.
 
-```{r edibble-graph, message = FALSE, echo = FALSE}
-des <- start_design("Split plot design") %>%
+```{r edibble-fct-graph, message = FALSE, echo = FALSE, fig.cap = "A factor graph shows a high order view of the relationship between the factors in the experiment. In the above figure, there are two treatment factors: irrigation and fertilizer. Irrigation treatment is applied to the mainplot and the fertilizer treatment is applied to the subplot. The arrow from mainplot node to the subplot node implies that the subplot is nested in the mainplot. The shape and color of the node correspond to the class of the factor (e.g. unit, treatment)."}
+des <- design("Split plot design") %>%
   set_units(mainplot = 4,
              subplot = nested_in(mainplot, 4)) %>%
   set_trts(irrigation = c("rainfed", "irrigated"),
@@ -28,9 +34,33 @@ des <- start_design("Split plot design") %>%
   allot_trts(irrigation ~ mainplot,
              fertilizer ~ subplot) %>%
   assign_trts("random", seed = 592)
-plot(des, view = "static", seed = 3, height = "200px",
+
+plot_fct_graph(des, view = "static", seed = 3, height = "200px",
      title = c("Factor graph for a split plot design" = "font-weight:bold;text-align:center;"))
-plot(des, which = "levels", view = "static", height = "400px", seed = 1,
+```
+
+
+```{r edibble-lvl-graph, message = FALSE, echo = FALSE, fig.cap = "The above figure shows the level graph. The nodes of the same color are the levels of the same factor (e.g. all yellow nodes correspond to the levels of the unit, subplot). The shape of the node correspond to the class of the corresponding factor."}
+plot_lvl_graph(des, view = "static", height = "400px", seed = 1,
      title = c("Level graph for a split plot design" = "font-weight:bold;text-align:center;"))
+```
+
+
+::: {.info .callout}
+
+All nodes in the factor graph must be explicitly named. 
+
+:::
+
+Table \@ref(tab:exam-table) shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e. an observational unit can only be uniquely identified by using information across multiple factors. **In the grammar, a factor cannot be implicitly assumed from other factors.** This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified by the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure. 
+
+```{r exam-table, echo = FALSE}
+expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>% 
+  dplyr::mutate(`Exam Time` = c("Morning", "Afternoon", "Afternoon", "Morning"),
+                `Exam Booklet` = 1:4, 
+                Score = c(58, 90, 39, 80)) %>% 
+  dplyr::select(4, c(1:3, 5)) %>% 
+  knitr::kable(align = "rlrrr", caption = "The above table shows the exam time allocation for every subject-student combination.") %>% 
+  kableExtra::kable_classic(full_width = TRUE)
 ```
 
