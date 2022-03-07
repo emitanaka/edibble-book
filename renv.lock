@@ -85,10 +85,10 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "3.1.1",
+      "Version": "3.2.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "da5160e769a652e3ec7111d63883f9bc",
+      "Hash": "1bdb126893e9ce6aae50ad1d6fc32faf",
       "Requirements": [
         "glue"
       ]
@@ -103,10 +103,10 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.4.2",
+      "Version": "1.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0a6a65d92bd45b47b94b84244b528d17",
+      "Hash": "741c2e098e98afe3dc26a7b0e5489f4e",
       "Requirements": []
     },
     "curl": {
@@ -116,6 +116,17 @@
       "Repository": "CRAN",
       "Hash": "022c42d49c28e95d69ca60446dbabf88",
       "Requirements": []
+    },
+    "dae": {
+      "Package": "dae",
+      "Version": "3.2-13",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "94a55f15508d6c9de0feacb100e92dc2",
+      "Requirements": [
+        "ggplot2",
+        "plyr"
+      ]
     },
     "deggust": {
       "Package": "deggust",
@@ -127,8 +138,8 @@
       "RemoteRepo": "deggust",
       "RemoteUsername": "emitanaka",
       "RemoteRef": "HEAD",
-      "RemoteSha": "a35d0b43ce3c724c15ab080e60b527b857f2c42c",
-      "Hash": "ffcf8937e7fa70d11c3e16feb8c71f18",
+      "RemoteSha": "59b3d438ea5807e746a371961d06551c99cd92da",
+      "Hash": "f59c7dd3a28500e0aa5e542307f00c12",
       "Requirements": [
         "edibble",
         "ggnewscale",
@@ -156,11 +167,13 @@
       "RemoteRepo": "edibble",
       "RemoteUsername": "emitanaka",
       "RemoteRef": "HEAD",
-      "RemoteSha": "f5d1f8635e66a035b92a3ea55a2a4139dccf8ef8",
-      "Hash": "d16e08b567b2dee72183242312dea0b1",
+      "RemoteSha": "e165b2a81fd17a3a58df25d93b3c75c6bdc5e661",
+      "Hash": "669aa822cab018740bfc5844b6ab71e5",
       "Requirements": [
         "AlgDesign",
+        "R6",
         "cli",
+        "dae",
         "magrittr",
         "nestr",
         "pillar",
@@ -214,10 +227,10 @@
     },
     "ggnewscale": {
       "Package": "ggnewscale",
-      "Version": "0.4.5",
+      "Version": "0.4.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5d2d9029aa89360eb283e3d10ab8bf42",
+      "Hash": "22f402422965796b053c5a35a218c94a",
       "Requirements": [
         "ggplot2"
       ]
@@ -436,6 +449,16 @@
       "Repository": "CRAN",
       "Hash": "01f28d4278f15c76cddbea05899c5d6f",
       "Requirements": []
+    },
+    "plyr": {
+      "Package": "plyr",
+      "Version": "1.8.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ec0e5ab4e5f851f6ef32cd1d1984957f",
+      "Requirements": [
+        "Rcpp"
+      ]
     },
     "purrr": {
       "Package": "purrr",

@@ -70,7 +70,7 @@ autoplot(rcbd)
 Suppose now I tell you that there are only 3 units in block 1 and 4 units in block 2, and 5 units in block 3, while other blocks can have 6 units. How would you modify your design then? Still generate an RCBD but randomly remove the treatment allocation to match the block size? In comparison to the previous design, this design has 6 less units so it's possible to have 9 replicates for each treatment. Generally you'd want to get close to a balanced design as possible so you have roughly an equal amount of information on all your treatments. If you randomly remove the treatment allocation to match the required block size, there's no guarantee that you'll end up with a balanced design. You'll also find that there'll be no named experimental design that matches the description of your units so you won't be able to just select a design from the menu. This is where the `edibble` system aids you. In the fundamental `edibble` system, you put the experimental structure first before thinking about the treatment assignment. 
 
 ```{r}
-mbd <- start_design("Modified Block Design") %>%
+mbd <- design("Modified Block Design") %>%
   set_units(block = 10,
             unit = nested_in(block, 
                                1 ~ 3,
@@ -147,7 +147,7 @@ strip <- takeout(menu_strip(t1 = 3, t2 = 4, r = 9))
 examine_recipe(strip)
 ```
 
-```{r autoplot-strip, fig.height = 6, fig.width = 6}
+```{r autoplot-strip, fig.height = 6, fig.width = 6, eval = FALSE}
 autoplot(strip) + facet_wrap(~block, scales = "free")
 ```
 
