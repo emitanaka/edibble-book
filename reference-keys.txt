@@ -1,3 +1,6 @@
+fig:edibble-fct-graph
+fig:edibble-lvl-graph
+tab:exam-table
 basics
 terminology
 randomisation
@@ -7,6 +10,8 @@ summary
 exercises
 grammar
 fundamental-terminology
+an-edibble-graph
+an-edibble-table-or-data-frame
 start
 setting-the-experimental-structure-and-context
 a-viable-experimental-design
