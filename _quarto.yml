@@ -35,8 +35,8 @@ format:
   html:
     theme: 
      - style.scss
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
 
 
 
