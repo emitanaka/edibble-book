@@ -1,0 +1,36 @@
+# Project management {#management}
+
+
+```{r child="work-in-progress.qmd"}
+```
+
+
+::: blockquote
+
+... communication is complex, fraught with tensions, misunderstandings, and problems — rather than a simple process of creating shared meaning
+
+-- Littlejohn et al., 2017, Theories of Human Communication
+
+:::
+
+
+An experiment generally involves more than one person. For simplicity, let us suppose there are four actors:
+
+* the **domain expert** who drives the experimental objective and has the intricate knowledge about the subject area,
+* the **statistician** who creates the experimental design layout after taking into account statistical and practical constraints,  
+* the **technician** who carries out the experiment and collects the data, and
+* the **analyst** who analyses the data after the data are collected. 
+
+The actors are purely illustrative and in practice, multiple people can take on each role, one person can take on multiple roles, and a person is not necessary a specialist in the role assigned (e.g. a statistician role can be carried out by a person who's primarily training is not in statistics). All the roles can be acted out by a single individual. Ideally, all parties should have clarity of the final experimental design. 
+
+
+
+
+
+The props:
+
+* experimental resources
+* statistical software to design experiments 
+* software to enter and store data 
+* good old pen and paper 
+* statistical software to analyse the collected data. 
