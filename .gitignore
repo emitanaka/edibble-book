@@ -9,4 +9,5 @@ _bookdown_files/
 cache
 docs
 /.quarto/
-_books/
+_book/
+figures/figures.graffle
