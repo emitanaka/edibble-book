@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
   <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.201">
+  <meta name="generator" content="quarto-0.9.209">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>The Grammar of Experimental Designs - 4&nbsp; Project management</title>
   <style>
@@ -65,7 +65,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
-<body class="floating fullcontent">
+<body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -155,7 +155,9 @@
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header" class="quarto-title-block default">
@@ -175,7 +177,7 @@ Note
 </div>
 </div>
 <div class="blockquote">
-<p>… communication is complex, fraught with tensions, misunderstandings, and problems — rather than a simple process of creating shared meaning</p>
+<p>… communication is complex, fraught with tensions, misunderstandings, and problems — rather than a simple process of creating shared meaning.</p>
 <p>– Littlejohn et al., 2017, Theories of Human Communication</p>
 </div>
 <p>An experiment generally involves more than one person. For simplicity, let us suppose there are four actors:</p>
@@ -187,14 +189,19 @@ Note
 <li>the <strong>analyst</strong> who analyses the data after the data are collected.</li>
 </ul>
 <p>The actors are purely illustrative and in practice, multiple people can take on each role, one person can take on multiple roles, and a person is not necessary a specialist in the role assigned (e.g.&nbsp;a statistician role can be carried out by a person who’s primarily training is not in statistics). All the roles can be acted out by a single individual. Ideally, all parties should have clarity of the final experimental design.</p>
-<p>The props:</p>
-<ul>
-<li>experimental resources</li>
-<li>statistical software to design experiments</li>
-<li>software to enter and store data</li>
-<li>good old pen and paper</li>
-<li>statistical software to analyse the collected data.</li>
-</ul>
+<p>To carry out this experiment, the people involved in the experiment must come to some degree of shared understanding about the experimental motivations, limitations and protocol. This understanding is achieved by <em>communication</em>. People may opt for a series of behavioural cycles that facilitate the process of clarification as they work to reduce uncertainty about their understanding.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="figures/drawn/communication-model.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>Each actor does not need to have a full comprehension of the experiment, but rather focus on the most pertinent part of the experiment that is relevant to their role. For example in the guinea pig experiment [add ref], a statistician does not need to know how the guinea pigs were sourced for the experiment – just that the subjects are genetically identical – in fact, a statistician can generate an experimental design without even knowledge that the subjects are guinea pigs. From the view point of the statistician, the experiment can be simplified to its bare essential elements to generate the experimental design. Why then would there be any need to encode the context of the experiment in generating the experimental design?</p>
+<p>The minimum required understanding for a statistician to conduct their role does not include understanding the experimental context. This is the reason perhaps that a lot of computational systems to generate the experimental design have often the inputs stripped off the experimental context. In an idealistic world, this approach would be fine but the major problem in this process is that the involved parties most likely do not know what is the most relevant knowledge for a statistician.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="figures/drawn/lens-view.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 
 
 
