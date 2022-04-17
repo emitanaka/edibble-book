@@ -32,7 +32,7 @@
     "href": "basics.html#principles",
     "title": "1  Basics",
     "section": "1.2 Principles",
-    "text": "1.2 Principles\nAll experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!\nIn designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The concepts outlined below are the basic statistical principles of experimental design to tackle this issue.\n\n1.2.1 Randomisation\n\n\n1.2.2 Replications, Repetition and Duplication\n\n\n1.2.3 Pseudo-replications\n\n\n1.2.4 Confounding"
+    "text": "1.2 Principles\nAll experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!\nIn designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures.\n\n1.2.1 Randomisation\n\n\n1.2.2 Replications, Repetition and Duplication\n\n\n1.2.3 Pseudo-replications\n\n\n1.2.4 Confounding"
   },
   {
     "objectID": "basics.html#summary",
