@@ -1,153 +1,158 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.209">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>The Grammar of Experimental Designs - 3&nbsp; Getting started</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
-  </style>
 
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./management.html" rel="next">
-  <link href="./grammar.html" rel="prev">
-  <link href="./figures/logos/favicon.ico" rel="icon">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 3,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.270">
 
-  <script type="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
-  </script>
-  <script async="" src="https://hypothes.is/embed.js"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+
+<title>The Grammar of Experimental Designs - 3&nbsp; Getting started</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./management.html" rel="next">
+<link href="./grammar.html" rel="prev">
+<link href="./figures/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
 </head>
+
 <body class="floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -163,7 +168,10 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./">
+      <img src="./figures/logos/edibble-website-logo-blue.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Grammar of Experimental Designs</a> 
         <div class="sidebar-tools-main">
@@ -239,32 +247,48 @@
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#setting-the-experimental-structure-and-context" id="toc-setting-the-experimental-structure-and-context" class="nav-link active" data-scroll-target="#setting-the-experimental-structure-and-context"> <span class="header-section-number">3.1</span> Setting the experimental structure and context</a>
-<ul class="collapse">
-<li><a href="#a-viable-experimental-design" id="toc-a-viable-experimental-design" class="nav-link" data-scroll-target="#a-viable-experimental-design"> <span class="header-section-number">3.1.1</span> A viable experimental design</a></li>
-<li><a href="#understanding-the-experimental-context" id="toc-understanding-the-experimental-context" class="nav-link" data-scroll-target="#understanding-the-experimental-context"> <span class="header-section-number">3.1.2</span> Understanding the experimental context</a></li>
-<li><a href="#fitting-a-variety-of-mental-mode" id="toc-fitting-a-variety-of-mental-mode" class="nav-link" data-scroll-target="#fitting-a-variety-of-mental-mode"> <span class="header-section-number">3.1.3</span> Fitting a variety of mental mode</a></li>
-</ul></li>
-<li><a href="#map-trts" id="toc-map-trts" class="nav-link" data-scroll-target="#map-trts"> <span class="header-section-number">3.2</span> Mapping treatment to units</a>
-<ul class="collapse">
-<li><a href="#treatment-allotment" id="toc-treatment-allotment" class="nav-link" data-scroll-target="#treatment-allotment"> <span class="header-section-number">3.2.1</span> Treatment allotment</a></li>
-</ul></li>
-<li><a href="#setting-records-with-expectations" id="toc-setting-records-with-expectations" class="nav-link" data-scroll-target="#setting-records-with-expectations"> <span class="header-section-number">3.3</span> Setting records with expectations</a></li>
-<li><a href="#simulate" id="toc-simulate" class="nav-link" data-scroll-target="#simulate"> <span class="header-section-number">3.4</span> Simulating records</a></li>
-<li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"> <span class="header-section-number">3.5</span> Exporting the design</a></li>
-<li><a href="#aes-custom" id="toc-aes-custom" class="nav-link" data-scroll-target="#aes-custom"> <span class="header-section-number">3.6</span> Aesthetic customisations</a></li>
-<li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"> <span class="header-section-number">3.7</span> Visualisation</a></li>
-<li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"> <span class="header-section-number">3.8</span> Examples</a></li>
-</ul>
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#setting-the-experimental-structure-and-context" id="toc-setting-the-experimental-structure-and-context" class="nav-link active" data-scroll-target="#setting-the-experimental-structure-and-context"> <span class="header-section-number">3.1</span> Setting the experimental structure and context</a>
+  <ul class="collapse">
+  <li><a href="#a-viable-experimental-design" id="toc-a-viable-experimental-design" class="nav-link" data-scroll-target="#a-viable-experimental-design"> <span class="header-section-number">3.1.1</span> A viable experimental design</a></li>
+  <li><a href="#understanding-the-experimental-context" id="toc-understanding-the-experimental-context" class="nav-link" data-scroll-target="#understanding-the-experimental-context"> <span class="header-section-number">3.1.2</span> Understanding the experimental context</a></li>
+  <li><a href="#fitting-a-variety-of-mental-mode" id="toc-fitting-a-variety-of-mental-mode" class="nav-link" data-scroll-target="#fitting-a-variety-of-mental-mode"> <span class="header-section-number">3.1.3</span> Fitting a variety of mental mode</a></li>
+  </ul></li>
+  <li><a href="#map-trts" id="toc-map-trts" class="nav-link" data-scroll-target="#map-trts"> <span class="header-section-number">3.2</span> Mapping treatment to units</a>
+  <ul class="collapse">
+  <li><a href="#treatment-allotment" id="toc-treatment-allotment" class="nav-link" data-scroll-target="#treatment-allotment"> <span class="header-section-number">3.2.1</span> Treatment allotment</a></li>
+  </ul></li>
+  <li><a href="#setting-records-with-expectations" id="toc-setting-records-with-expectations" class="nav-link" data-scroll-target="#setting-records-with-expectations"> <span class="header-section-number">3.3</span> Setting records with expectations</a></li>
+  <li><a href="#simulate" id="toc-simulate" class="nav-link" data-scroll-target="#simulate"> <span class="header-section-number">3.4</span> Simulating records</a></li>
+  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"> <span class="header-section-number">3.5</span> Exporting the design</a></li>
+  <li><a href="#aes-custom" id="toc-aes-custom" class="nav-link" data-scroll-target="#aes-custom"> <span class="header-section-number">3.6</span> Aesthetic customisations</a></li>
+  <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"> <span class="header-section-number">3.7</span> Visualisation</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"> <span class="header-section-number">3.8</span> Examples</a></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/edibble.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="start" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started</span></span></h1></div></header>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="start" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started</span></span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
 
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -281,7 +305,7 @@ Note
 </div>
 <p>The experimental planning in this book is supported by the <code>edibble</code> R-package and its extensions. The <code>edibble</code> system is built on the principle that the system must make it easy to recover experimental context by encouraging the user to be explicit about experimental details. To get started with using the system, you need to first load the package:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(edibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(edibble)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="setting-the-experimental-structure-and-context" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="setting-the-experimental-structure-and-context"><span class="header-section-number">3.1</span> Setting the experimental structure and context</h2>
@@ -292,15 +316,15 @@ Note
 <li>set treatments with 3 levels: 2 bacterial strains (PM398 and ZNP1) and no innoculation with <code>set_trts()</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mydesign1 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My first experiment"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mydesign1 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My first experiment"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pot =</span> <span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">innoculation =</span> <span class="fu">c</span>(<span class="st">"PM398"</span>, <span class="st">"ZNP1"</span>, <span class="st">"none"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These steps create and modify a so-called “edibble design” (<code>edbl_design</code>) object that is used to represent an <em>intermediate construct of an experimental design</em>. The arguments in the functions <code>set_units()</code> and <code>set_trts()</code> employ the convention that the left hand side (LHS) is the name of the factor and the input on the right hand side (RHS) defines the levels. If the RHS is a single integer then it’s assumed to be the number of levels and if it’s a vector then it’s the name of the levels.</p>
 <p>The print out of this object, as seen below, is displayed like a tree summarising the variables defined thus far.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mydesign1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mydesign1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>My first experiment
 ├─pot (24 levels)
 └─innoculation (3 levels)</code></pre>
@@ -314,12 +338,12 @@ Note
 </div>
 <p>The argument names in <code>set_units</code> and <code>set_trts</code> are not fixed, so you could easily change the name of the units or treatment to something more meaningful. Below we have another experiment which has a <em>statistically equivalent experimental structure</em> as the previous experiment (24 units and 3 levels of treatment), but it “reads” as a different experimental context – a typical user will realise that the experimental units are pigs and treatments are diet.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mydesign2 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My second experiment"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mydesign2 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My second experiment"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pig =</span> <span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">diet =</span> <span class="fu">c</span>(<span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span>))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mydesign2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>My second experiment
 ├─pig (24 levels)
 └─diet (3 levels)</code></pre>
@@ -327,14 +351,14 @@ Note
 </div>
 <p>You can define more than one unit factor or treatment factor. For example below, it reads as that there are: 3 pens (named “North”, “Shade” and “Meadow”), 18 pigs, 3 type of diets and 2 types of supplement given at a frequency of either daily or weekly.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"My experiment with multiple factors"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"My experiment with multiple factors"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pen =</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"Shade"</span>, <span class="st">"Meadow"</span>),</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">pig =</span> <span class="dv">18</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">diet =</span> <span class="fu">c</span>(<span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span>),</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">supplement =</span> <span class="dv">2</span>, </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>           <span class="co"># frequency of supplements:</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">frequency =</span> <span class="fu">c</span>(<span class="st">"daily"</span>, <span class="st">"weekly"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>My experiment with multiple factors
 ├─pen (3 levels)
 ├─pig (18 levels)
@@ -345,14 +369,14 @@ Note
 </div>
 <p>The unit and treatment factors do not need to be defined in one call. The ordering of the functions is commutative where the factor is not dependent directly on another factor.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"My experiment with multiple factors"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"My experiment with multiple factors"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pen =</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"Shade"</span>, <span class="st">"Meadow"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">diet =</span> <span class="fu">c</span>(<span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span>),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">supplement =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># frequency of supplements</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">frequency =</span> <span class="fu">c</span>(<span class="st">"daily"</span>, <span class="st">"weekly"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pig =</span> <span class="dv">18</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>My experiment with multiple factors
 ├─pen (3 levels)
 ├─diet (3 levels)
@@ -375,11 +399,11 @@ Note
 </div>
 <p>For example below</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"An invalid unit structure"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"An invalid unit structure"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pen =</span> <span class="dv">6</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">pig =</span> <span class="dv">18</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># An invalid unit structure 
 # An edibble: 0 x 2
 # … with 2 variables: pen &lt;unit(6)&gt;, pig &lt;unit(18)&gt;</code></pre>
@@ -402,7 +426,7 @@ Note
 </ul>
 <p>These step may feel redundant in experiments where there is exactly one unit factor and one treatment factor but it’s required for further generalisation to other experimental structures. In addition, it serves to re-enforce the specific actions to the user.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My first animal experiment"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"My first animal experiment"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pig =</span> <span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">diet =</span> <span class="fu">c</span>(<span class="st">"high-fat"</span>, <span class="st">"low-fat"</span>, <span class="st">"standard"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_trts</span>(diet <span class="sc">~</span> pig) <span class="sc">%&gt;%</span> </span>
@@ -410,8 +434,8 @@ Note
 </div>
 <p>Once a minimum viable experimental design has been specified, then you can generate the experimental design table (or tibble) called <code>edibble</code> by parsing the object to <code>serve_table()</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">serve_table</span>(des)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">serve_table</span>(des)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code># My first animal experiment 
 # An edibble: 24 x 2
           pig     diet
@@ -432,7 +456,7 @@ Note
 <section id="treatment-allotment" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="treatment-allotment"><span class="header-section-number">3.2.1</span> Treatment allotment</h3>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>diet_design <span class="ot">&lt;-</span> <span class="cf">function</span>(...) {</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>diet_design <span class="ot">&lt;-</span> <span class="cf">function</span>(...) {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">design</span>(<span class="st">"A valid nested design"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_units</span>(<span class="at">pen =</span> <span class="dv">6</span>,</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">pig =</span> <span class="fu">nested_in</span>(pen, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
@@ -443,7 +467,7 @@ Note
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">diet_design</span>(diet <span class="sc">~</span> pig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 3
          pen        pig     diet
@@ -469,8 +493,8 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diet_design</span>(diet <span class="sc">~</span> pen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diet_design</span>(diet <span class="sc">~</span> pen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 3
          pen        pig     diet
@@ -501,13 +525,13 @@ Note
 <h2 data-number="3.3" class="anchored" data-anchor-id="setting-records-with-expectations"><span class="header-section-number">3.3</span> Setting records with expectations</h2>
 <p>The term “records”, often abbreviated as <code>rcrd</code> in the <code>edibble</code> system, refers to any observational variables, including response variables. Setting records is a way to describe the <em>intent</em> of the observations that you will collect in the experiment. All records must be made on a unit. The primary way to set the record is using <code>set_rcrds()</code> where the LHS is the factor name of the record and the RHS is the unit factor on which the record will be measured. The LHS of the input in <code>set_rcrds()</code> follow the same pattern as <code>set_units()</code> and <code>set_trts()</code> as the LHS is the name of the new factor. In the example below, we are measuring <code>weight</code> and <code>sex</code> of the <code>pig</code> and recording the <code>manager</code> of each <code>pen</code>. In this example there are only 6 pens, therefore there should be only a maximum of 6 managers recorded.</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>desr <span class="ot">&lt;-</span> <span class="fu">diet_design</span>(diet <span class="sc">~</span> pen) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>desr <span class="ot">&lt;-</span> <span class="fu">diet_design</span>(diet <span class="sc">~</span> pen) <span class="sc">%&gt;%</span> </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_rcrds</span>(<span class="at">weight =</span> pig,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sex =</span> pig,</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">manager =</span> pen) </span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>desr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 6
          pen        pig     diet weight    sex manager
@@ -534,13 +558,13 @@ Note
 </div>
 <p>Another equivalent way to set the record is using <code>set_rcrds_of()</code>. The format of the input is such that the unit factors are on the LHS and the RHS are character vectors of new record factor names. The reason that names are set as characters is because the factors in the RHS do not yet exist. In contrast, the RHS of the input in <code>set_rcrds()</code> is unquoted because those factors exist. The suffix <code>_of</code> in the function name is purposely chosen to signal that the pattern for the LHS no longer follows that of <code>set_rcrds()</code>, <code>set_trts()</code> and <code>set_units()</code> where the LHS is always a new factor name.</p>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diet_design</span>(diet <span class="sc">~</span> pen) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diet_design</span>(diet <span class="sc">~</span> pen) <span class="sc">%&gt;%</span> </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_rcrds_of</span>(<span class="at">pig =</span> <span class="fu">c</span>(<span class="st">"weight"</span>, <span class="st">"sex"</span>),</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">pen =</span> <span class="st">"manager"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You may choose to also set expecations of the record. For example, we assert below that the weight of a grown pig must be a minimum of 15 kg.</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>desre <span class="ot">&lt;-</span> desr <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>desre <span class="ot">&lt;-</span> desr <span class="sc">%&gt;%</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_rcrds</span>(weight <span class="sc">&gt;</span> <span class="dv">15</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">factor</span>(sex, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -549,7 +573,7 @@ Note
 <section id="simulate" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="simulate"><span class="header-section-number">3.4</span> Simulating records</h2>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> desre <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> desre <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_rcrds</span>(<span class="at">weight =</span> <span class="fu">sim_normal</span>(<span class="sc">~</span>diet <span class="sc">+</span> pen <span class="sc">+</span> pig, <span class="at">sd =</span> <span class="dv">25</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">params</span>(<span class="st">"mean"</span>, </span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">diet =</span> <span class="fu">c</span>(<span class="st">"high-fat"</span> <span class="ot">=</span> <span class="dv">300</span>,</span>
@@ -562,7 +586,7 @@ Note
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.seed =</span> <span class="dv">1</span>, <span class="at">.censor =</span> <span class="cn">NA</span>)</span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 6
          pen        pig     diet weight    sex manager
@@ -588,9 +612,9 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(pen, weight, <span class="at">color =</span> diet)) <span class="sc">+</span> </span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(pen, weight, <span class="at">color =</span> diet)) <span class="sc">+</span> </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stderr">
+<div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -608,7 +632,7 @@ Note
 <section id="visualisation" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="visualisation"><span class="header-section-number">3.7</span> Visualisation</h2>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deggust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deggust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="examples" class="level2" data-number="3.8">
@@ -625,7 +649,7 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 8.5"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 8.5"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pot =</span> <span class="dv">90</span>,</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">plant =</span> <span class="fu">nested_in</span>(pot, <span class="dv">3</span>),</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">piece =</span> <span class="fu">nested_in</span>(plant, <span class="dv">9</span>)) <span class="sc">%&gt;%</span> </span>
@@ -636,7 +660,7 @@ Note
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign_trts</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_rcrds</span>(<span class="at">plantlets =</span> piece) <span class="sc">%&gt;%</span> </span>
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># Bailey (2008) Exercise 8.5 
 # An edibble: 2,430 x 6
           pot       plant      piece pottasium  nutrition plantlets
@@ -666,7 +690,7 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 9.6"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 9.6"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">thinning =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>),</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">grass =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">row =</span> <span class="dv">5</span>,</span>
@@ -677,7 +701,7 @@ Note
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>              grass <span class="sc">~</span> tree)</span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
 
 Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
@@ -697,7 +721,7 @@ Table of information (partially) aliased with previous sources derived from the 
 
 The design is not orthogonal</code></pre>
 </div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/bailey-ex-9-6-1.png" class="img-fluid" width="384"></p>
 </div>
@@ -714,7 +738,7 @@ The design is not orthogonal</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Tyre test"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Tyre test"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">car =</span> <span class="dv">4</span>,</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">driver =</span> <span class="dv">4</span>,</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">day =</span> <span class="dv">5</span>,</span>
@@ -726,7 +750,7 @@ The design is not orthogonal</code></pre>
 <span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(make <span class="sc">~</span> test_drive)</span>
 <span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
 
 Summary table of the decomposition for unit &amp; trt
@@ -738,7 +762,7 @@ Summary table of the decomposition for unit &amp; trt
  test_drive   69 make         3      1.0000      1.0000     1
                  Residual    66                              </code></pre>
 </div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/tyre-example-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -755,7 +779,7 @@ Summary table of the decomposition for unit &amp; trt
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.19"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.19"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">wash_temp =</span> <span class="dv">4</span>,</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">dry_temp =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">washer =</span> <span class="dv">8</span>,</span>
@@ -771,7 +795,7 @@ Summary table of the decomposition for unit &amp; trt
 <span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span>
 <span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
 
 Summary table of the decomposition for unit &amp; trt
@@ -784,7 +808,7 @@ Summary table of the decomposition for unit &amp; trt
  sheet        35 wash_temp#dry_temp   6      1.0000      1.0000     1
                  Residual            29                              </code></pre>
 </div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/washer-example-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -801,7 +825,7 @@ Summary table of the decomposition for unit &amp; trt
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.20"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.20"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">cultivar =</span> <span class="dv">3</span>,</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">seeding =</span> <span class="fu">c</span>(<span class="st">"conventional"</span>, <span class="st">"no tillage"</span>),</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">molybdenum =</span> <span class="fu">c</span>(<span class="st">"applied"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> </span>
@@ -815,7 +839,7 @@ Summary table of the decomposition for unit &amp; trt
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>              molybdenum <span class="sc">~</span> quarter) </span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code># Bailey (2008) Example 10.20 
 # An edibble: 48 x 8
     cultivar      seeding molybdenum     block      strip      half
@@ -833,13 +857,13 @@ Summary table of the decomposition for unit &amp; trt
 # … with 38 more rows, and 2 more variables: quarter &lt;unit(16)&gt;,
 #   plot &lt;unit(48)&gt;</code></pre>
 </div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stderr">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
 <pre><code>Warning in pstructure.formula(formulae[[1]], keep.order = keep.order, grandMean
 = grandMean, : block:half is aliased with previous terms in the formula and has
 been removed</code></pre>
 </div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
 
 Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
@@ -890,7 +914,7 @@ Table of information (partially) aliased with previous sources derived from the 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb45"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.5"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.5"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">feed =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">room =</span> <span class="dv">4</span>,</span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sheep =</span> <span class="fu">nested_in</span>(room, <span class="dv">4</span>),</span>
@@ -916,7 +940,7 @@ Table of information (partially) aliased with previous sources derived from the 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb46"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.6"</span>) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.6"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">pesticide =</span> <span class="fu">c</span>(<span class="st">"diuron"</span>, <span class="st">"carbofuran"</span>, <span class="st">"chlorpyrifos"</span>, <span class="st">"tributyltin chloride"</span>, </span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"phorate"</span>, <span class="st">"fonofos"</span>),</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">concentration =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
@@ -924,7 +948,7 @@ Table of information (partially) aliased with previous sources derived from the 
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">petri =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">ntrts</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb47"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emylyn's design</span></span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emylyn's design</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(edibble)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>des1 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"sensory evaluation"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">day =</span> <span class="dv">4</span>,</span>
@@ -956,13 +980,13 @@ Table of information (partially) aliased with previous sources derived from the 
 </div>
 
 
-
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-Bailey2008-gw" class="csl-entry" role="doc-biblioentry">
 Bailey, Rosemary. 2008. <em>Design of Comparative Experiments</em>.
 </div>
 </div>
 </section>
+
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1053,6 +1077,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>

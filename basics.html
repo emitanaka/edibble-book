@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.209">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>The Grammar of Experimental Designs - 1&nbsp; Basics</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
-  </style>
 
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./grammar.html" rel="next">
-  <link href="./preface.html" rel="prev">
-  <link href="./figures/logos/favicon.ico" rel="icon">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 3,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.270">
 
-  <script type="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
-  </script>
-  <script async="" src="https://hypothes.is/embed.js"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+
+<title>The Grammar of Experimental Designs - 1&nbsp; Basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./grammar.html" rel="next">
+<link href="./preface.html" rel="prev">
+<link href="./figures/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+
 </head>
+
 <body class="floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -100,7 +105,10 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./">
+      <img src="./figures/logos/edibble-website-logo-blue.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Grammar of Experimental Designs</a> 
         <div class="sidebar-tools-main">
@@ -176,24 +184,45 @@
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#terminology" id="toc-terminology" class="nav-link active" data-scroll-target="#terminology"> <span class="header-section-number">1.1</span> Basic terminology</a></li>
-<li><a href="#randomisation" id="toc-randomisation" class="nav-link" data-scroll-target="#randomisation"> <span class="header-section-number">1.2</span> Randomisation</a></li>
-<li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.3</span> Replications, Repetition and Duplication</a>
-<ul class="collapse">
-<li><a href="#pseudo-replications" id="toc-pseudo-replications" class="nav-link" data-scroll-target="#pseudo-replications"> <span class="header-section-number">1.3.1</span> Pseudo-replications</a></li>
-</ul></li>
-<li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.4</span> Summary</a></li>
-<li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.5</span> Exercises</a></li>
-</ul>
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#terminology" id="toc-terminology" class="nav-link active" data-scroll-target="#terminology"> <span class="header-section-number">1.1</span> Basic terminology</a>
+  <ul class="collapse">
+  <li><a href="#specialised-terminology" id="toc-specialised-terminology" class="nav-link" data-scroll-target="#specialised-terminology"> <span class="header-section-number">1.1.1</span> Specialised terminology</a></li>
+  </ul></li>
+  <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"> <span class="header-section-number">1.2</span> Principles</a>
+  <ul class="collapse">
+  <li><a href="#randomisation" id="toc-randomisation" class="nav-link" data-scroll-target="#randomisation"> <span class="header-section-number">1.2.1</span> Randomisation</a></li>
+  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.2</span> Replications, Repetition and Duplication</a></li>
+  <li><a href="#pseudo-replications" id="toc-pseudo-replications" class="nav-link" data-scroll-target="#pseudo-replications"> <span class="header-section-number">1.2.3</span> Pseudo-replications</a></li>
+  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"> <span class="header-section-number">1.2.4</span> Confounding</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="basics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics</span></span></h1></div></header>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="basics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics</span></span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
 
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -214,38 +243,47 @@ Note
 </div>
 <p>There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by <span class="citation" data-cites="Fisher1935-qc">Fisher (<a href="references.html#ref-Fisher1935-qc" role="doc-biblioref">1935</a>)</span>, <span class="citation" data-cites="Bailey2008-gw">Bailey (<a href="references.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span>, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment.</p>
 <p>Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You’ll therefore find that most experiments in this book are <strong>comparative experiments</strong>.</p>
-<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter @ref(management).</p>
+<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter -<span class="citation" data-cites="management">(<a href="references.html#ref-management" role="doc-biblioref"><strong>management?</strong></a>)</span>.</p>
 <p>All experiments have a cost whether that be financial, resources, time or other. We can consider the <strong>experimental cost</strong> as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite – you only have one chance to do the experiment – so it’s absolutely essential that you plan, design and execute the experiment well.</p>
-<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter @ref(context), describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter @ref(grammar), implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in Chapter @ref(start).</p>
+<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter <span class="citation" data-cites="context">(<a href="references.html#ref-context" role="doc-biblioref"><strong>context?</strong></a>)</span>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter <span class="citation" data-cites="grammar">(<a href="references.html#ref-grammar" role="doc-biblioref"><strong>grammar?</strong></a>)</span>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in Chapter <span class="citation" data-cites="start">(<a href="references.html#ref-start" role="doc-biblioref"><strong>start?</strong></a>)</span>.</p>
 <p>Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn’t serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.</p>
-<div class="callout note callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>Scenario 1: plant growth</strong> <i class="fas fa-seedling"></i> Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.</p>
+<div class="callout-caption-container flex-fill">
+Scenario 1: plant growth <i class="fas fa-seedling"></i>
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.</p>
 </div>
-<div class="callout note callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>Scenario 2: wine tasting <i class="fas fa-wine-bottle"></i></strong> A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine.</p>
+<div class="callout-caption-container flex-fill">
+Scenario 2: wine tasting <i class="fas fa-wine-bottle"></i>
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine.</p>
 </div>
-<div class="callout note callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>Scenario 3: new classification method <i class="fas fa-laptop"></i></strong> A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
+<div class="callout-caption-container flex-fill">
+Scenario 3: new classification method <i class="fas fa-laptop"></i>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
 </div>
 </div>
 <section id="terminology" class="level2" data-number="1.1">
@@ -263,37 +301,54 @@ Note
 <li><strong>unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on; and</li>
 <li><strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors.</li>
 </ul></li>
-<li><strong>balanced experiment</strong>: refers to when the replication of the treatments are equal</li>
-<li><strong>orthogonal design</strong></li>
-<li><strong>complete design</strong></li>
 </ul>
-<div class="callout note callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<p>The above terminology describe the experimental factors and its associations. More specifically, <strong>experimental factors</strong> are any variables that pertain to the experiment (physical or otherwise) and includes the treatments, experimental units, observational units and blocks/clusters. The associations of experimental factors include its nesting structure or say the assignment of treatment to units.</p>
+<p>In addition to above, there are commonly understood terminology that refer to the properties of experimental designs. These include:</p>
+<ul>
+<li><strong>balanced experiment</strong>: refers to when the replication of the treatments are equal,</li>
+<li><strong>orthogonal design</strong></li>
+<li><strong>complete design</strong>: every treatment appears exactly once in each block or cluster.</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>(plant growth)</strong>:</p>
+<div class="callout-caption-container flex-fill">
+plant growth
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>The experimental aim is to study the effects of plant growth of four particular bacterial strains.</li>
 <li>The experimental units are …</li>
 </ul>
 </div>
 </div>
-</div>
-<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter @ref(cookbook).</p>
-</section>
-<section id="randomisation" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="randomisation"><span class="header-section-number">1.2</span> Randomisation</h2>
-</section>
-<section id="replications-repetition-and-duplication" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.3</span> Replications, Repetition and Duplication</h2>
-<section id="pseudo-replications" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.3.1</span> Pseudo-replications</h3>
+<section id="specialised-terminology" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="specialised-terminology"><span class="header-section-number">1.1.1</span> Specialised terminology</h3>
+<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter <span class="citation" data-cites="cookbook">(<a href="references.html#ref-cookbook" role="doc-biblioref"><strong>cookbook?</strong></a>)</span>.</p>
 </section>
 </section>
-<section id="summary" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.4</span> Summary</h2>
+<section id="principles" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="principles"><span class="header-section-number">1.2</span> Principles</h2>
+<p>All experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!</p>
+<p>In designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The concepts outlined below are the basic statistical principles of experimental design to tackle this issue.</p>
+<section id="randomisation" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="randomisation"><span class="header-section-number">1.2.1</span> Randomisation</h3>
+</section>
+<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.2</span> Replications, Repetition and Duplication</h3>
+</section>
+<section id="pseudo-replications" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.3</span> Pseudo-replications</h3>
+</section>
+<section id="confounding" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="confounding"><span class="header-section-number">1.2.4</span> Confounding</h3>
+</section>
+</section>
+<section id="summary" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.3</span> Summary</h2>
 <p>The major concepts this chapter covered are:</p>
 <ul>
 <li>basic statistical terminology for experimental design</li>
@@ -301,12 +356,11 @@ Note
 <li>pitfalls of pseudo-replication</li>
 </ul>
 </section>
-<section id="exercises" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.5</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.4</span> Exercises</h2>
 <ol type="1">
 <li>A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.</li>
 </ol>
-
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -318,6 +372,7 @@ Fisher, Ronald. 1935. <em>The Design of Experiments</em>. Oliver; Boyd.
 </div>
 </div>
 </section>
+
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -408,6 +463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>

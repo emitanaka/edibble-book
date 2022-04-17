@@ -1,135 +1,140 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.209">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>The Grammar of Experimental Designs - 5&nbsp; Cookbook</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
 
-  <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-  <script src="site_libs/quarto-nav/headroom.min.js"></script>
-  <script src="site_libs/clipboard/clipboard.min.js"></script>
-  <meta name="quarto:offset" content="./">
-  <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-  <script src="site_libs/quarto-search/fuse.min.js"></script>
-  <script src="site_libs/quarto-search/quarto-search.js"></script>
-  <link href="./references.html" rel="next">
-  <link href="./management.html" rel="prev">
-  <link href="./figures/logos/favicon.ico" rel="icon">
-  <script src="site_libs/quarto-html/quarto.js"></script>
-  <script src="site_libs/quarto-html/popper.min.js"></script>
-  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="site_libs/quarto-html/anchor.min.js"></script>
-  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
-  <script src="site_libs/bootstrap/bootstrap.min.js"></script>
-  <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-  <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script id="quarto-search-options" type="application/json">{
-    "location": "sidebar",
-    "copy-button": false,
-    "collapse-after": 3,
-    "panel-placement": "start",
-    "type": "textbox",
-    "limit": 20,
-    "language": {
-      "search-no-results-text": "No results",
-      "search-matching-documents-text": "matching documents",
-      "search-copy-link-title": "Copy link to search",
-      "search-hide-matches-text": "Hide additional matches",
-      "search-more-match-text": "more match in this document",
-      "search-more-matches-text": "more matches in this document",
-      "search-clear-button-title": "Clear",
-      "search-detached-cancel-button-title": "Cancel",
-      "search-submit-button-title": "Submit"
-    }
-  }</script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.270">
 
-  <script type="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
-  </script>
-  <script async="" src="https://hypothes.is/embed.js"></script>
+
+<title>The Grammar of Experimental Designs - 5&nbsp; Cookbook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<link href="./references.html" rel="next">
+<link href="./management.html" rel="prev">
+<link href="./figures/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZBRNTDT9WG"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+
 </head>
+
 <body class="floating">
+
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -145,7 +150,10 @@
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./">
+      <img src="./figures/logos/edibble-website-logo-blue.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Grammar of Experimental Designs</a> 
         <div class="sidebar-tools-main">
@@ -221,26 +229,42 @@
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#completely-randomised-design" id="toc-completely-randomised-design" class="nav-link active" data-scroll-target="#completely-randomised-design"> <span class="header-section-number">5.1</span> Completely randomised design</a></li>
-<li><a href="#randomised-complete-block-design" id="toc-randomised-complete-block-design" class="nav-link" data-scroll-target="#randomised-complete-block-design"> <span class="header-section-number">5.2</span> Randomised complete block design</a></li>
-<li><a href="#latin-square-design" id="toc-latin-square-design" class="nav-link" data-scroll-target="#latin-square-design"> <span class="header-section-number">5.3</span> Latin square design</a></li>
-<li><a href="#factorial-design" id="toc-factorial-design" class="nav-link" data-scroll-target="#factorial-design"> <span class="header-section-number">5.4</span> Factorial design</a></li>
-<li><a href="#balanced-incomplete-block-design" id="toc-balanced-incomplete-block-design" class="nav-link" data-scroll-target="#balanced-incomplete-block-design"> <span class="header-section-number">5.5</span> Balanced incomplete block design</a></li>
-<li><a href="#split-plot-design" id="toc-split-plot-design" class="nav-link" data-scroll-target="#split-plot-design"> <span class="header-section-number">5.6</span> Split-plot design</a></li>
-<li><a href="#strip-plot-design" id="toc-strip-plot-design" class="nav-link" data-scroll-target="#strip-plot-design"> <span class="header-section-number">5.7</span> Strip-plot design</a></li>
-<li><a href="#graeco-latin-square-design" id="toc-graeco-latin-square-design" class="nav-link" data-scroll-target="#graeco-latin-square-design"> <span class="header-section-number">5.8</span> Graeco-Latin square design</a></li>
-<li><a href="#hyper-graeco-latin-square-design" id="toc-hyper-graeco-latin-square-design" class="nav-link" data-scroll-target="#hyper-graeco-latin-square-design"> <span class="header-section-number">5.9</span> Hyper-Graeco-Latin square design</a></li>
-<li><a href="#youden-square-design" id="toc-youden-square-design" class="nav-link" data-scroll-target="#youden-square-design"> <span class="header-section-number">5.10</span> Youden square design</a></li>
-</ul>
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#completely-randomised-design" id="toc-completely-randomised-design" class="nav-link active" data-scroll-target="#completely-randomised-design"> <span class="header-section-number">5.1</span> Completely randomised design</a></li>
+  <li><a href="#randomised-complete-block-design" id="toc-randomised-complete-block-design" class="nav-link" data-scroll-target="#randomised-complete-block-design"> <span class="header-section-number">5.2</span> Randomised complete block design</a></li>
+  <li><a href="#latin-square-design" id="toc-latin-square-design" class="nav-link" data-scroll-target="#latin-square-design"> <span class="header-section-number">5.3</span> Latin square design</a></li>
+  <li><a href="#factorial-design" id="toc-factorial-design" class="nav-link" data-scroll-target="#factorial-design"> <span class="header-section-number">5.4</span> Factorial design</a></li>
+  <li><a href="#balanced-incomplete-block-design" id="toc-balanced-incomplete-block-design" class="nav-link" data-scroll-target="#balanced-incomplete-block-design"> <span class="header-section-number">5.5</span> Balanced incomplete block design</a></li>
+  <li><a href="#split-plot-design" id="toc-split-plot-design" class="nav-link" data-scroll-target="#split-plot-design"> <span class="header-section-number">5.6</span> Split-plot design</a></li>
+  <li><a href="#strip-plot-design" id="toc-strip-plot-design" class="nav-link" data-scroll-target="#strip-plot-design"> <span class="header-section-number">5.7</span> Strip-plot design</a></li>
+  <li><a href="#graeco-latin-square-design" id="toc-graeco-latin-square-design" class="nav-link" data-scroll-target="#graeco-latin-square-design"> <span class="header-section-number">5.8</span> Graeco-Latin square design</a></li>
+  <li><a href="#hyper-graeco-latin-square-design" id="toc-hyper-graeco-latin-square-design" class="nav-link" data-scroll-target="#hyper-graeco-latin-square-design"> <span class="header-section-number">5.9</span> Hyper-Graeco-Latin square design</a></li>
+  <li><a href="#youden-square-design" id="toc-youden-square-design" class="nav-link" data-scroll-target="#youden-square-design"> <span class="header-section-number">5.10</span> Youden square design</a></li>
+  </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/cookbook.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<header id="title-block-header" class="quarto-title-block default">
 
-<div class="quarto-title"><h1 class="title display-7"><span id="cookbook" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cookbook</span></span></h1></div></header>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="cookbook" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Cookbook</span></span></h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
 
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -278,8 +302,8 @@ Note
 <p>A completely randomised design, commonly abbreviated as CRD, contain two factors: experimental units and treatments with a completely unstructured experiment (i.e.&nbsp;no grouping for the factors). CRD is sufficiently characterised by the number of units, <span class="math inline">\(n\)</span>, and the number of treatment, <span class="math inline">\(t\)</span>. Instead of <span class="math inline">\(n\)</span>, you ccan parameterise the design with the number of replications, <span class="math inline">\(r\)</span>; in which case, you can derive <span class="math inline">\(n = rt\)</span>. The later parameterisation means that the design will be balanced while the former does not guarantee that the design is balanced.</p>
 <p>You can call on <code>menu_crd()</code> to see the code in the terms of the fundamental system. If you omit the argument values, then a random parameterisation will be selected for you. You can find more details about the design in the documentation (<code>?menu_crd</code>).</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">menu_crd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">menu_crd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Completely Randomised Design") %&gt;%
   set_units(unit = 23) %&gt;%
   set_trts(trt = 10) %&gt;%
@@ -290,9 +314,9 @@ Note
 </div>
 <p>If you want to generate the design table, then you can use the <code>takeout()</code> function parsing the named design object created by the set of <code>menu_</code> functions. If you don’t select any menu then the <code>takeout()</code> function will automatically select a random menu for you. You can find the list of available named experimental designs by calling on <code>scan_menu()</code>. For now, let’s “takeout” the completely randomised design with 5 treatments and 30 experimental units.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>crd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_crd</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">n =</span> <span class="dv">30</span>, <span class="at">seed =</span> <span class="dv">1</span>), )</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>crd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_crd</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">n =</span> <span class="dv">30</span>, <span class="at">seed =</span> <span class="dv">1</span>), )</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>crd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Completely Randomised Design") %&gt;%
   set_units(unit = 30) %&gt;%
   set_trts(trt = 5) %&gt;%
@@ -320,7 +344,7 @@ Note
 <p>A design table generated by <code>takeout()</code> is an object with a special class of <code>edbl_table</code>. When you print a <code>takeout</code> object, a table will be displayed like a typical <code>edbl_table</code> object but the recipe code will also be displayed prior to the table.</p>
 <p>You can quickly plot the design using the <code>autoplot()</code> in the <code>deggust</code> package.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(crd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(crd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-crd-1.png" class="img-fluid" width="480"></p>
 </div>
@@ -330,9 +354,9 @@ Note
 <h2 data-number="5.2" class="anchored" data-anchor-id="randomised-complete-block-design"><span class="header-section-number">5.2</span> Randomised complete block design</h2>
 <p>A randomised complete block design, commonly abbreviated as RCBD, is contain two unit factors, a blocking factor and experimental unit factor, and a treatment factor. The experimental unit factor would be nested within the blocking factor with the number of units within each level of the blocking factor, <span class="math inline">\(k\)</span>, equal to the number of treatments, <span class="math inline">\(t\)</span>. Every treatment appears exactly once in each level of the blocking factor, so the number of blocks, <span class="math inline">\(b\)</span>, is the same as the number of replications, <span class="math inline">\(r\)</span>, i.e.&nbsp;<span class="math inline">\(b = r\)</span>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rcbd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_rcbd</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">r =</span> <span class="dv">10</span>))</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rcbd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_rcbd</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">r =</span> <span class="dv">10</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(rcbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Randomised Complete Block Design") %&gt;%
   set_units(block = 10,
             unit = nested_in(block, 6)) %&gt;%
@@ -343,14 +367,14 @@ Note
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(rcbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(rcbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-rcbd-1.png" class="img-fluid" width="576"></p>
 </div>
 </div>
 <p>Suppose now I tell you that there are only 3 units in block 1 and 4 units in block 2, and 5 units in block 3, while other blocks can have 6 units. How would you modify your design then? Still generate an RCBD but randomly remove the treatment allocation to match the block size? In comparison to the previous design, this design has 6 less units so it’s possible to have 9 replicates for each treatment. Generally you’d want to get close to a balanced design as possible so you have roughly an equal amount of information on all your treatments. If you randomly remove the treatment allocation to match the required block size, there’s no guarantee that you’ll end up with a balanced design. You’ll also find that there’ll be no named experimental design that matches the description of your units so you won’t be able to just select a design from the menu. This is where the <code>edibble</code> system aids you. In the fundamental <code>edibble</code> system, you put the experimental structure first before thinking about the treatment assignment.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mbd <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Modified Block Design"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mbd <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Modified Block Design"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">block =</span> <span class="dv">10</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit =</span> <span class="fu">nested_in</span>(block, </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
@@ -363,15 +387,15 @@ Note
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-bd-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>You can see below that the number of replications are equal across the treatments. You can try changing the seed number above to generate another set of design and see if it still holds true (it should!).</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mbd<span class="sc">$</span>trt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mbd<span class="sc">$</span>trt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>
 trt1 trt2 trt3 trt4 trt5 trt6 
    9    9    9    9    9    9 </code></pre>
@@ -381,9 +405,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="latin-square-design" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="latin-square-design"><span class="header-section-number">5.3</span> Latin square design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lsd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_lsd</span>(<span class="at">t =</span> <span class="dv">6</span>))</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lsd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_lsd</span>(<span class="at">t =</span> <span class="dv">6</span>))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(lsd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Latin Square Design") %&gt;%
   set_units(row = 6,
             col = 6,
@@ -395,7 +419,7 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(lsd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(lsd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-lsd-1.png" class="img-fluid" width="576"></p>
 </div>
@@ -404,9 +428,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="factorial-design" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="factorial-design"><span class="header-section-number">5.4</span> Factorial design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fac <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_factorial</span>(<span class="at">trt =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>)))</span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fac <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_factorial</span>(<span class="at">trt =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>)))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(fac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Factorial Design") %&gt;%
   set_units(unit = 54) %&gt;%
   set_trts(trt1 = 3,
@@ -417,7 +441,7 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(fac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(fac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-fac-1.png" class="img-fluid" width="576"></p>
 </div>
@@ -426,9 +450,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="balanced-incomplete-block-design" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="balanced-incomplete-block-design"><span class="header-section-number">5.5</span> Balanced incomplete block design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bibd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_bibd</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">4</span>))</span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bibd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_bibd</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">4</span>))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(bibd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Balanced Incomplete Block Design") %&gt;%
   set_units(block = 12,
             unit = nested_in(block, 4)) %&gt;%
@@ -439,7 +463,7 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bibd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bibd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-bibd-1.png" class="img-fluid" width="576"></p>
 </div>
@@ -448,9 +472,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="split-plot-design" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="split-plot-design"><span class="header-section-number">5.6</span> Split-plot design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>spd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_split</span>(<span class="at">t1 =</span> <span class="dv">2</span>, <span class="at">t2 =</span> <span class="dv">4</span>, <span class="at">r =</span> <span class="dv">10</span>))</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>spd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_split</span>(<span class="at">t1 =</span> <span class="dv">2</span>, <span class="at">t2 =</span> <span class="dv">4</span>, <span class="at">r =</span> <span class="dv">10</span>))</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(spd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Split-Plot Design | Split-Unit Design") %&gt;%
   set_units(mainplot = 20,
              subplot = nested_in(mainplot, 4)) %&gt;%
@@ -463,7 +487,7 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(spd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(spd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-spd-1.png" class="img-fluid" width="576"></p>
 </div>
@@ -472,9 +496,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="strip-plot-design" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="strip-plot-design"><span class="header-section-number">5.7</span> Strip-plot design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>strip <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_strip</span>(<span class="at">t1 =</span> <span class="dv">3</span>, <span class="at">t2 =</span> <span class="dv">4</span>, <span class="at">r =</span> <span class="dv">9</span>))</span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>strip <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_strip</span>(<span class="at">t1 =</span> <span class="dv">3</span>, <span class="at">t2 =</span> <span class="dv">4</span>, <span class="at">r =</span> <span class="dv">9</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(strip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Strip-Plot Design | Strip-Unit Design") %&gt;%
   set_units(block = 9,
             row = nested_in(block, 3),
@@ -489,15 +513,15 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(strip) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>block, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(strip) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>block, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="graeco-latin-square-design" class="level2" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="graeco-latin-square-design"><span class="header-section-number">5.8</span> Graeco-Latin square design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>graeco <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_graeco</span>(<span class="at">t =</span> <span class="dv">9</span>))</span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>graeco <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_graeco</span>(<span class="at">t =</span> <span class="dv">9</span>))</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Graeco-Latin Square Design") %&gt;%
   set_units(row = 9,
             col = 9,
@@ -511,7 +535,7 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-graeco-1.png" class="img-fluid" width="576"></p>
 </div>
@@ -520,9 +544,9 @@ trt1 trt2 trt3 trt4 trt5 trt6
 <section id="hyper-graeco-latin-square-design" class="level2" data-number="5.9">
 <h2 data-number="5.9" class="anchored" data-anchor-id="hyper-graeco-latin-square-design"><span class="header-section-number">5.9</span> Hyper-Graeco-Latin square design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>hyper_graeco <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_hyper_graeco</span>(<span class="at">t =</span> <span class="dv">6</span>))</span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>hyper_graeco <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_hyper_graeco</span>(<span class="at">t =</span> <span class="dv">6</span>))</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(hyper_graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Hyper-Graeco-Latin Square Design") %&gt;%
   set_units(block1 = 6,
             block2 = 6,
@@ -536,8 +560,8 @@ trt1 trt2 trt3 trt4 trt5 trt6
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(hyper_graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stderr">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(hyper_graeco)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
 <pre><code>Warning: Too manu units so 296 units dropped from the plot. If you want to see
 all, use `nnode_max = Inf` or use `page = 2` to see the next set.</code></pre>
 </div>
@@ -549,9 +573,9 @@ all, use `nnode_max = Inf` or use `page = 2` to see the next set.</code></pre>
 <section id="youden-square-design" class="level2" data-number="5.10">
 <h2 data-number="5.10" class="anchored" data-anchor-id="youden-square-design"><span class="header-section-number">5.10</span> Youden square design</h2>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>youden <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_youden</span>(<span class="at">nc =</span> <span class="dv">4</span>, <span class="at">t =</span> <span class="dv">5</span>))</span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>youden <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_youden</span>(<span class="at">nc =</span> <span class="dv">4</span>, <span class="at">t =</span> <span class="dv">5</span>))</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(youden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>design("Youden Square Design") %&gt;%
   set_units(row = 5,
             col = 4,
@@ -563,15 +587,15 @@ all, use `nnode_max = Inf` or use `page = 2` to see the next set.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(youden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(youden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/autoplot-youden-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
 
-
 </section>
+
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -662,6 +686,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 </body></html>
