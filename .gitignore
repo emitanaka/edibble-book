@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rdata
+.httr-oauth
+.DS_Store
+_bookdown_files/
+cache
+docs
+/.quarto/
+_book/
+figures/figures.graffle

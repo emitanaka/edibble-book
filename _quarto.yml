@@ -1,0 +1,42 @@
+project:
+  type: book
+  output-dir: _book
+
+
+book:
+  title: "The Grammar of Experimental Designs"
+  author: "Emi Tanaka"
+  site-url: https:://emitanaka.org/edibble-book
+  repo-url: https://github.com/emitanaka/edibble-book
+  repo-branch: master
+  repo-actions: [edit, issue]
+  google-analytics: G-ZBRNTDT9WG
+  image: figures/logos/edibble-website-logo-blue.png
+  favicon: figures/logos/favicon.ico
+  sharing: [twitter, facebook]
+  sidebar:
+    logo: figures/logos/edibble-website-logo-blue.png
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - basics.qmd
+    - grammar.qmd
+    - edibble.qmd
+    - management.qmd
+    - cookbook.qmd
+    - references.qmd
+
+comments:
+  hypothesis: true
+       
+bibliography: book.bib
+
+format:
+  html:
+    theme: 
+     - style.scss
+  #pdf:
+  #  documentclass: scrreprt
+
+
+
