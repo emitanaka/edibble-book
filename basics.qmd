@@ -94,10 +94,18 @@ All experiments have a potential to go wrong -- plans may not be followed to the
 
 In designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures.  
 
-### Randomisation
+### Randomisation and optimisation
+
+**Randomisation** in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is **systematic** allocations of treatments to units -- this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.  
+
+Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don't know about. 
+
+Not all experiments can allocate treatments to units randomly, e.g. you can't get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows. These types of experiments are referred to as *quasi-experiment* or *natural experiment*. 
 
 
-### Replications, Repetition and Duplication
+
+
+### Replications, repetition and duplication
 
 
 ### Pseudo-replications
