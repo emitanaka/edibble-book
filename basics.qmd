@@ -96,7 +96,7 @@ In designing an experiment, there are some safety measures that you can put in p
 
 ### Randomisation and optimisation
 
-**Randomisation** in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is **systematic** allocations of treatments to units -- this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.  
+**Randomisation** in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome of the allocation is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is **systematic** allocations of treatments to units -- this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.  
 
 Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don't know about. 
 
