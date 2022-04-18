@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.271">
+<meta name="generator" content="quarto-0.9.275">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -194,9 +194,9 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"> <span class="header-section-number">1.2</span> Principles</a>
   <ul class="collapse">
   <li><a href="#randomisation-and-optimisation" id="toc-randomisation-and-optimisation" class="nav-link" data-scroll-target="#randomisation-and-optimisation"> <span class="header-section-number">1.2.1</span> Randomisation and optimisation</a></li>
-  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.2</span> Replications, repetition and duplication</a></li>
-  <li><a href="#pseudo-replications" id="toc-pseudo-replications" class="nav-link" data-scroll-target="#pseudo-replications"> <span class="header-section-number">1.2.3</span> Pseudo-replications</a></li>
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"> <span class="header-section-number">1.2.4</span> Confounding</a></li>
+  <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.2.2</span> Bias and confounding</a></li>
+  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.3</span> Replications, repetition and duplication</a></li>
+  <li><a href="#pseudo-replications" id="toc-pseudo-replications" class="nav-link" data-scroll-target="#pseudo-replications"> <span class="header-section-number">1.2.4</span> Pseudo-replications</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
@@ -337,17 +337,50 @@ plant growth
 <section id="randomisation-and-optimisation" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="randomisation-and-optimisation"><span class="header-section-number">1.2.1</span> Randomisation and optimisation</h3>
 <p><strong>Randomisation</strong> in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome of the allocation is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is <strong>systematic</strong> allocations of treatments to units – this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.</p>
-<p>Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don’t know about.</p>
-<p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows. These types of experiments are referred to as <em>quasi-experiment</em> or <em>natural experiment</em>.</p>
+<p>Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don’t know about – if you did, you could try to control that variable in your experiment. Randomisation protects the experiment, with no guarantee however, from potential bias.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+How to randomise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Typically you can use some software to draw a random sample; in this instance it’d be a good idea to ensure this randomisation can be replicated. In R, this is typically achieved by using <code>set.seed()</code>.</p>
+<p>In some cases, you can use physical tools to do your randomisation so long as the tool doesn’t introduce some bias. E.g. flipping an unbiased coin or blindly drawing a paper with a number written from a covered box. While it’s easier to replicate the randomisation using a computational tool like R, it’s far more important to present the treatment allocation in a manner that the subjects involved in the experiment can accept it. For example, a water-sensitive revitalisation is planned for settlements in a developmental country such that half the settlements will be allocated to early intervention, the other half late intervention. The local community doesn’t have an understanding about randomisation but the concept of lottery is familiar – a grand ceremony is taken place with representative of the settlements drawing out a ball that allocates the settlement to early or late intervention.</p>
+</div>
+</div>
+<p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as <em>quasi-experiments</em> or <em>natural experiments</em>.</p>
 </section>
-<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.2</span> Replications, repetition and duplication</h3>
+<section id="bias-and-confounding" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.2.2</span> Bias and confounding</h3>
+<p><strong>Biases</strong> can lurk into an experiment in many forms.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Examples of biases
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>To test the effectiveness of flu vaccines, a trial for vaccine 1 is done in January and a trial for vaccine 2 is done in July.</li>
+<li>To study the effects of different diets for pigs, diet A is given to the first set of pigs that the farmer caught and the remaining (faster) pigs received diet B.</li>
+<li>A doctor decides to assign the treatment to the sickest patients while the control treatment is assigned to the healthiest patients.</li>
+</ol>
+</div>
+</div>
+<p>Biases are not necessary introduced into study with malicious or known intent (e.g.&nbsp;trying to ensure certain treatments have a better outcome by manipulating the treatment assignment). The third example is a case where the intention of the doctor is well but is introducing a selection bias.</p>
 </section>
-<section id="pseudo-replications" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.3</span> Pseudo-replications</h3>
+<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.3</span> Replications, repetition and duplication</h3>
 </section>
-<section id="confounding" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="confounding"><span class="header-section-number">1.2.4</span> Confounding</h3>
+<section id="pseudo-replications" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4</span> Pseudo-replications</h3>
 </section>
 </section>
 <section id="summary" class="level2" data-number="1.3">
