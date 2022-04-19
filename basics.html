@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.275">
+<meta name="generator" content="quarto-0.9.282">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -208,7 +208,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="basics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics</span></span></h1>
+<h1 class="title"><span id="sec-basics" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basics</span></span></h1>
 </div>
 
 
@@ -243,9 +243,9 @@ Note
 </div>
 <p>There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by <span class="citation" data-cites="Fisher1935-qc">Fisher (<a href="references.html#ref-Fisher1935-qc" role="doc-biblioref">1935</a>)</span>, <span class="citation" data-cites="Bailey2008-gw">Bailey (<a href="references.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span>, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment.</p>
 <p>Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You’ll therefore find that most experiments in this book are <strong>comparative experiments</strong>.</p>
-<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in Chapter -<span class="citation" data-cites="management">(<a href="references.html#ref-management" role="doc-biblioref"><strong>management?</strong></a>)</span>.</p>
+<p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in <a href="management.html">Chapter&nbsp;<span>4</span></a>.</p>
 <p>All experiments have a cost whether that be financial, resources, time or other. We can consider the <strong>experimental cost</strong> as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite – you only have one chance to do the experiment – so it’s absolutely essential that you plan, design and execute the experiment well.</p>
-<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter <span class="citation" data-cites="context">(<a href="references.html#ref-context" role="doc-biblioref"><strong>context?</strong></a>)</span>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter <span class="citation" data-cites="grammar">(<a href="references.html#ref-grammar" role="doc-biblioref"><strong>grammar?</strong></a>)</span>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in Chapter <span class="citation" data-cites="start">(<a href="references.html#ref-start" role="doc-biblioref"><strong>start?</strong></a>)</span>.</p>
+<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in <span class="quarto-unresolved-ref">?sec-context</span>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in <a href="grammar.html">Chapter&nbsp;<span>2</span></a>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in <a href="edibble.html">Chapter&nbsp;<span>3</span></a>.</p>
 <p>Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn’t serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -327,7 +327,7 @@ plant growth
 </div>
 <section id="specialised-terminology" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="specialised-terminology"><span class="header-section-number">1.1.1</span> Specialised terminology</h3>
-<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter <span class="citation" data-cites="cookbook">(<a href="references.html#ref-cookbook" role="doc-biblioref"><strong>cookbook?</strong></a>)</span>.</p>
+<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter <a href="cookbook.html">Section&nbsp;<span>5</span></a>.</p>
 </section>
 </section>
 <section id="principles" class="level2" data-number="1.2">
@@ -378,6 +378,17 @@ Examples of biases
 </section>
 <section id="replications-repetition-and-duplication" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.3</span> Replications, repetition and duplication</h3>
+<p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-replication" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/drawn/replications.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: A comparative experiment with two treatments allocated to four participants. Each treatment is replicated twice with the same outcome for the same treatment.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="pseudo-replications" class="level3" data-number="1.2.4">
 <h3 data-number="1.2.4" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4</span> Pseudo-replications</h3>
@@ -431,7 +442,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.blur();
     // flash "checked"
     button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
     setTimeout(function() {
+      button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
