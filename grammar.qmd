@@ -1,4 +1,4 @@
-# Grammar {#grammar}
+# Grammar {#sec-grammar}
 
 
 ```{r child="work-in-progress.qmd"}

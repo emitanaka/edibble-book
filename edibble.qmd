@@ -1,4 +1,4 @@
-# Getting started  {#start}
+# Getting started  {#sec-edibble}
 
 
 ```{r child="work-in-progress.qmd"}

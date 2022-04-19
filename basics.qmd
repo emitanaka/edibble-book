@@ -1,4 +1,4 @@
-# Basics {#basics}
+# Basics {#sec-basics}
 
 ```{r child="work-in-progress.qmd"}
 ```
@@ -19,11 +19,11 @@ There are many articles and books dedicated to explaining the concepts of experi
 
 Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You'll therefore find that most experiments in this book are **comparative experiments**. 
 
-At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well.  We touch more on this in Chapter -@management. 
+At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the **_experiments are human endeavours_**. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well.  We touch more on this in [Chapter -@sec-management]. 
 
 All experiments have a cost whether that be financial, resources, time or other. We can consider the **experimental cost** as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite -- you only have one chance to do the experiment -- so it's absolutely essential that you plan, design and execute the experiment well.
 
-Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in Chapter @context, describe a system that  encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in Chapter @grammar, implemented as the `edibble` R-package and present how to get started with the `edibble` system to construct experimental design in Chapter @start.
+Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in [Chapter -@sec-context], describe a system that  encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in [Chapter -@sec-grammar], implemented as the `edibble` R-package and present how to get started with the `edibble` system to construct experimental design in [Chapter -@sec-edibble].
 
 Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
  
@@ -85,7 +85,7 @@ In addition to above, there are commonly understood terminology that refer to th
 
 ### Specialised terminology
 
-Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter @cookbook.
+Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in Chapter @sec-cookbook.
 
 
 ## Principles
@@ -130,6 +130,13 @@ Biases are not necessary introduced into study with malicious or known intent (e
 
 
 ### Replications, repetition and duplication
+
+In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g. computer experiments). As a simple example, consider @fig-replication.
+
+
+```{r fig-replication, echo = FALSE, fig.cap = "A comparative experiment with two treatments allocated to four participants. Each treatment is replicated twice with the same outcome for the same treatment.", out.width="100%"}
+knitr::include_graphics("figures/drawn/replications.png")
+```
 
 
 ### Pseudo-replications

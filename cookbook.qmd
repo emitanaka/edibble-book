@@ -1,4 +1,4 @@
-# Cookbook {#cookbook}
+# Cookbook {#sec-cookbook}
 
 
 ```{r child="work-in-progress.qmd"}

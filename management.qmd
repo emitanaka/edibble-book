@@ -1,4 +1,4 @@
-# Project management {#management}
+# Project management {#sec-management}
 
 
 ```{r child="work-in-progress.qmd"}
