@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.282">
+<meta name="generator" content="quarto-0.9.290">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,6 +84,11 @@ gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+.quarto-title-banner {
+  
+}
+</style>
 
 
 </head>
@@ -196,7 +201,6 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#randomisation-and-optimisation" id="toc-randomisation-and-optimisation" class="nav-link" data-scroll-target="#randomisation-and-optimisation"> <span class="header-section-number">1.2.1</span> Randomisation and optimisation</a></li>
   <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.2.2</span> Bias and confounding</a></li>
   <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.3</span> Replications, repetition and duplication</a></li>
-  <li><a href="#pseudo-replications" id="toc-pseudo-replications" class="nav-link" data-scroll-target="#pseudo-replications"> <span class="header-section-number">1.2.4</span> Pseudo-replications</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
@@ -378,20 +382,25 @@ Examples of biases
 </section>
 <section id="replications-repetition-and-duplication" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.3</span> Replications, repetition and duplication</h3>
-<p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a>.</p>
+<p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). To distinguish the individual variation from the treatment variation, you need <strong>replication</strong> of the treatment allocation to another <em>independent</em> unit.</p>
+<p>As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a> – 2 treatments are allocated to 3 participants each. If you ever only look at the outcome of a single replication in isolation, you wouldn’t know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-replication" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/drawn/replications.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: A comparative experiment with two treatments allocated to four participants. Each treatment is replicated twice with the same outcome for the same treatment.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: A comparative experiment with two treatments allocated to six participants. Each treatment is replicated thrice with the same outcome for the same treatment.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Suppose now that in <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a>, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants.</p>
+<section id="how-many-replications" class="level4" data-number="1.2.3.1">
+<h4 data-number="1.2.3.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.3.1</span> How many replications?</h4>
 </section>
-<section id="pseudo-replications" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4</span> Pseudo-replications</h3>
+<section id="pseudo-replications" class="level4" data-number="1.2.3.2">
+<h4 data-number="1.2.3.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.3.2</span> Pseudo-replications</h4>
+</section>
 </section>
 </section>
 <section id="summary" class="level2" data-number="1.3">
