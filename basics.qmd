@@ -131,15 +131,21 @@ Biases are not necessary introduced into study with malicious or known intent (e
 
 ### Replications, repetition and duplication
 
-In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g. computer experiments). As a simple example, consider @fig-replication.
+In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g. computer experiments). To distinguish the individual variation from the treatment variation, you need **replication** of the treatment allocation to another *independent* unit. 
+
+As a simple example, consider @fig-replication -- 2 treatments are allocated to 3 participants each.  If you ever only look at the outcome of a single replication in isolation,  you wouldn't know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.
 
 
-```{r fig-replication, echo = FALSE, fig.cap = "A comparative experiment with two treatments allocated to four participants. Each treatment is replicated twice with the same outcome for the same treatment.", out.width="100%"}
+```{r fig-replication, echo = FALSE, fig.cap = "A comparative experiment with two treatments allocated to six participants. Each treatment is replicated thrice with the same outcome for the same treatment.", out.width="100%"}
 knitr::include_graphics("figures/drawn/replications.png")
 ```
 
+Suppose now that in @fig-replication, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants. 
 
-### Pseudo-replications
+
+#### How many replications?
+
+#### Pseudo-replications
 
 
 
