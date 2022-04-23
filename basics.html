@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.290">
+<meta name="generator" content="quarto-0.9.301">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,13 +83,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<style>
-.quarto-title-banner {
-  
-}
-</style>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -192,7 +187,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#terminology" id="toc-terminology" class="nav-link active" data-scroll-target="#terminology"> <span class="header-section-number">1.1</span> Basic terminology</a>
+  <li><a href="#sec-terminology" id="toc-sec-terminology" class="nav-link active" data-scroll-target="#sec-terminology"> <span class="header-section-number">1.1</span> Basic terminology</a>
   <ul class="collapse">
   <li><a href="#specialised-terminology" id="toc-specialised-terminology" class="nav-link" data-scroll-target="#specialised-terminology"> <span class="header-section-number">1.1.1</span> Specialised terminology</a></li>
   </ul></li>
@@ -290,8 +285,8 @@ Scenario 3: new classification method <i class="fas fa-laptop"></i>
 <p>A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
 </div>
 </div>
-<section id="terminology" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="terminology"><span class="header-section-number">1.1</span> Basic terminology</h2>
+<section id="sec-terminology" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-terminology"><span class="header-section-number">1.1</span> Basic terminology</h2>
 <p>The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
 <ul>
 <li><strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
@@ -357,6 +352,43 @@ How to randomise
 </div>
 </div>
 <p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as <em>quasi-experiments</em> or <em>natural experiments</em>.</p>
+<p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model,</p>
+<p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span> where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
+<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-}\)</span> where <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span> is the generalised inverse of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> – typically we construct <span class="math inline">\(\mathbf{X}\)</span> as a full rank matrix (e.g.&nbsp;by removing the column corresponding to the baseline level of a factor, which is equivalent to the treatment constraint) so <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span> is just <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span>. Under these assumptions we have</p>
+<p><span class="math display">\[var(\hat{\boldsymbol{\beta}}) \propto $(\mathbf{X}^\top\mathbf{X})^{-1}.\]</span> The list of optimal-criteria are:</p>
+<ul>
+<li><strong>A-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span>,</li>
+<li><strong>C-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(var(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})\)</span>,</li>
+<li><strong>D-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it maximises <span class="math inline">\(det\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span>,</li>
+<li><strong>E-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it maximises the minimume eigenvalue of <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span>,</li>
+<li>… and so many more</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Optimised designs are not necessary randomised
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This means that even if the design has been constructed as to optimise some criteria, you are missing out on the benefits of the randomisation. Some experimental structure results in a multiple possible treatment allocations with the same optimal criteria and the software may be selecting this in a systematic way.</p>
+</div>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Optimal designs for complex experiments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Optimised designs for complex experiments can be computationally expensive. In these cases, the algorithm may be searching heuristically. You should try searching under different starting values and compare the optimal criteria obtained.</p>
+</div>
+</div>
 </section>
 <section id="bias-and-confounding" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.2.2</span> Bias and confounding</h3>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.290">
+<meta name="generator" content="quarto-0.9.301">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,12 +83,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<style>
-.quarto-title-banner {
-  
-}
-</style>
 <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="site_libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
 <script src="site_libs/vis-9.1.0/vis-network.min.js"></script>
@@ -202,6 +196,8 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#fundamental-terminology" id="toc-fundamental-terminology" class="nav-link active" data-scroll-target="#fundamental-terminology"> <span class="header-section-number">2.1</span> Fundamental terminology</a></li>
   <li><a href="#an-edibble-graph" id="toc-an-edibble-graph" class="nav-link" data-scroll-target="#an-edibble-graph"> <span class="header-section-number">2.2</span> An edibble graph</a></li>
   <li><a href="#an-edibble-table-or-data-frame" id="toc-an-edibble-table-or-data-frame" class="nav-link" data-scroll-target="#an-edibble-table-or-data-frame"> <span class="header-section-number">2.3</span> An edibble table (or data frame)</a></li>
+  <li><a href="#sec-ggplot" id="toc-sec-ggplot" class="nav-link" data-scroll-target="#sec-ggplot"> <span class="header-section-number">2.4</span> The (layered) grammar of graphics</a></li>
+  <li><a href="#sec-deggust" id="toc-sec-deggust" class="nav-link" data-scroll-target="#sec-deggust"> <span class="header-section-number">2.5</span> Graphics for design of experiments</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/grammar.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -243,11 +239,11 @@ Note
 <p>Grammar makes language expressive. A language consisting of words and no grammar (statement = word) expresses only as many ideas as there are words. By specifying how words are combined in statements, a grammar expands a language’s scope.</p>
 <p>– Wilkinson, 2005, The Grammar of Graphics, 2nd edition</p>
 </div>
-<p>Chapter @ref(basics) described a number of basic terms and concepts in experimental designs. In this chapter, I dissect these basic terms in order to build the “grammar of experimental designs”. The so-called grammar of experimental designs is a term that is heavily influenced by <span class="citation" data-cites="Wilkinson2005-oz">Wilkinson (<a href="references.html#ref-Wilkinson2005-oz" role="doc-biblioref">2005</a>)</span>, who use the term “grammar of graphics” to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation <span class="citation" data-cites="Wickham2010-kt">(<a href="references.html#ref-Wickham2010-kt" role="doc-biblioref">H. Wickham 2010</a>)</span> as the <code>ggplot2</code> R-package <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Hadley Wickham 2016</a>)</span>. An overview of <code>ggplot2</code> is given in Section @ref(ggplot). The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in @ref(deggust).</p>
+<p><a href="basics.html">Chapter&nbsp;<span>1</span></a> described a number of basic terms and concepts in experimental designs. In this chapter, I dissect these basic terms in order to build the “grammar of experimental designs”. The so-called grammar of experimental designs is a term that is heavily influenced by <span class="citation" data-cites="Wilkinson2005-oz">Wilkinson (<a href="references.html#ref-Wilkinson2005-oz" role="doc-biblioref">2005</a>)</span>, who use the term “grammar of graphics” to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation <span class="citation" data-cites="Wickham2010-kt">(<a href="references.html#ref-Wickham2010-kt" role="doc-biblioref">H. Wickham 2010</a>)</span> as the <code>ggplot2</code> R-package <span class="citation" data-cites="ggplot2">(<a href="references.html#ref-ggplot2" role="doc-biblioref">Hadley Wickham 2016</a>)</span>. An overview of <code>ggplot2</code> is given in <a href="#sec-ggplot">Section&nbsp;<span>2.4</span></a>. The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in <a href="#sec-deggust">Section&nbsp;<span>2.5</span></a>.</p>
 <p>Henceforth, “grammar” refers to the grammar of experimental designs unless explicitly stated otherwise.</p>
 <section id="fundamental-terminology" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fundamental-terminology"><span class="header-section-number">2.1</span> Fundamental terminology</h2>
-<p>Section @ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a <strong>factor</strong> in the design. The two primary roles of a factor are <strong>treatments</strong> and <strong>units</strong>; under this categorisation blocks, experimental units and observational units are all just units – the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
+<p><a href="basics.html#sec-terminology">Section&nbsp;<span>1.1</span></a> describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a <strong>factor</strong> in the design. The two primary roles of a factor are <strong>treatments</strong> and <strong>units</strong>; under this categorisation blocks, experimental units and observational units are all just units – the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
 <div class="info callout callout callout-style-simple no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -283,11 +279,11 @@ Note
 </div>
 </div>
 </div>
-<p>Table @ref(tab:exam-table) shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e.&nbsp;an observational unit can only be uniquely identified by using information across multiple factors. <strong>In the grammar, a factor cannot be implicitly assumed from other factors.</strong> This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified in the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure.</p>
+<p>Table <span class="citation" data-cites="tab:exam-table">(<a href="references.html#ref-tab:exam-table" role="doc-biblioref"><strong>tab:exam-table?</strong></a>)</span> shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e.&nbsp;an observational unit can only be uniquely identified by using information across multiple factors. <strong>In the grammar, a factor cannot be implicitly assumed from other factors.</strong> This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified in the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
-<caption>The above table shows the exam time allocation for every subject-student combination.</caption>
+<caption>The table below shows the exam time allocation for every subject-student combination.</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> Exam Booklet </th>
@@ -458,6 +454,12 @@ Note
 <li>converting edibble graph to edibble using <code>serve_table</code> and</li>
 <li>converting existing data frame to edibble using <code>edibble</code>.</li>
 </ol>
+</section>
+<section id="sec-ggplot" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-ggplot"><span class="header-section-number">2.4</span> The (layered) grammar of graphics</h2>
+</section>
+<section id="sec-deggust" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-deggust"><span class="header-section-number">2.5</span> Graphics for design of experiments</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
