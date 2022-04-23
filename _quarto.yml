@@ -26,8 +26,8 @@ book:
     - cookbook.qmd
     - references.qmd
 
-comments:
-  hypothesis: true
+#comments:
+#  hypothesis: true
        
 bibliography: book.bib
 
