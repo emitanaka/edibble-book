@@ -17,14 +17,14 @@ Grammar  makes  language  expressive.  A  language  consisting  of  words and no
 
 :::
 
-Chapter \@ref(basics) described a number of basic terms and concepts in experimental designs. In this chapter, I dissect these basic terms in order to build the "grammar of experimental designs". 
-The so-called grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation [@Wickham2010-kt] as the `ggplot2` R-package [@ggplot2]. An overview of `ggplot2` is given in Section \@ref(ggplot). The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in \@ref(deggust). 
+[Chapter -@sec-basics] described a number of basic terms and concepts in experimental designs. In this chapter, I dissect these basic terms in order to build the "grammar of experimental designs". 
+The so-called grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation [@Wickham2010-kt] as the `ggplot2` R-package [@ggplot2]. An overview of `ggplot2` is given in @sec-ggplot. The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in @sec-deggust. 
 
 Henceforth, "grammar" refers to the grammar of experimental designs unless explicitly stated otherwise.
 
 ## Fundamental terminology
 
-Section \@ref(terminology) describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental units and observational units are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
+@sec-terminology describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a **factor** in the design. The two primary roles of a factor are **treatments** and **units**; under this categorisation blocks, experimental units and observational units are all just units -- the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
 
 ::: {.info .callout}
 
@@ -54,14 +54,13 @@ plot_lvl_graph(des, view = "static", height = "400px", seed = 1,
      title = c("Level graph for a split plot design" = "font-weight:bold;text-align:center;"))
 ```
 
-
 ::: {.info .callout}
 
 All nodes in the factor graph must be explicitly named. 
 
 :::
 
-Table \@ref(tab:exam-table) shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e. an observational unit can only be uniquely identified by using information across multiple factors. **In the grammar, a factor cannot be implicitly assumed from other factors.** This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified in the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure. 
+Table @tab:exam-table shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e. an observational unit can only be uniquely identified by using information across multiple factors. **In the grammar, a factor cannot be implicitly assumed from other factors.** This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified in the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure. 
 
 ```{r exam-table, echo = FALSE}
 expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>% 
@@ -69,7 +68,7 @@ expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>%
                 `Exam Booklet` = 1:4, 
                 Score = c(58, 90, 39, 80)) %>% 
   dplyr::select(4, c(1:3, 5)) %>% 
-  knitr::kable(align = "rlrrr", caption = "The above table shows the exam time allocation for every subject-student combination.") %>% 
+  knitr::kable(align = "rlrrr", caption = "The table below shows the exam time allocation for every subject-student combination.") %>% 
   kableExtra::kable_classic(full_width = TRUE)
 ```
 
@@ -151,3 +150,8 @@ An edibble data frame is produced when the variables can be laid out in a [tidy 
 
 (1) converting edibble graph to edibble using `serve_table` and 
 (2) converting existing data frame to edibble using `edibble`. 
+
+## The (layered) grammar of graphics {#sec-ggplot}
+
+
+## Graphics for design of experiments {#sec-deggust}
