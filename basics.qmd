@@ -52,7 +52,7 @@ A new statistical method is proposed as a better alternative for classification 
 :::
  
 
-## Basic terminology {#terminology}
+## Basic terminology {#sec-terminology}
 
 The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:
 
@@ -112,11 +112,47 @@ In some cases, you can use physical tools to do your randomisation so long as th
 
 Not all experiments can allocate treatments to units randomly, e.g. you can't get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as *quasi-experiments* or *natural experiments*. 
 
+**Optimisation** in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, 
+
+$$\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}$$
+where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\beta}$ is a vector of experimental factor effects (e.g. treatment, block, etc), $\mathbf{X}$ is the so-called **design matrix** (comprising of 0s and 1s) that map the experimental factor levels to a response, and  $\boldsymbol{e}$ is a vector of errors. 
+
+If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-}$ where $(\mathbf{X}^\top\mathbf{X})^{-}$ is the generalised inverse of $\mathbf{X}^\top\mathbf{X}$ -- typically we construct $\mathbf{X}$ as a full rank matrix (e.g. by removing the column corresponding to the baseline level of a factor, which is equivalent to the treatment constraint) so $(\mathbf{X}^\top\mathbf{X})^{-}$ is just $(\mathbf{X}^\top\mathbf{X})^{-1}$. Under these assumptions we have 
+
+$$var(\hat{\boldsymbol{\beta}}) \propto $(\mathbf{X}^\top\mathbf{X})^{-1}.$$
+The list of optimal-criteria are:
+
+* **A-optimality** finds $\mathbf{X}$ such that it minimises $\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$,
+* **C-optimality** finds $\mathbf{X}$ such that it minimises $var(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$,
+* **D-optimality** finds $\mathbf{X}$ such that it maximises $det\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$,
+* **E-optimality** finds $\mathbf{X}$ such that it maximises the minimume eigenvalue of $(\mathbf{X}^\top\mathbf{X})^{-1}$,
+* ... and so many more 
+
+::: callout-warning
+
+## Optimised designs are not necessary randomised
+
+This means that even if the design has been constructed as to optimise some criteria, you are missing out on the benefits of the randomisation. Some experimental structure results in a multiple possible treatment allocations with the same optimal criteria and the software may be selecting this in a systematic way. 
+
+:::
+
+
+::: callout-warning
+
+## Optimal designs for complex experiments
+
+Optimised designs for complex experiments can be computationally expensive. In these cases, the algorithm may be searching heuristically. You should try searching under different starting values and compare the optimal criteria obtained.
+
+:::
+
 ### Bias and confounding
 
 **Biases** can lurk into an experiment in many forms.
 
 ::: callout-note
+
+
+
 
 ## Examples of biases
 
