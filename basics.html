@@ -338,7 +338,7 @@ Note
 <section id="randomisation-and-optimisation" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="randomisation-and-optimisation"><span class="header-section-number">1.2.1</span> Randomisation and optimisation</h3>
 <p><strong>Randomisation</strong> in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome of the allocation is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is <strong>systematic</strong> allocations of treatments to units – this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.</p>
-<p>Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don’t know about – if you did, you could try to control that variable in your experiment. Randomisation protects the experiment, with no guarantee however, from potential bias.</p>
+<p>Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don’t know about – if you did, you could try to control that variable in your experiment. <em>Randomisation protects the experiment, with no guarantee however, from potential bias.</em></p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -413,7 +413,7 @@ Where <span class="math inline">\(\mathbf{X}\)</span> is not full rank
 </tr>
 <tr class="even">
 <td>E-optimality</td>
-<td>maximises the minimum eigenvalue of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></td>
+<td>maximise the minimum eigenvalue of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -427,7 +427,7 @@ Optimised designs are not necessary randomised
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This means that even if the design has been constructed as to optimise some criteria, you are missing out on the benefits of the randomisation. Some experimental structure results in a multiple possible treatment allocations with the same optimal criteria and the software may be selecting this in a systematic way.</p>
+<p>This means that even if the design has been constructed as to optimise some criteria, you are possibly <em>missing out on the benefits of the randomisation</em>. Some experimental structure results in a multiple possible treatment allocations with the same optimal criteria and the software may be selecting this in a systematic way.</p>
 </div>
 </div>
 <div class="callout-warning callout callout-style-default callout-captioned">
@@ -464,7 +464,23 @@ Examples of biases
 </ol>
 </div>
 </div>
-<p>Biases are not necessary introduced into study with malicious or known intent (e.g.&nbsp;trying to ensure certain treatments have a better outcome by manipulating the treatment assignment). The third example is a case where the intention of the doctor is well but is introducing a selection bias.</p>
+<p>Biases are not necessary introduced into the study with malicious or known intent (e.g.&nbsp;trying to ensure certain treatments have a better outcome by manipulating the treatment assignment). The third example is a case where the intention of the doctor is well but is introducing a selection bias.</p>
+<p>Bias is counteracted generally by employing randomisation in the design.</p>
+<p>Confounding, which may or may not be the result of a bias, is when the factors in the design are highly correlated which makes it hard to distinguish which factor influenced the outcome with certainty. If an experimental factor of interest is confounded with some other factor, whether that be latent or not, then you do need to redo your experiment removing or adjusting this confounding.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+All experiments are confounded and some confounding are okay
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In essence, all experiments are confounded. In an unstructured experiment, the units are confounded with treatment – even with enough replications, you can only distinguish the effects if the response is an additive model of contributions from the treatment and the individual, otherwise there’s little value you will get from this experiment.</p>
+<p>Some confounding are acceptable. For example, in a randomised block experiment, different technicians may be assigned to each block. This will confound the effects of blocks and effects of technicians, but so long as these effects can be disaggregated from noise and the treatment effects, it’s not of a high concern to delineate the individual contributions from blocks and technicians.</p>
+</div>
+</div>
 </section>
 <section id="replications-repetition-and-duplication" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.3</span> Replications, repetition and duplication</h3>
