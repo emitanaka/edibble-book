@@ -168,7 +168,7 @@ This means that even if the design has been constructed as to optimise some crit
 
 ::: callout-warning
 
-## Optimal designs for complex experiments
+## Optimised designs for complex experiments
 
 Optimised designs for complex experiments can be computationally expensive. In these cases, the algorithm may be searching heuristically. You should try searching under different starting values and compare the optimal criteria obtained.
 
