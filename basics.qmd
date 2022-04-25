@@ -23,7 +23,7 @@ At the heart of each experiment, we are ultimately seeking confidence in any con
 
 All experiments have a cost whether that be financial, resources, time or other. We can consider the **experimental cost** as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite -- you only have one chance to do the experiment -- so it's absolutely essential that you plan, design and execute the experiment well.
 
-Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in [Chapter -@sec-context], describe a system that  encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in [Chapter -@sec-grammar], implemented as the `edibble` R-package and present how to get started with the `edibble` system to construct experimental design in [Chapter -@sec-edibble].
+Doing an experiment well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e. how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in [Chapter -@sec-context], then describe a system that  encourages higher order thinking of the experimental design, termed the grammar of experimental designs, in [Chapter -@sec-grammar], implemented as the `edibble` R-package and present how to get started with the `edibble` system to construct experimental design in [Chapter -@sec-edibble].
 
 Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
  
@@ -54,7 +54,7 @@ A new statistical method is proposed as a better alternative for classification 
 
 ## Basic terminology {#sec-terminology}
 
-The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:
+The field of experimental design is large and is applied to many domains, e.g. biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:
 
 * **treatments**: the whole set of experimental conditions in which the units are subjected to,
 * **experimental unit**: the smallest unit in which the treatment can independently be applied,
@@ -123,7 +123,7 @@ where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\be
 
 ::: {.callout-note icon=false}
 
-# `r eunit1()`  Design matrix for plant growth example
+## `r eunit1()`  Design matrix for plant growth example
 
 Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$, below shows the mapping of the six plant units to the baterial strain.
 
@@ -204,6 +204,9 @@ Some confounding are acceptable. For example, in a randomised block experiment, 
 
 :::
 
+### Choices of treatments
+
+The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.
 
 ### Replications, repetition and duplication
 
