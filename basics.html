@@ -367,11 +367,11 @@ How to randomise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, <span class="math inline">\(\mathbf{X}\)</span>, below shows the mapping fo the six plant units to the baterial strain.</p>
+<p>Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, <span class="math inline">\(\mathbf{X}\)</span>, below shows the mapping of the six plant units to the baterial strain.</p>
 <p><span class="math display">\[\mathbf{X} = \begin{bmatrix}1 &amp; 0 &amp; 0  \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 1  &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}\]</span></p>
 </div>
 </div>
-<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}\)</span> where <span class="math inline">\(\mathbf{X}\)</span> is assumed to be full rank. Note in particular that <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}\)</span> so if the model is reasonable then the variance of parameter estimates is determined by the design matrix.</p>
+<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}\)</span> where <span class="math inline">\(\mathbf{X}\)</span> is assumed to be full rank. Note in particular that <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}\)</span> and the construction of <span class="math inline">\(\mathbf{X}\)</span> is what we normally have control over at the experimental design stage.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -382,17 +382,41 @@ Where <span class="math inline">\(\mathbf{X}\)</span> is not full rank
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(\mathbf{X}\)</span> is not full rank, then there are many possible inverses of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, termed <strong>generalised inverse</strong> with notation as <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span>. In these circumstances, the software generally makes choices for you (without you knowing or not) which generalised inverse is used.</p>
+<p>If <span class="math inline">\(\mathbf{X}\)</span> is not full rank, then there are many possible inverses of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, termed <strong>generalised inverse</strong> with notation as <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span>. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how the generalised inverse is constructed. In most cases this doesn’t pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse.</p>
+<p>We’ll assume that <span class="math inline">\(\mathbf{X}\)</span> is full rank for this book.</p>
 </div>
 </div>
-<p>The list of optimal-criteria are:</p>
-<ul>
-<li><strong>A-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span>,</li>
-<li><strong>C-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(var(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})\)</span>,</li>
-<li><strong>D-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it maximises <span class="math inline">\(det\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span>,</li>
-<li><strong>E-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it maximises the minimume eigenvalue of <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span>,</li>
-<li>… and so many more</li>
-</ul>
+<p>Most optimal-criteria is based on optimising some function based on <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span> or <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, also known as the <strong>information matrix</strong> (although to be more specific, the actual information matrix corresponds to <span class="math inline">\(\sigma^{-2}\mathbf{X}^\top\mathbf{X}\)</span>). The list of optimal-criteria are shown in Table XX.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criteria</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A-optimality</td>
+<td>minimise <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span></td>
+</tr>
+<tr class="even">
+<td>C-optimality</td>
+<td>minimise <span class="math inline">\(\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})\)</span> where <span class="math inline">\(\boldsymbol{c}\)</span> is pre-determined vector of constants</td>
+</tr>
+<tr class="odd">
+<td>D-optimality</td>
+<td>maximise <span class="math inline">\(det\left(\mathbf{X}^\top\mathbf{X}\right)\)</span></td>
+</tr>
+<tr class="even">
+<td>E-optimality</td>
+<td>maximises the minimum eigenvalue of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></td>
+</tr>
+</tbody>
+</table>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
