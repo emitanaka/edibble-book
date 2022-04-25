@@ -35,6 +35,9 @@ format:
   html:
     theme: 
      - style.scss
+    header-includes: |
+      <link rel="stylesheet" href="/assets/fontawesome-free-6.1.1-web/css/font-awesome.min.css">
+      <script defer src="/assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
   #pdf:
   #  documentclass: scrreprt
 

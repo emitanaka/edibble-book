@@ -27,25 +27,25 @@ Doing an experimental well requires a good understanding of the subject matter s
 
 Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn't serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.
  
-::: {.callout-note}
+::: {.callout-note icon=false}
 
-## Scenario 1: plant growth  `r eunit1()` 
+## `r eunit1()` Scenario 1: plant growth  
 
-Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.
+Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study three bacterial strains known for promoting plant growth under osmotic stress.
 
 :::
 
-::: {.callout-note}
+::: {.callout-note icon=false}
 
-## Scenario 2: wine tasting `r eunit2()`
+## `r eunit2()` Scenario 2: wine tasting 
 
 A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine. 
 
 :::
 
-::: {.callout-note}
+::: {.callout-note icon=false}
 
-## Scenario 3: new classification method `r eunit3()`
+## `r eunit3()` Scenario 3: new classification method 
 
 A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark  datasets, was carried out to compare the method under different metrics. 
 
@@ -74,9 +74,9 @@ In addition to above, there are commonly understood terminology that refer to th
 * **orthogonal design**
 * **complete design**: every treatment appears exactly once in each block or cluster.
 
-::: {.callout-note}
+::: {.callout-note icon=false}
 
-## plant growth
+## `r eunit1()`  plant growth
 
 * The experimental aim is to study the effects of plant growth of four particular bacterial strains. 
 * The experimental units are ... 
@@ -117,9 +117,30 @@ Not all experiments can allocate treatments to units randomly, e.g. you can't ge
 $$\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}$$
 where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\beta}$ is a vector of experimental factor effects (e.g. treatment, block, etc), $\mathbf{X}$ is the so-called **design matrix** (comprising of 0s and 1s) that map the experimental factor levels to a response, and  $\boldsymbol{e}$ is a vector of errors. 
 
-If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-}$ where $(\mathbf{X}^\top\mathbf{X})^{-}$ is the generalised inverse of $\mathbf{X}^\top\mathbf{X}$ -- typically we construct $\mathbf{X}$ as a full rank matrix (e.g. by removing the column corresponding to the baseline level of a factor, which is equivalent to the treatment constraint) so $(\mathbf{X}^\top\mathbf{X})^{-}$ is just $(\mathbf{X}^\top\mathbf{X})^{-1}$. Under these assumptions we have 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
-$$var(\hat{\boldsymbol{\beta}}) \propto $(\mathbf{X}^\top\mathbf{X})^{-1}.$$
+
+::: {.callout-note icon=false}
+
+# `r eunit1()`  Design matrix for plant growth example
+
+Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$ below shows the mapping fo the six plant units to the baterial strain.
+
+$$\mathbf{X} = \begin{bmatrix}1 & 0 & 0  \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1  & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}$$
+
+
+:::
+
+If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}$ where $\mathbf{X}$ is assumed to be full rank. Note in particular that $var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}$ so if the model is reasonable then the variance of parameter estimates is determined by the design matrix.
+
+::: callout-note
+
+## Where  $\mathbf{X}$ is not full rank
+
+If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. 
+
+:::
+
 The list of optimal-criteria are:
 
 * **A-optimality** finds $\mathbf{X}$ such that it minimises $\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$,
@@ -128,6 +149,8 @@ The list of optimal-criteria are:
 * **E-optimality** finds $\mathbf{X}$ such that it maximises the minimume eigenvalue of $(\mathbf{X}^\top\mathbf{X})^{-1}$,
 * ... and so many more 
 
+
+
 ::: callout-warning
 
 ## Optimised designs are not necessary randomised
@@ -135,6 +158,7 @@ The list of optimal-criteria are:
 This means that even if the design has been constructed as to optimise some criteria, you are missing out on the benefits of the randomisation. Some experimental structure results in a multiple possible treatment allocations with the same optimal criteria and the software may be selecting this in a systematic way. 
 
 :::
+
 
 
 ::: callout-warning
