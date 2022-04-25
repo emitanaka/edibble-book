@@ -124,7 +124,7 @@ where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\be
 
 # `r eunit1()`  Design matrix for plant growth example
 
-Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$ below shows the mapping fo the six plant units to the baterial strain.
+Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$, below shows the mapping fo the six plant units to the baterial strain.
 
 $$\mathbf{X} = \begin{bmatrix}1 & 0 & 0  \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1  & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}$$
 
