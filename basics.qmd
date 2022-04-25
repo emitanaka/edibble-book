@@ -138,9 +138,9 @@ If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\b
 
 ## Where  $\mathbf{X}$ is not full rank
 
-If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how the generalised inverse is constructed. In most cases this doesn't pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse. 
+If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how either to modify $\mathbf{X}$ or the generalised inverse is constructed. In most cases this doesn't pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse. 
 
-We'll assume that $\mathbf{X}$ is full rank for this book.
+Under experiments with multiple factors (which is most experiments), including where interaction effects are assumed, $\mathbf{X}$ is _not_ full rank. We assume that $\mathbf{X}$ is full rank for this book, unless there is a need to explicitly address the issue. 
 
 :::
 
