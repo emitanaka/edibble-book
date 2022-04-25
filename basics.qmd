@@ -137,7 +137,7 @@ If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\b
 
 ## Where  $\mathbf{X}$ is not full rank
 
-If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. 
+If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (without you knowing or not) which generalised inverse is used.
 
 :::
 
