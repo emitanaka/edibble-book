@@ -124,30 +124,35 @@ where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\be
 
 # `r eunit1()`  Design matrix for plant growth example
 
-Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$, below shows the mapping fo the six plant units to the baterial strain.
+Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, $\mathbf{X}$, below shows the mapping of the six plant units to the baterial strain.
 
 $$\mathbf{X} = \begin{bmatrix}1 & 0 & 0  \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1  & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}$$
 
 
 :::
 
-If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}$ where $\mathbf{X}$ is assumed to be full rank. Note in particular that $var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}$ so if the model is reasonable then the variance of parameter estimates is determined by the design matrix.
+If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}$ where $\mathbf{X}$ is assumed to be full rank. Note in particular that $var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}$ and the construction of $\mathbf{X}$ is what we normally have control over at the experimental design stage. 
 
 ::: callout-note
 
 ## Where  $\mathbf{X}$ is not full rank
 
-If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (without you knowing or not) which generalised inverse is used.
+If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how the generalised inverse is constructed. In most cases this doesn't pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse. 
+
+We'll assume that $\mathbf{X}$ is full rank for this book.
 
 :::
 
-The list of optimal-criteria are:
+Most optimal-criteria is based on optimising some function based on  $(\mathbf{X}^\top\mathbf{X})^{-1}$ or $\mathbf{X}^\top\mathbf{X}$, also known as the **information matrix** (although to be more specific, the actual information matrix corresponds to $\sigma^{-2}\mathbf{X}^\top\mathbf{X}$). The list of optimal-criteria are shown in Table XX.
 
-* **A-optimality** finds $\mathbf{X}$ such that it minimises $\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$,
-* **C-optimality** finds $\mathbf{X}$ such that it minimises $var(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$,
-* **D-optimality** finds $\mathbf{X}$ such that it maximises $det\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$,
-* **E-optimality** finds $\mathbf{X}$ such that it maximises the minimume eigenvalue of $(\mathbf{X}^\top\mathbf{X})^{-1}$,
-* ... and so many more 
+| Criteria | Description |
+| --- | --- |
+| A-optimality  |  minimise $\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$ |
+| C-optimality | minimise $\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$ where $\boldsymbol{c}$ is pre-determined vector of constants |
+| D-optimality | maximise $det\left(\mathbf{X}^\top\mathbf{X}\right)$ |
+| E-optimality | maximises the minimum eigenvalue of $\mathbf{X}^\top\mathbf{X}$ |
+
+
 
 
 
