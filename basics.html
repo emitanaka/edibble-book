@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.301">
+<meta name="generator" content="quarto-0.9.305">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,6 +83,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
+<link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/font-awesome.min.css">
+<script defer="" src="./assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -246,39 +248,39 @@ Note
 <p>All experiments have a cost whether that be financial, resources, time or other. We can consider the <strong>experimental cost</strong> as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite – you only have one chance to do the experiment – so it’s absolutely essential that you plan, design and execute the experiment well.</p>
 <p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in <span class="quarto-unresolved-ref">?sec-context</span>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in <a href="grammar.html">Chapter&nbsp;<span>2</span></a>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in <a href="edibble.html">Chapter&nbsp;<span>3</span></a>.</p>
 <p>Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn’t serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Scenario 1: plant growth <i class="fas fa-seedling"></i>
+<i class="fas fa-seedling"></i> Scenario 1: plant growth
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study four bacterial strains known for promoting plant growth under osmotic stress.</p>
+<p>Microbes have a potential for promoting plant growth by increasing abiotic stress tolerance of the plant. An experiment is conducted to study three bacterial strains known for promoting plant growth under osmotic stress.</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Scenario 2: wine tasting <i class="fas fa-wine-bottle"></i>
+<i class="fas fa-wine-bottle"></i> Scenario 2: wine tasting
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>A large-scale experiment was conducted to discern whether expensive wines are good value for money. The experiment involved 450 individuals in a public tasting of expensive or inexpensive wine. The taster did not know whether they were tasting the expensive or inexpensive wine.</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Scenario 3: new classification method <i class="fas fa-laptop"></i>
+<i class="fas fa-laptop"></i> Scenario 3: new classification method
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -308,13 +310,13 @@ Scenario 3: new classification method <i class="fas fa-laptop"></i>
 <li><strong>orthogonal design</strong></li>
 <li><strong>complete design</strong>: every treatment appears exactly once in each block or cluster.</li>
 </ul>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-plant growth
+<i class="fas fa-seedling"></i> plant growth
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -354,8 +356,36 @@ How to randomise
 <p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as <em>quasi-experiments</em> or <em>natural experiments</em>.</p>
 <p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model,</p>
 <p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span> where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
-<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-}\)</span> where <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span> is the generalised inverse of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> – typically we construct <span class="math inline">\(\mathbf{X}\)</span> as a full rank matrix (e.g.&nbsp;by removing the column corresponding to the baseline level of a factor, which is equivalent to the treatment constraint) so <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span> is just <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span>. Under these assumptions we have</p>
-<p><span class="math display">\[var(\hat{\boldsymbol{\beta}}) \propto $(\mathbf{X}^\top\mathbf{X})^{-1}.\]</span> The list of optimal-criteria are:</p>
+<p><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<i class="fas fa-seedling"></i> Design matrix for plant growth example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider again Scenario 1 where an experiment studies three bacterial strains known for promoting plant growth under osmotic stress. The design matrix, <span class="math inline">\(\mathbf{X}\)</span> below shows the mapping fo the six plant units to the baterial strain.</p>
+<p><span class="math display">\[\mathbf{X} = \begin{bmatrix}1 &amp; 0 &amp; 0  \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 1  &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}\]</span></p>
+</div>
+</div>
+<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}\)</span> where <span class="math inline">\(\mathbf{X}\)</span> is assumed to be full rank. Note in particular that <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}\)</span> so if the model is reasonable then the variance of parameter estimates is determined by the design matrix.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Where <span class="math inline">\(\mathbf{X}\)</span> is not full rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\mathbf{X}\)</span> is not full rank, then there are many possible inverses of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, termed <strong>generalised inverse</strong> with notation as <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span>.</p>
+</div>
+</div>
+<p>The list of optimal-criteria are:</p>
 <ul>
 <li><strong>A-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span>,</li>
 <li><strong>C-optimality</strong> finds <span class="math inline">\(\mathbf{X}\)</span> such that it minimises <span class="math inline">\(var(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})\)</span>,</li>
