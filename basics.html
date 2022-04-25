@@ -197,7 +197,8 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#randomisation-and-optimisation" id="toc-randomisation-and-optimisation" class="nav-link" data-scroll-target="#randomisation-and-optimisation"> <span class="header-section-number">1.2.1</span> Randomisation and optimisation</a></li>
   <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.2.2</span> Bias and confounding</a></li>
-  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.3</span> Replications, repetition and duplication</a></li>
+  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">1.2.3</span> Choices of treatments</a></li>
+  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.4</span> Replications, repetition and duplication</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
@@ -246,7 +247,7 @@ Note
 <p>Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You’ll therefore find that most experiments in this book are <strong>comparative experiments</strong>.</p>
 <p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in <a href="management.html">Chapter&nbsp;<span>4</span></a>.</p>
 <p>All experiments have a cost whether that be financial, resources, time or other. We can consider the <strong>experimental cost</strong> as a function of the ability to redo the experiment again. For example, if your experimental resources are based on examination of fossils and the fossils are destroyed in the experimental process, then the cost of the experiment is infinite – you only have one chance to do the experiment – so it’s absolutely essential that you plan, design and execute the experiment well.</p>
-<p>Doing an experimental well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in <span class="quarto-unresolved-ref">?sec-context</span>, describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimetnal designs, in <a href="grammar.html">Chapter&nbsp;<span>2</span></a>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in <a href="edibble.html">Chapter&nbsp;<span>3</span></a>.</p>
+<p>Doing an experiment well requires a good understanding of the subject matter so that potential sources of variation can be controlled or accounted for in the experimental design. Prior to the collection of data, the statistical component of an experiment tends to be focussed on the design of the experiment, i.e.&nbsp;how the treatments are assigned to experimental units under practical constrains to maximise the statistical information of interest. Under this consideration, the statistical problem for experimental design is often reduced to either a randomisation or an optimisation problem and the experimental context may be stripped away in the generation of the design using computer software. We discuss this in <span class="quarto-unresolved-ref">?sec-context</span>, then describe a system that encourages higher order thinking of the experimental design, termed the grammar of experimental designs, in <a href="grammar.html">Chapter&nbsp;<span>2</span></a>, implemented as the <code>edibble</code> R-package and present how to get started with the <code>edibble</code> system to construct experimental design in <a href="edibble.html">Chapter&nbsp;<span>3</span></a>.</p>
 <p>Before we get into the crux of the basics of the experimental design, consider the three scenarios below. Each scenario describes an experiment where technical details have been reduced so it doesn’t serve as a distraction for now. For each scenario, try to see if you can identify what are the basic components to build the design of the experiment.</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -289,7 +290,7 @@ Note
 </div>
 <section id="sec-terminology" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-terminology"><span class="header-section-number">1.1</span> Basic terminology</h2>
-<p>The field of experimental design is large and is applied to many domains. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
+<p>The field of experimental design is large and is applied to many domains, e.g.&nbsp;biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
 <ul>
 <li><strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
 <li><strong>experimental unit</strong>: the smallest unit in which the treatment can independently be applied,</li>
@@ -482,8 +483,12 @@ All experiments are confounded and some confounding are okay
 </div>
 </div>
 </section>
-<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.3</span> Replications, repetition and duplication</h3>
+<section id="choices-of-treatments" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.2.3</span> Choices of treatments</h3>
+<p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
+</section>
+<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.4</span> Replications, repetition and duplication</h3>
 <p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). To distinguish the individual variation from the treatment variation, you need <strong>replication</strong> of the treatment allocation to another <em>independent</em> unit.</p>
 <p>As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a> – 2 treatments are allocated to 3 participants each. If you ever only look at the outcome of a single replication in isolation, you wouldn’t know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.</p>
 <div class="cell">
@@ -497,11 +502,11 @@ All experiments are confounded and some confounding are okay
 </div>
 </div>
 <p>Suppose now that in <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a>, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants.</p>
-<section id="how-many-replications" class="level4" data-number="1.2.3.1">
-<h4 data-number="1.2.3.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.3.1</span> How many replications?</h4>
+<section id="how-many-replications" class="level4" data-number="1.2.4.1">
+<h4 data-number="1.2.4.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.4.1</span> How many replications?</h4>
 </section>
-<section id="pseudo-replications" class="level4" data-number="1.2.3.2">
-<h4 data-number="1.2.3.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.3.2</span> Pseudo-replications</h4>
+<section id="pseudo-replications" class="level4" data-number="1.2.4.2">
+<h4 data-number="1.2.4.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4.2</span> Pseudo-replications</h4>
 </section>
 </section>
 </section>
