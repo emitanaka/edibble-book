@@ -222,7 +222,56 @@ knitr::include_graphics("figures/drawn/replications.png")
 Suppose now that in @fig-replication, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants. 
 
 
+::: callout-note
+
+## Common phrases for replication 
+
+When we say:
+
+* "no replication", this is equivalent to one replication,
+* "a [particular treatment level] is replicated" then it means that the treatment level has two or more replications,
+* "unreplicated experiment" means that the experiment has no replication,
+* "partial replication" means that a proportion of the treatments are replicated.
+
+:::
+
+::: callout-note
+
+## Partially replicated experiment
+
+Consider an experiment with two treatments with two replicates for the first treatment and one replicate for the second treatment. This is a partially replicated (or $p$-rep) experiment and proportion replicated ($p$) is 0.5. 
+
+
+:::
+
+
+A distinction must be made about replication, repetition and duplication. Replication refers to the allocation of same treatment to independent units. Repetition refers to the allocation of same treatment to another unit, which may or may not be independent. Duplication refers to repeated measurement of the same unit. This distinction often cannot be made just looking at the experimental data.
+
+
+```{r tab-rrp, echo = FALSE, message = FALSE}
+library(tidyverse)
+tibble(block = rep(1:3, 2),
+       unit = 1:6,
+       trt = c("A", "A", "B", "B", "C", "C"),
+       response = c(10.1, 9.8, 8.8, 8.8, 7.4, 7.5)) %>% 
+  knitr::kable(caption = "A dummy experimental data. Is the treatment replicated here?") %>% 
+  kableExtra::kable_classic()
+```
+
+
+
+
 #### How many replications?
+
+Where treatments are independent (see Section X on correlated treatments), then it's optimal to have equal, or near-equal, number of replications for each treatment. 
+
+A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g. statistical power and expected effect size (or its difference). 
+
+Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It's better to have some replication, even if it's only one more. 
+
+Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constrains and so on.
+
+
 
 #### Pseudo-replications
 
