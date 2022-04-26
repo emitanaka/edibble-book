@@ -1,5 +1,9 @@
 # Preface {-}
 
+```{r setup, include = FALSE}
+source("setup.R")
+knitr::read_chunk("setup.R")
+```
 
 ```{r child="work-in-progress.qmd"}
 ```
