@@ -249,13 +249,11 @@ A distinction must be made about replication, repetition and duplication. Replic
 
 
 ```{r tab-rrp, echo = FALSE, message = FALSE}
-library(tidyverse)
-tibble(block = rep(1:3, 2),
+df <- data.frame(block = rep(1:3, 2),
        unit = 1:6,
        trt = c("A", "A", "B", "B", "C", "C"),
-       response = c(10.1, 9.8, 8.8, 8.8, 7.4, 7.5)) %>% 
-  knitr::kable(caption = "A dummy experimental data. Is the treatment replicated here?") %>% 
-  kableExtra::kable_classic()
+       response = c(10.1, 9.8, 8.8, 8.8, 7.4, 7.5))
+kableExtra::kable_classic(knitr::kable(df, caption = "A dummy experimental data. Is the treatment replicated here?"))
 ```
 
 
