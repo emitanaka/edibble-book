@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.309">
+<meta name="generator" content="quarto-0.9.312">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -197,13 +197,16 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"> <span class="header-section-number">1.2</span> Principles</a>
   <ul class="collapse">
-  <li><a href="#randomisation-and-optimisation" id="toc-randomisation-and-optimisation" class="nav-link" data-scroll-target="#randomisation-and-optimisation"> <span class="header-section-number">1.2.1</span> Randomisation and optimisation</a></li>
-  <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.2.2</span> Bias and confounding</a></li>
-  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">1.2.3</span> Choices of treatments</a></li>
-  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.4</span> Replications, repetition and duplication</a></li>
+  <li><a href="#randomisation" id="toc-randomisation" class="nav-link" data-scroll-target="#randomisation"> <span class="header-section-number">1.2.1</span> Randomisation</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
+  <li><a href="#optimisation" id="toc-optimisation" class="nav-link" data-scroll-target="#optimisation"> <span class="header-section-number">1.3</span> Optimisation</a>
+  <ul class="collapse">
+  <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.3.1</span> Bias and confounding</a></li>
+  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">1.3.2</span> Choices of treatments</a></li>
+  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.3.3</span> Replications, repetition and duplication</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.4</span> Summary</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.5</span> Exercises</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -338,8 +341,8 @@ Note
 <h2 data-number="1.2" class="anchored" data-anchor-id="principles"><span class="header-section-number">1.2</span> Principles</h2>
 <p>All experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!</p>
 <p>In designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures.</p>
-<section id="randomisation-and-optimisation" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="randomisation-and-optimisation"><span class="header-section-number">1.2.1</span> Randomisation and optimisation</h3>
+<section id="randomisation" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="randomisation"><span class="header-section-number">1.2.1</span> Randomisation</h3>
 <p><strong>Randomisation</strong> in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome of the allocation is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is <strong>systematic</strong> allocations of treatments to units – this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.</p>
 <p>Randomisation is a core principle of experimental design. When you conduct an experiment, you are investigating factors to understand some process or phenomenon, and there will be factors which affect the response that you don’t know about – if you did, you could try to control that variable in your experiment. <em>Randomisation protects the experiment, with no guarantee however, from potential bias.</em></p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -357,7 +360,11 @@ How to randomise
 </div>
 </div>
 <p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as <em>quasi-experiments</em> or <em>natural experiments</em>.</p>
-<p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model,</p>
+</section>
+</section>
+<section id="optimisation" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="optimisation"><span class="header-section-number">1.3</span> Optimisation</h2>
+<p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, say,</p>
 <p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span> where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
 <p><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -374,7 +381,7 @@ How to randomise
 <p><span class="math display">\[\mathbf{X} = \begin{bmatrix}1 &amp; 0 &amp; 0  \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 1  &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1\end{bmatrix}\qquad \boldsymbol{\beta} = \begin{bmatrix}\class{fa-solid fa-virus}{}\\ \class{fa-solid fa-bacterium}{}\\ \class{fa-solid fa-disease}{}\\ \end{bmatrix} \qquad \underset{\text{illustrative}}{\mathbf{X}\boldsymbol{\beta} =  \begin{bmatrix}\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_1\\\class{fa-solid fa-virus}{} \rightarrow \class{fa-solid fa-seedling}{}_2\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_3\\\class{fa-solid fa-bacterium}{} \rightarrow \class{fa-solid fa-seedling}{}_4\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_5\\\class{fa-solid fa-disease}{} \rightarrow \class{fa-solid fa-seedling}{}_6\end{bmatrix}}\]</span></p>
 </div>
 </div>
-<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})\)</span> and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}\)</span> where <span class="math inline">\(\mathbf{X}\)</span> is assumed to be full rank. Note in particular that <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}\)</span> and the construction of <span class="math inline">\(\mathbf{X}\)</span> is what we normally have control over at the experimental design stage.</p>
+<p>If we assume <span class="math inline">\(\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{V})\)</span> where <span class="math inline">\(\mathbf{V}\)</span> is a non-negative definite covariance matrix (often assumed as <span class="math inline">\(\sigma^2\mathbf{I}\)</span>) and <span class="math inline">\(\boldsymbol{\beta}\)</span> are fixed effects, then <span class="math inline">\(\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\mathbf{X}^\top\mathbf{V}^{-1}\boldsymbol{y}\)</span> and <span class="math inline">\(var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\)</span> where <span class="math inline">\(\mathbf{X}\)</span> is assumed to be full rank. Note that the construction of <span class="math inline">\(\mathbf{X}\)</span> is what we normally have control over at the experimental design stage.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -385,41 +392,48 @@ Where <span class="math inline">\(\mathbf{X}\)</span> is not full rank
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(\mathbf{X}\)</span> is not full rank, then there are many possible inverses of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, termed <strong>generalised inverse</strong> with notation as <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-}\)</span>. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how either to modify <span class="math inline">\(\mathbf{X}\)</span> or the generalised inverse is constructed. In most cases this doesn’t pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse.</p>
+<p>If <span class="math inline">\(\mathbf{X}\)</span> is not full rank, then there are many possible inverses of <span class="math inline">\(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\)</span>, termed <strong>generalised inverse</strong> with notation as <span class="math inline">\((\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-}\)</span>. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how either to modify <span class="math inline">\(\mathbf{X}\)</span> or the generalised inverse is constructed. In most cases this doesn’t pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse.</p>
 <p>Under experiments with multiple factors (which is most experiments), including where interaction effects are assumed, <span class="math inline">\(\mathbf{X}\)</span> is <em>not</em> full rank. We assume that <span class="math inline">\(\mathbf{X}\)</span> is full rank for this book, unless there is a need to explicitly address the issue.</p>
 </div>
 </div>
-<p>Most optimal-criteria is based on optimising some function based on <span class="math inline">\((\mathbf{X}^\top\mathbf{X})^{-1}\)</span> or <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span>, also known as the <strong>information matrix</strong> (although to be more specific, the actual information matrix corresponds to <span class="math inline">\(\sigma^{-2}\mathbf{X}^\top\mathbf{X}\)</span>). The list of optimal-criteria are shown in Table XX.</p>
+<p>Most optimal-criteria is based on optimising some function based on <span class="math inline">\((\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\)</span> or <span class="math inline">\(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\)</span>, also known as the <strong>information matrix</strong>. The list of optimal-criteria are shown in Table XX.</p>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Criteria</th>
 <th>Description</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>A-optimality</td>
-<td>minimise <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)\)</span></td>
+<td>minimise <span class="math inline">\(\text{tr}\left((\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\right)\)</span></td>
+<td>average variance of the estimators of parameters of interest</td>
 </tr>
 <tr class="even">
 <td>C-optimality</td>
 <td>minimise <span class="math inline">\(\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})\)</span> where <span class="math inline">\(\boldsymbol{c}\)</span> is pre-determined vector of constants</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>D-optimality</td>
-<td>maximise <span class="math inline">\(det\left(\mathbf{X}^\top\mathbf{X}\right)\)</span></td>
+<td>maximise <span class="math inline">\(\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)\)</span></td>
+<td>sometimes this is adjusted to <span class="math inline">\([\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)]^{\frac{1}{k}}\)</span> where <span class="math inline">\(k\)</span> is the number of parameter</td>
 </tr>
 <tr class="even">
 <td>E-optimality</td>
-<td>maximise the minimum eigenvalue of <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span></td>
+<td>maximise the minimum eigenvalue of <span class="math inline">\(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\)</span></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p>The most popular optimal-criterions are A- and D-optimality.</p>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -446,9 +460,8 @@ Optimised designs for complex experiments
 <p>Optimised designs for complex experiments can be computationally expensive. In these cases, the algorithm may be searching heuristically. You should try searching under different starting values and compare the optimal criteria obtained.</p>
 </div>
 </div>
-</section>
-<section id="bias-and-confounding" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.2.2</span> Bias and confounding</h3>
+<section id="bias-and-confounding" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.3.1</span> Bias and confounding</h3>
 <p><strong>Biases</strong> can lurk into an experiment in many forms.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -485,12 +498,12 @@ All experiments are confounded and some confounding are okay
 </div>
 </div>
 </section>
-<section id="choices-of-treatments" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.2.3</span> Choices of treatments</h3>
+<section id="choices-of-treatments" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.3.2</span> Choices of treatments</h3>
 <p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
 </section>
-<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.4</span> Replications, repetition and duplication</h3>
+<section id="replications-repetition-and-duplication" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.3.3</span> Replications, repetition and duplication</h3>
 <p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). To distinguish the individual variation from the treatment variation, you need <strong>replication</strong> of the treatment allocation to another <em>independent</em> unit.</p>
 <p>As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a> – 2 treatments are allocated to 3 participants each. If you ever only look at the outcome of a single replication in isolation, you wouldn’t know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.</p>
 <div class="cell">
@@ -591,20 +604,20 @@ Partially replicated experiment
 
 </div>
 </div>
-<section id="how-many-replications" class="level4" data-number="1.2.4.1">
-<h4 data-number="1.2.4.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.4.1</span> How many replications?</h4>
+<section id="how-many-replications" class="level4" data-number="1.3.3.1">
+<h4 data-number="1.3.3.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.3.3.1</span> How many replications?</h4>
 <p>Where treatments are independent (see Section X on correlated treatments), then it’s optimal to have equal, or near-equal, number of replications for each treatment.</p>
 <p>A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g.&nbsp;statistical power and expected effect size (or its difference).</p>
 <p>Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It’s better to have some replication, even if it’s only one more.</p>
 <p>Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constrains and so on.</p>
 </section>
-<section id="pseudo-replications" class="level4" data-number="1.2.4.2">
-<h4 data-number="1.2.4.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4.2</span> Pseudo-replications</h4>
+<section id="pseudo-replications" class="level4" data-number="1.3.3.2">
+<h4 data-number="1.3.3.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.3.3.2</span> Pseudo-replications</h4>
 </section>
 </section>
 </section>
-<section id="summary" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.3</span> Summary</h2>
+<section id="summary" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.4</span> Summary</h2>
 <p>The major concepts this chapter covered are:</p>
 <ul>
 <li>basic statistical terminology for experimental design</li>
@@ -612,8 +625,8 @@ Partially replicated experiment
 <li>pitfalls of pseudo-replication</li>
 </ul>
 </section>
-<section id="exercises" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.4</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.5</span> Exercises</h2>
 <ol type="1">
 <li>A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.</li>
 </ol>
