@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.305">
+<meta name="generator" content="quarto-0.9.309">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,6 +83,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/font-awesome.min.css">
 <script defer="" src="./assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
 
@@ -502,8 +504,99 @@ All experiments are confounded and some confounding are okay
 </div>
 </div>
 <p>Suppose now that in <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a>, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Common phrases for replication
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we say:</p>
+<ul>
+<li>“no replication”, this is equivalent to one replication,</li>
+<li>“a [particular treatment level] is replicated” then it means that the treatment level has two or more replications,</li>
+<li>“unreplicated experiment” means that the experiment has no replication,</li>
+<li>“partial replication” means that a proportion of the treatments are replicated.</li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Partially replicated experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider an experiment with two treatments with two replicates for the first treatment and one replicate for the second treatment. This is a partially replicated (or <span class="math inline">\(p\)</span>-rep) experiment and proportion replicated (<span class="math inline">\(p\)</span>) is 0.5.</p>
+</div>
+</div>
+<p>A distinction must be made about replication, repetition and duplication. Replication refers to the allocation of same treatment to independent units. Repetition refers to the allocation of same treatment to another unit, which may or may not be independent. Duplication refers to repeated measurement of the same unit. This distinction often cannot be made just looking at the experimental data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>A dummy experimental data. Is the treatment replicated here?</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> block </th>
+   <th style="text-align:right;"> unit </th>
+   <th style="text-align:left;"> trt </th>
+   <th style="text-align:right;"> response </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 10.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:right;"> 9.8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 8.8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:right;"> 8.8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:right;"> 7.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:right;"> 7.5 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
 <section id="how-many-replications" class="level4" data-number="1.2.4.1">
 <h4 data-number="1.2.4.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.4.1</span> How many replications?</h4>
+<p>Where treatments are independent (see Section X on correlated treatments), then it’s optimal to have equal, or near-equal, number of replications for each treatment.</p>
+<p>A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g.&nbsp;statistical power and expected effect size (or its difference).</p>
+<p>Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It’s better to have some replication, even if it’s only one more.</p>
+<p>Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constrains and so on.</p>
 </section>
 <section id="pseudo-replications" class="level4" data-number="1.2.4.2">
 <h4 data-number="1.2.4.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.4.2</span> Pseudo-replications</h4>
