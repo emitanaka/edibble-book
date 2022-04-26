@@ -94,7 +94,7 @@ All experiments have a potential to go wrong -- plans may not be followed to the
 
 In designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures.  
 
-### Randomisation and optimisation
+### Randomisation
 
 **Randomisation** in the context of experimental design means that the treatment allocation to units were probabilistically determined by a mechanism where the outcome of the allocation is not (consciously or unconsciously) influenced by those involved in the experiment. The opposite spectrum of randomisation is **systematic** allocations of treatments to units -- this means that the allocations are not probabilistic and if you know the systematic order, then you can precisely infer the allocation.  
 
@@ -113,7 +113,9 @@ In some cases, you can use physical tools to do your randomisation so long as th
 
 Not all experiments can allocate treatments to units randomly, e.g. you can't get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as *quasi-experiments* or *natural experiments*. 
 
-**Optimisation** in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, 
+## Optimisation
+
+**Optimisation** in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, say,
 
 $$\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}$$
 where $\boldsymbol{y}$ is a vector of yet unobserved responses, $\boldsymbol{\beta}$ is a vector of experimental factor effects (e.g. treatment, block, etc), $\mathbf{X}$ is the so-called **design matrix** (comprising of 0s and 1s) that map the experimental factor levels to a response, and  $\boldsymbol{e}$ is a vector of errors. 
@@ -132,28 +134,29 @@ $$\mathbf{X} = \begin{bmatrix}1 & 0 & 0  \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1  & 0
 
 :::
 
-If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{I})$ and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{X})^{-1}\mathbf{X}^\top\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{X})^{-1}$ where $\mathbf{X}$ is assumed to be full rank. Note in particular that $var(\hat{\boldsymbol{\beta}}) \propto (\mathbf{X}^\top\mathbf{X})^{-1}$ and the construction of $\mathbf{X}$ is what we normally have control over at the experimental design stage. 
+If we assume $\boldsymbol{e} \sim N(\boldsymbol{0}, \sigma^2\mathbf{V})$ where $\mathbf{V}$ is a non-negative definite covariance matrix (often assumed as $\sigma^2\mathbf{I}$) and $\boldsymbol{\beta}$ are fixed effects, then $\hat{\boldsymbol{\beta}} = (\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\mathbf{X}^\top\mathbf{V}^{-1}\boldsymbol{y}$ and $var(\hat{\boldsymbol{\beta}}) = \sigma^2(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}$ where $\mathbf{X}$ is assumed to be full rank. Note that the construction of $\mathbf{X}$ is what we normally have control over at the experimental design stage. 
 
 ::: callout-note
 
 ## Where  $\mathbf{X}$ is not full rank
 
-If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how either to modify $\mathbf{X}$ or the generalised inverse is constructed. In most cases this doesn't pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse. 
+If $\mathbf{X}$ is not full rank, then there are many possible inverses of $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$, termed **generalised inverse** with notation as $(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-}$. In these circumstances, the software generally makes choices for you (most likely without you knowing) of how either to modify $\mathbf{X}$ or the generalised inverse is constructed. In most cases this doesn't pose any detrimental consequences as most optimal criteria tends to be invariant to the choice of the generalised inverse. 
 
 Under experiments with multiple factors (which is most experiments), including where interaction effects are assumed, $\mathbf{X}$ is _not_ full rank. We assume that $\mathbf{X}$ is full rank for this book, unless there is a need to explicitly address the issue. 
 
 :::
 
-Most optimal-criteria is based on optimising some function based on  $(\mathbf{X}^\top\mathbf{X})^{-1}$ or $\mathbf{X}^\top\mathbf{X}$, also known as the **information matrix** (although to be more specific, the actual information matrix corresponds to $\sigma^{-2}\mathbf{X}^\top\mathbf{X}$). The list of optimal-criteria are shown in Table XX.
+Most optimal-criteria is based on optimising some function based on  $(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}$ or $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$, also known as the **information matrix**. The list of optimal-criteria are shown in Table XX.
 
-| Criteria | Description |
-| --- | --- |
-| A-optimality  |  minimise $\text{tr}\left((\mathbf{X}^\top\mathbf{X})^{-1}\right)$ |
-| C-optimality | minimise $\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$ where $\boldsymbol{c}$ is pre-determined vector of constants |
-| D-optimality | maximise $det\left(\mathbf{X}^\top\mathbf{X}\right)$ |
-| E-optimality | maximise the minimum eigenvalue of $\mathbf{X}^\top\mathbf{X}$ |
+| Criteria | Description | Notes |
+| --- | --- | --- | 
+| A-optimality  |  minimise $\text{tr}\left((\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\right)$ | average variance of the estimators of parameters of interest | 
+| C-optimality | minimise $\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$ where $\boldsymbol{c}$ is pre-determined vector of constants | | 
+| D-optimality | maximise $\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)$ | sometimes this is adjusted to $[\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)]^{\frac{1}{k}}$ where $k$ is the number of parameter  |
+| E-optimality | maximise the minimum eigenvalue of $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$ | |
 
 
+The most popular optimal-criterions are A- and D-optimality. 
 
 
 
