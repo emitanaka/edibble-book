@@ -64,7 +64,9 @@ The field of experimental design is large and is applied to many domains, e.g. b
 * **plan** or **layout**: the actual assignment of treatment to units, and
 * **experimental structure**: the arrangements or constrains of experimental factors -- the structure can be broadly categorised as: 
   * **unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on; and
-  * **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.
+  * **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors,
+* **control** in treatment refers to a standard approach used, e.g. chemotherapy is a standard way to treat patients with particular cancers, and
+* **placebo** means a treatment designed to 
   
 The above terminology describe the experimental factors and its associations. More specifically, **experimental factors** are any variables that pertain to the experiment (physical or otherwise) and includes the treatments, experimental units, observational units and blocks/clusters. The associations of experimental factors include its nesting structure or say the assignment of treatment to units. 
 
@@ -72,7 +74,8 @@ In addition to above, there are commonly understood terminology that refer to th
 
 * **balanced experiment**: refers to when the replication of the treatments are equal,
 * **orthogonal design**
-* **complete design**: every treatment appears exactly once in each block or cluster.
+* **complete block design**: every treatment appears exactly once in each block or cluster, otherwise it is referred to as **incomplete block design**,
+* **blinded experiments**, relevant only to studies involving human subjects, refers to experiments where subjects are not informed about which treatment they received. **Double-blinded** studies means that both those administrating and receipient of the treatment are not informed about the actual treatment. 
 
 ::: {.callout-note icon=false}
 
@@ -113,7 +116,7 @@ In some cases, you can use physical tools to do your randomisation so long as th
 
 Not all experiments can allocate treatments to units randomly, e.g. you can't get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as *quasi-experiments* or *natural experiments*. 
 
-## Optimisation
+### Optimisation
 
 **Optimisation** in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, say,
 
@@ -211,6 +214,8 @@ Some confounding are acceptable. For example, in a randomised block experiment, 
 
 The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.
 
+
+
 ### Replications, repetition and duplication
 
 In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g. computer experiments). To distinguish the individual variation from the treatment variation, you need **replication** of the treatment allocation to another *independent* unit. 
@@ -270,13 +275,34 @@ A related question to the number of replications is sample size calculation. Sam
 
 Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It's better to have some replication, even if it's only one more. 
 
-Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constrains and so on.
+Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constraints and so on.
 
 
 
 #### Pseudo-replications
 
 
+### Blocking 
+
+Blocks are factors that group units that are alike together. Some units have natural discrete divisions, e.g. sex for animals, that should be used for blocking. Some units differ in qualities on a continuous scale (e.g. age, weight, space, time) and artificial thresholds may be chosen to group these units.
+
+::: callout-note
+
+## How to assign units to blocks
+
+Where possible, it is better to have blocks of equal or near-equal size. Also where possible, it is better to have at least one occurence of each treatment in every block. This is of course not possible if the block size is smaller than the number of treatments -- in this case, it is desirable to have every pair of treatments appear equal or near-equal times across blocks. 
+
+:::
+
+::: callout-note
+
+## To include or not include blocking factors in your model?
+
+The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.
+
+My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them. 
+
+:::
 
 ## Summary
 
