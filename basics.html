@@ -198,15 +198,14 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#principles" id="toc-principles" class="nav-link" data-scroll-target="#principles"> <span class="header-section-number">1.2</span> Principles</a>
   <ul class="collapse">
   <li><a href="#randomisation" id="toc-randomisation" class="nav-link" data-scroll-target="#randomisation"> <span class="header-section-number">1.2.1</span> Randomisation</a></li>
+  <li><a href="#optimisation" id="toc-optimisation" class="nav-link" data-scroll-target="#optimisation"> <span class="header-section-number">1.2.2</span> Optimisation</a></li>
+  <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.2.3</span> Bias and confounding</a></li>
+  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">1.2.4</span> Choices of treatments</a></li>
+  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.5</span> Replications, repetition and duplication</a></li>
+  <li><a href="#blocking" id="toc-blocking" class="nav-link" data-scroll-target="#blocking"> <span class="header-section-number">1.2.6</span> Blocking</a></li>
   </ul></li>
-  <li><a href="#optimisation" id="toc-optimisation" class="nav-link" data-scroll-target="#optimisation"> <span class="header-section-number">1.3</span> Optimisation</a>
-  <ul class="collapse">
-  <li><a href="#bias-and-confounding" id="toc-bias-and-confounding" class="nav-link" data-scroll-target="#bias-and-confounding"> <span class="header-section-number">1.3.1</span> Bias and confounding</a></li>
-  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">1.3.2</span> Choices of treatments</a></li>
-  <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.3.3</span> Replications, repetition and duplication</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.4</span> Summary</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.5</span> Exercises</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -306,15 +305,18 @@ Note
 <li><strong>experimental structure</strong>: the arrangements or constrains of experimental factors – the structure can be broadly categorised as:
 <ul>
 <li><strong>unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on; and</li>
-<li><strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors.</li>
+<li><strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors,</li>
 </ul></li>
+<li><strong>control</strong> in treatment refers to a standard approach used, e.g.&nbsp;chemotherapy is a standard way to treat patients with particular cancers, and</li>
+<li><strong>placebo</strong> means a treatment designed to</li>
 </ul>
 <p>The above terminology describe the experimental factors and its associations. More specifically, <strong>experimental factors</strong> are any variables that pertain to the experiment (physical or otherwise) and includes the treatments, experimental units, observational units and blocks/clusters. The associations of experimental factors include its nesting structure or say the assignment of treatment to units.</p>
 <p>In addition to above, there are commonly understood terminology that refer to the properties of experimental designs. These include:</p>
 <ul>
 <li><strong>balanced experiment</strong>: refers to when the replication of the treatments are equal,</li>
 <li><strong>orthogonal design</strong></li>
-<li><strong>complete design</strong>: every treatment appears exactly once in each block or cluster.</li>
+<li><strong>complete block design</strong>: every treatment appears exactly once in each block or cluster, otherwise it is referred to as <strong>incomplete block design</strong>,</li>
+<li><strong>blinded experiments</strong>, relevant only to studies involving human subjects, refers to experiments where subjects are not informed about which treatment they received. <strong>Double-blinded</strong> studies means that both those administrating and receipient of the treatment are not informed about the actual treatment.</li>
 </ul>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -361,9 +363,8 @@ How to randomise
 </div>
 <p>Not all experiments can allocate treatments to units randomly, e.g.&nbsp;you can’t get your participants to smoke to study the effect of smoking, nor can you get a random agricultural land to have a drought to study how well a crop grows under drought conditions. These types of experiments are referred to as <em>quasi-experiments</em> or <em>natural experiments</em>.</p>
 </section>
-</section>
-<section id="optimisation" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="optimisation"><span class="header-section-number">1.3</span> Optimisation</h2>
+<section id="optimisation" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="optimisation"><span class="header-section-number">1.2.2</span> Optimisation</h3>
 <p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, say,</p>
 <p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span> where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
 <p><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></p>
@@ -460,8 +461,9 @@ Optimised designs for complex experiments
 <p>Optimised designs for complex experiments can be computationally expensive. In these cases, the algorithm may be searching heuristically. You should try searching under different starting values and compare the optimal criteria obtained.</p>
 </div>
 </div>
-<section id="bias-and-confounding" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.3.1</span> Bias and confounding</h3>
+</section>
+<section id="bias-and-confounding" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="bias-and-confounding"><span class="header-section-number">1.2.3</span> Bias and confounding</h3>
 <p><strong>Biases</strong> can lurk into an experiment in many forms.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -498,12 +500,12 @@ All experiments are confounded and some confounding are okay
 </div>
 </div>
 </section>
-<section id="choices-of-treatments" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.3.2</span> Choices of treatments</h3>
+<section id="choices-of-treatments" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.2.4</span> Choices of treatments</h3>
 <p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
 </section>
-<section id="replications-repetition-and-duplication" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.3.3</span> Replications, repetition and duplication</h3>
+<section id="replications-repetition-and-duplication" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.5</span> Replications, repetition and duplication</h3>
 <p>In a comparative experiment, treatments are allocated to units but every unit has an individual variation (with exceptions for some, e.g.&nbsp;computer experiments). To distinguish the individual variation from the treatment variation, you need <strong>replication</strong> of the treatment allocation to another <em>independent</em> unit.</p>
 <p>As a simple example, consider <a href="#fig-replication">Figure&nbsp;<span>1.1</span></a> – 2 treatments are allocated to 3 participants each. If you ever only look at the outcome of a single replication in isolation, you wouldn’t know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.</p>
 <div class="cell">
@@ -604,20 +606,51 @@ Partially replicated experiment
 
 </div>
 </div>
-<section id="how-many-replications" class="level4" data-number="1.3.3.1">
-<h4 data-number="1.3.3.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.3.3.1</span> How many replications?</h4>
+<section id="how-many-replications" class="level4" data-number="1.2.5.1">
+<h4 data-number="1.2.5.1" class="anchored" data-anchor-id="how-many-replications"><span class="header-section-number">1.2.5.1</span> How many replications?</h4>
 <p>Where treatments are independent (see Section X on correlated treatments), then it’s optimal to have equal, or near-equal, number of replications for each treatment.</p>
 <p>A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g.&nbsp;statistical power and expected effect size (or its difference).</p>
 <p>Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It’s better to have some replication, even if it’s only one more.</p>
-<p>Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constrains and so on.</p>
+<p>Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constraints and so on.</p>
 </section>
-<section id="pseudo-replications" class="level4" data-number="1.3.3.2">
-<h4 data-number="1.3.3.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.3.3.2</span> Pseudo-replications</h4>
+<section id="pseudo-replications" class="level4" data-number="1.2.5.2">
+<h4 data-number="1.2.5.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.5.2</span> Pseudo-replications</h4>
 </section>
 </section>
+<section id="blocking" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="blocking"><span class="header-section-number">1.2.6</span> Blocking</h3>
+<p>Blocks are factors that group units that are alike together. Some units have natural discrete divisions, e.g.&nbsp;sex for animals, that should be used for blocking. Some units differ in qualities on a continuous scale (e.g.&nbsp;age, weight, space, time) and artificial thresholds may be chosen to group these units.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+How to assign units to blocks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Where possible, it is better to have blocks of equal or near-equal size. Also where possible, it is better to have at least one occurence of each treatment in every block. This is of course not possible if the block size is smaller than the number of treatments – in this case, it is desirable to have every pair of treatments appear equal or near-equal times across blocks.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+To include or not include blocking factors in your model?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.</p>
+<p>My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them.</p>
+</div>
+</div>
 </section>
-<section id="summary" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.4</span> Summary</h2>
+</section>
+<section id="summary" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.3</span> Summary</h2>
 <p>The major concepts this chapter covered are:</p>
 <ul>
 <li>basic statistical terminology for experimental design</li>
@@ -625,8 +658,8 @@ Partially replicated experiment
 <li>pitfalls of pseudo-replication</li>
 </ul>
 </section>
-<section id="exercises" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.5</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.4</span> Exercises</h2>
 <ol type="1">
 <li>A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.</li>
 </ol>
