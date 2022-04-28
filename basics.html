@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.315">
+<meta name="generator" content="quarto-0.9.318">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -407,7 +407,7 @@ Where <span class="math inline">\(\mathbf{V}\)</span> is singular
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In some software, <span class="math inline">\(\mathbf{V}\)</span> may (inadvertentnly or not) allow positive semi-definite matrix. This causes issues when <span class="math inline">\(\mathbf{V}\)</span> becomes singular or when one of the eigenvalues of <span class="math inline">\(\mathbf{V}\)</span> is near-zero and there are some strategies that the software employs to tackle these issues.</p>
+<p>In some software, <span class="math inline">\(\mathbf{V}\)</span> may (inadvertentnly or not) be allowed to be positive semi-definite matrix. This causes issues when <span class="math inline">\(\mathbf{V}\)</span> becomes singular or when one of the eigenvalues of <span class="math inline">\(\mathbf{V}\)</span> is near-zero and there are some strategies that the software employs to tackle these issues.</p>
 </div>
 </div>
 <p>Most optimal-criteria is based on optimising some function based on <span class="math inline">\((\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}\)</span> or <span class="math inline">\(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\)</span>, also known as the <strong>information matrix</strong>. The list of optimal-criteria are shown in Table XX.</p>
@@ -515,7 +515,21 @@ All experiments are confounded and some confounding are okay
 </section>
 <section id="choices-of-treatments" class="level3" data-number="1.2.4">
 <h3 data-number="1.2.4" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.2.4</span> Choices of treatments</h3>
-<p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In the former, screening experiments, which are small scale experiments, may be done first to determine the dose levels for the larger trial. For the latter experiment, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
+<p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In dose finding experiment, small-scale screening experiments may be done first to determine the dose levels for the larger trial. For Latin hyper cube sampling, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
+<p>The effectiveness of any treatment is only established in relation to another treatment, e.g.&nbsp;the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without other comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g.&nbsp;comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don’t make regular use of it.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Choice of control treatment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The control treatment should be chosen such that the comparison is meaningful. For example, a new cancer treatment shouldn’t be compared to “no treatment” but to the standard approach to treat cancer. Not only may it be unethical to assign a “no treatment” to a cancer patient, it is wasteful of experimental resources to design experiments where there there is little interest in comparing to “no treatment”.</p>
+</div>
+</div>
 </section>
 <section id="replications-repetition-and-duplication" class="level3" data-number="1.2.5">
 <h3 data-number="1.2.5" class="anchored" data-anchor-id="replications-repetition-and-duplication"><span class="header-section-number">1.2.5</span> Replications, repetition and duplication</h3>
