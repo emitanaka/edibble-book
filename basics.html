@@ -204,8 +204,10 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.5</span> Replications, repetition and duplication</a></li>
   <li><a href="#blocking" id="toc-blocking" class="nav-link" data-scroll-target="#blocking"> <span class="header-section-number">1.2.6</span> Blocking</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.3</span> Summary</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.4</span> Exercises</a></li>
+  <li><a href="#ethics" id="toc-ethics" class="nav-link" data-scroll-target="#ethics"> <span class="header-section-number">1.3</span> Ethics</a></li>
+  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol"> <span class="header-section-number">1.4</span> Protocol</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.5</span> Summary</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.6</span> Exercises</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -516,7 +518,7 @@ All experiments are confounded and some confounding are okay
 <section id="choices-of-treatments" class="level3" data-number="1.2.4">
 <h3 data-number="1.2.4" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">1.2.4</span> Choices of treatments</h3>
 <p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In dose finding experiment, small-scale screening experiments may be done first to determine the dose levels for the larger trial. For Latin hyper cube sampling, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
-<p>The effectiveness of any treatment is only established in relation to another treatment, e.g.&nbsp;the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without other comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g.&nbsp;comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don’t make regular use of it.</p>
+<p>The effectiveness of any treatment is only established in relation to another treatment, e.g.&nbsp;the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g.&nbsp;comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don’t make regular use of it.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -676,8 +678,16 @@ To include or not include blocking factors in your model?
 </div>
 </section>
 </section>
-<section id="summary" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.3</span> Summary</h2>
+<section id="ethics" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="ethics"><span class="header-section-number">1.3</span> Ethics</h2>
+<p>While the aim of experiments may be to advance our knowledge or understanding, this doesn’t mean all experiments should be conducted. The Belmont report by the <span class="citation" data-cites="belmont">National Commission for the Proptection of Human Subjects of Biomedical and Behavioral Research (<a href="references.html#ref-belmont" role="doc-biblioref">1978</a>)</span> outlines the ethical principles and guidelines for the protection of human subjects of research. A similar guideline would be available for animal subjects.</p>
+</section>
+<section id="protocol" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="protocol"><span class="header-section-number">1.4</span> Protocol</h2>
+<p>Some domains require experimental protocol to be <a href="https://www.cos.io/initiatives/prereg">pre-registered</a>.</p>
+</section>
+<section id="summary" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.5</span> Summary</h2>
 <p>The major concepts this chapter covered are:</p>
 <ul>
 <li>basic statistical terminology for experimental design</li>
@@ -685,8 +695,8 @@ To include or not include blocking factors in your model?
 <li>pitfalls of pseudo-replication</li>
 </ul>
 </section>
-<section id="exercises" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.4</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.6</span> Exercises</h2>
 <ol type="1">
 <li>A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.</li>
 </ol>
@@ -698,6 +708,9 @@ Bailey, Rosemary. 2008. <em>Design of Comparative Experiments</em>.
 </div>
 <div id="ref-Fisher1935-qc" class="csl-entry" role="doc-biblioentry">
 Fisher, Ronald. 1935. <em>The Design of Experiments</em>. Oliver; Boyd.
+</div>
+<div id="ref-belmont" class="csl-entry" role="doc-biblioentry">
+National Commission for the Proptection of Human Subjects of Biomedical and Behavioral Research. 1978. <span>“The Belmont Report: Ethical Principles and Guidelines for the Protection of Human Subjects of Research.”</span> Distributed by ERIC Clearinghouse.
 </div>
 </div>
 </section>
