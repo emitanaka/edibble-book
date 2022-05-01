@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.328">
+<meta name="generator" content="quarto-0.9.339">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,7 +92,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </head>
 
-<body class="floating">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,10 +204,21 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <li><a href="#replications-repetition-and-duplication" id="toc-replications-repetition-and-duplication" class="nav-link" data-scroll-target="#replications-repetition-and-duplication"> <span class="header-section-number">1.2.5</span> Replications, repetition and duplication</a></li>
   <li><a href="#blocking" id="toc-blocking" class="nav-link" data-scroll-target="#blocking"> <span class="header-section-number">1.2.6</span> Blocking</a></li>
   </ul></li>
-  <li><a href="#ethics" id="toc-ethics" class="nav-link" data-scroll-target="#ethics"> <span class="header-section-number">1.3</span> Ethics</a></li>
-  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol"> <span class="header-section-number">1.4</span> Protocol</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.5</span> Summary</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.6</span> Exercises</a></li>
+  <li><a href="#diagnosis" id="toc-diagnosis" class="nav-link" data-scroll-target="#diagnosis"> <span class="header-section-number">1.3</span> Diagnosis</a>
+  <ul class="collapse">
+  <li><a href="#design-anatomy" id="toc-design-anatomy" class="nav-link" data-scroll-target="#design-anatomy"> <span class="header-section-number">1.3.1</span> Design anatomy</a></li>
+  <li><a href="#diagrams" id="toc-diagrams" class="nav-link" data-scroll-target="#diagrams"> <span class="header-section-number">1.3.2</span> Diagrams</a></li>
+  <li><a href="#simulate" id="toc-simulate" class="nav-link" data-scroll-target="#simulate"> <span class="header-section-number">1.3.3</span> Simulate</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"> <span class="header-section-number">1.4</span> Analysis</a>
+  <ul class="collapse">
+  <li><a href="#to-include-or-not-include-blocking-factors-in-your-model" id="toc-to-include-or-not-include-blocking-factors-in-your-model" class="nav-link" data-scroll-target="#to-include-or-not-include-blocking-factors-in-your-model"> <span class="header-section-number">1.4.1</span> To include or not include blocking factors in your model?</a></li>
+  </ul></li>
+  <li><a href="#data-collection-issues" id="toc-data-collection-issues" class="nav-link" data-scroll-target="#data-collection-issues"> <span class="header-section-number">1.5</span> Data collection issues</a></li>
+  <li><a href="#ethics" id="toc-ethics" class="nav-link" data-scroll-target="#ethics"> <span class="header-section-number">1.6</span> Ethics</a></li>
+  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol"> <span class="header-section-number">1.7</span> Protocol</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">1.8</span> Summary</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">1.9</span> Exercises</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -641,9 +652,19 @@ Partially replicated experiment
 <p>A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g.&nbsp;statistical power and expected effect size (or its difference).</p>
 <p>Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It’s better to have some replication, even if it’s only one more.</p>
 <p>Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constraints and so on.</p>
-</section>
-<section id="pseudo-replications" class="level4" data-number="1.2.5.2">
-<h4 data-number="1.2.5.2" class="anchored" data-anchor-id="pseudo-replications"><span class="header-section-number">1.2.5.2</span> Pseudo-replications</h4>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Pseudo-replications
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pseudo-replication refers to the analysis where repetitions of the treatment are treated as replications.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="blocking" class="level3" data-number="1.2.6">
@@ -662,32 +683,53 @@ How to assign units to blocks
 <p>Where possible, it is better to have blocks of equal or near-equal size. Also where possible, it is better to have at least one occurence of each treatment in every block. This is of course not possible if the block size is smaller than the number of treatments – in this case, it is desirable to have every pair of treatments appear equal or near-equal times across blocks.</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-To include or not include blocking factors in your model?
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+</section>
+<section id="diagnosis" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="diagnosis"><span class="header-section-number">1.3</span> Diagnosis</h2>
+<p>This section addresses the statistical diagnosis of an experimental design. In addition, there are non-statistical diagnosis that should be made by the domain experts.</p>
+<section id="design-anatomy" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="design-anatomy"><span class="header-section-number">1.3.1</span> Design anatomy</h3>
+<p>The design anatomy, or sometimes referred to as skeleton anova, shows the decomposition of the degrees of freedom for different sources of variation. This is important in finding out if there are any terms that are aliasing (i.e.&nbsp;perfectly confounded) or have low information.</p>
+</section>
+<section id="diagrams" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="diagrams"><span class="header-section-number">1.3.2</span> Diagrams</h3>
+</section>
+<section id="simulate" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="simulate"><span class="header-section-number">1.3.3</span> Simulate</h3>
+<p>It’s good practice to simulate the data for the given design and try fitting the model in the analysis plan. This can help reflect about your design and also reveal any issues with fitting the planned model. You may plan for some complex model, however keep in mind that it doesn’t mean you can fit that model since you may be hit with issues like where model fails to converge and memory or speed issues with big data.</p>
+</section>
+</section>
+<section id="analysis" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="analysis"><span class="header-section-number">1.4</span> Analysis</h2>
+<p>Before starting the experiment, it is important to have an analysis plan of the experimental data.</p>
+<section id="to-include-or-not-include-blocking-factors-in-your-model" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="to-include-or-not-include-blocking-factors-in-your-model"><span class="header-section-number">1.4.1</span> To include or not include blocking factors in your model?</h3>
 <p>The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.</p>
 <p>My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them.</p>
-</div>
-</div>
 </section>
 </section>
-<section id="ethics" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="ethics"><span class="header-section-number">1.3</span> Ethics</h2>
+<section id="data-collection-issues" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="data-collection-issues"><span class="header-section-number">1.5</span> Data collection issues</h2>
+<p>Recognising potential data collection issues at the experimental design stage can be helpful in ensuring that there are sufficient and accurate data at the analysis stage. Some situations that can arise are:</p>
+<ul>
+<li>missing data,</li>
+<li>change in instrument to measure response,</li>
+<li>loss of data integrity (i.e.&nbsp;issues related to record, storage and access of data), and/or</li>
+<li>non-compliance of experimental protocol.</li>
+</ul>
+<p>In planning an experiment, it’s not prudent that the most statistical optimal design is produced. It is better to produce a design that technician can follow without great difficulty than produce a complex design that’s likely to result in a mistake in carrying it out.</p>
+</section>
+<section id="ethics" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="ethics"><span class="header-section-number">1.6</span> Ethics</h2>
 <p>While the aim of experiments may be to advance our knowledge or understanding, this doesn’t mean all experiments should be conducted. The Belmont report by the <span class="citation" data-cites="belmont">National Commission for the Proptection of Human Subjects of Biomedical and Behavioral Research (<a href="references.html#ref-belmont" role="doc-biblioref">1978</a>)</span> outlines the ethical principles and guidelines for the protection of human subjects of research. A similar guideline would be available for animal subjects.</p>
 </section>
-<section id="protocol" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="protocol"><span class="header-section-number">1.4</span> Protocol</h2>
+<section id="protocol" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="protocol"><span class="header-section-number">1.7</span> Protocol</h2>
 <p>Some domains require experimental protocol to be <a href="https://www.cos.io/initiatives/prereg">pre-registered</a>.</p>
 </section>
-<section id="summary" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.5</span> Summary</h2>
+<section id="summary" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.8</span> Summary</h2>
 <p>The major concepts this chapter covered are:</p>
 <ul>
 <li>basic statistical terminology for experimental design</li>
@@ -695,8 +737,8 @@ To include or not include blocking factors in your model?
 <li>pitfalls of pseudo-replication</li>
 </ul>
 </section>
-<section id="exercises" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.6</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">1.9</span> Exercises</h2>
 <ol type="1">
 <li>A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.</li>
 </ol>
@@ -716,7 +758,7 @@ National Commission for the Proptection of Human Subjects of Biomedical and Beha
 </section>
 
 </main> <!-- /main -->
-<script type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
   const anchorJS = new window.AnchorJS();
