@@ -296,9 +296,18 @@ Larger sample size (and thus the number of replications) is always statistically
 
 Above are statistical perspectives for the desired number of replications. In practice, the number of replications are also determined by non-statistical reasons. E.g., there are only limited number of treatments in stock; not enough subjects that qualify for treatments, time constraints and so on.
 
+::: callout-note
+
+## Pseudo-replications
+
+Pseudo-replication refers to the analysis where repetitions of the treatment are treated as replications.
+
+:::
 
 
-#### Pseudo-replications
+
+
+
 
 
 ### Blocking 
@@ -313,15 +322,44 @@ Where possible, it is better to have blocks of equal or near-equal size. Also wh
 
 :::
 
-::: callout-note
 
-## To include or not include blocking factors in your model?
+## Diagnosis
+
+This section addresses the statistical diagnosis of an experimental design. In addition, there are non-statistical diagnosis that should be made by the domain experts.
+
+### Design anatomy
+
+The design anatomy, or sometimes referred to as skeleton anova, shows the decomposition of the degrees of freedom for different sources of variation. This is important in finding out if there are any terms that are aliasing (i.e. perfectly confounded) or have low information. 
+
+### Diagrams
+
+### Simulate
+
+It's good practice to simulate the data for the given design and try fitting the model in the analysis plan. This can help reflect about your design and also reveal any issues with fitting the planned model. You may plan for some complex model, however keep in mind that it doesn't mean you can fit that model since you may be hit with issues like where model fails to converge and memory or speed issues with big data.
+
+## Analysis
+
+Before starting the experiment, it is important to have an analysis plan of the experimental data.  
+
+
+
+### To include or not include blocking factors in your model?
 
 The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.
 
 My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them. 
 
-:::
+## Data collection issues
+
+Recognising potential data collection issues at the experimental design stage can be helpful in ensuring that there are sufficient and accurate data at the analysis stage. Some situations that can arise are:
+
+- missing data, 
+- change in instrument to measure response, 
+- loss of data integrity (i.e. issues related to record, storage and access of data), and/or 
+- non-compliance of experimental protocol.
+
+In planning an experiment, it's not prudent that the most statistical optimal design is produced. It is better to produce a design that technician can follow without great difficulty than produce a complex design that's likely to result in a mistake in carrying it out.
+
 
 ## Ethics
 
@@ -330,6 +368,8 @@ While the aim of experiments may be to advance our knowledge or understanding, t
 ## Protocol
 
 Some domains require experimental protocol to be [pre-registered](https://www.cos.io/initiatives/prereg).
+
+
 
 ## Summary
 
