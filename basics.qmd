@@ -241,21 +241,6 @@ Some confounding are acceptable. For example, in a randomised block experiment, 
 
 :::
 
-### Choices of treatments
-
-The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In dose finding experiment, small-scale screening experiments may be done first to determine the dose levels for the larger trial. For Latin hyper cube sampling, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.
-
-The effectiveness of any treatment is only established in relation to another treatment, e.g. the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g. comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don't make regular use of it. 
-
-
-::: callout-note
-
-## Choice of control treatment
-
-The control treatment should be chosen such that the comparison is meaningful. For example, a new cancer treatment shouldn't be compared to "no treatment" but to the standard approach to treat cancer. Not only may it be unethical to assign a "no treatment" to a cancer patient, it is wasteful of experimental resources to design experiments where there there is little interest in comparing to "no treatment".
-
-:::
-
 
 
 ### Replications, repetition and duplication
@@ -345,6 +330,30 @@ Where possible, it is better to have blocks of equal or near-equal size. Also wh
 
 :::
 
+## Choosing factors
+
+### Choices of units
+
+
+
+### Choices of treatments
+
+The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In dose finding experiment, small-scale screening experiments may be done first to determine the dose levels for the larger trial. For Latin hyper cube sampling, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.
+
+The effectiveness of any treatment is only established in relation to another treatment, e.g. the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g. comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don't make regular use of it. 
+
+
+::: callout-note
+
+## Choice of control treatment
+
+The control treatment should be chosen such that the comparison is meaningful. For example, a new cancer treatment shouldn't be compared to "no treatment" but to the standard approach to treat cancer. Not only may it be unethical to assign a "no treatment" to a cancer patient, it is wasteful of experimental resources to design experiments where there there is little interest in comparing to "no treatment".
+
+:::
+
+### Choices of data to record
+
+
 
 ## Diagnosis
 
@@ -387,6 +396,9 @@ In planning an experiment, it's not prudent that the most statistical optimal de
 ## Ethics
 
 While the aim of experiments may be to advance our knowledge or understanding, this doesn't mean all experiments should be conducted. The Belmont report by the @belmont outlines the ethical principles and guidelines for the protection of human subjects of research. A similar guideline would be available for animal subjects. 
+
+Besides the protection of the subjects, the experiment should not go ahead if there is little possibility of extracting meaningful analysis. These include cases where the sample size is small so no conclusive evidence can be drawn from the experiment, or where the collected data does not answer the aim of the experiment. 
+
 
 ## Protocol
 
