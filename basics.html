@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.339">
+<meta name="generator" content="quarto-0.9.341">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -302,27 +302,65 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulation, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
+<p>A new statistical method is proposed as a better alternative for classification of cellular type from single cell transcriptomics data. A number of simulations, based on a number of public benchmark datasets, was carried out to compare the method under different metrics.</p>
 </div>
 </div>
 <section id="sec-terminology" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-terminology"><span class="header-section-number">1.1</span> Basic terminology</h2>
 <p>The field of experimental design is large and is applied to many domains, e.g.&nbsp;biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Unit related
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
-<li><strong>experimental unit</strong>: the smallest unit in which the treatment can independently be applied,</li>
+<li><strong>experimental unit</strong>: the smallest unit in which the treatment can <em>independently</em> be applied,</li>
 <li><strong>observational unit</strong>: the smallest unit in which the response is measured on,</li>
 <li><strong>block</strong> or <strong>cluster</strong>: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,</li>
-<li><strong>design</strong>: the allocation of treatment to units,</li>
-<li><strong>plan</strong> or <strong>layout</strong>: the actual assignment of treatment to units, and</li>
-<li><strong>experimental structure</strong>: the arrangements or constrains of experimental factors – the structure can be broadly categorised as:
+<li><strong>unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on</li>
+</ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Treatment related
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><strong>unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on; and</li>
+<li><strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
 <li><strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors,</li>
-</ul></li>
 <li><strong>control</strong> in treatment refers to a standard approach used, e.g.&nbsp;chemotherapy is a standard way to treat patients with particular cancers, and</li>
 <li><strong>placebo</strong> means a treatment designed to</li>
 </ul>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Experiment related
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>design</strong>: the allocation of treatment to units,</li>
+<li><strong>plan</strong> or <strong>layout</strong>: the actual assignment of treatment to units, and</li>
+<li><strong>experimental structure</strong>: the arrangements or constrains of experimental factors – the structure can be broadly categorised as unit and treatment structure.</li>
+</ul>
+</div>
+</div>
 <p>The above terminology describe the experimental factors and its associations. More specifically, <strong>experimental factors</strong> are any variables that pertain to the experiment (physical or otherwise) and includes the treatments, experimental units, observational units and blocks/clusters. The associations of experimental factors include its nesting structure or say the assignment of treatment to units.</p>
 <p>In addition to above, there are commonly understood terminology that refer to the properties of experimental designs. These include:</p>
 <ul>
