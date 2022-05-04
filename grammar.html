@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.345">
+<meta name="generator" content="quarto-0.9.349">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -232,17 +232,14 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <p>Henceforth, “grammar” refers to the grammar of experimental designs unless explicitly stated otherwise.</p>
 <section id="fundamental-terminology" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fundamental-terminology"><span class="header-section-number">2.1</span> Fundamental terminology</h2>
-<p><a href="basics.html#sec-terminology">Section&nbsp;<span>1.1</span></a> describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a <strong>factor</strong> in the design. The two primary roles of a factor are <strong>treatments</strong> and <strong>units</strong>; under this categorisation blocks, experimental units and observational units are all just units – the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
-<div class="info callout callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<p><a href="basics.html#sec-terminology">Section&nbsp;<span>1.1</span></a> describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a factor in the design. The two primary roles of a factor are treatments and units; under this categorisation blocks, experimental units and observational units are all just units – the specific role of the unit is determined by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
+<p>In the grammar, a <strong>factor</strong> is an experimental variable manifested as an object with a dual structure, the “root” and the “role”. The <strong>root</strong> is the constitution of the discrete factor levels and the <strong>role</strong> characterizes the holistic attributes of the factor. For example, consider an agricultural field trial with plot as a unit factor – the root is the plots and the role corresponds to the whole set of plots. Every root and role structure has an outer form that is visible to the user (usually in the form of a graph) and an inner quality that are intrinsic characteristics of the outer form. E.g., the dimension of the plot size may be described in the role as an inner quality (i.e.&nbsp;not something that is readily visible to the user but stored as a meta information about the factor). In addition, every root structure co-exists with a role structure in a reciprocal relationship.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="figures/drawn/factor-structure.png" class="img-fluid" style="width:100.0%"></p>
 </div>
-<div class="callout-body-container">
+</div>
 <p>In the grammar, the different types of units (block, cluster group, subject, plot, etc) are all classified as <strong>units</strong>. There are no explicit specification of what is an experimental, observational or blocking units as these can be determined implicitly by the relationship of the factors.</p>
-</div>
-</div>
-</div>
 <p>In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, <span class="math inline">\(G_F = (V(G_F), E(G_F))\)</span> and <span class="math inline">\(G_L = (V(G_L), E(G_L))\)</span>, where <span class="math inline">\(V(G_F)\)</span> and <span class="math inline">\(V(G_L)\)</span> are sets of vertices and <span class="math inline">\(E(G_F)\)</span> and <span class="math inline">\(E(G_L)\)</span> are sets of edges. We refer <span class="math inline">\(G_F\)</span> and <span class="math inline">\(G_L\)</span> as factor graph and level graph, respectively. In the <strong>factor graph</strong>, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the <strong>level graph</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
