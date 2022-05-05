@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.349">
+<meta name="generator" content="quarto-0.9.358">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -252,6 +252,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <p>If the design of an experiment is faulty, any method of interpretation which makes it out to be decisive must be faulty too.</p>
 <p>–Fisher, 1935, Design of Experiments</p>
 </div>
+<p>Data is a resultant reality, as such any examination of the data to answer questions in a satisfying manner require comprehension of the origin of the data, i.e.&nbsp;how was the data collected? For experimental data, this includes knowing the experimental aim and design.</p>
 <p>There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by <span class="citation" data-cites="Fisher1935-qc">Fisher (<a href="references.html#ref-Fisher1935-qc" role="doc-biblioref">1935</a>)</span>, <span class="citation" data-cites="Bailey2008-gw">Bailey (<a href="references.html#ref-Bailey2008-gw" role="doc-biblioref">2008</a>)</span>, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment.</p>
 <p>Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You’ll therefore find that most experiments in this book are <strong>comparative experiments</strong>.</p>
 <p>At the heart of each experiment, we are ultimately seeking confidence in any conclusion we are making from the analysis of the experimental data. What is perhaps not emphasised enough is that the <strong><em>experiments are human endeavours</em></strong>. Often there are multiple people involved in running experiments and a key challenge is to ensure each individual has sufficient understanding to play their role well. We touch more on this in <a href="management.html">Chapter&nbsp;<span>4</span></a>.</p>
@@ -409,7 +410,8 @@ How to randomise
 <section id="optimisation" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="optimisation"><span class="header-section-number">1.2.2</span> Optimisation</h3>
 <p><strong>Optimisation</strong> in the context of experimental design generally means that the treatment allocation to units were found by optimising some given criteria, usually denoted by a single letter (A, C, D, etc). These optimality-criteria are based on a statistical model, say,</p>
-<p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span> where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
+<p><span class="math display">\[\begin{equation} \boldsymbol{y} =  \mathbf{X}\boldsymbol{\beta} + \boldsymbol{e},\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{y}\)</span> is a vector of yet unobserved responses, <span class="math inline">\(\boldsymbol{\beta}\)</span> is a vector of experimental factor effects (e.g.&nbsp;treatment, block, etc), <span class="math inline">\(\mathbf{X}\)</span> is the so-called <strong>design matrix</strong> (comprising of 0s and 1s) that map the experimental factor levels to a response, and <span class="math inline">\(\boldsymbol{e}\)</span> is a vector of errors.</p>
 <p><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
