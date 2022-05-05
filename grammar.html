@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.358">
+<meta name="generator" content="quarto-0.9.363">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -114,7 +114,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./">
+      <a href="./" class="sidebar-logo-link">
       <img src="./figures/logos/edibble-website-logo-blue.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
@@ -233,19 +233,59 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <section id="fundamental-terminology" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fundamental-terminology"><span class="header-section-number">2.1</span> Fundamental terminology</h2>
 <p><a href="basics.html#sec-terminology">Section&nbsp;<span>1.1</span></a> describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a factor in the design. The two primary roles of a factor are treatments and units; under this categorisation blocks, experimental units and observational units are all just units – the explicit role of the unit is determined implicitly by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit.</p>
-<p>In the grammar, a <strong>factor</strong> is an experimental variable manifested as an object with a dual structure, the “root” and the “head”. The <strong>head</strong> characterizes the holistic attributes of the factor (e.g.&nbsp;the label “vaccine” for the treatment factor) and the <strong>root</strong> is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g.&nbsp;labels “type A” and “type B” for the two types of vaccine treatment). Every root and head structure has an outer form that is visible to the user (usually in the form of a vertex or a vector) and an inner quality that are intrinsic characteristics of the outer form (e.g.&nbsp;id of the levels, the long name of the vaccines, dose level of each vaccine, etc). The inner quality are not usually exported in the final design table. In the system, every root structure co-exists with a head structure in a reciprocal relationship, i.e.&nbsp;any change in the root structure may be reflected as a change in head structure (and vice-versa). A schema of the factor structure is shown in <a href="#fig-factor-structure">Figure&nbsp;<span>2.1</span></a>.</p>
+<p>In the grammar, a <strong>factor</strong> is an experimental variable manifested as an object with a dual structure: the “head” and the “root”. The <strong>head</strong> characterizes the holistic attributes of the factor (e.g.&nbsp;the label “vaccine” for the treatment factor) and the <strong>root</strong> is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g.&nbsp;labels “type A” and “type B” for the two types of vaccine treatment). Every root and head structure has an outer form that is visible to the user (usually in the form of a vertex or a vector) and an inner quality that are intrinsic characteristics of the outer form (e.g.&nbsp;id of the levels, the long name of the vaccines, dose level of each vaccine, etc). A factor can be physical (e.g.&nbsp;person, plot, animal and drug), metaphysical (e.g.&nbsp;gender, time and space) or intended response measures. The inner quality are not usually exported in the final design table. In the system, every root structure co-exists with a head structure in a reciprocal relationship, i.e.&nbsp;any change in the root structure may be reflected as a change in head structure (and vice-versa). A schema of the factor structure is shown in <a href="#fig-factor-structure">Figure&nbsp;<span>2.1</span></a>.</p>
 <div id="fig-factor-structure" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/drawn/factor-structure.png" class="img-fluid figure-img"></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: A schema for the factor structure in the grammar.</figcaption><p></p>
 </figure>
 </div>
-<p>Every factor in the system is given an <strong>explicit role</strong> stored as a class in the inner quality of the head. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g.&nbsp;treatment linked as a directed graph to a unit as seen in <a href="#fig-implicit-inner-quality">Figure&nbsp;<span>2.2</span></a>.</p>
-<div id="fig-implicit-inner-quality" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/drawn/implicit-inner-quality.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.2: Implicit role based on relationship between factors</figcaption><p></p>
-</figure>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Principle 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All factor must have a dual structure that describes the head (holistic attributes of the factor) and root (constitution of the levels).</p>
+</div>
+</div>
+<p>Every factor in the system is given an <strong>explicit role</strong> stored as a class in the inner quality of the head. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g.&nbsp;treatment linked as a directed graph to a unit as seen in <a href="#tbl-implicit-role">Table&nbsp;<span>2.1</span></a>.</p>
+<div id="tbl-implicit-role" class="anchored">
+<table class="table">
+<caption>Table 2.1: Implicit role based on the relationship between factors</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">A</th>
+<th style="text-align: left;">B</th>
+<th style="text-align: left;"><span class="math inline">\(A \rightarrow B\)</span> relationship</th>
+<th style="text-align: left;">Implicit role for B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">unit</td>
+<td style="text-align: left;">unit</td>
+<td style="text-align: left;">B is nested in A</td>
+<td style="text-align: left;">Nested unit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">treatment</td>
+<td style="text-align: left;">unit</td>
+<td style="text-align: left;">B is applied to A</td>
+<td style="text-align: left;">Experimental unit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">record</td>
+<td style="text-align: left;">unit</td>
+<td style="text-align: left;">B is measured on A</td>
+<td style="text-align: left;">Obervational unit</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>In building an experimental design, the system tasks factors to link the root nodes with some constraint as prescribed by their explicit role.</p>
 <p>In the grammar, an intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, <span class="math inline">\(G_F = (V(G_F), E(G_F))\)</span> and <span class="math inline">\(G_L = (V(G_L), E(G_L))\)</span>, where <span class="math inline">\(V(G_F)\)</span> and <span class="math inline">\(V(G_L)\)</span> are sets of vertices and <span class="math inline">\(E(G_F)\)</span> and <span class="math inline">\(E(G_L)\)</span> are sets of edges. We refer <span class="math inline">\(G_F\)</span> and <span class="math inline">\(G_L\)</span> as factor graph and level graph, respectively. In the <strong>factor graph</strong>, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the <strong>level graph</strong>.</p>
@@ -263,14 +303,17 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <p>The above figure shows the level graph. The nodes of the same color are the levels of the same factor (e.g.&nbsp;all yellow nodes correspond to the levels of the unit, subplot). The shape of the node correspond to the class of the corresponding factor.</p>
 </div>
 </div>
-<div class="info callout callout callout-style-simple no-icon">
-<div class="callout-body d-flex">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>All nodes in the factor graph must be explicitly named.</p>
+<div class="callout-caption-container flex-fill">
+Principle 2
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All nodes in the factor graph must be explicitly named.</p>
 </div>
 </div>
 <p>Table <span class="citation" data-cites="tab:exam-table">(<a href="references.html#ref-tab:exam-table" role="doc-biblioref"><strong>tab:exam-table?</strong></a>)</span> shows an example of an illustrative experiment that tests the exam score on a different exam time allocation for two different subjects. In such an experiment, the observational unit may be specified as the combination of Subject-Student, i.e.&nbsp;an observational unit can only be uniquely identified by using information across multiple factors. <strong>In the grammar, a factor cannot be implicitly assumed from other factors.</strong> This restriction means, for example, that a new factor, like Exam Booklet, which uniquely identifies every Subject-Student combination must be specified in the system. This restriction is not only for the purpose of internal graph representation but forces the user to confront what the observational units actually are. Naming things are hard, but without naming things, it can be hard to create a shared understanding about the experimental structure.</p>
@@ -321,79 +364,19 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </div>
 </div>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">object</th>
-<th style="text-align: left;">class</th>
-<th style="text-align: left;">purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">edibble factor</td>
-<td style="text-align: left;"><code>edbl_fct</code></td>
-<td style="text-align: left;">a factor pertaining to the experimental design</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">edibble unit</td>
-<td style="text-align: left;"><code>edbl_unit</code></td>
-<td style="text-align: left;">any entity, except treatment factors, that pertains to the experiment</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">edibble treatment</td>
-<td style="text-align: left;"><code>edbl_trt</code></td>
-<td style="text-align: left;">treatment factor in the experiment such that the factorial combination describes the whole treatment levels</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">edibble response</td>
-<td style="text-align: left;"><code>edbl_rcrd</code></td>
-<td style="text-align: left;">the intended response to be measured during the experiment</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">edibble graph</td>
-<td style="text-align: left;"><code>edbl_graph</code></td>
-<td style="text-align: left;">an intermediate construct of the experimental design</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">edibble table/data frame</td>
-<td style="text-align: left;"><code>edbl_table</code></td>
-<td style="text-align: left;">a tibble output for experimental design</td>
-</tr>
-</tbody>
-</table>
-<p>An edibble variable is any variable that is relevant in any aspect of the experiment (not just the design of experiment). An edibble variable can be physical (e.g.&nbsp;person, plot, animal and drug), metaphysical (e.g.&nbsp;gender, time and space) or intended response measures.</p>
-<p>There are three main types of edibble variable: an edibble unit (<code>edbl_unit</code>), an edibble treatment factor (<code>edbl_trt</code>), and an edibble record (<code>edbl_rcrd</code>).</p>
-<p>Currently, variables are limited to categorical variables.</p>
-<p>Every edibble variable comes in two forms:</p>
-<ul>
-<li>a <strong>vertex form</strong> which contains:
-<ul>
-<li><code>name</code>: variable name,</li>
-<li><code>class</code>: <code>"edbl_unit"</code>, <code>"edbl_trt"</code>, or <code>"edbl_rcrd"</code>,</li>
-<li><code>vtype</code>: <code>"var"</code>,</li>
-<li>graphical attributes like <code>label</code>, and</li>
-<li>connected to child level nodes which contain:
-<ul>
-<li><code>name</code>: level name,</li>
-<li><code>label</code>: the level name,</li>
-<li><code>vtype</code>: <code>"level"</code>, and</li>
-<li>graphical attributes like <code>label</code>.</li>
-</ul></li>
-</ul></li>
-<li>a <strong>vector form</strong> which is an integer vector which has classes <code>edbl_var</code>, <code>factor</code> and <code>vctrs_vctr</code> with attributes:
-<ul>
-<li><code>name</code>: variable name,</li>
-<li><code>class</code>: a character vector containing <code>"edbl_var"</code>, <code>"factor"</code>, and <code>"vctrs_vctr"</code>, and</li>
-<li><code>levels</code>: a character vector of the level names.</li>
-</ul></li>
-</ul>
-<p>The vector format behaves much like a <code>factor</code> except that the output is modified to include the number of levels in tibble output.</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Principle 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A viable experimental design is only specified if the relationship between the factors can be reconciled to a single observational unit.</p>
+</div>
+</div>
 </section>
 <section id="an-edibble-graph" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="an-edibble-graph"><span class="header-section-number">2.2</span> An edibble graph</h2>
@@ -402,34 +385,8 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <ul>
 <li>a vertex is a variable,</li>
 <li>an edge is a high-level connection between two variables, and</li>
-<li>the direction of an edge defines a relationship based on which two variables it is connecting. Say if we have two nodes named A and B with a directed edge starting from A to B, then the meaning of the relationship follows the table below. If the combination is not listed below then the nodes cannot have a direct relationship.</li>
+<li>the direction of an edge defines a relationship based on which two variables it is connecting. Say if we have two nodes named A and B with a directed edge starting from A to B, then the meaning of the relationship follows from <a href="#tbl-implicit-role">Table&nbsp;<span>2.1</span></a>. If the combination is not listed below then the nodes cannot have a direct relationship.</li>
 </ul>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">A</th>
-<th style="text-align: left;">B</th>
-<th style="text-align: left;"><span class="math inline">\(A \rightarrow B\)</span> relationship</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">unit</td>
-<td style="text-align: left;">unit</td>
-<td style="text-align: left;">B is nested in A</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">treatment</td>
-<td style="text-align: left;">unit</td>
-<td style="text-align: left;">B is applied to A</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">record</td>
-<td style="text-align: left;">unit</td>
-<td style="text-align: left;">B is measured on A</td>
-</tr>
-</tbody>
-</table>
 <p>As an example, consider a split-plot design that contains 4 main plots with 2 sub plots within each main plot (so 8 subplots in total). There are 2 treatment factors: fertilizer (with levels A and B) and variety (with levels V1 and V2). Each level of the fertilizer is randomly applied to two main plots. Each level of variety is randomly applied to one sub plot within each main plot. Two responses are planned to be measured on the sub plots: yield and height.</p>
 <p>In a <strong><em>level graph</em></strong>:</p>
 <ul>
