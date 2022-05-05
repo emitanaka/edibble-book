@@ -28,14 +28,28 @@ Henceforth, "grammar" refers to the grammar of experimental designs unless expli
 
 @sec-terminology describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a factor in the design. The two primary roles of a factor are treatments and units; under this categorisation blocks, experimental units and observational units are all just units -- the explicit role of the unit is determined implicitly by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
 
-In the grammar, a **factor** is an experimental variable manifested as an object with a dual structure, the "root" and the "head". The **head** characterizes the holistic attributes of the factor (e.g. the label "vaccine" for the treatment factor) and the **root** is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g. labels "type A" and "type B" for the two types of vaccine treatment). Every root and head structure has an outer form that is visible to the user (usually in the form of a vertex or a vector) and an inner quality that are intrinsic characteristics of the outer form (e.g. id of the levels, the long name of the vaccines, dose level of each vaccine, etc). The inner quality are not usually exported in the final design table. In the system, every root structure co-exists with a head structure in a reciprocal relationship, i.e. any change in the root structure may be reflected as a change in head structure (and vice-versa). A schema of the factor structure is shown in @fig-factor-structure.
+
+In the grammar, a **factor** is an experimental variable manifested as an object with a dual structure: the "head" and the "root". The **head** characterizes the holistic attributes of the factor (e.g. the label "vaccine" for the treatment factor) and the **root** is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g. labels "type A" and "type B" for the two types of vaccine treatment). Every root and head structure has an outer form that is visible to the user (usually in the form of a vertex or a vector) and an inner quality that are intrinsic characteristics of the outer form (e.g. id of the levels, the long name of the vaccines, dose level of each vaccine, etc). A factor can be physical (e.g. person, plot, animal and drug),  metaphysical (e.g. gender, time and space) or intended response measures. The inner quality are not usually exported in the final design table. In the system, every root structure co-exists with a head structure in a reciprocal relationship, i.e. any change in the root structure may be reflected as a change in head structure (and vice-versa). A schema of the factor structure is shown in @fig-factor-structure.
 
 ![A schema for the factor structure in the grammar.](figures/drawn/factor-structure){#fig-factor-structure}
 
-Every factor in the system is given an **explicit role** stored as a class in the inner quality of the head. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g. treatment linked as a directed graph to a unit as seen in @fig-implicit-inner-quality.
+::: {.callout-note icon=false}
 
+## Principle 1
 
-![Implicit role based on relationship between factors](figures/drawn/implicit-inner-quality){#fig-implicit-inner-quality}
+All factor must have a dual structure that describes the head (holistic attributes of the factor) and root (constitution of the levels).
+
+:::
+
+Every factor in the system is given an **explicit role** stored as a class in the inner quality of the head. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g. treatment linked as a directed graph to a unit as seen in @tbl-implicit-role.
+
+ A | B | $A \rightarrow B$ relationship | Implicit role for B
+:--- |:--- |:--- |:---
+unit | unit | B is nested in A | Nested unit
+treatment | unit | B is applied to A | Experimental unit
+record | unit | B is measured on A | Obervational unit
+
+: Implicit role based on the relationship between factors {#tbl-implicit-role}
 
 In building an experimental design, the system tasks factors to link the root nodes with some constraint as prescribed by their explicit role.
 
@@ -63,7 +77,9 @@ plot_lvl_graph(des, view = "static", height = "400px", seed = 1,
      title = c("Level graph for a split plot design" = "font-weight:bold;text-align:center;"))
 ```
 
-::: {.info .callout}
+::: {.callout-note icon=false}
+
+## Principle 2
 
 All nodes in the factor graph must be explicitly named. 
 
@@ -81,41 +97,16 @@ expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>%
   kableExtra::kable_classic(full_width = TRUE)
 ```
 
-object | class | purpose 
-:---|:---|:---
-edibble factor | `edbl_fct` | a factor pertaining to the experimental design 
-edibble unit | `edbl_unit` | any entity, except treatment factors, that pertains to the experiment 
-edibble treatment | `edbl_trt` | treatment factor in the experiment such that the factorial combination describes the whole treatment levels 
-edibble response | `edbl_rcrd` | the intended response to be measured during the experiment 
-edibble graph | `edbl_graph` | an intermediate construct of the experimental design
-edibble table/data frame | `edbl_table` | a tibble output for experimental design 
+::: {.callout-note icon=false}
+
+## Principle 3
+
+A viable experimental design is only specified if the relationship between the factors can be reconciled to a single observational unit. 
+
+:::
 
 
-An edibble variable is any variable that is relevant in any aspect of the experiment (not just the design of experiment). An edibble variable can be physical (e.g. person, plot, animal and drug),  metaphysical (e.g. gender, time and space) or intended response measures.
 
-There are three main types of edibble variable: an edibble unit (`edbl_unit`), an edibble treatment factor (`edbl_trt`), and an edibble record (`edbl_rcrd`). 
-
-Currently, variables are limited to categorical variables.  
-
-Every edibble variable comes in two forms: 
-
-* a **vertex form** which contains:
-   * `name`: variable name,
-   * `class`: `"edbl_unit"`, `"edbl_trt"`, or `"edbl_rcrd"`, 
-   * `vtype`: `"var"`, 
-   * graphical attributes like `label`, and
-   * connected to child level nodes which contain:
-      * `name`: level name,
-      * `label`: the level name,
-      * `vtype`: `"level"`, and
-      * graphical attributes like `label`.
-
-* a **vector form** which is an integer vector which has classes `edbl_var`, `factor` and `vctrs_vctr` with attributes:
-  * `name`: variable name, 
-  * `class`: a character vector containing `"edbl_var"`, `"factor"`, and `"vctrs_vctr"`, and 
-  * `levels`: a character vector of the level names.
-
-The vector format behaves much like a `factor` except that the output is modified to include the number of levels in tibble output.
 
 
 ## An edibble graph
@@ -126,14 +117,9 @@ In a **_factor graph_**:
 
 * a vertex is a variable,
 * an edge is a high-level connection between two variables, and
-* the direction of an edge defines a relationship based on which two variables it is connecting. Say if we have two nodes named A and B with a directed edge starting from A to B, then the meaning of the relationship follows the table below. If the combination is not listed below then the nodes cannot have a direct relationship.
+* the direction of an edge defines a relationship based on which two variables it is connecting. Say if we have two nodes named A and B with a directed edge starting from A to B, then the meaning of the relationship follows from @tbl-implicit-role. If the combination is not listed below then the nodes cannot have a direct relationship.
 
 
- A | B | $A \rightarrow B$ relationship
-:--- |:--- |:---
-unit | unit | B is nested in A
-treatment | unit | B is applied to A
-record | unit | B is measured on A
 
 As an example, consider a split-plot design that contains 4 main plots with 2 sub plots within each main plot (so 8 subplots in total). There are 2 treatment factors: fertilizer (with levels A and B) and variety (with levels V1 and V2). Each level of the fertilizer is randomly applied to two main plots. Each level of variety is randomly applied to one sub plot within each main plot. Two responses are planned to be measured on the sub plots: yield and height.
 
