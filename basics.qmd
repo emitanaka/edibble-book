@@ -15,6 +15,8 @@ If the design of an experiment is faulty, any method of interpretation which mak
 --Fisher, 1935, Design of Experiments
 :::
 
+Data is a resultant reality, as such any examination of the data to answer questions in a satisfying manner require comprehension of the origin of the data, i.e. how was the data collected? For experimental data, this includes knowing the experimental aim and design.
+
 There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by @Fisher1935-qc, @Bailey2008-gw, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment. 
 
 Most experiments are comparative in nature, or more specifically, most experiments involve study of two or more experimental conditions in which the primary interest is to compare the outcome under the different conditions. You'll therefore find that most experiments in this book are **comparative experiments**. 

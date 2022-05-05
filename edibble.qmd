@@ -9,7 +9,7 @@
 source("setup.R")
 ```
 
-The experimental planning in this book is supported by the `edibble` R-package and its extensions. The `edibble` system is built on the principle that the system must make it easy to recover experimental context by encouraging the user to be explicit about experimental details. To get started with using the system, you need to first load the package: 
+The experimental planning in this book is supported by the `edibble` R-package and its extensions. The `edibble` system is based on the grammar of experimental designs in [Chapter -@sec-grammar]. To get started with using the system, you need to first load the package: 
 
 ```{r}
 library(edibble)
