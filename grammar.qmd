@@ -51,11 +51,21 @@ Every factor in the system is given an **explicit role** stored as a class in th
 :--- |:--- |:--- |:---
 unit | unit | B is nested in A | Nested unit
 treatment | unit | B is applied to A | Experimental unit
-record | unit | B is measured on A | Obervational unit
+record | unit | B is measured on A | Observational unit
 
 : Implicit role based on the relationship between factors {#tbl-implicit-role}
 
-In building an experimental design, the system tasks factors to link the root nodes with some constraint as prescribed by their explicit role.
+There are two types of relationships in the system: the higher-order links between the factor nodes in the head system and the lower-order links between the level nodes in the root system. The user explicitly defines the higher-order links and depending on how it is defined, the system links the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user input.  
+
+
+::: {.callout-note icon=false}
+
+## Principle 2
+
+Higher-order links between factor nodes in the head system must be established before the lower-order links between the corresponding level nodes in the root system.
+
+:::
+
 
 
 ![An example network structure.](figures/drawn/example-network){#fig-example-network}
@@ -84,7 +94,7 @@ plot_lvl_graph(des, view = "static", height = "400px", seed = 1,
 
 ::: {.callout-note icon=false}
 
-## Principle 2
+## Principle 3
 
 All nodes in the factor graph must be explicitly named. 
 
@@ -104,7 +114,7 @@ expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>%
 
 ::: {.callout-note icon=false}
 
-## Principle 3
+## Principle 4
 
 A viable experimental design is only specified if the relationship between the factors can be reconciled to a single observational unit. 
 
