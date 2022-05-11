@@ -39,7 +39,7 @@ In the grammar, a **factor** is an experimental variable manifested as an object
 
 ::: {.callout-note icon=false}
 
-## Principle 1
+## Principle 1: Dual structure of factors
 
 All factor must have a dual structure that describes the head (holistic attributes of the factor) and root (constitution of the levels).
 
@@ -55,14 +55,15 @@ record | unit | B is measured on A | Observational unit
 
 : Implicit role based on the relationship between factors {#tbl-implicit-role}
 
-There are two types of relationships in the system: the higher-order links between the factor nodes in the head system and the lower-order links between the level nodes in the root system. The user explicitly defines the higher-order links and depending on how it is defined, the system links the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user input.  
+There are two orders of relationships in the system: the **higher-order links** between the factor nodes in the head system and the **lower-order links** between the level nodes in the root system. A higher-order link is created by explicit specification by the user and depending on how it is defined, the system creates the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user inputs.  
 
 
 ::: {.callout-note icon=false}
 
-## Principle 2
+## Principle 2: Rules for relationships between factors
 
-Higher-order links between factor nodes in the head system must be established before the lower-order links between the corresponding level nodes in the root system.
+a) A higher-order link between any two head nodes must be explicitly specified by the user.
+b) A lower-order link between any two root nodes cannot be made if there is no higher-order link between the head nodes linked to the two root nodes. 
 
 :::
 
@@ -94,7 +95,7 @@ plot_lvl_graph(des, view = "static", height = "400px", seed = 1,
 
 ::: {.callout-note icon=false}
 
-## Principle 3
+## Principle 3: All factors must be given an identity
 
 All nodes in the factor graph must be explicitly named. 
 
@@ -114,7 +115,7 @@ expand.grid(Subject = c("Math", "Science"), Student = 1:2) %>%
 
 ::: {.callout-note icon=false}
 
-## Principle 4
+## Principle 4: All factor levels must map to a single observational unit
 
 A viable experimental design is only specified if the relationship between the factors can be reconciled to a single observational unit. 
 
