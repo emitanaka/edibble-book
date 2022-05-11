@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.377">
+<meta name="generator" content="quarto-0.9.385">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -247,7 +247,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Principle 1
+Principle 1: Dual structure of factors
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -288,18 +288,21 @@ Principle 1
 </tbody>
 </table>
 </div>
-<p>There are two types of relationships in the system: the higher-order links between the factor nodes in the head system and the lower-order links between the level nodes in the root system. The user explicitly defines the higher-order links and depending on how it is defined, the system links the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user input.</p>
+<p>There are two orders of relationships in the system: the <strong>higher-order links</strong> between the factor nodes in the head system and the <strong>lower-order links</strong> between the level nodes in the root system. A higher-order link is created by explicit specification by the user and depending on how it is defined, the system creates the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user inputs.</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Principle 2
+Principle 2: Rules for relationships between factors
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Higher-order links between factor nodes in the head system must be established before the lower-order links between the corresponding level nodes in the root system.</p>
+<ol type="a">
+<li>A higher-order link between any two head nodes must be explicitly specified by the user.</li>
+<li>A lower-order link between any two root nodes cannot be made if there is no higher-order link between the head nodes linked to the two root nodes.</li>
+</ol>
 </div>
 </div>
 <div id="fig-example-network" class="quarto-figure quarto-figure-center anchored">
@@ -331,7 +334,7 @@ Principle 2
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Principle 3
+Principle 3: All factors must be given an identity
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -393,7 +396,7 @@ Principle 3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Principle 4
+Principle 4: All factor levels must map to a single observational unit
 </div>
 </div>
 <div class="callout-body-container callout-body">
