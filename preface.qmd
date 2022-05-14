@@ -5,7 +5,8 @@ source("setup.R")
 knitr::read_chunk("setup.R")
 ```
 
-```{r child="work-in-progress.qmd"}
+```{r}
+#| child: "status.qmd"
 ```
 
 

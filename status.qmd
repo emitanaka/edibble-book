@@ -3,7 +3,7 @@
 
 ## 📖 Status of the book
 
-Hi there! This book is a work-in-progress. You may like to come back later when it's in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:
+Hi there! This book is a work-in-progress. You may like to come back later when it's closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:
 
 - at [GitHub issues](https://github.com/emitanaka/edibble-book/issues), 
 - email me at [emi.tanaka@monash.edu](mailto:emi.tanaka@monash.edu), or 
