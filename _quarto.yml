@@ -36,6 +36,7 @@ book:
         - grammar-ed-graphics.qmd
     - part: human.qmd
       chapters:
+        - human-context.qmd
         - human-consulting.qmd
         - human-management.qmd
     - part: toolbox.qmd

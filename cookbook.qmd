@@ -20,9 +20,9 @@ Named experimental design are handy in succinctly describing the experimental st
 
 The use of named experimental designs is an endemic -- it will continue to be prevalent in the field.  So a compromising approach is used in the `edibble` system. For every named experimental design presented, there will be a function prefixed by `menu_` that shows the recipe code in terms of the fundamental system. The user is supposed to copy-and-paste these code and modify the names of the units and treatments to their experimental context. You can choose to generate a design table using `takeout()`, but again I discourage you to use these approaches to generate a proper design. 
 
-The following sections present a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in fundamental system terms (see Section \@ref(grammar)). 
+The following sections present a number of recipes for some well known named experimental designs. The ingredients for each recipe are described in fundamental system terms (see @sec-grammar-ed). 
 
-::: {.callout .note}
+::: {.callout-note}
 
 What are the differences between Latin square design, Graeco-Latin square design and Hyper-Graeco-Latin square design?
 
