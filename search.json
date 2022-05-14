@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "The Grammar of Experimental Designs",
     "section": "",
-    "text": "The book will include about the basics of experimental design and how to get started with the edibble R-package and its extensions to plan, design and simulate experiments.\nThe concept and the development of the edibble R-package and its extensions have been my long-standing passion project. I’ve designed experiments in practice and taught experimental design in undergraduate statistics courses but felt the friction in the system to construct the experimental design. For some years, I’ve thought about doing something in the area of experimental design research and whenever I go to conferences, I would attend any talks about experimental design (which there are not many of!). With the rise of popularity in tidyverse and the development of tsibble, coupled with my own interest and skill in software development, I came up with the idea of edibble in early 2019 – some of these sketches are shown below. I sketched out the proof of concept that year and have been developing it ever since.\n\n\nSketches from 2019\n\nIf you know the present system, you’ll notice how it’s evolved from the original idea!\n\n\n\n\n\n\n\n\n\n\n\n\nIf I was any good, I would have finished developing this sooner, but the project is far different to all my past research projects and truthfully, I get distracted easily, take on far too many service jobs, put enormous effort into my teaching and do other research activities to actually have had time for this project. But in the little time I had, working on this has brought me joy. If I care about just climbing up the academic ladder, I wouldn’t work on this project – it’s far too inefficient for that purpose. It’s my belief that this project will make a significant positive difference in the world, particularly for scientific studies, and I hope you find that too.\nAn experimental design is a huge field, and no doubt I know only a small portion of it. So if you find mistakes or I’m not giving enough due attention or credit to an important concept, please feel to let me know."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\n\n\n\nThe book will include about the basics of experimental design and how to get started with the edibble R-package and its extensions to plan, design and simulate experiments.\nThe concept and the development of the edibble R-package and its extensions have been my long-standing passion project. I’ve designed experiments in practice and taught experimental design in undergraduate statistics courses but felt the friction in the system to construct the experimental design. For some years, I’ve thought about doing something in the area of experimental design research and whenever I go to conferences, I would attend any talks about experimental design (which there are not many of!). With the rise of popularity in tidyverse and the development of tsibble, coupled with my own interest and skill in software development, I came up with the idea of edibble in early 2019 – some of these sketches are shown below. I sketched out the proof of concept that year and have been developing it ever since.\n\n\nSketches from 2019\n\nIf you know the present system, you’ll notice how it’s evolved from the original idea!\n\n\n\n\n\n\n\n\n\n\n\n\nIf I was any good, I would have finished developing this sooner, but the project is far different to all my past research projects and truthfully, I get distracted easily, take on far too many service jobs, put enormous effort into my teaching and do other research activities to actually have had time for this project. But in the little time I had, working on this has brought me joy. If I care about just climbing up the academic ladder, I wouldn’t work on this project – it’s far too inefficient for that purpose. It’s my belief that this project will make a significant positive difference in the world, particularly for scientific studies, and I hope you find that too.\nAn experimental design is a huge field, and no doubt I know only a small portion of it. So if you find mistakes or I’m not giving enough due attention or credit to an important concept, please feel to let me know."
   },
   {
     "objectID": "preface.html",
     "href": "preface.html",
     "title": "Preface",
     "section": "",
-    "text": "The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.\nIt is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for tidyverse approaches to data analysis in R.\nThe book primarily makes use of ggplot2 for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by ggplot2 henceforth."
+    "text": "This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.\nThe book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.\nIt is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for tidyverse approaches to data analysis in R.\nThe book primarily makes use of ggplot2 for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by ggplot2 henceforth."
   },
   {
     "objectID": "basics.html",
@@ -25,7 +25,7 @@
     "href": "basics-terminology.html",
     "title": "1  Terminology",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThe field of experimental design is large and is applied to many domains, e.g. biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:"
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThe field of experimental design is large and is applied to many domains, e.g. biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:"
   },
   {
     "objectID": "basics-terminology.html#unit-related",
@@ -60,7 +60,7 @@
     "href": "basics-principles.html",
     "title": "2  Principles",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nAll experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!\nIn designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nAll experiments have a potential to go wrong – plans may not be followed to the letter; you can’t distinguish which factor had the effect; or unknown factor is affecting the response. The degree of how wrong it went can vary but in some cases you wouldn’t even know it went wrong!\nIn designing an experiment, there are some safety measures that you can put in place to minimise potential issues. The basic statistical principles of experimental design outlined below form some of these safety measures."
   },
   {
     "objectID": "basics-principles.html#randomisation",
@@ -95,7 +95,7 @@
     "href": "basics-choices.html",
     "title": "3  Choices",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "basics-choices.html#choices-of-units",
@@ -123,7 +123,7 @@
     "href": "basics-diagnosis.html",
     "title": "4  Diagnosis",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThis section addresses the statistical diagnosis of an experimental design. In addition, there are non-statistical diagnosis that should be made by the domain experts."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThis section addresses the statistical diagnosis of an experimental design. In addition, there are non-statistical diagnosis that should be made by the domain experts."
   },
   {
     "objectID": "basics-diagnosis.html#design-anatomy",
@@ -158,7 +158,7 @@
     "href": "basics-guides.html",
     "title": "6  Guides",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "basics-guides.html#data-collection-issues",
@@ -186,7 +186,7 @@
     "href": "basics-summary.html",
     "title": "7  Summary",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThe major concepts this chapter covered are:"
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here.\nThe major concepts this chapter covered are:"
   },
   {
     "objectID": "basics-summary.html#exercises",
@@ -207,7 +207,7 @@
     "href": "grammar-ed.html",
     "title": "8  The grammar of experimental designs",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "grammar-ed.html#fundamental-terminology",
@@ -235,14 +235,14 @@
     "href": "grammar-graphics.html",
     "title": "9  The (layered) grammar of graphics",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "grammar-ed-graphics.html",
     "href": "grammar-ed-graphics.html",
     "title": "10  Graphics for experimental design",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "human.html",
@@ -354,7 +354,7 @@
     "href": "cookbook-lsd.html",
     "title": "16  Latin square designs",
     "section": "",
-    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
+    "text": "📖 Status of the book\n\n\n\nHi there! This book is a work-in-progress. You may like to come back later when it’s closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:\n\nat GitHub issues,\nemail me at emi.tanaka@monash.edu, or\nleave it anonymously in the form here."
   },
   {
     "objectID": "cookbook-lsd.html#graeco-latin-square-design",
