@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - Preface</title>
+<title>The Grammar of Experimental Designs - 12&nbsp; Project management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,8 +24,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./toolbox.html" rel="next">
+<link href="./human-consulting.html" rel="prev">
 <link href="./figures/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,7 +77,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Preface</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project management</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -128,7 +128,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -216,7 +216,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./human-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project management</span></a>
+  <a href="./human-management.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project management</span></a>
   </div>
 </li>
     </ul>
@@ -308,7 +308,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Preface</h1>
+<h1 class="title"><span id="sec-management" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project management</span></span></h1>
 </div>
 
 
@@ -324,10 +324,46 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </header>
 
-<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
-<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
-<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
-<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+📖 Status of the book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:</p>
+<ul>
+<li>at <a href="https://github.com/emitanaka/edibble-book/issues">GitHub issues</a>,</li>
+<li>email me at <a href="mailto:emi.tanaka@monash.edu">emi.tanaka@monash.edu</a>, or</li>
+<li>leave it anonymously in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link">here</a>.</li>
+</ul>
+</div>
+</div>
+<p>An experiment generally involves more than one person. For simplicity, let us suppose there are four actors:</p>
+<ul>
+<li>the <strong>domain expert</strong> who drives the experimental objective and has the intricate knowledge about the subject area,</li>
+<li>the <strong>statistician</strong> who creates the experimental design layout after taking into account statistical and practical constraints,<br>
+</li>
+<li>the <strong>technician</strong> who carries out the experiment and collects the data, and</li>
+<li>the <strong>analyst</strong> who analyses the data after the data are collected.</li>
+</ul>
+<p>The actors are purely illustrative and in practice, multiple people can take on each role, one person can take on multiple roles, and a person is not necessary a specialist in the role assigned (e.g.&nbsp;a statistician role can be carried out by a person who’s primarily training is not in statistics). All the roles can be acted out by a single individual. Ideally, all parties should have clarity of the final experimental design.</p>
+<p>To carry out this experiment, the people involved in the experiment must come to some degree of shared understanding about the experimental motivations, limitations and protocol. This understanding is achieved by <em>communication</em>. People may opt for a series of behavioural cycles that facilitate the process of clarification as they work to reduce uncertainty about their understanding.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="figures/drawn/communication-model.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>Each actor does not need to have a full comprehension of the experiment, but rather focus on the most pertinent part of the experiment that is relevant to their role. For example in the guinea pig experiment [add ref], a statistician does not need to know how the guinea pigs were sourced for the experiment – just that the subjects are genetically identical – in fact, a statistician can generate an experimental design without even knowledge that the subjects are guinea pigs. From the view point of the statistician, the experiment can be simplified to its bare essential elements to generate the experimental design. Why then would there be any need to encode the context of the experiment in generating the experimental design?</p>
+<p>The minimum required understanding for a statistician to conduct their role does not include understanding the experimental context. This is the reason perhaps that a lot of computational systems to generate the experimental design have often the inputs stripped off the experimental context. In an idealistic world, this approach would be fine but the major problem in this process is that the involved parties most likely do not know what is the most relevant knowledge for a statistician.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="figures/drawn/lens-view.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 
 
 
@@ -413,13 +449,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./human-consulting.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Consultation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link">
-        <span class="nav-page-text">Basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./toolbox.html" class="pagination-link">
+        <span class="nav-page-text">Toolbox</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - Preface</title>
+<title>The Grammar of Experimental Designs - 1&nbsp; Terminology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,8 +24,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./basics-principles.html" rel="next">
+<link href="./basics.html" rel="prev">
 <link href="./figures/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,7 +77,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Preface</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminology</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -128,7 +128,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -141,7 +141,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics-terminology.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminology</span></a>
+  <a href="./basics-terminology.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -301,14 +301,23 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#unit-related" id="toc-unit-related" class="nav-link active" data-scroll-target="#unit-related"> <span class="header-section-number">1.1</span> Unit related</a></li>
+  <li><a href="#treatment-related" id="toc-treatment-related" class="nav-link" data-scroll-target="#treatment-related"> <span class="header-section-number">1.2</span> Treatment related</a></li>
+  <li><a href="#experiment-related" id="toc-experiment-related" class="nav-link" data-scroll-target="#experiment-related"> <span class="header-section-number">1.3</span> Experiment related</a></li>
+  <li><a href="#specialised-terminology" id="toc-specialised-terminology" class="nav-link" data-scroll-target="#specialised-terminology"> <span class="header-section-number">1.4</span> Specialised terminology</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics-terminology.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Preface</h1>
+<h1 class="title"><span id="sec-terminology" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminology</span></span></h1>
 </div>
 
 
@@ -324,12 +333,81 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </header>
 
-<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
-<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
-<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
-<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+📖 Status of the book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:</p>
+<ul>
+<li>at <a href="https://github.com/emitanaka/edibble-book/issues">GitHub issues</a>,</li>
+<li>email me at <a href="mailto:emi.tanaka@monash.edu">emi.tanaka@monash.edu</a>, or</li>
+<li>leave it anonymously in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link">here</a>.</li>
+</ul>
+</div>
+</div>
+<p>The field of experimental design is large and is applied to many domains, e.g.&nbsp;biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
+<section id="unit-related" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="unit-related"><span class="header-section-number">1.1</span> Unit related</h2>
+<ul>
+<li><strong>experimental unit</strong>: the smallest unit in which the treatment can <em>independently</em> be applied,</li>
+<li><strong>observational unit</strong>: the smallest unit in which the response is measured on,</li>
+<li><strong>block</strong> or <strong>cluster</strong>: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,</li>
+<li><strong>unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on</li>
+</ul>
+</section>
+<section id="treatment-related" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="treatment-related"><span class="header-section-number">1.2</span> Treatment related</h2>
+<ul>
+<li><strong>treatments</strong>: the whole set of experimental conditions in which the units are subjected to,</li>
+<li><strong>treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors,</li>
+<li><strong>control</strong> in treatment refers to a standard approach used, e.g.&nbsp;chemotherapy is a standard way to treat patients with particular cancers, and</li>
+<li><strong>placebo</strong> means a treatment designed to</li>
+</ul>
+</section>
+<section id="experiment-related" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="experiment-related"><span class="header-section-number">1.3</span> Experiment related</h2>
+<ul>
+<li><strong>design</strong>: the allocation of treatment to units,</li>
+<li><strong>plan</strong> or <strong>layout</strong>: the actual assignment of treatment to units, and</li>
+<li><strong>experimental structure</strong>: the arrangements or constrains of experimental factors – the structure can be broadly categorised as unit and treatment structure.</li>
+</ul>
+<p>The above terminology describe the experimental factors and its associations. More specifically, <strong>experimental factors</strong> are any variables that pertain to the experiment (physical or otherwise) and includes the treatments, experimental units, observational units and blocks/clusters. The associations of experimental factors include its nesting structure or say the assignment of treatment to units.</p>
+<p>In addition to above, there are commonly understood terminology that refer to the properties of experimental designs. These include:</p>
+<ul>
+<li><strong>balanced experiment</strong>: refers to when the replication of the treatments are equal,</li>
+<li><strong>orthogonal design</strong></li>
+<li><strong>complete block design</strong>: every treatment appears exactly once in each block or cluster, otherwise it is referred to as <strong>incomplete block design</strong>,</li>
+<li><strong>blinded experiments</strong>, relevant only to studies involving human subjects, refers to experiments where subjects are not informed about which treatment they received. <strong>Double-blinded</strong> studies means that both those administrating and receipient of the treatment are not informed about the actual treatment.</li>
+</ul>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<i class="fas fa-seedling"></i> plant growth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The experimental aim is to study the effects of plant growth of four particular bacterial strains.</li>
+<li>The experimental units are …</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="specialised-terminology" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="specialised-terminology"><span class="header-section-number">1.4</span> Specialised terminology</h2>
+<p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in <span class="quarto-unresolved-ref">?sec-cookbook</span>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -413,13 +491,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./basics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link">
-        <span class="nav-page-text">Basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./basics-principles.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Principles</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

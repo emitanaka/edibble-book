@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - Preface</title>
+<title>The Grammar of Experimental Designs - 15&nbsp; Randomised complete block design</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -24,8 +87,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./cookbook-lsd.html" rel="next">
+<link href="./cookbook-crd.html" rel="prev">
 <link href="./figures/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,6 +131,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <script defer="" src="./assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
 <script defer="" data-domain="emitanaka.org/edibble-book" src="https://plausible.io/js/plausible.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -77,7 +141,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Preface</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Randomised complete block design</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -128,7 +192,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -251,7 +315,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cookbook-rcbd.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Randomised complete block design</span></a>
+  <a href="./cookbook-rcbd.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Randomised complete block design</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -308,7 +372,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Preface</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Randomised complete block design</span></h1>
 </div>
 
 
@@ -324,10 +388,73 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </header>
 
-<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
-<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
-<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
-<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+📖 Status of the book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:</p>
+<ul>
+<li>at <a href="https://github.com/emitanaka/edibble-book/issues">GitHub issues</a>,</li>
+<li>email me at <a href="mailto:emi.tanaka@monash.edu">emi.tanaka@monash.edu</a>, or</li>
+<li>leave it anonymously in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link">here</a>.</li>
+</ul>
+</div>
+</div>
+<p>A randomised complete block design, commonly abbreviated as RCBD, is contain two unit factors, a blocking factor and experimental unit factor, and a treatment factor. The experimental unit factor would be nested within the blocking factor with the number of units within each level of the blocking factor, <span class="math inline">\(k\)</span>, equal to the number of treatments, <span class="math inline">\(t\)</span>. Every treatment appears exactly once in each level of the blocking factor, so the number of blocks, <span class="math inline">\(b\)</span>, is the same as the number of replications, <span class="math inline">\(r\)</span>, i.e.&nbsp;<span class="math inline">\(b = r\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rcbd <span class="ot">&lt;-</span> <span class="fu">takeout</span>(<span class="fu">menu_rcbd</span>(<span class="at">t =</span> <span class="dv">6</span>, <span class="at">r =</span> <span class="dv">10</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">examine_recipe</span>(rcbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>design("Randomised Complete Block Design") %&gt;%
+  set_units(block = 10,
+            unit = nested_in(block, 6)) %&gt;%
+  set_trts(trt = 6) %&gt;%
+  allot_trts(trt ~ unit) %&gt;%
+  assign_trts("random", seed = 836) %&gt;%
+  serve_table()</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(rcbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="figures/autoplot-rcbd-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+<p>Suppose now I tell you that there are only 3 units in block 1 and 4 units in block 2, and 5 units in block 3, while other blocks can have 6 units. How would you modify your design then? Still generate an RCBD but randomly remove the treatment allocation to match the block size? In comparison to the previous design, this design has 6 less units so it’s possible to have 9 replicates for each treatment. Generally you’d want to get close to a balanced design as possible so you have roughly an equal amount of information on all your treatments. If you randomly remove the treatment allocation to match the required block size, there’s no guarantee that you’ll end up with a balanced design. You’ll also find that there’ll be no named experimental design that matches the description of your units so you won’t be able to just select a design from the menu. This is where the <code>edibble</code> system aids you. In the fundamental <code>edibble</code> system, you put the experimental structure first before thinking about the treatment assignment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mbd <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Modified Block Design"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">block =</span> <span class="dv">10</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit =</span> <span class="fu">nested_in</span>(block, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">2</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">3</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                               . <span class="sc">~</span> <span class="dv">6</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">trt =</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_trts</span>(trt <span class="sc">~</span> unit) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign_trts</span>(<span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">326</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(mbd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="figures/autoplot-bd-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can see below that the number of replications are equal across the treatments. You can try changing the seed number above to generate another set of design and see if it still holds true (it should!).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mbd<span class="sc">$</span>trt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+trt1 trt2 trt3 trt4 trt5 trt6 
+   9    9    9    9    9    9 </code></pre>
+</div>
+</div>
 
 
 
@@ -413,13 +540,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./cookbook-crd.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Completely randomised design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link">
-        <span class="nav-page-text">Basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./cookbook-lsd.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Latin square designs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

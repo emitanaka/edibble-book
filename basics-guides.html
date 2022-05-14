@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - Preface</title>
+<title>The Grammar of Experimental Designs - 6&nbsp; Guides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -24,8 +43,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./basics-summary.html" rel="next">
+<link href="./basics-analysis.html" rel="prev">
 <link href="./figures/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,7 +96,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Preface</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Guides</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -128,7 +147,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -166,7 +185,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics-guides.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Guides</span></a>
+  <a href="./basics-guides.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Guides</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -301,14 +320,22 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-collection-issues" id="toc-data-collection-issues" class="nav-link active" data-scroll-target="#data-collection-issues"> <span class="header-section-number">6.1</span> Data collection issues</a></li>
+  <li><a href="#ethics" id="toc-ethics" class="nav-link" data-scroll-target="#ethics"> <span class="header-section-number">6.2</span> Ethics</a></li>
+  <li><a href="#protocol" id="toc-protocol" class="nav-link" data-scroll-target="#protocol"> <span class="header-section-number">6.3</span> Protocol</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics-guides.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Preface</h1>
+<h1 class="title"><span id="sec-guides" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Guides</span></span></h1>
 </div>
 
 
@@ -324,12 +351,51 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </header>
 
-<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
-<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
-<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
-<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+📖 Status of the book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:</p>
+<ul>
+<li>at <a href="https://github.com/emitanaka/edibble-book/issues">GitHub issues</a>,</li>
+<li>email me at <a href="mailto:emi.tanaka@monash.edu">emi.tanaka@monash.edu</a>, or</li>
+<li>leave it anonymously in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link">here</a>.</li>
+</ul>
+</div>
+</div>
+<section id="data-collection-issues" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="data-collection-issues"><span class="header-section-number">6.1</span> Data collection issues</h2>
+<p>Recognising potential data collection issues at the experimental design stage can be helpful in ensuring that there are sufficient and accurate data at the analysis stage. Some situations that can arise are:</p>
+<ul>
+<li>missing data,</li>
+<li>change in instrument to measure response,</li>
+<li>loss of data integrity (i.e.&nbsp;issues related to record, storage and access of data), and/or</li>
+<li>non-compliance of experimental protocol.</li>
+</ul>
+<p>In planning an experiment, it’s not prudent that the most statistical optimal design is produced. It is better to produce a design that technician can follow without great difficulty than produce a complex design that’s likely to result in a mistake in carrying it out.</p>
+</section>
+<section id="ethics" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="ethics"><span class="header-section-number">6.2</span> Ethics</h2>
+<p>While the aim of experiments may be to advance our knowledge or understanding, this doesn’t mean all experiments should be conducted. The Belmont report by the <span class="citation" data-cites="belmont">National Commission for the Proptection of Human Subjects of Biomedical and Behavioral Research (<a href="references.html#ref-belmont" role="doc-biblioref">1978</a>)</span> outlines the ethical principles and guidelines for the protection of human subjects of research. A similar guideline would be available for animal subjects.</p>
+<p>Besides the protection of the subjects, the experiment should not go ahead if there is little possibility of extracting meaningful analysis. These include cases where the sample size is small so no conclusive evidence can be drawn from the experiment, or where the collected data does not answer the aim of the experiment.</p>
+</section>
+<section id="protocol" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="protocol"><span class="header-section-number">6.3</span> Protocol</h2>
+<p>Some domains require experimental protocol to be <a href="https://www.cos.io/initiatives/prereg">pre-registered</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-belmont" class="csl-entry" role="doc-biblioentry">
+National Commission for the Proptection of Human Subjects of Biomedical and Behavioral Research. 1978. <span>“The Belmont Report: Ethical Principles and Guidelines for the Protection of Human Subjects of Research.”</span> Distributed by ERIC Clearinghouse.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -413,13 +479,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./basics-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link">
-        <span class="nav-page-text">Basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./basics-summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

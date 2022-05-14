@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - Preface</title>
+<title>The Grammar of Experimental Designs - 3&nbsp; Choices</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,8 +24,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./basics-diagnosis.html" rel="next">
+<link href="./basics-principles.html" rel="prev">
 <link href="./figures/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,7 +77,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Preface</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Choices</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -128,7 +128,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -151,7 +151,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics-choices.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Choices</span></a>
+  <a href="./basics-choices.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Choices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -301,14 +301,22 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#choices-of-units" id="toc-choices-of-units" class="nav-link active" data-scroll-target="#choices-of-units"> <span class="header-section-number">3.1</span> Choices of units</a></li>
+  <li><a href="#choices-of-treatments" id="toc-choices-of-treatments" class="nav-link" data-scroll-target="#choices-of-treatments"> <span class="header-section-number">3.2</span> Choices of treatments</a></li>
+  <li><a href="#choices-of-data-to-record" id="toc-choices-of-data-to-record" class="nav-link" data-scroll-target="#choices-of-data-to-record"> <span class="header-section-number">3.3</span> Choices of data to record</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics-choices.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Preface</h1>
+<h1 class="title"><span id="sec-choices" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Choices</span></span></h1>
 </div>
 
 
@@ -324,12 +332,50 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 
 </header>
 
-<p>This book is intended for anyone who is interested in planning, designing and simulating experiments with a programming language. The programming is illustrated with the R language, however, the concept may be generalised to other programming languages.</p>
-<p>The book can also serve as a reference to both undergraduate and graduate courses. Each section has problems that can be used as exercise for students. The book can also be used by practitioners that are involved with scientific or industrial experiments. The book will include plenty of examples spanning a diverse range of disciplines.</p>
-<p>It is beneficial to have at least some knowledge of R. Readers may like to read XXX for basic knowledge in R and “R for Data Science” for <code>tidyverse</code> approaches to data analysis in R.</p>
-<p>The book primarily makes use of <code>ggplot2</code> for drawing static plots. The default color scheme and theme are modified as below and are applied for all plots produced by <code>ggplot2</code> henceforth.</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+📖 Status of the book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hi there! This book is a work-in-progress. You may like to come back later when it’s in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:</p>
+<ul>
+<li>at <a href="https://github.com/emitanaka/edibble-book/issues">GitHub issues</a>,</li>
+<li>email me at <a href="mailto:emi.tanaka@monash.edu">emi.tanaka@monash.edu</a>, or</li>
+<li>leave it anonymously in the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link">here</a>.</li>
+</ul>
+</div>
+</div>
+<section id="choices-of-units" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="choices-of-units"><span class="header-section-number">3.1</span> Choices of units</h2>
+</section>
+<section id="choices-of-treatments" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="choices-of-treatments"><span class="header-section-number">3.2</span> Choices of treatments</h2>
+<p>The choice of treatments must be guided by the domain expert, however in some cases this may be guided by statistics. These generally include treatments that can be encoded as a numerical value, such as in dose finding experiments or Latin hyper cube sampling. In dose finding experiment, small-scale screening experiments may be done first to determine the dose levels for the larger trial. For Latin hyper cube sampling, several factors that have a continuous range and the level is sampled in a way that maximises a certain criterion.</p>
+<p>The effectiveness of any treatment is only established in relation to another treatment, e.g.&nbsp;the control. As an analogy, consider a student that has been heralded as a mathematical genius because she has been getting perfect scores in all her assessments. But if you find out that all the other students in her class has been getting perfect scores as well, then you may rescind calling her a mathematical genius. The thing is though, all the students could indeed be mathematical geniuses but without comparisons with typical mathematics students, you will not be sure. Wrong comparisons could also be made, e.g.&nbsp;comparing the student with a member of general public, who does not practice mathematics day-to-day, leads to a logical fallacy of student appearing to excel in mathematics, when in fact it would be expected she would be better at mathematics than those who don’t make regular use of it.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Choice of control treatment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The control treatment should be chosen such that the comparison is meaningful. For example, a new cancer treatment shouldn’t be compared to “no treatment” but to the standard approach to treat cancer. Not only may it be unethical to assign a “no treatment” to a cancer patient, it is wasteful of experimental resources to design experiments where there there is little interest in comparing to “no treatment”.</p>
+</div>
+</div>
+</section>
+<section id="choices-of-data-to-record" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="choices-of-data-to-record"><span class="header-section-number">3.3</span> Choices of data to record</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -413,13 +459,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./basics-principles.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Principles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link">
-        <span class="nav-page-text">Basics</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./basics-diagnosis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Diagnosis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
