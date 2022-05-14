@@ -15,7 +15,10 @@ If the design of an experiment is faulty, any method of interpretation which mak
 --Fisher, 1935, Design of Experiments
 :::
 
-Data is a resultant reality, as such any examination of the data to answer questions in a satisfying manner require comprehension of the origin of the data, i.e. how was the data collected? For experimental data, this includes knowing the experimental aim and design.
+Data is a resultant reality so any examination of the data to answer questions in a satisfying manner requires a degree of comprehension of the origin of the data, i.e. **_how was the data collected and curated?_** If you don't know how the data originated, how do you know what population the sample represents? In the absence of understanding the origin of data, your interpretation can be flawed -- we've seen this with prediction algorithms trained on biased data, election outcome that was unexpected by many because the poll indicated otherwise, retracted articles due to fabricated data, and so on. You can dissect your data using myraids of different analysis but it'll do no good if your data is rubbish. Knowing the method of data collection and data curation doesn't guarantee your analysis will be better but it can raise your understanding of the limitation of your interpretation. 
+
+Experimental data, as the name suggests, is data collected from an experiment. Unlike other methods of data collection, experimental data originate from a controlled environment where specific factors in the data are within the control of the experimenter. In other words, experimental data are unique in that we have control over how data is created. How to control these factors is what entails as _experimental design_.
+
 
 There are many articles and books dedicated to explaining the concepts of experimental designs. This includes the seminal book by @Fisher1935-qc, @Bailey2008-gw, etc. This chapter presents an overview of the statistical concepts that are most pertinent in designing an experiment. 
 
