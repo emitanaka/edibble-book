@@ -1,0 +1,19 @@
+# Strip-plot design
+
+```{r}
+#| child: "status.qmd"
+```
+```{r setup, include = FALSE}
+source("setup.R")
+set.seed(1)
+```
+
+```{r, comment = ""}
+strip <- takeout(menu_strip(t1 = 3, t2 = 4, r = 9))
+examine_recipe(strip)
+```
+
+```{r autoplot-strip, fig.height = 6, fig.width = 6, eval = FALSE}
+autoplot(strip) + facet_wrap(~block, scales = "free")
+```
+

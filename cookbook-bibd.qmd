@@ -1,0 +1,17 @@
+# Balanced incomplete block design
+
+```{r}
+#| child: "status.qmd"
+```
+```{r setup, include = FALSE}
+source("setup.R")
+set.seed(1)
+```
+
+```{r, comment = ""}
+bibd <- takeout(menu_bibd(t = 5, r = 10, k = 4))
+examine_recipe(bibd)
+```
+```{r autoplot-bibd, fig.height = 6, fig.width = 6}
+autoplot(bibd)
+```

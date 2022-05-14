@@ -23,3 +23,8 @@ options(
   )
 )
 
+
+
+eunit1 <- function() '<i class="fas fa-seedling"></i>'
+eunit2 <- function() '<i class="fas fa-wine-bottle"></i>'
+eunit3 <- function() '<i class="fas fa-laptop"></i>'

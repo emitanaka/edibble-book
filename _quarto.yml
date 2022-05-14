@@ -19,11 +19,38 @@ book:
   chapters:
     - index.qmd
     - preface.qmd
-    - basics.qmd
-    - grammar.qmd
-    - edibble.qmd
-    - management.qmd
-    - cookbook.qmd
+    
+    - part: basics.qmd
+      chapters:
+        - basics-terminology.qmd
+        - basics-principles.qmd
+        - basics-choices.qmd
+        - basics-diagnosis.qmd
+        - basics-analysis.qmd
+        - basics-guides.qmd
+        - basics-summary.qmd
+    - part: grammar.qmd
+      chapters:
+        - grammar-ed.qmd
+        - grammar-graphics.qmd
+        - grammar-ed-graphics.qmd
+    - part: human.qmd
+      chapters:
+        - human-consulting.qmd
+        - human-management.qmd
+    - part: toolbox.qmd
+      chapters:
+        - toolbox-edibble.qmd
+    - part: cookbook.qmd
+      chapters:
+        - cookbook-crd.qmd
+        - cookbook-rcbd.qmd
+        - cookbook-lsd.qmd
+        - cookbook-factorial.qmd
+        - cookbook-bibd.qmd
+        - cookbook-split.qmd
+        - cookbook-strip.qmd
+  appendices:
     - references.qmd
 
 #comments:

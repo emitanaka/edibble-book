@@ -1,0 +1,19 @@
+# Analysis {#sec-analysis}
+
+```{r}
+#| child: "status.qmd"
+```
+```{r}
+#| include: false
+source("setup.R")
+```
+
+Before starting the experiment, it is important to have an analysis plan of the experimental data.  
+
+
+
+### To include or not include blocking factors in your model?
+
+The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.
+
+My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them. 

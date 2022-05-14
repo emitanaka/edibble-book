@@ -1,0 +1,21 @@
+# Diagnosis {#sec-dignosis}
+
+```{r}
+#| child: "status.qmd"
+```
+```{r}
+#| include: false
+source("setup.R")
+```
+
+This section addresses the statistical diagnosis of an experimental design. In addition, there are non-statistical diagnosis that should be made by the domain experts.
+
+## Design anatomy
+
+The design anatomy, or sometimes referred to as skeleton anova, shows the decomposition of the degrees of freedom for different sources of variation. This is important in finding out if there are any terms that are aliasing (i.e. perfectly confounded) or have low information. 
+
+## Diagrams
+
+## Simulate
+
+It's good practice to simulate the data for the given design and try fitting the model in the analysis plan. This can help reflect about your design and also reveal any issues with fitting the planned model. You may plan for some complex model, however keep in mind that it doesn't mean you can fit that model since you may be hit with issues like where model fails to converge and memory or speed issues with big data.

@@ -1,0 +1,19 @@
+# Summary {#sec-basics-summary}
+
+```{r}
+#| child: "status.qmd"
+```
+```{r}
+#| include: false
+source("setup.R")
+```
+
+The major concepts this chapter covered are:
+
+* basic statistical terminology for experimental design 
+* importance of replication and randomisation in experiments 
+* pitfalls of pseudo-replication 
+
+## Exercises
+
+1. A farmer would like to know which diet is most effective in increasing the weight of the pigs. There are three types of diet that he wishes to test. For this scenario, describe the experimental aim, treatments, experimental units, observational units and the experimental design.

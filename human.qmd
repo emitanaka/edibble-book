@@ -1,0 +1,18 @@
+# Human factor {#sec-human .unnumbered}
+
+
+```{r}
+#| child: "status.qmd"
+```
+
+```{r setup, include = FALSE}
+source("setup.R")
+```
+
+::: blockquote
+
+... communication is complex, fraught with tensions, misunderstandings, and problems — rather than a simple process of creating shared meaning.
+
+-- Littlejohn et al., 2017, Theories of Human Communication
+
+:::

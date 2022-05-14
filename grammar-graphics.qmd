@@ -1,0 +1,9 @@
+# The (layered) grammar of graphics {#sec-ggplot}
+
+```{r}
+#| child: "status.qmd"
+```
+
+```{r setup, include = FALSE}
+source("setup.R")
+```

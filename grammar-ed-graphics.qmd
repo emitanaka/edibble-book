@@ -1,0 +1,9 @@
+# Graphics for experimental design {#sec-deggust}
+
+```{r}
+#| child: "status.qmd"
+```
+
+```{r setup, include = FALSE}
+source("setup.R")
+```

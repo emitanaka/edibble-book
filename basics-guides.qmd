@@ -1,0 +1,34 @@
+# Guides {#sec-guides}
+
+```{r}
+#| child: "status.qmd"
+```
+```{r}
+#| include: false
+source("setup.R")
+```
+
+## Data collection issues
+
+Recognising potential data collection issues at the experimental design stage can be helpful in ensuring that there are sufficient and accurate data at the analysis stage. Some situations that can arise are:
+
+- missing data, 
+- change in instrument to measure response, 
+- loss of data integrity (i.e. issues related to record, storage and access of data), and/or 
+- non-compliance of experimental protocol.
+
+In planning an experiment, it's not prudent that the most statistical optimal design is produced. It is better to produce a design that technician can follow without great difficulty than produce a complex design that's likely to result in a mistake in carrying it out.
+
+
+## Ethics
+
+While the aim of experiments may be to advance our knowledge or understanding, this doesn't mean all experiments should be conducted. The Belmont report by the @belmont outlines the ethical principles and guidelines for the protection of human subjects of research. A similar guideline would be available for animal subjects. 
+
+Besides the protection of the subjects, the experiment should not go ahead if there is little possibility of extracting meaningful analysis. These include cases where the sample size is small so no conclusive evidence can be drawn from the experiment, or where the collected data does not answer the aim of the experiment. 
+
+
+## Protocol
+
+Some domains require experimental protocol to be [pre-registered](https://www.cos.io/initiatives/prereg).
+
+

@@ -1,0 +1,53 @@
+# Latin square designs
+
+```{r}
+#| child: "status.qmd"
+```
+```{r setup, include = FALSE}
+source("setup.R")
+set.seed(1)
+```
+
+```{r, comment = ""}
+lsd <- takeout(menu_lsd(t = 6))
+examine_recipe(lsd)
+```
+
+```{r autoplot-lsd, fig.height = 6, fig.width = 6}
+autoplot(lsd)
+```
+
+
+## Graeco-Latin square design
+
+```{r, comment = ""}
+graeco <- takeout(menu_graeco(t = 9))
+examine_recipe(graeco)
+```
+
+```{r autoplot-graeco, fig.height = 6, fig.width = 6}
+autoplot(graeco)
+```
+
+## Hyper-Graeco-Latin square design
+
+```{r, comment = ""}
+hyper_graeco <- takeout(menu_hyper_graeco(t = 6))
+examine_recipe(hyper_graeco)
+```
+
+```{r autoplot-hyper-graeco, fig.height = 6, fig.width = 6}
+autoplot(hyper_graeco)
+```
+
+## Youden square design
+
+```{r, comment = ""}
+youden <- takeout(menu_youden(nc = 4, t = 5))
+examine_recipe(youden)
+```
+
+```{r autoplot-youden}
+autoplot(youden)
+```
+

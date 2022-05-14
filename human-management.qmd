@@ -1,17 +1,14 @@
 # Project management {#sec-management}
 
 
-```{r child="status.qmd"}
+```{r}
+#| child: "status.qmd"
 ```
 
+```{r setup, include = FALSE}
+source("setup.R")
+```
 
-::: blockquote
-
-... communication is complex, fraught with tensions, misunderstandings, and problems — rather than a simple process of creating shared meaning.
-
--- Littlejohn et al., 2017, Theories of Human Communication
-
-:::
 
 
 An experiment generally involves more than one person. For simplicity, let us suppose there are four actors:

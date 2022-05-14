@@ -1,0 +1,18 @@
+# Split-plot design
+
+```{r}
+#| child: "status.qmd"
+```
+```{r setup, include = FALSE}
+source("setup.R")
+set.seed(1)
+```
+
+```{r, comment = ""}
+spd <- takeout(menu_split(t1 = 2, t2 = 4, r = 10))
+examine_recipe(spd)
+```
+
+```{r autoplot-spd, fig.height = 6, fig.width = 6}
+autoplot(spd)
+```

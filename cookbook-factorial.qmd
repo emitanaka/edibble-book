@@ -1,0 +1,18 @@
+# Factorial design
+
+```{r}
+#| child: "status.qmd"
+```
+```{r setup, include = FALSE}
+source("setup.R")
+set.seed(1)
+```
+
+```{r, comment = ""}
+fac <- takeout(menu_factorial(trt = c(3, 2)))
+examine_recipe(fac)
+```
+
+```{r autoplot-fac, fig.height = 6, fig.width = 6}
+autoplot(fac)
+```
