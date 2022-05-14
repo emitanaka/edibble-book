@@ -1,0 +1,12 @@
+
+::: {.callout-caution icon=false}
+
+## 📖 Status of the book
+
+Hi there! This book is a work-in-progress. You may like to come back later when it's in a more complete state. If you would like to raise issues or leave feedback, please feel to do this:
+
+- at [GitHub](https://github.com/emitanaka/edibble-book/issues), 
+- email me at [emi.tanaka@monash.edu](mailto:emi.tanaka@monash.edu), or 
+- leave it anonymously in the form [here](https://docs.google.com/forms/d/e/1FAIpQLSfMkZ2uxjFce0u5zFBEeEo6_P6Nnkk0ShnCI9LZNmv__EY8vw/viewform?usp=sf_link).
+
+:::

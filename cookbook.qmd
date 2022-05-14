@@ -1,7 +1,7 @@
 # Cookbook {#sec-cookbook}
 
 
-```{r child="work-in-progress.qmd"}
+```{r child="status.qmd"}
 ```
 
 

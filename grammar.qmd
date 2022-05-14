@@ -1,7 +1,6 @@
 # Grammar {#sec-grammar}
 
-
-```{r child="work-in-progress.qmd"}
+```{r child="status.qmd"}
 ```
 
 ```{r setup, include = FALSE}

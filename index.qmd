@@ -7,10 +7,8 @@ knitr::read_chunk("setup.R")
 
 # Welcome {-}
 
-```{r child="work-in-progress.qmd"}
+```{r child="status.qmd"}
 ```
-
-
 
 
 The book will include about the basics of experimental design and how to get started with the `edibble` R-package and its extensions to plan, design and simulate experiments. 

@@ -1,7 +1,7 @@
 # Project management {#sec-management}
 
 
-```{r child="work-in-progress.qmd"}
+```{r child="status.qmd"}
 ```
 
 
