@@ -27,7 +27,6 @@ book:
         - basics-choices.qmd
         - basics-diagnosis.qmd
         - basics-analysis.qmd
-        - basics-guides.qmd
         - basics-summary.qmd
     - part: grammar.qmd
       chapters:
@@ -36,9 +35,10 @@ book:
         - grammar-ed-graphics.qmd
     - part: practice.qmd
       chapters:
-        - practice-context.qmd
         - practice-consulting.qmd
         - practice-management.qmd
+        - practice-context.qmd
+        - practice-guides.qmd
     - part: toolbox.qmd
       chapters:
         - toolbox-edibble.qmd

@@ -16,3 +16,13 @@ source("setup.R")
 -- Littlejohn et al., 2017, Theories of Human Communication
 
 :::
+
+Designing an experiment _in practice_ isn't just about applying statistical principles as covered in @sec-principles. In fact, a large component of experimental design in practice is being able to _elicit information from the experts and translating it to the statistical structure needed for the experimental design_. Therefore, any best practice for experimental design is incomplete without discussing the practical factors that comes into play in designing an experiment.  
+
+This part is organised as follows:
+
+* @sec-consultation focuses on consulting aspects from the perspective of the statistician,
+* @sec-management discusses the project management across all parties involved, 
+* @sec-context considers the domain knowledge aspects and some context specific examples, and
+* @sec-guides present guides for general consideration of experimental design.
+

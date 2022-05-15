@@ -1,4 +1,4 @@
-# Graphics for experimental design {#sec-deggust}
+# Graphics for experimental designs {#sec-deggust}
 
 ```{r}
 #| child: "status.qmd"
