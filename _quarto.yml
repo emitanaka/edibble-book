@@ -34,11 +34,11 @@ book:
         - grammar-ed.qmd
         - grammar-graphics.qmd
         - grammar-ed-graphics.qmd
-    - part: human.qmd
+    - part: practice.qmd
       chapters:
-        - human-context.qmd
-        - human-consulting.qmd
-        - human-management.qmd
+        - practice-context.qmd
+        - practice-consulting.qmd
+        - practice-management.qmd
     - part: toolbox.qmd
       chapters:
         - toolbox-edibble.qmd
