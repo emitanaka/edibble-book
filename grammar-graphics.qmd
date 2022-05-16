@@ -7,3 +7,59 @@
 ```{r setup, include = FALSE}
 source("setup.R")
 ```
+
+The grammar of graphics is an object oriented programming framework to computational express multitude of graphics based on a relatively small number of rules. The framework requires the data to be organised in a manner such that data variables are mapped a particular plot element. The grammar of graphics is extensively explained in the seminal book, @Wilkinson2005-oz, and various interpretations are implemented in different systems (e.g. R, Python, Julia, Tableau) with the most popular one being the R-package `ggplot2` by @ggplot2. 
+
+I illustrate below some basics but those who wish to know more about the framework is advised to read @ggplot2. If you want to learn more about using the system, then you are advised to read @Chang2018.
+
+```{r, message = FALSE, warning = FALSE, echo = -c(2:4)}
+library(tidyverse) # includes `ggplot2`
+# revert back to original theme 
+theme_book <- theme_get()
+theme_set(theme_gray())
+data(crampton.pig, package = "agridat")
+glimpse(crampton.pig)
+```
+
+```{r plot1}
+g1 <- ggplot(data = crampton.pig,
+             mapping = aes(x = weight1,
+                           y = weight2,
+                           color = treatment,
+                           size = feed)) +
+        geom_point()
+g1
+```
+
+
+```{r plot2}
+g2 <- g1 + geom_smooth(method = "lm", se = FALSE, formula = y ~ x)
+g2
+```
+
+```{r plot3}
+g3 <- g2 + coord_polar("y")
+g3
+```
+
+```{r}
+crampton_pig_wide <- crampton.pig %>% 
+  mutate(pig_id = 1:n()) %>% 
+  pivot_longer(c(weight1, weight2), 
+               names_to = "state",
+               values_to = "weight")
+
+glimpse(crampton_pig_wide)
+```
+```{r plot4}
+ggplot(crampton_pig_wide, 
+       aes(x = state, y = weight, group = pig_id)) +
+  geom_line() +
+  facet_wrap(~treatment)
+```
+
+
+```{r, include=FALSE}
+theme_set(theme_book)
+```
+
