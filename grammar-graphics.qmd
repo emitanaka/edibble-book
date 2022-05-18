@@ -10,7 +10,15 @@ source("setup.R")
 
 The grammar of graphics is an object oriented programming framework to computational express multitude of graphics based on a relatively small number of rules. The framework requires the data to be organised in a manner such that data variables are mapped a particular plot element. The grammar of graphics is extensively explained in the seminal book, @Wilkinson2005-oz, and various interpretations are implemented in different systems (e.g. R, Python, Julia, Tableau) with the most popular one being the R-package `ggplot2` by @ggplot2. 
 
-I illustrate below some basics but those who wish to know more about the framework is advised to read @ggplot2. If you want to learn more about using the system, then you are advised to read @Chang2018.
+I illustrate below some basics of `ggplot2` but those who wish to know more about the framework is advised to read @ggplot2. If you want to learn more about using the system to draw plots, then you are advised to read @Chang2018.
+
+In the first instance, we load the `tidyverse` package and data about weight gain of 50 pigs for five different feed treatments. The data, contained in the object `crampton.pig`, has rows corresponding to each pig and five columns:
+
+* `treatment` - the feed treatment,
+* `rep` - the replicate of the treatment,
+* `weight1` - the initial weight, 
+* `feed` - the amount of feed eaten by the pig, and
+* `weight2` - the final weight.
 
 ```{r, message = FALSE, warning = FALSE, echo = -c(2:4)}
 library(tidyverse) # includes `ggplot2`
@@ -21,26 +29,86 @@ data(crampton.pig, package = "agridat")
 glimpse(crampton.pig)
 ```
 
-```{r plot1}
-g1 <- ggplot(data = crampton.pig,
-             mapping = aes(x = weight1,
-                           y = weight2,
-                           color = treatment,
-                           size = feed)) +
-        geom_point()
-g1
+## Mapping
+
+Mapping, provided through `aes`, links the data to plot aesthetics. This can be specified through the `ggplot()` function as shown in the code below where the input data is `crampton.pig` and the mapping is such that `weight1` and `weight2` will be shown in the x-axis and y-axis, respectively, treatment depicted by color, and feed depicted by size. This is just specifying the data and mapping though so no graph is shown in the plot. 
+
+```{r plot-blank}
+gbase <- ggplot(data = crampton.pig,
+                mapping = aes(x     = weight1,
+                              y     = weight2,
+                              color = treatment,
+                              size  = feed)) 
+
+gbase
 ```
 
 
-```{r plot2}
-g2 <- g1 + geom_smooth(method = "lm", se = FALSE, formula = y ~ x)
-g2
+## Layers
+
+To draw graphs, layers must be specified by appending a `LayerInstance` object. 
+
+```{r plot-scatter}
+gscatter <- gbase + geom_point()
+
+gscatter
 ```
 
-```{r plot3}
-g3 <- g2 + coord_polar("y")
-g3
+```{r plot-boxplot}
+gboxplot <- ggplot(data = crampton.pig,
+                   mapping = aes(x = treatment,
+                                 y = weight2 - weight1)) +
+            geom_boxplot()
+gboxplot
 ```
+
+```{r}
+layer_data(gboxplot)
+```
+
+
+```{r, eval = FALSE}
+gboxplot$layers[[1]]$geom$draw_group
+```
+```cell-output-stdout
+...
+outliers_grob <- GeomPoint$draw_panel(outliers, ...)
+...
+ggname("geom_boxplot", 
+       grobTree(outliers_grob, 
+                GeomSegment$draw_panel(whiskers, ...), 
+                GeomCrossbar$draw_panel(box, ...)))
+```
+
+
+
+```{r plot-fit}
+gfit <- gscatter + 
+  geom_smooth(method = "lm", 
+              formula = y ~ x,
+              se = FALSE)
+gfit
+```
+
+
+
+
+## Coordinate system
+
+```{r plot-bar}
+gbar <- ggplot(data = crampton.pig,
+             mapping = aes(x = treatment,
+                           y = weight2 - weight1,
+                           group = factor(1:nrow(crampton.pig)))) +
+        geom_col(position = "dodge", color = "white") 
+gbar
+```
+
+```{r plot-rose}
+gbar + coord_polar("x")
+```
+
+## Data organisation
 
 ```{r}
 crampton_pig_wide <- crampton.pig %>% 
@@ -51,12 +119,36 @@ crampton_pig_wide <- crampton.pig %>%
 
 glimpse(crampton_pig_wide)
 ```
-```{r plot4}
-ggplot(crampton_pig_wide, 
+
+
+```{r plot-slope}
+gslope <- ggplot(crampton_pig_wide, 
        aes(x = state, y = weight, group = pig_id)) +
-  geom_line() +
-  facet_wrap(~treatment)
+  geom_line(aes(color = treatment))
+
+gslope
 ```
+
+## Facet
+
+```{r plot-facet}
+gslope + facet_wrap(~treatment)
+```
+
+```{r plot-grid}
+gslope + facet_grid(cut_number(feed, 3) ~ treatment)
+```
+
+
+## Scale
+
+## Guide
+
+
+## Theme
+
+
+
 
 
 ```{r, include=FALSE}
