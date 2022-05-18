@@ -1,0 +1,44 @@
+# Visualise {#sec-deggust}
+
+```{r}
+#| child: "status.qmd"
+```
+
+```{r setup, include = FALSE}
+source("setup.R")
+```
+
+Visualisation of the experimental design is helpful for diagnostics (as outlined in @sec-dignosis), however, it serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in @tbl-purpose. 
+
+
+\# | Purpose | Primary audience | Output requirement
+-: | -------- | --- | -------
+1 | Checking the experimental structure | Domain experts | Quick and easy 
+2 | Diagnosis of experimental design | Statisticians | Informative
+3 | Implementing the experimental design | Technicians | Detailed diagram
+4 | Publications | Public | Polished 
+
+: Purposes of visualising experimental designs {#tbl-purpose}
+
+
+
+## Rectangular display 
+
+```{r dummy-crd, echo = FALSE}
+crd_eg <- takeout(menu_crd(t = 4, r = 6))
+knitr::kable(crd_eg)
+```
+
+```{r dummy-crd-plot, echo = FALSE}
+ggplot(crd_eg, aes(unit, "1", color = trt)) +
+  geom_point(size = 7) +
+  theme_void()
+```
+
+
+```{r dummy-crd-autoplot, echo = FALSE}
+autoplot(crd_eg) +
+  theme(plot.title = element_blank(),
+        plot.subtitle = element_blank())
+```
+

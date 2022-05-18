@@ -1,4 +1,4 @@
-# The grammar of experimental designs {#sec-grammar-ed}
+# Fundamentals {#sec-grammar-ed}
 
 ```{r}
 #| child: "status.qmd"
@@ -9,7 +9,6 @@ source("setup.R")
 ```
 
 
-## Fundamental terminology
 
 @sec-terminology describe the basic terminology used in the field of experimental design. We can, however, describe some terms more fundamentally by considering every categorised entity (physical or otherwise) involved in the experiment to be a factor in the design. The two primary roles of a factor are treatments and units; under this categorisation blocks, experimental units and observational units are all just units -- the explicit role of the unit is determined implicitly by the relationship of the factors. For example, if a treatment factor is allocated to a plot factor, then the plot is an experimental unit. 
 
