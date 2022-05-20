@@ -8,7 +8,7 @@
 source("setup.R")
 ```
 
-Visualisation of the experimental design is helpful for diagnostics (as outlined in @sec-dignosis), however, it serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in @tbl-purpose. 
+Visualisation of the experimental design is helpful for diagnostics (as outlined in @sec-dignosis), however, it serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in @tbl-purpose. Given the purposes in @tbl-purpose, an ideal visualisation system for experimental designs would be easy, quick and can be customised to make a polished, publication-ready visualisation -- just like the `ggplot2` system discussed in @sec-ggplot. On top of the previous ideal requirements, it helps to leverage existing visualisation systems so users don't have to learn a new "lingo" just to customise the visualisation of experimental designs. The `deggust` R-package was made with these requirements in mind -- several of its features are outlined below that make small but considerate choices for viewers.
 
 
 \# | Purpose | Primary audience | Output requirement
@@ -16,7 +16,7 @@ Visualisation of the experimental design is helpful for diagnostics (as outlined
 1 | Checking the experimental structure | Domain experts | Quick and easy 
 2 | Diagnosis of experimental design | Statisticians | Informative
 3 | Implementing the experimental design | Technicians | Detailed diagram
-4 | Publications | Public | Polished 
+4 | Publications in journals, reports and other mediums | Public | Polished 
 
 : Purposes of visualising experimental designs {#tbl-purpose}
 
@@ -29,14 +29,20 @@ crd_eg <- takeout(menu_crd(t = 4, r = 6))
 knitr::kable(crd_eg)
 ```
 
-```{r dummy-crd-plot, echo = FALSE}
+```{r}
+#| label: dummy-crd-plot
+#| fig-cap: 'The units are ordered in a straight line.'
+#| echo: false
 ggplot(crd_eg, aes(unit, "1", color = trt)) +
   geom_point(size = 7) +
   theme_void()
 ```
 
 
-```{r dummy-crd-autoplot, echo = FALSE}
+```{r}
+#| label: dummy-crd-autoplot
+#| fig-cap: 'The units, denoted by circles, are "wrapped" around so that it fits nicely into a rectangle screen. The line behind the circles show the order of the units.'
+#| echo: false
 autoplot(crd_eg) +
   theme(plot.title = element_blank(),
         plot.subtitle = element_blank())
