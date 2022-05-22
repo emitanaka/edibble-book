@@ -173,3 +173,33 @@ div.sourceCode {
   padding: 7px;
 }
 
+/* Table */
+
+
+.table > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--bs-table-striped-bg);
+}
+
+td {
+  border-bottom-color: rgb(222, 226, 230)
+}
+
+.pagedtable .even {
+  background-color: transparent!important;
+}
+
+.pagedtable {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+
+.pagedtable-not-empty .pagedtable-footer {
+  padding-left: 8px!important;
+  padding-right: 8px!important;
+}
+
+.table > thead > tr > * {
+  background-color: #282828;
+  color: white;
+  vertical-align: middle;
+}

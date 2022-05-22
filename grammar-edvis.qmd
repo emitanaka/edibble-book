@@ -8,7 +8,7 @@
 source("setup.R")
 ```
 
-Visualisation of the experimental design is helpful for diagnostics (as outlined in @sec-dignosis), however, it serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in @tbl-purpose. Given the purposes in @tbl-purpose, an ideal visualisation system for experimental designs would be easy, quick and can be customised to make a polished, publication-ready visualisation -- just like the `ggplot2` system discussed in @sec-ggplot. On top of the previous ideal requirements, it helps to leverage existing visualisation systems so users don't have to learn a new "lingo" just to customise the visualisation of experimental designs. The `deggust` R-package was made with these requirements in mind -- several of its features are outlined below that make small but considerate choices for viewers.
+Visualisation of the experimental design is helpful for diagnostics (as outlined in @sec-dignosis), however, it also serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in @tbl-purpose. Given the purposes in @tbl-purpose, an ideal visualisation system for experimental designs would be easy, quick and can be customised to make a polished, publication-ready visualisation -- just like the `ggplot2` system discussed in @sec-ggplot. On top of the previous ideal requirements, it helps to leverage existing visualisation systems so users don't have to learn a new "lingo" just to customise the visualisation of experimental designs. The `deggust` R-package was made with these requirements in mind -- several of its features are outlined below that make small but considerate choices for viewers.
 
 
 \# | Purpose | Primary audience | Output requirement
@@ -24,9 +24,18 @@ Visualisation of the experimental design is helpful for diagnostics (as outlined
 
 ## Rectangular display 
 
-```{r dummy-crd, echo = FALSE}
+Suppose we consider an experiment with 6 treatments with 4 replicates each and these treatments are randomly assigned to 24 units as shown in @tab-crd. 
+
+```{r}
+#| label: tab-crd
+#| echo: false
+#| results: "asis"
+#| tbl-cap: "An example experimental structure with 24 units and 6 treatments with 4 replicates each. The treatments are completely randomised to units."
 crd_eg <- takeout(menu_crd(t = 4, r = 6))
-knitr::kable(crd_eg)
+DT::datatable(crd_eg, 
+              class = "display table",
+              caption = "An example experimental structure with 24 units and 6 treatments with 4 replicates each. The treatments are completely randomised to units.")
+
 ```
 
 ```{r}
