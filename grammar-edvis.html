@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.403">
+<meta name="generator" content="quarto-0.9.442">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Grammar of Experimental Designs - 9&nbsp; Graphics for experimental designs</title>
+<title>The Grammar of Experimental Designs - 9&nbsp; Visualise</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,16 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </script>
+
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.23/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1-web/css/font-awesome.min.css">
 <script defer="" src="./assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
 <script defer="" data-domain="emitanaka.org/edibble-book" src="https://plausible.io/js/plausible.js"></script>
@@ -77,7 +87,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphics for experimental designs</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Visualise</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -181,7 +191,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grammar-ed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The grammar of experimental designs</span></a>
+  <a href="./grammar-ed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Fundamentals</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,7 +201,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grammar-ed-graphics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphics for experimental designs</span></a>
+  <a href="./grammar-edvis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Visualise</span></a>
   </div>
 </li>
     </ul>
@@ -306,17 +316,21 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#rectangular-display" id="toc-rectangular-display" class="nav-link active" data-scroll-target="#rectangular-display"> <span class="header-section-number">9.1</span> Rectangular display</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/grammar-edvis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-deggust" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphics for experimental designs</span></span></h1>
+<h1 class="title"><span id="sec-deggust" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Visualise</span></span></h1>
 </div>
-
-
 
 
 
@@ -347,8 +361,85 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </ul>
 </div>
 </div>
+<p>Visualisation of the experimental design is helpful for diagnostics (as outlined in <a href="basics-diagnosis.html"><span>Chapter&nbsp;4</span></a>), however, it also serves well for communication purposes. There are broadly four types of purposes in visualising experimental design as outlined in <a href="#tbl-purpose">Table&nbsp;<span>9.1</span></a>. Given the purposes in <a href="#tbl-purpose">Table&nbsp;<span>9.1</span></a>, an ideal visualisation system for experimental designs would be easy, quick and can be customised to make a polished, publication-ready visualisation – just like the <code>ggplot2</code> system discussed in <a href="grammar-graphics.html"><span>Chapter&nbsp;8</span></a>. On top of the previous ideal requirements, it helps to leverage existing visualisation systems so users don’t have to learn a new “lingo” just to customise the visualisation of experimental designs. The <code>deggust</code> R-package was made with these requirements in mind – several of its features are outlined below that make small but considerate choices for viewers.</p>
+<div id="tbl-purpose" class="anchored">
+<table class="table">
+<caption>Table 9.1: Purposes of visualising experimental designs</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 40%">
+<col style="width: 15%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th>Purpose</th>
+<th>Primary audience</th>
+<th>Output requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Checking the experimental structure</td>
+<td>Domain experts</td>
+<td>Quick and easy</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Diagnosis of experimental design</td>
+<td>Statisticians</td>
+<td>Informative</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td>Implementing the experimental design</td>
+<td>Technicians</td>
+<td>Detailed diagram</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>Publications in journals, reports and other mediums</td>
+<td>Public</td>
+<td>Polished</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="rectangular-display" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="rectangular-display"><span class="header-section-number">9.1</span> Rectangular display</h2>
+<p>Suppose we consider an experiment with 6 treatments with 4 replicates each and these treatments are randomly assigned to 24 units as shown in <span class="quarto-unresolved-ref">?tab-crd</span>.</p>
+<div class="cell" data-tbl-cap="An example experimental structure with 24 units and 6 treatments with 4 replicates each. The treatments are completely randomised to units.">
+<div class="cell-output-display">
+
+<div id="htmlwidget-36f984995e0c439cf405" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-36f984995e0c439cf405">{"x":{"filter":"none","vertical":false,"caption":"<caption>An example experimental structure with 24 units and 6 treatments with 4 replicates each. The treatments are completely randomised to units.<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"],["unit1","unit2","unit3","unit4","unit5","unit6","unit7","unit8","unit9","unit10","unit11","unit12","unit13","unit14","unit15","unit16","unit17","unit18","unit19","unit20","unit21","unit22","unit23","unit24"],["trt1","trt3","trt4","trt4","trt3","trt3","trt1","trt3","trt2","trt2","trt4","trt2","trt2","trt3","trt1","trt2","trt4","trt2","trt1","trt4","trt4","trt1","trt1","trt3"]],"container":"<table class=\"display table\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>unit<\/th>\n      <th>trt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/dummy-crd-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">The units are ordered in a straight line.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/dummy-crd-autoplot-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">The units, denoted by circles, are “wrapped” around so that it fits nicely into a rectangle screen. The line behind the circles show the order of the units.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

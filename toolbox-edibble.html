@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.403">
+<meta name="generator" content="quarto-0.9.442">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -263,7 +263,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grammar-ed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The grammar of experimental designs</span></a>
+  <a href="./grammar-ed.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Fundamentals</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -273,7 +273,7 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grammar-ed-graphics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphics for experimental designs</span></a>
+  <a href="./grammar-edvis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Visualise</span></a>
   </div>
 </li>
     </ul>
@@ -418,8 +418,6 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="quarto-title">
 <h1 class="title"><span id="sec-edibble" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Getting started</span></span></h1>
 </div>
-
-
 
 
 
@@ -569,16 +567,16 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 # An edibble: 24 x 2
           pig     diet
    &lt;unit(24)&gt; &lt;trt(3)&gt;
- 1      pig1  high-fat
- 2      pig2  low-fat 
- 3      pig3  standard
- 4      pig4  high-fat
+ 1      pig1  low-fat 
+ 2      pig2  standard
+ 3      pig3  low-fat 
+ 4      pig4  standard
  5      pig5  low-fat 
- 6      pig6  standard
+ 6      pig6  low-fat 
  7      pig7  standard
- 8      pig8  high-fat
- 9      pig9  low-fat 
-10      pig10 low-fat 
+ 8      pig8  low-fat 
+ 9      pig9  high-fat
+10      pig10 high-fat
 # … with 14 more rows</code></pre>
 </div>
 </div>
@@ -794,16 +792,16 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 # An edibble: 2,430 x 6
           pot       plant      piece pottasium  nutrition plantlets
    &lt;unit(90)&gt; &lt;unit(270)&gt; &lt;unit(2k)&gt;  &lt;trt(5)&gt;   &lt;trt(3)&gt;    &lt;rcrd&gt;
- 1       pot1      plant1    piece1         q2 nutrition1         ■
- 2       pot1      plant1    piece2         q2 nutrition3         ■
- 3       pot1      plant1    piece3         q2 nutrition3         ■
+ 1       pot1      plant1    piece1         q2 nutrition3         ■
+ 2       pot1      plant1    piece2         q2 nutrition2         ■
+ 3       pot1      plant1    piece3         q2 nutrition2         ■
  4       pot1      plant1    piece4         q2 nutrition1         ■
- 5       pot1      plant1    piece5         q2 nutrition2         ■
+ 5       pot1      plant1    piece5         q2 nutrition3         ■
  6       pot1      plant1    piece6         q2 nutrition2         ■
- 7       pot1      plant1    piece7         q2 nutrition2         ■
- 8       pot1      plant1    piece8         q2 nutrition3         ■
- 9       pot1      plant1    piece9         q2 nutrition1         ■
-10       pot1      plant2    piece10        q2 nutrition1         ■
+ 7       pot1      plant1    piece7         q2 nutrition1         ■
+ 8       pot1      plant1    piece8         q2 nutrition1         ■
+ 9       pot1      plant1    piece9         q2 nutrition3         ■
+10       pot1      plant2    piece10        q2 nutrition2         ■
 # … with 2,420 more rows</code></pre>
 </div>
 </div>
@@ -836,17 +834,18 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
 
  Source.unit df1 Source.trt     df2 aefficiency eefficiency order
- row           4 thinning#grass   4      0.5625      0.5000     2
- col           4 thinning#grass   4      0.5625      0.5000     2
+ row           4 thinning#grass   4      0.5410      0.3333     3
+ col           4 thinning#grass   4      0.5385      0.4667     2
  tree         16 thinning         4      1.0000      1.0000     1
                  grass            4      1.0000      1.0000     1
-                 thinning#grass   8      0.2500      0.1000     2
+                 thinning#grass   5      0.5970      0.4000     4
+                 Residual         3                              
 
 Table of information (partially) aliased with previous sources derived from the same formula
 
  Source df Alias                    In  aefficiency eefficiency order
- grass  1  thinning                 trt      0.6400      0.6400     1
- grass  4  ## Information remaining trt      0.6923      0.3600     2
+ grass  3  thinning                 trt      0.2667      0.1600     2
+ grass  4  ## Information remaining trt      0.7241      0.6000     3
 
 The design is not orthogonal</code></pre>
 </div>
@@ -973,12 +972,12 @@ Summary table of the decomposition for unit &amp; trt
 # An edibble: 48 x 8
     cultivar      seeding molybdenum     block      strip      half
     &lt;trt(3)&gt;     &lt;trt(2)&gt;   &lt;trt(2)&gt; &lt;unit(4)&gt; &lt;unit(12)&gt; &lt;unit(8)&gt;
- 1 cultivar2 conventional    none       block1     strip1     half1
- 2 cultivar1 conventional    none       block1     strip2     half1
- 3 cultivar3 conventional    none       block1     strip3     half1
- 4 cultivar2 conventional    applied    block1     strip1     half1
- 5 cultivar1 conventional    applied    block1     strip2     half1
- 6 cultivar3 conventional    applied    block1     strip3     half1
+ 1 cultivar2 conventional    applied    block1     strip1     half1
+ 2 cultivar1 conventional    applied    block1     strip2     half1
+ 3 cultivar3 conventional    applied    block1     strip3     half1
+ 4 cultivar2 conventional    none       block1     strip1     half1
+ 5 cultivar1 conventional    none       block1     strip2     half1
+ 6 cultivar3 conventional    none       block1     strip3     half1
  7 cultivar2 no tillage      none       block1     strip1     half2
  8 cultivar1 no tillage      none       block1     strip2     half2
  9 cultivar3 no tillage      none       block1     strip3     half2
