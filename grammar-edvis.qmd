@@ -24,10 +24,10 @@ Visualisation of the experimental design is helpful for diagnostics (as outlined
 
 ## Rectangular display 
 
-Suppose we consider an experiment with 6 treatments with 4 replicates each and these treatments are randomly assigned to 24 units as shown in @tab-crd. 
+Suppose we have an experiment with 6 treatments with 4 replicates each and these treatments are randomly assigned to 24 units as shown in @tbl-crd. Now consider visualising the design layout of this experiment using some graphic system with the goal of checking the design layout and assessing the randomisation of the treatments to units. 
 
 ```{r}
-#| label: tab-crd
+#| label: tbl-crd
 #| echo: false
 #| results: "asis"
 #| tbl-cap: "An example experimental structure with 24 units and 6 treatments with 4 replicates each. The treatments are completely randomised to units."
@@ -38,8 +38,10 @@ DT::datatable(crd_eg,
 
 ```
 
+If say, you use a system based on the grammar of graphics, then the columns in the design table must be mapped to a particular plot aesthetics. @fig-crd-plot shows a plot with a series of circles where each circle represents a unit, the `unit` column mapped to the x-axis, the `trt` column mapped to the color of the circle, the y-axis value is held at a constant. This display, however, is horizontally long, which is not optimal for the typical rectangular display. A display that fits more nicely into a rectangular region, while preserving the ability to understand the order of units, may be more desirable,
+
 ```{r}
-#| label: dummy-crd-plot
+#| label: fig-crd-plot
 #| fig-cap: 'The units are ordered in a straight line.'
 #| echo: false
 ggplot(crd_eg, aes(unit, "1", color = trt)) +
@@ -47,9 +49,11 @@ ggplot(crd_eg, aes(unit, "1", color = trt)) +
   theme_void()
 ```
 
+A display like @fig-crd-autoplot, which shows the design layout in @tbl-crd with units ordered in a snake-like fashion, snugly fits all units in a rectangular display with the order traced by the lines connecting the circles. This display however requires computation of new positions for the units, which adds an extra layer of friction for fast visualisation of the experimental design. The `deggust` package automates these types of computation so the user can quickly visualise the experimental design in a manner made for human consumption.
+
 
 ```{r}
-#| label: dummy-crd-autoplot
+#| label: fig-crd-autoplot
 #| fig-cap: 'The units, denoted by circles, are "wrapped" around so that it fits nicely into a rectangle screen. The line behind the circles show the order of the units.'
 #| echo: false
 autoplot(crd_eg) +
