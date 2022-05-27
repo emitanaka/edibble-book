@@ -61,3 +61,38 @@ autoplot(crd_eg) +
         plot.subtitle = element_blank())
 ```
 
+
+
+```{r}
+#| echo: false
+rcbd_eg <- design("Randomised Complete Block Design") %>%
+  set_units(block = 9,
+            unit = nested_in(block, 6)) %>%
+  set_trts(trt = 6) %>%
+  allot_trts(trt ~ unit) %>%
+  assign_trts("random", seed = 376) %>%
+  serve_table()
+
+DT::datatable(rcbd_eg, 
+              class = "display table",
+              caption = "")
+```
+
+```{r}
+#| echo: false
+ggplot(rcbd_eg, aes(unit, "1", color = trt)) +
+  geom_point(size = 7) +
+  facet_wrap(~block, scale = "free_x")
+```
+
+
+
+```{r}
+#| label: fig-rcbd-autoplot
+#| fig-cap: 'The units are automatically "wrapped" within each block. The blocks are used to facet the units.'
+#| echo: false
+autoplot(rcbd_eg) +
+  theme(plot.title = element_blank(),
+        plot.subtitle = element_blank())
+```
+
