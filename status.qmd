@@ -1,7 +1,7 @@
 
 ::: {.callout-caution icon=false}
 
-## 📖 Status of the book
+## 📖  Status of the book
 
 Hi there! This book is a work-in-progress. You may like to come back later when it's closer to a complete state. If you would like to raise issues or leave feedback, please feel to do this:
 
