@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="438 483 142 161" width="142" height="161">
+  <defs>
+    <font-face font-family="Arial Black" font-size="20" panose-1="2 11 10 4 2 1 2 2 2 4" units-per-em="1000" underline-position="-125" underline-thickness="60.058594" slope="0" x-height="524.41406" cap-height="721.6797" ascent="1100.586" descent="-309.5703" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Arial-Black"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2022-05-31 02:56:36 +0000</metadata>
+  <g id="technician" fill="none" stroke="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+    <title>technician</title>
+    <g id="technician_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>domain expert</title>
+        <g id="Group_4">
+          <g id="Graphic_10">
+            <ellipse cx="511.9048" cy="551" rx="33.0000527307626" ry="29.000046339155" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_9">
+            <line x1="513.28316" y1="581.76945" x2="512.60246" y2="618.63306" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_8">
+            <line x1="512.60246" y1="618.63306" x2="524.6807" y2="641.0091" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_7">
+            <line x1="512.60246" y1="618.63306" x2="499.4706" y2="641.0091" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_6">
+            <line x1="509.4994" y1="583.95864" x2="499.4706" y2="601.5133" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_5">
+            <line x1="514.06695" y1="583.95864" x2="532.2021" y2="601.5133" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+        </g>
+        <g id="Graphic_3">
+          <text transform="translate(443 489)" fill="#003776">
+            <tspan font-family="Arial Black" font-size="20" font-weight="800" fill="#003776" x="6.1049805" y="22">Technician</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

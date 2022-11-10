@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="556 539 142 161" width="142" height="161">
+  <defs>
+    <font-face font-family="Arial Black" font-size="20" panose-1="2 11 10 4 2 1 2 2 2 4" units-per-em="1000" underline-position="-125" underline-thickness="60.058594" slope="0" x-height="524.41406" cap-height="721.6797" ascent="1100.586" descent="-309.5703" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Arial-Black"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2022-05-31 02:56:36 +0000</metadata>
+  <g id="analyst" fill="none" stroke="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+    <title>analyst</title>
+    <g id="analyst_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>domain expert</title>
+        <g id="Group_4">
+          <g id="Graphic_10">
+            <ellipse cx="624.9048" cy="603" rx="33.0000527307626" ry="29.000046339155" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_9">
+            <line x1="626.2832" y1="633.76945" x2="625.60246" y2="670.6331" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_8">
+            <line x1="625.60246" y1="670.6331" x2="639.5546" y2="697.04136" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_7">
+            <line x1="625.60246" y1="670.6331" x2="613.5042" y2="697.04136" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_6">
+            <line x1="622.4994" y1="635.95864" x2="604.36424" y2="651.06675" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_5">
+            <path d="M 627.06695 635.95864 L 647.9831 645.8568 L 637.87395 645.7311" stroke="#b34400" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+        </g>
+        <g id="Graphic_3">
+          <text transform="translate(561 544)" fill="#b34400">
+            <tspan font-family="Arial Black" font-size="20" font-weight="800" fill="#b34400" x="24.63037" y="22">Analyst</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

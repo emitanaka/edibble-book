@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="456 199 142 164" width="142" height="164">
+  <defs>
+    <font-face font-family="Arial Black" font-size="20" panose-1="2 11 10 4 2 1 2 2 2 4" units-per-em="1000" underline-position="-125" underline-thickness="60.058594" slope="0" x-height="524.41406" cap-height="721.6797" ascent="1100.586" descent="-309.5703" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Arial-Black"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2022-05-31 02:56:36 +0000</metadata>
+  <g id="statistician" fill="none" stroke="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+    <title>statistician</title>
+    <g id="statistician_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>statistician</title>
+        <g id="Group_4">
+          <g id="Graphic_10">
+            <ellipse cx="526.9048" cy="265" rx="33.0000527307626" ry="29.000046339155" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_9">
+            <line x1="532.50016" y1="295.6039" x2="533.60246" y2="331.6744" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_8">
+            <line x1="533.60246" y1="331.6744" x2="556.0686" y2="358.0827" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_7">
+            <line x1="533.60246" y1="331.6744" x2="519.9318" y2="360.2162" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_6">
+            <line x1="530.4994" y1="297" x2="512.36424" y2="314.8108" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_5">
+            <line x1="535.06695" y1="297" x2="553.2021" y2="314.8108" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+        </g>
+        <g id="Graphic_3">
+          <text transform="translate(461 205)" fill="#b1001c">
+            <tspan font-family="Arial Black" font-size="20" font-weight="800" fill="#b1001c" x="2.760254" y="22">Statistician</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

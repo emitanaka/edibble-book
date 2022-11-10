@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="486 493 142 191" width="142" height="191">
+  <defs>
+    <font-face font-family="Arial Black" font-size="20" panose-1="2 11 10 4 2 1 2 2 2 4" units-per-em="1000" underline-position="-125" underline-thickness="60.058594" slope="0" x-height="524.41406" cap-height="721.6797" ascent="1100.586" descent="-309.5703" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Arial-Black"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2022-05-31 02:56:36 +0000</metadata>
+  <g id="domain-expert" fill="none" stroke="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+    <title>domain-expert</title>
+    <g id="domain-expert_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>domain expert</title>
+        <g id="Group_4">
+          <g id="Graphic_10">
+            <ellipse cx="559.9048" cy="587.04136" rx="33.0000527307626" ry="29.000046339155" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_9">
+            <line x1="561.28316" y1="617.8108" x2="560.60246" y2="654.6744" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_8">
+            <line x1="560.60246" y1="654.6744" x2="583.0686" y2="681.0827" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_7">
+            <line x1="560.60246" y1="654.6744" x2="544.2291" y2="681.0827" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_6">
+            <line x1="557.4994" y1="620" x2="539.36424" y2="635.1081" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+          <g id="Line_5">
+            <line x1="562.06695" y1="620" x2="586.9048" y2="633.4865" stroke="#235e00" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+          </g>
+        </g>
+        <g id="Graphic_3">
+          <text transform="translate(491 498)" fill="#235e00">
+            <tspan font-family="Arial Black" font-size="20" font-weight="800" fill="#235e00" x="24.78662" y="22">Domain </tspan>
+            <tspan font-family="Arial Black" font-size="20" font-weight="800" fill="#235e00" x="30.108887" y="50">expert</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
