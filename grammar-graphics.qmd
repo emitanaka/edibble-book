@@ -1,4 +1,4 @@
-# The (layered) grammar of graphics {#sec-ggplot}
+# Graphics {#sec-ggplot}
 
 ```{r}
 #| child: "status.qmd"
