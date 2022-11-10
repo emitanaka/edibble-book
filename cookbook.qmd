@@ -1,4 +1,4 @@
-# Cookbook {#sec-cookbook}
+# Cookbook {#sec-cookbook .unnumbered}
 
 ```{r}
 #| child: "status.qmd"
