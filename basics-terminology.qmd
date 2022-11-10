@@ -14,26 +14,27 @@ The field of experimental design is large and is applied to many domains, e.g. b
 
 ## Unit related 
 
-* **experimental unit**: the smallest unit in which the treatment can _independently_ be applied,
-* **observational unit**: the smallest unit in which the response is measured on,
-* **block** or **cluster**: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters,
-* **unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on
+* **Experimental unit**: the smallest unit in which the treatment can _independently_ be applied. If the experimental unit is a human, then each unit is often referred to as a **subject**.
+* **Observational unit**: the smallest unit in which the response is measured on.
+* **Block** or **cluster**: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters.
+* **Unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on.
 
 
 ## Treatment related 
 
-* **treatments**: the whole set of experimental conditions in which the units are subjected to,
-* **treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors,
-* **control** in treatment refers to a standard approach used, e.g. chemotherapy is a standard way to treat patients with particular cancers, and
-* **placebo** means a treatment designed to 
+* **Treatments**: the whole set of experimental conditions in which the units are subjected to.
+* **Treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.
+* **Control** in treatment refers to a standard approach used, e.g. chemotherapy is a standard way to treat patients with particular cancers, and
+* **Placebo** means a treatment designed to 
 
 
 
 ## Experiment related 
 
-* **design**: the allocation of treatment to units, 
-* **plan** or **layout**: the actual assignment of treatment to units, and
-* **experimental structure**: the arrangements or constrains of experimental factors -- the structure can be broadly categorised as unit and treatment structure. 
+* **Experimental run**: an experimental setting to be used for collecting an observation,
+* **Design**: the allocation of treatment to units, 
+* **Plan** or **layout**: the actual assignment of treatment to units, and
+* **Experimental structure**: the arrangements or constrains of experimental factors -- the structure can be broadly categorised as unit and treatment structure. 
   
 
   
@@ -57,4 +58,4 @@ In addition to above, there are commonly understood terminology that refer to th
 
 ## Specialised terminology
 
-Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in [Chapter -@sec-cookbook].
+Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g. Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in @sec-cookbook.
