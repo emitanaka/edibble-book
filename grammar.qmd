@@ -19,9 +19,16 @@ Grammar  makes  language  expressive.  A  language  consisting  of  words and no
 
 
 
-In this chapter, I describe an object-oriented programming system called "the grammar of experimental designs" that is designed to capture elements of the origin of an experimental data encapsulated in a cognitive framework. The grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation [@Wickham2010-kt] as the `ggplot2` R-package [@ggplot2]. An overview of `ggplot2` is given in @sec-ggplot. The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in @sec-deggust. 
+In this part, I describe an object-oriented programming system called "the grammar of experimental designs" that is designed to capture elements of the origin of an experimental data encapsulated in a cognitive framework. The grammar of experimental designs is a term that is heavily influenced by @Wilkinson2005-oz, who use the term "grammar of graphics" to describe an object-oriented system to create unlimited number of plots from following a relatively small number of rules. The grammar of graphics is adopted across many systems (Julia, Python, R, Tableau and so on) with its most popular interpretation [@Wickham2010-kt] as the `ggplot2` R-package [@ggplot2]. 
 
-Henceforth, "grammar" refers to the grammar of experimental designs unless explicitly stated otherwise.
+This part is organised as follows:
+
+* @sec-grammar-ed describes the fundamentals and in-depth explanation of the grammar of experimental designs.
+* @sec-ggplot gives an overview of `ggplot2`.
+* The grammar of experimental designs leverage aspects of the grammar of graphics for the visualisation of the experimental designs as discussed more extensively in @sec-deggust.
+
+
+
 
 
 
