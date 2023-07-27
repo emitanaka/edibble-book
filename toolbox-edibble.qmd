@@ -194,6 +194,7 @@ You might see that it is good principles to be explicit about the records but yo
 ## Simulating records {#simulate}
 
 ```{r}
+#| eval: false
 dat <- desre %>% 
   simulate_rcrds(weight = sim_normal(~diet + pen + pig, sd = 25) %>% 
                    params("mean", 
@@ -211,6 +212,7 @@ dat
 
 
 ```{r}
+#| eval: false
 ggplot(dat, aes(pen, weight, color = diet)) + 
   geom_point(size = 3) 
 ```
