@@ -46,7 +46,7 @@ jobs:
           install.packages("visNetwork")
         shell: Rscript {0}
 
-      - uses: r-lib/actions/setup-renv@v1
+      - uses: r-lib/actions/setup-renv@v2
 
       - name: Render book to all format
         # Add any command line argument needed
