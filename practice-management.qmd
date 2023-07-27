@@ -1,4 +1,4 @@
-# Project management {#sec-management}
+# Management {#sec-management}
 
 
 ```{r}
@@ -9,7 +9,9 @@
 source("setup.R")
 ```
 
+Experiments costs time and resources. Some experiments, you may not be able to repeat again. Designing an experiment goes beyond just producing an experimental design layout -- you need to consider holistically the total experimental process. Beyond the statistical and computational concerns, you need to be acquainted with some of the realities that come into play in designing experiments. This chapter aims to illuminate on the management aspects. 
 
+## Communication
 
 An experiment generally involves more than one person. For simplicity, let us suppose there are four actors:
 
@@ -23,7 +25,6 @@ The actors are purely illustrative and in practice, multiple people can take on 
 To carry out this experiment, the people involved in the experiment must come to some degree of shared understanding about the experimental motivations, limitations and protocol. This understanding is achieved by *communication*. People may opt for a series of behavioural cycles that facilitate the process of clarification as they work to reduce uncertainty about their understanding.  
 
 
-![](figures/drawn/communication-model){#fig-comm-model}
 
 Each actor does not need to have a full comprehension of the experiment, but rather focus on the most pertinent part of the experiment that is relevant to their role. 
 For example in the guinea pig experiment [add ref], a statistician does not need to know how the guinea pigs were sourced for the experiment -- just that the subjects are genetically identical -- in fact, a statistician can generate an experimental design without even knowledge that the subjects are guinea pigs. From the view point of the statistician, the experiment can be simplified to its bare essential elements to generate the experimental design. Why then would there be any need to encode the context of the experiment in generating the experimental design?
@@ -32,4 +33,21 @@ The minimum required understanding for a statistician to conduct their role does
 
 
 
-![](figures/drawn/lens-view){#fig-lens-view}
+- Type of role: collaboration or consultation?
+- Documentation
+- Responsibility - who does what?  
+- Expectations - financial feasibilty of experiment, execution of experiment etc
+- Timeline
+- Reward (financial, experience, joint work, social good, etc) 
+
+## Project management
+
+- Principles of project management from @projectmanagementinstituteGuideProjectManagement2021
+- Show how the framework relates to designing experiments
+
+## Data management
+
+- Data standards (metrics for measurement, data dictionary, etc) 
+- Data storage, access, and distribution, including meta data
+- Data quality indicators
+- Planning for data provenance

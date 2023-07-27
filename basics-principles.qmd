@@ -81,7 +81,7 @@ In some software, $\mathbf{V}$ may (inadvertentnly or not) be allowed to be posi
 
 :::
 
-Most optimal-criteria is based on optimising some function based on  $(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}$ or $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$, also known as the **information matrix**. The list of optimal-criteria are shown in Table XX.
+Most optimal-criteria is based on optimising some function based on  $(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X})^{-1}$ or $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$, also known as the **information matrix**. The list of optimal-criteria are shown in @tbl-optimal.
 
 | Criteria | Description | Notes |
 | --- | --- | --- | 
@@ -89,6 +89,8 @@ Most optimal-criteria is based on optimising some function based on  $(\mathbf{X
 | C-optimality | minimise $\text{var}(\boldsymbol{c}^\top\hat{\boldsymbol{\beta}})$ where $\boldsymbol{c}$ is pre-determined vector of constants | | 
 | D-optimality | maximise $\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)$ | sometimes this is adjusted to $[\text{det}\left(\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}\right)]^{\frac{1}{k}}$ where $k$ is the number of parameter  |
 | E-optimality | maximise the minimum eigenvalue of $\mathbf{X}^\top\mathbf{V}^{-1}\mathbf{X}$ | |
+
+: The list of typical optimal-criteria for optimal designs. {#tbl-optimal} 
 
 
 The most popular optimal-criterions are A- and D-optimality. 

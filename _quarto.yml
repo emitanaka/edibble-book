@@ -35,9 +35,9 @@ book:
         - grammar-edvis.qmd
     - part: practice.qmd
       chapters:
-        - practice-consulting.qmd
         - practice-management.qmd
         - practice-context.qmd
+        - practice-teaching.qmd
         - practice-guides.qmd
     - part: toolbox.qmd
       chapters:
