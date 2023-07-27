@@ -25,9 +25,9 @@ count_rule <- function() {
 
 ::: {.callout-note icon=false}
 
-## Rule `r count_rule()`: Explicit roles are encoded as a class
+## Rule `r count_rule()`: Primary roles are encoded as a class
 
-All experimental factors must be encoded as an object with the factor class (e.g. `edbl_fct`) with additional expansible explicit roles as unit (`edbl_unit`), treatment (`edbl_trt`), record (`edbl_rcrd`) or other. Roles determined implicitly by relationship with other factors should not be encoded as a class. 
+All experimental factors must be encoded as an object with the factor class (e.g. `edbl_fct`) with primary roles as unit (`edbl_unit`), treatment (`edbl_trt`), record (`edbl_rcrd`) or other. Roles determined implicitly by relationship with other factors should not be encoded as a class. 
 
 :::
 
