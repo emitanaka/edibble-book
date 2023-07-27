@@ -151,9 +151,9 @@ In a comparative experiment, treatments are allocated to units but every unit ha
 As a simple example, consider @fig-replication -- 2 treatments are allocated to 3 participants each.  If you ever only look at the outcome of a single replication in isolation,  you wouldn't know whether the outcome is a result of the treatment the participant received or some innate biological attribute of the participant, thus nothing to do with the treatment. Only by replicating and getting similar results with other sets of participants can you start to feel confident that the outcome may be associated with the treatment.
 
 
-```{r fig-replication, echo = FALSE, fig.cap = "A comparative experiment with two treatments allocated to six participants. Each treatment is replicated thrice with the same outcome for the same treatment.", out.width="100%"}
-knitr::include_graphics("figures/drawn/replications.png")
-```
+
+
+![A comparative experiment with two treatments allocated to six participants. Each treatment is replicated thrice with the same outcome for the same treatment.](figures/drawn/replications){#fig-replication}
 
 Suppose now that in @fig-replication, participants in Replicate 3 are biological sisters of participants in Replicate 1. In this case, Replicate 3 is not a complete replicate. As biological sisters, they would share genetics (and perhaps the environment) that makes it harder to feel confident that the outcome is due to treatment instead of other shared factors between the participants. 
 
@@ -199,7 +199,7 @@ kableExtra::kable_classic(knitr::kable(df, caption = "A dummy experimental data.
 
 Where treatments are independent (see Section X on correlated treatments), then it's optimal to have equal, or near-equal, number of replications for each treatment. 
 
-A related question to the number of replications is sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g. statistical power and expected effect size (or its difference). 
+A related question to the number of replications is the sample size calculation. Sample size calculation generally requires users to pre-specify a number of parameters, e.g. statistical power and expected effect size (or its difference). 
 
 Larger sample size (and thus the number of replications) is always statistically desired for higher certainty in the analysis, but practical constraints will always counteract this. Avoid designing an unreplicated experiment. It's better to have some replication, even if it's only one more. 
 

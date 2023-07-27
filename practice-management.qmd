@@ -22,12 +22,8 @@ The actors are purely illustrative and in practice, multiple people can take on 
 
 To carry out this experiment, the people involved in the experiment must come to some degree of shared understanding about the experimental motivations, limitations and protocol. This understanding is achieved by *communication*. People may opt for a series of behavioural cycles that facilitate the process of clarification as they work to reduce uncertainty about their understanding.  
 
-```{r}
-#| label: comm-model
-#| out.width: "100%"
-#| echo: false
-knitr::include_graphics("figures/drawn/communication-model.png")
-```
+
+![](figures/drawn/communication-model){#fig-comm-model}
 
 Each actor does not need to have a full comprehension of the experiment, but rather focus on the most pertinent part of the experiment that is relevant to their role. 
 For example in the guinea pig experiment [add ref], a statistician does not need to know how the guinea pigs were sourced for the experiment -- just that the subjects are genetically identical -- in fact, a statistician can generate an experimental design without even knowledge that the subjects are guinea pigs. From the view point of the statistician, the experiment can be simplified to its bare essential elements to generate the experimental design. Why then would there be any need to encode the context of the experiment in generating the experimental design?
@@ -35,9 +31,5 @@ For example in the guinea pig experiment [add ref], a statistician does not need
 The minimum required understanding for a statistician to conduct their role does not include understanding the experimental context. This is the reason perhaps that a lot of computational systems to generate the experimental design have often the inputs stripped off the experimental context. In an idealistic world, this approach would be fine but the major problem in this process is that the involved parties most likely do not know what is the most relevant knowledge for a statistician. 
 
 
-```{r}
-#| label: lens-view
-#| out.width: "100%"
-#| echo: false
-knitr::include_graphics("figures/drawn/lens-view.png")
-```
+
+![](figures/drawn/lens-view){#fig-lens-view}
