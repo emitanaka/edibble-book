@@ -32,6 +32,8 @@ jobs:
         run: |
           sudo apt-get install -y libcurl4-openssl-dev
           sudo apt-get install libmagick++-dev
+  
+      - uses: r-lib/actions/setup-renv@v2
           
       - name: Query R dependencies
         run: |
@@ -45,8 +47,6 @@ jobs:
           install.packages("xml2")
           install.packages("visNetwork")
         shell: Rscript {0}
-
-      - uses: r-lib/actions/setup-renv@v2
 
       - name: Render book to all format
         # Add any command line argument needed
