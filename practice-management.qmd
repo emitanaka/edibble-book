@@ -47,7 +47,23 @@ The minimum required understanding for a statistician to conduct their role does
 
 ## Data management
 
-- Data standards (metrics for measurement, data dictionary, etc) 
+- Data standards (metrics for measurement, data dictionary, ISO 601 for representing times and dates, etc) 
 - Data storage, access, and distribution, including meta data
 - Data quality indicators
+- Data citation, data versioning
+- FAIR principles for scientific data 
 - Planning for data provenance
+- Responsible data stewardship
+
+Some specific reporting protocols for certain fields, e.g. 
+
+- Consolidated Standards of Reporting Trials (CONSORT) for reporting randomised trial
+- Good Clinical Practice (GCP) is an international ethical and scientific quality standard for the design, conduct, performance, monitoring, auditing, recording, analyses and reporting of clinical trials.
+- The STROBE (Strengthening the Reporting of Observational Studies in Epidemiology) statement offers guidelines for reporting observational studies. It provides a checklist of key items to include in research publications to enhance the quality of reporting and reproducibility.
+- MIAME (Minimum Information About a Microarray Experiment) guidelines provide recommendations for reporting microarray experiments. They focus on the information needed to interpret and reproduce microarray data, ensuring that data quality is maintained.
+- MIATA Guidelines: The MIATA (Minimum Information About T Cell Assays) guidelines provide a framework for reporting T cell assays in immunology research. It aims to ensure that critical information about the experimental setup and results is documented for reproducibility and interpretation.
+- ARRIVE Guidelines: The ARRIVE (Animal Research: Reporting of In Vivo Experiments) guidelines are intended to improve the reporting of animal research studies. It emphasizes the complete and transparent reporting of essential experimental details to enhance reproducibility and reduce bias.
+- Minimum Information Standards (MIS): Minimum Information Standards are developed for specific types of experiments or data types. Examples include MIAPE (Mass Spectrometry-based Proteomics Experiments), MIAPAR (Minimum Information About a Plant Aerobiology Experiment), and MIAME (Minimum Information About a Microarray Experiment).
+- GSC Standards: The Genomic Standards Consortium (GSC) has developed various standards for data and metadata reporting in genomics research. Examples include MIGS/MIMS/MIMARKS for microbial genomes and MIxS for environmental genomic studies.
+- NIST Guidelines: The National Institute of Standards and Technology (NIST) has developed various guidelines for data quality, security, and interoperability, particularly in fields like cybersecurity and IT.
+- Earth Science Data Standards: In Earth science and environmental research, organizations like NASA and NOAA have established data standards and protocols for data collection, sharing, and archiving.
