@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -355,10 +389,11 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#unit-related" id="toc-unit-related" class="nav-link active" data-scroll-target="#unit-related"><span class="header-section-number">1.1</span> Unit related</a></li>
-  <li><a href="#treatment-related" id="toc-treatment-related" class="nav-link" data-scroll-target="#treatment-related"><span class="header-section-number">1.2</span> Treatment related</a></li>
-  <li><a href="#experiment-related" id="toc-experiment-related" class="nav-link" data-scroll-target="#experiment-related"><span class="header-section-number">1.3</span> Experiment related</a></li>
-  <li><a href="#specialised-terminology" id="toc-specialised-terminology" class="nav-link" data-scroll-target="#specialised-terminology"><span class="header-section-number">1.4</span> Specialised terminology</a></li>
+  <li><a href="#treatment-related" id="toc-treatment-related" class="nav-link active" data-scroll-target="#treatment-related"><span class="header-section-number">1.1</span> Treatment related</a></li>
+  <li><a href="#unit-related" id="toc-unit-related" class="nav-link" data-scroll-target="#unit-related"><span class="header-section-number">1.2</span> Unit related</a></li>
+  <li><a href="#record-related" id="toc-record-related" class="nav-link" data-scroll-target="#record-related"><span class="header-section-number">1.3</span> Record related</a></li>
+  <li><a href="#experiment-related" id="toc-experiment-related" class="nav-link" data-scroll-target="#experiment-related"><span class="header-section-number">1.4</span> Experiment related</a></li>
+  <li><a href="#specialised-terminology" id="toc-specialised-terminology" class="nav-link" data-scroll-target="#specialised-terminology"><span class="header-section-number">1.5</span> Specialised terminology</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics-terminology.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -401,17 +436,8 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </div>
 </div>
 <p>The field of experimental design is large and is applied to many domains, e.g.&nbsp;biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:</p>
-<section id="unit-related" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="unit-related"><span class="header-section-number">1.1</span> Unit related</h2>
-<ul>
-<li><strong>Experimental unit</strong>: the smallest unit in which the treatment can <em>independently</em> be applied. If the experimental unit is a human, then each unit is often referred to as a <strong>subject</strong>.</li>
-<li><strong>Observational unit</strong>: the smallest unit in which the response is measured on.</li>
-<li><strong>Block</strong> or <strong>cluster</strong>: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters.</li>
-<li><strong>Unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on.</li>
-</ul>
-</section>
-<section id="treatment-related" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="treatment-related"><span class="header-section-number">1.2</span> Treatment related</h2>
+<section id="treatment-related" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="treatment-related"><span class="header-section-number">1.1</span> Treatment related</h2>
 <ul>
 <li><strong>Treatments</strong>: the whole set of experimental conditions in which the units are subjected to.</li>
 <li><strong>Treatment structure</strong>: the division of treatment levels to meaningful groups, e.g.&nbsp;factorial structure means all combinations across the different treatment factors.</li>
@@ -419,8 +445,33 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <li><strong>Placebo</strong> means a treatment designed to</li>
 </ul>
 </section>
-<section id="experiment-related" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experiment-related"><span class="header-section-number">1.3</span> Experiment related</h2>
+<section id="unit-related" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="unit-related"><span class="header-section-number">1.2</span> Unit related</h2>
+<ul>
+<li><strong>Experimental unit</strong>: the smallest unit in which the treatment can <em>independently</em> be applied. If the experimental unit is a human, then each unit is often referred to as a <strong>subject</strong>.</li>
+<li><strong>Observational unit</strong>: the smallest unit in which the response is measured on.</li>
+<li><strong>Block</strong> or <strong>cluster</strong>: the grouping of another unit such that the units within the same block or cluster is more alike in some aspect than units in different blocks or clusters.</li>
+<li><strong>Unit structure</strong>: the relation between the units, e.g.&nbsp;pots nested in particular glasshouses, subjects segregated by sex, and so on.</li>
+</ul>
+</section>
+<section id="record-related" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="record-related"><span class="header-section-number">1.3</span> Record related</h2>
+<p>Record is used here to mean any uncontrollable factor. These can include the response, nuisance factor and just any value that is observed.</p>
+<ul>
+<li><strong>Observation</strong> implies the observed value of a single unit.</li>
+<li><strong>Response</strong> is usually the observation of interest in an experiment.</li>
+<li><strong>Dependent variable</strong> is another way to call response.</li>
+<li><strong>Nuisance factor</strong></li>
+<li><strong>Lurking variable</strong></li>
+<li><strong>Trait</strong></li>
+</ul>
+<p>Records are captured at different time points. We can map the time point categorical relative to the experiment: historical (pre-experiment), pre-treatment, post-treatment, followup/future (assuming measured once), or even the frequency of it: daily, weekly, monthly etc.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_rcrds</span>(<span class="at">yield =</span> <span class="fu">measure</span>(plot, <span class="at">unit =</span> <span class="st">"t/h"</span>, <span class="at">when =</span> <span class="st">"pre"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="experiment-related" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="experiment-related"><span class="header-section-number">1.4</span> Experiment related</h2>
 <ul>
 <li><strong>Experimental run</strong>: an experimental setting to be used for collecting an observation,</li>
 <li><strong>Design</strong>: the allocation of treatment to units,</li>
@@ -452,8 +503,8 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="specialised-terminology" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="specialised-terminology"><span class="header-section-number">1.4</span> Specialised terminology</h2>
+<section id="specialised-terminology" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="specialised-terminology"><span class="header-section-number">1.5</span> Specialised terminology</h2>
 <p>Experimental design is applicable across numerous domains, so perhaps it is not surprising that there are domain specific or specialised terminology that is used to describe the whole experimental designs, e.g.&nbsp;Latin Square Design, Step-Wedge Trial, Beehive Design and so on. Some recipe of these named experimental design are presented and discussed in <span class="quarto-unresolved-ref">?sec-cookbook</span>.</p>
 
 
