@@ -10,6 +10,12 @@ source("setup.R")
 
 The field of experimental design is large and is applied to many domains, e.g. biology, psychology, industry, finance, marketing and so on. While some specialised terminology exist, the following terminology are basic terms that are commonly understood across domains:
 
+## Treatment related 
+
+* **Treatments**: the whole set of experimental conditions in which the units are subjected to.
+* **Treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.
+* **Control** in treatment refers to a standard approach used, e.g. chemotherapy is a standard way to treat patients with particular cancers, and
+* **Placebo** means a treatment designed to 
 
 
 ## Unit related 
@@ -20,12 +26,25 @@ The field of experimental design is large and is applied to many domains, e.g. b
 * **Unit structure**: the relation between the units, e.g. pots nested in particular glasshouses, subjects segregated by sex, and so on.
 
 
-## Treatment related 
 
-* **Treatments**: the whole set of experimental conditions in which the units are subjected to.
-* **Treatment structure**: the division of treatment levels to meaningful groups, e.g. factorial structure means all combinations across the different treatment factors.
-* **Control** in treatment refers to a standard approach used, e.g. chemotherapy is a standard way to treat patients with particular cancers, and
-* **Placebo** means a treatment designed to 
+## Record related
+
+Record is used here to mean any uncontrollable factor. These can include the response, nuisance factor and just any value that is observed. 
+
+* **Observation** implies the observed value of a single unit.
+* **Response** is usually the observation of interest in an experiment. 
+* **Dependent variable** is another way to call response.
+* **Nuisance factor** 
+* **Lurking variable**
+* **Trait**
+
+
+Records are captured at different time points. We can map the time point categorical relative to the experiment: historical (pre-experiment), pre-treatment, post-treatment, followup/future (assuming measured once), or even the frequency of it: daily, weekly, monthly etc. 
+
+```{r}
+#| eval: false
+set_rcrds(yield = measure(plot, unit = "t/h", when = "pre"))
+```
 
 
 
