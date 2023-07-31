@@ -8,3 +8,39 @@
 ```{r setup, include = FALSE}
 source("setup.R")
 ```
+
+Context matters in an experiment. As experiments are crucial pillars of empirical evidence to validate or invalidate a phenomena or hypothesis, experiments are ubiquitious across almost all fields. Each field often has different concerns and understanding, so perhaps it is not surprising that terminology evolved for respective subculture/subdiscipline. 
+
+The aim of this chapter is to give a glimpse of some concerns, focus, or terminology used within each discipline. It should be noted these are not necessary the major or only focus within each discipline. The idea of this chapter is to give exposure to the diversity of experiments and the subcultures.
+
+## Agriculture
+
+- Classic Fisherian experiments. 
+
+## Biology 
+
+- Small sample size. 
+
+## Medical 
+
+- Includes Pharmaceutical studies
+
+## Ecology and environment
+
+- Mensurative and manipulative experiments
+
+## Psychology and social science
+
+- Stimuli
+
+
+## Business and economics
+
+- Online experiments
+- Interrupted time series
+
+## Industry and engineering
+
+- Taguchi and Box et al. style experiments. 
+
+
