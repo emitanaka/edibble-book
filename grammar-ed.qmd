@@ -127,13 +127,21 @@ A viable experimental design is only specified if the relationship between the f
 
 ::: {.callout-note icon=false}
 
-## Rule `r count_rule()`: One unit-to-treatment mapping.
+## Rule `r count_rule()`: The unit and treatment mapping
 
-- Each treatment factor can only be applied to a single unit factor.
-- Each level of a unit factor can only be mapped to a single level of the treatment factor level.
+- In the factor system, the mapping is from treatment-to-unit. In other words, each treatment factor can only be applied to a single unit factor.
+- In the level system, the mapping is from unit-to-treatment. Each level of a unit factor can only be mapped to a single level of the treatment factor level.
 
 :::
 
+::: {.callout-note icon=false}
+
+## Rule `r count_rule()`: Bijective mapping of unit and record
+
+- Each record factor is measured only for a single unit factor.
+- Every level of a unit factor level has a single measurement.
+
+:::
 
 
 ## An edibble graph
