@@ -133,6 +133,14 @@ A viable experimental design is only specified if the relationship between the f
 :::
 
 
+::: {.callout-note icon=false}
+
+## Rule `r count_rule()`: One unit-to-treatment mapping.
+
+- Each treatment factor can only be applied to a single unit factor.
+- Each level of a unit factor can only be mapped to a single level of the treatment factor level.
+
+:::
 
 
 
