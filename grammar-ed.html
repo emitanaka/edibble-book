@@ -422,20 +422,8 @@ Rule 1: Primary roles are encoded as a class
 <p>All experimental factors must be encoded as an object with the factor class (e.g.&nbsp;<code>edbl_fct</code>) with primary roles as unit (<code>edbl_unit</code>), treatment (<code>edbl_trt</code>), record (<code>edbl_rcrd</code>) or other. Roles determined implicitly by relationship with other factors should not be encoded as a class.</p>
 </div>
 </div>
-<p>In the grammar, a <strong>factor</strong> is an experimental variable manifested as an object with a dual structure: the “head system” and the “root system”. The <strong>head system</strong> characterizes the holistic attributes of the factor (e.g.&nbsp;the label “vaccine” for the treatment factor) and the <strong>root system</strong> is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g.&nbsp;labels “type A” and “type B” for the two types of vaccine treatment). Every root and head system has an <strong>outer form</strong> that is visible to the user (usually in the form of a vertex or a vector) and an <strong>inner form</strong> that are intrinsic characteristics of the outer form (e.g.&nbsp;id of the levels, the long name of the vaccines, dose level of each vaccine, etc). A factor can be physical (e.g.&nbsp;person, plot, animal and drug), metaphysical (e.g.&nbsp;gender, time and space) or unobserved (e.g.&nbsp;intended response measures). There are three types of information in the inner form:</p>
-<ul>
-<li>The <strong>constant inner form</strong> is the set of variables that cannot be directly modififed by the user; this is generally the IDs of the nodes.</li>
-<li>The <strong>common inner form</strong> is the set of variables that are common across all factors, e.g.&nbsp;label and class of the node.</li>
-<li>The <strong>specific inner form</strong> are variables that are set of variables that are specific to the factor – these are stored in a separate table.</li>
-</ul>
-<p>The inner form is not usually shown in the final design table (<code>edbl_table</code>).</p>
-<p>In the system, every root system co-exists with a head system in a reciprocal relationship, i.e.&nbsp;any change in the root structure may be reflected as a change in head structure (and vice-versa). A schema of the factor structure is shown in <a href="#fig-factor-structure">Figure&nbsp;<span>7.1</span></a>.</p>
-<div id="fig-factor-structure" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/drawn/factor-structure.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7.1: A schema for the factor structure in the grammar.</figcaption>
-</figure>
-</div>
+<p>In the grammar, a <strong>factor</strong> is an experimental variable manifested as an object with a dual structure: the “factor graph” and the “level graph”. The <strong>factor graph</strong> characterizes the holistic attributes of the factor (e.g.&nbsp;the label “vaccine” for the treatment factor) and the <strong>level graph</strong> is the constitution of the discrete factor levels such that it captures the idiosyncratic semantic features of each level that distinguish itself from other levels (e.g.&nbsp;labels “type A” and “type B” for the two types of vaccine treatment). A factor can be physical (e.g.&nbsp;person, plot, animal and drug), metaphysical (e.g.&nbsp;gender, time and space) or unobserved (e.g.&nbsp;intended response measures).</p>
+<p>In the system, every level graph co-exists with a factor graph in a reciprocal relationship, i.e.&nbsp;any change in the factor graph may be reflected as a change in level graph (and vice-versa).</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -446,10 +434,10 @@ Rule 2: Dual structure of factors
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>All factor must have a dual structure that describes the head (holistic attributes of the factor) and root (constitution of the levels).</p>
+<p>All factors must have a dual structure that describes the factor graph (holistic attributes of the factor) and level graph (constitution of the levels).</p>
 </div>
 </div>
-<p>Every factor in the system is given an <strong>explicit role</strong> stored as a class in the inner quality of the head. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g.&nbsp;treatment linked as a directed graph to a unit means that the unit is an experimental unit. The implicit roles are described in <a href="#tbl-implicit-role">Table&nbsp;<span>7.1</span></a>.</p>
+<p>Every factor in the system is given an <strong>explicit role</strong> stored as a class in the factor graph. The main roles are unit, treatment and record. The relationship between factors assigns an implicit role, e.g.&nbsp;treatment linked as a directed graph to a unit means that the unit is an experimental unit. The implicit roles are described in <a href="#tbl-implicit-role">Table&nbsp;<span>7.1</span></a>.</p>
 <div id="tbl-implicit-role" class="anchored">
 <table class="table">
 <caption>Table&nbsp;7.1: Implicit role based on the relationship between factors</caption>
@@ -483,7 +471,7 @@ Rule 2: Dual structure of factors
 </tbody>
 </table>
 </div>
-<p>There are two orders of relationships in the system: the <strong>higher-order links</strong> between the factor nodes in the head system and the <strong>lower-order links</strong> between the level nodes in the root system. A higher-order link is created by explicit specification by the user and depending on how it is defined, the system creates the lower-order links between the root nodes with some constraint as prescribed by their explicit role and other user inputs.</p>
+<p>There are two orders of relationships in the system: the <strong>higher-order links</strong> between the factor nodes in the factor graph and the <strong>lower-order links</strong> between the level nodes in the level graph. A higher-order link is created by explicit specification by the user and depending on how it is defined, the system creates the lower-order links between the level nodes with some constraint as prescribed by their explicit role and other user inputs.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -495,15 +483,15 @@ Rule 3: Rules for relationships between factors
 </div>
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li>A higher-order link between any two head nodes must be explicitly specified by the user.</li>
-<li>A lower-order link between any two root nodes cannot be made if there is no higher-order link between the head nodes linked to the two root nodes.</li>
+<li>A higher-order link between any two factor nodes must be explicitly specified by the user.</li>
+<li>A lower-order link between any two factor nodes cannot be made if there is no higher-order link between the factor nodes linked to the two level nodes.</li>
 </ol>
 </div>
 </div>
 <div id="fig-example-network" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/drawn/example-factor-structure.svg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7.2: An example of the full schema of an experimental design with 3 factors: diet, subject, and day. There are three types of diet (Atkins, Keto, Vegan and Paleo), 4 different subjects per day over a total of two days.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;7.1: An example of the full schema of an experimental design with 3 factors: diet, subject, and day. There are three types of diet (Atkins, Keto, Vegan and Paleo), 4 different subjects per day over a total of two days.</figcaption>
 </figure>
 </div>
 <p>An intermediate construct of the experimental design is stored as an object that contain two types of directed graphs, <span class="math inline">\(G_H = (V(G_H), E(G_H))\)</span> and <span class="math inline">\(G_L = (V(G_L), E(G_L))\)</span>, where <span class="math inline">\(V(G_F)\)</span> and <span class="math inline">\(V(G_L)\)</span> are sets of vertices and <span class="math inline">\(E(G_F)\)</span> and <span class="math inline">\(E(G_L)\)</span> are sets of edges. We refer <span class="math inline">\(G_F\)</span> and <span class="math inline">\(G_L\)</span> as factor graph and level graph, respectively. In the <strong>factor graph</strong>, every factor is represented as a single vertex. Every factor has a finite number of levels and each of these levels is represented as a single vertex in the <strong>level graph</strong>.</p>
