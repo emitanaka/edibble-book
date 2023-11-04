@@ -278,7 +278,7 @@ df <- design("Bailey (2008) Exercise 9.6") %>%
   allot_table(thinning ~ tree,
               grass ~ tree)
 
-anatomy(df)
+design_anatomy(df)
 autoplot(df)
 ```
 
@@ -302,7 +302,7 @@ df <- design("Tyre test") %>%
   #set_rcrds(measure = tyre) %>% 
   allot_table(make ~ test_drive)
 
-anatomy(df)
+design_anatomy(df)
 autoplot(df)
 ```
 
@@ -315,6 +315,7 @@ A manufacturer of household appliances wants to find the best combination of was
 :::
 
 ```{r washer-example}
+#| eval: false
 df <- design("Bailey (2008) Example 10.19") %>%
   set_trts(wash_temp = 4,
            dry_temp = 3) %>% 
@@ -330,7 +331,7 @@ df <- design("Bailey (2008) Example 10.19") %>%
   set_rcrds(score = sheet) %>% 
   serve_table()
 
-anatomy(df)
+design_anatomy(df)
 autoplot(df)
 ```
 
@@ -357,7 +358,7 @@ df <- design("Bailey (2008) Example 10.20") %>%
               molybdenum ~ quarter) 
 
 df
-anatomy(df)
+design_anatomy(df)
 ```
 
 ::: {.callout .note}
