@@ -28,3 +28,4 @@ The control treatment should be chosen such that the comparison is meaningful. F
 :::
 
 ## Choices of data to record
+

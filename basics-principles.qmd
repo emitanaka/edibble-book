@@ -232,3 +232,5 @@ Blocks are factors that group units that are alike together. Some units have nat
 Where possible, it is better to have blocks of equal or near-equal size. Also where possible, it is better to have at least one occurence of each treatment in every block. This is of course not possible if the block size is smaller than the number of treatments -- in this case, it is desirable to have every pair of treatments appear equal or near-equal times across blocks. 
 
 :::
+
+

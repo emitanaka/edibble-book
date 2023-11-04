@@ -36,7 +36,7 @@ The minimum required understanding for a statistician to conduct their role does
 - Type of role: collaboration or consultation?
 - Documentation
 - Responsibility - who does what?  
-- Expectations - financial feasibilty of experiment, execution of experiment etc
+- Expectations - financial feasibility of experiment, execution of experiment etc
 - Timeline
 - Reward (financial, experience, joint work, social good, etc) 
 
