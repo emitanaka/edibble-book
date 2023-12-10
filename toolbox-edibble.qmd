@@ -94,6 +94,7 @@ A viable experimental design is only specified if the relationship between the v
 For example below 
 
 ```{r}
+#| error: true
 design("An invalid unit structure") %>% 
   set_units(pen = 6,
             pig = 18) %>% 
@@ -314,7 +315,7 @@ A manufacturer of household appliances wants to find the best combination of was
 
 :::
 
-```{r washer-example}
+```{r washer-example, eval = FALSE}
 #| eval: false
 df <- design("Bailey (2008) Example 10.19") %>%
   set_trts(wash_temp = 4,
