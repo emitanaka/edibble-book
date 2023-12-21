@@ -31,20 +31,8 @@ jobs:
           sudo apt-get install libmagick++-dev
           
       - name: Query R dependencies
-        run: |
-          install.packages('remotes')
-          remotes::install_github("emitanaka/edibble")
-          remotes::install_github("emitanaka/deggust")
-          install.packages("openxlsx")
-          install.packages("kableExtra")
-          install.packages("tidyverse")
-          install.packages("bslib")
-          install.packages("downlit")
-          install.packages("xml2")
-          install.packages("visNetwork")
-          install.packages("agridat")
-        shell: Rscript {0}
-
+        uses: r-lib/actions/setup-renv@v2
+        
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
 
