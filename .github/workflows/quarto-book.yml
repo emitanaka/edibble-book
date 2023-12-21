@@ -33,10 +33,11 @@ jobs:
       - name: Query R dependencies
         run: |
           install.packages('remotes')
-          remotes::install_github("emitanaka/simulate")
           remotes::install_github("emitanaka/edibble")
           remotes::install_github("emitanaka/deggust")
           install.packages("openxlsx")
+          install.packages("kableExtra")
+          install.packages("tidyverse")
           install.packages("bslib")
           install.packages("downlit")
           install.packages("xml2")
