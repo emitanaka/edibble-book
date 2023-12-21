@@ -4,7 +4,6 @@ knitr::opts_chunk$set(fig.path = "figures/",
                       cache = FALSE, 
                       cache.path = "cache/")
 set.seed(1)
-library(simulate)
 library(edibble)
 library(deggust)
 
