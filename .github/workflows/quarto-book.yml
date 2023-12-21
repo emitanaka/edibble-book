@@ -14,13 +14,10 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install Quarto
-        uses: quarto-dev/quarto-actions/install-quarto@v1
-        with:
-          # To install LaTeX to build PDF book 
-          tinytex: true 
+        uses: quarto-dev/quarto-actions/setup@v2
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -32,8 +29,6 @@ jobs:
         run: |
           sudo apt-get install -y libcurl4-openssl-dev
           sudo apt-get install libmagick++-dev
-  
-      - uses: r-lib/actions/setup-renv@v2
           
       - name: Query R dependencies
         run: |
@@ -49,17 +44,10 @@ jobs:
           install.packages("agridat")
         shell: Rscript {0}
 
-      - name: Render book to all format
-        # Add any command line argument needed
-        run: |
-          quarto render
-          
-      - name: Deploy 🚀
-        # only deploy when push to main
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          # The branch the action should deploy to.
-          branch: gh-pages
-          # The folder the action should deploy. Adapt if you changed in Quarto config
-          folder: _book
+          target: gh-pages
