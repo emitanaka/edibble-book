@@ -565,10 +565,9 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">pen =</span> <span class="dv">6</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">pig =</span> <span class="dv">18</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># An invalid unit structure 
-# An edibble: 0 x 2
-# ℹ 2 variables: pen &lt;unit(6)&gt;, pig &lt;unit(18)&gt;</code></pre>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `serve_table()`:
+! The graph cannot be converted to a table format.</code></pre>
 </div>
 </div>
 </section>
@@ -600,18 +599,19 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code># My first animal experiment 
 # An edibble: 24 x 2
-          pig     diet
-   &lt;unit(24)&gt; &lt;trt(3)&gt;
- 1      pig1  low-fat 
- 2      pig2  standard
- 3      pig3  low-fat 
- 4      pig4  standard
- 5      pig5  low-fat 
- 6      pig6  low-fat 
- 7      pig7  standard
- 8      pig8  low-fat 
- 9      pig9  high-fat
-10      pig10 high-fat
+       pig     diet
+   &lt;U(24)&gt;   &lt;T(3)&gt;
+     &lt;chr&gt;    &lt;chr&gt;
+ 1   pig01 high-fat
+ 2   pig02 low-fat 
+ 3   pig03 low-fat 
+ 4   pig04 low-fat 
+ 5   pig05 standard
+ 6   pig06 high-fat
+ 7   pig07 standard
+ 8   pig08 high-fat
+ 9   pig09 standard
+10   pig10 standard
 # ℹ 14 more rows</code></pre>
 </div>
 </div>
@@ -632,26 +632,27 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 3
-         pen        pig     diet
-   &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt;
- 1      pen1      pig1  high-fat
- 2      pen1      pig2  low-fat 
- 3      pen1      pig3  standard
- 4      pen2      pig4  high-fat
- 5      pen2      pig5  low-fat 
- 6      pen2      pig6  standard
- 7      pen3      pig7  high-fat
- 8      pen3      pig8  low-fat 
- 9      pen3      pig9  standard
-10      pen4      pig10 high-fat
-11      pen4      pig11 low-fat 
-12      pen4      pig12 standard
-13      pen5      pig13 high-fat
-14      pen5      pig14 low-fat 
-15      pen5      pig15 standard
-16      pen6      pig16 high-fat
-17      pen6      pig17 low-fat 
-18      pen6      pig18 standard</code></pre>
+      pen     pig     diet
+   &lt;U(6)&gt; &lt;U(18)&gt;   &lt;T(3)&gt;
+    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;
+ 1   pen1   pig01 high-fat
+ 2   pen1   pig02 low-fat 
+ 3   pen1   pig03 standard
+ 4   pen2   pig04 high-fat
+ 5   pen2   pig05 low-fat 
+ 6   pen2   pig06 standard
+ 7   pen3   pig07 high-fat
+ 8   pen3   pig08 low-fat 
+ 9   pen3   pig09 standard
+10   pen4   pig10 high-fat
+11   pen4   pig11 low-fat 
+12   pen4   pig12 standard
+13   pen5   pig13 high-fat
+14   pen5   pig14 low-fat 
+15   pen5   pig15 standard
+16   pen6   pig16 high-fat
+17   pen6   pig17 low-fat 
+18   pen6   pig18 standard</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -659,26 +660,27 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 3
-         pen        pig     diet
-   &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt;
- 1      pen1      pig1  high-fat
- 2      pen1      pig2  high-fat
- 3      pen1      pig3  high-fat
- 4      pen2      pig4  low-fat 
- 5      pen2      pig5  low-fat 
- 6      pen2      pig6  low-fat 
- 7      pen3      pig7  standard
- 8      pen3      pig8  standard
- 9      pen3      pig9  standard
-10      pen4      pig10 high-fat
-11      pen4      pig11 high-fat
-12      pen4      pig12 high-fat
-13      pen5      pig13 low-fat 
-14      pen5      pig14 low-fat 
-15      pen5      pig15 low-fat 
-16      pen6      pig16 standard
-17      pen6      pig17 standard
-18      pen6      pig18 standard</code></pre>
+      pen     pig     diet
+   &lt;U(6)&gt; &lt;U(18)&gt;   &lt;T(3)&gt;
+    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;
+ 1   pen1   pig01 high-fat
+ 2   pen1   pig02 high-fat
+ 3   pen1   pig03 high-fat
+ 4   pen2   pig04 low-fat 
+ 5   pen2   pig05 low-fat 
+ 6   pen2   pig06 low-fat 
+ 7   pen3   pig07 standard
+ 8   pen3   pig08 standard
+ 9   pen3   pig09 standard
+10   pen4   pig10 high-fat
+11   pen4   pig11 high-fat
+12   pen4   pig12 high-fat
+13   pen5   pig13 low-fat 
+14   pen5   pig14 low-fat 
+15   pen5   pig15 low-fat 
+16   pen6   pig16 standard
+17   pen6   pig17 standard
+18   pen6   pig18 standard</code></pre>
 </div>
 </div>
 </section>
@@ -696,26 +698,27 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code># A valid nested design 
 # An edibble: 18 x 6
-         pen        pig     diet weight    sex manager
-   &lt;unit(6)&gt; &lt;unit(18)&gt; &lt;trt(3)&gt; &lt;rcrd&gt; &lt;rcrd&gt;  &lt;rcrd&gt;
- 1      pen1      pig1  high-fat      o      o       o
- 2      pen1      pig2  high-fat      o      o       x
- 3      pen1      pig3  high-fat      o      o       x
- 4      pen2      pig4  low-fat       o      o       o
- 5      pen2      pig5  low-fat       o      o       x
- 6      pen2      pig6  low-fat       o      o       x
- 7      pen3      pig7  standard      o      o       o
- 8      pen3      pig8  standard      o      o       x
- 9      pen3      pig9  standard      o      o       x
-10      pen4      pig10 high-fat      o      o       o
-11      pen4      pig11 high-fat      o      o       x
-12      pen4      pig12 high-fat      o      o       x
-13      pen5      pig13 low-fat       o      o       o
-14      pen5      pig14 low-fat       o      o       x
-15      pen5      pig15 low-fat       o      o       x
-16      pen6      pig16 standard      o      o       o
-17      pen6      pig17 standard      o      o       x
-18      pen6      pig18 standard      o      o       x</code></pre>
+      pen     pig     diet  weight     sex manager
+   &lt;U(6)&gt; &lt;U(18)&gt;   &lt;T(3)&gt; &lt;R(18)&gt; &lt;R(18)&gt;  &lt;R(6)&gt;
+    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1   pen1   pig01 high-fat       o       o       o
+ 2   pen1   pig02 high-fat       o       o       x
+ 3   pen1   pig03 high-fat       o       o       x
+ 4   pen2   pig04 low-fat        o       o       o
+ 5   pen2   pig05 low-fat        o       o       x
+ 6   pen2   pig06 low-fat        o       o       x
+ 7   pen3   pig07 standard       o       o       o
+ 8   pen3   pig08 standard       o       o       x
+ 9   pen3   pig09 standard       o       o       x
+10   pen4   pig10 high-fat       o       o       o
+11   pen4   pig11 high-fat       o       o       x
+12   pen4   pig12 high-fat       o       o       x
+13   pen5   pig13 low-fat        o       o       o
+14   pen5   pig14 low-fat        o       o       x
+15   pen5   pig15 low-fat        o       o       x
+16   pen6   pig16 standard       o       o       o
+17   pen6   pig17 standard       o       o       x
+18   pen6   pig18 standard       o       o       x</code></pre>
 </div>
 </div>
 <p>Another equivalent way to set the record is using <code>set_rcrds_of()</code>. The format of the input is such that the unit factors are on the LHS and the RHS are character vectors of new record factor names. The reason that names are set as characters is because the factors in the RHS do not yet exist. In contrast, the RHS of the input in <code>set_rcrds()</code> is unquoted because those factors exist. The suffix <code>_of</code> in the function name is purposely chosen to signal that the pattern for the LHS no longer follows that of <code>set_rcrds()</code>, <code>set_trts()</code> and <code>set_units()</code> where the LHS is always a new factor name.</p>
@@ -795,18 +798,19 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code># Bailey (2008) Exercise 8.5 
 # An edibble: 2,430 x 6
-          pot       plant      piece pottasium  nutrition plantlets
-   &lt;unit(90)&gt; &lt;unit(270)&gt; &lt;unit(2k)&gt;  &lt;trt(5)&gt;   &lt;trt(3)&gt;    &lt;rcrd&gt;
- 1       pot1      plant1    piece1         q2 nutrition2         o
- 2       pot1      plant1    piece2         q2 nutrition1         o
- 3       pot1      plant1    piece3         q2 nutrition3         o
- 4       pot1      plant1    piece4         q2 nutrition3         o
- 5       pot1      plant1    piece5         q2 nutrition2         o
- 6       pot1      plant1    piece6         q2 nutrition3         o
- 7       pot1      plant1    piece7         q2 nutrition1         o
- 8       pot1      plant1    piece8         q2 nutrition1         o
- 9       pot1      plant1    piece9         q2 nutrition2         o
-10       pot1      plant2    piece10        q2 nutrition3         o
+       pot    plant     piece pottasium  nutrition plantlets
+   &lt;U(90)&gt; &lt;U(270)&gt;  &lt;U(~2k)&gt;    &lt;T(5)&gt;     &lt;T(3)&gt;  &lt;R(~2k)&gt;
+     &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;
+ 1   pot01 plant001 piece0001        q5 nutrition1         o
+ 2   pot01 plant001 piece0002        q5 nutrition3         o
+ 3   pot01 plant001 piece0003        q5 nutrition1         o
+ 4   pot01 plant001 piece0004        q5 nutrition2         o
+ 5   pot01 plant001 piece0005        q5 nutrition1         o
+ 6   pot01 plant001 piece0006        q5 nutrition3         o
+ 7   pot01 plant001 piece0007        q5 nutrition3         o
+ 8   pot01 plant001 piece0008        q5 nutrition2         o
+ 9   pot01 plant001 piece0009        q5 nutrition2         o
+10   pot01 plant002 piece0010        q5 nutrition2         o
 # ℹ 2,420 more rows</code></pre>
 </div>
 </div>
@@ -832,24 +836,25 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(thinning <span class="sc">~</span> tree,</span>
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>              grass <span class="sc">~</span> tree)</span>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">design_anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
 Summary table of the decomposition for unit &amp; trt (based on adjusted quantities)
 
  Source.unit df1 Source.trt     df2 aefficiency eefficiency order
- row           4 thinning#grass   4      0.5625      0.5000     2
- col           4 thinning#grass   4      0.5625      0.5000     2
+ row           4 thinning#grass   4      0.5385      0.4667     2
+ col           4 thinning#grass   4      0.5410      0.3333     3
  tree         16 thinning         4      1.0000      1.0000     1
                  grass            4      1.0000      1.0000     1
-                 thinning#grass   8      0.2500      0.1000     2
+                 thinning#grass   5      0.5970      0.4000     4
+                 Residual         3                              
 
 Table of information (partially) aliased with previous sources derived from the same formula
 
  Source df Alias                    In  aefficiency eefficiency order
- grass  1  thinning                 trt      0.6400      0.6400     1
- grass  4  ## Information remaining trt      0.6923      0.3600     2
+ grass  3  thinning                 trt      0.2667      0.1600     2
+ grass  4  ## Information remaining trt      0.7241      0.6000     3
 
 The design is not orthogonal</code></pre>
 </div>
@@ -881,7 +886,7 @@ The design is not orthogonal</code></pre>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#set_rcrds(measure = tyre) %&gt;% </span></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(make <span class="sc">~</span> test_drive)</span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="fu">design_anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
@@ -926,24 +931,8 @@ Summary table of the decomposition for unit &amp; trt
 <span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_rcrds</span>(<span class="at">score =</span> sheet) <span class="sc">%&gt;%</span> </span>
 <span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">serve_table</span>()</span>
 <span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-
-Summary table of the decomposition for unit &amp; trt
-
- Source.unit df1 Source.trt         df2 aefficiency eefficiency order
- washer        7 wash_temp            3      1.0000      1.0000     1
-                 Residual             4                              
- dryer         5 dry_temp             2      1.0000      1.0000     1
-                 Residual             3                              
- sheet        35 wash_temp#dry_temp   6      1.0000      1.0000     1
-                 Residual            29                              </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="figures/washer-example-1.png" class="img-fluid" width="672"></p>
-</div>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="fu">design_anatomy</span>(df)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="note callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
@@ -957,39 +946,39 @@ Summary table of the decomposition for unit &amp; trt
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.20"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">cultivar =</span> <span class="dv">3</span>,</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">seeding =</span> <span class="fu">c</span>(<span class="st">"conventional"</span>, <span class="st">"no tillage"</span>),</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">molybdenum =</span> <span class="fu">c</span>(<span class="st">"applied"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">block =</span> <span class="dv">4</span>,</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">strip =</span> <span class="fu">nested_in</span>(block, <span class="dv">3</span>),</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">half =</span> <span class="fu">nested_in</span>(block, <span class="dv">2</span>),</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">quarter =</span> <span class="fu">nested_in</span>(half, <span class="dv">2</span>),</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">plot =</span> <span class="fu">nested_in</span>(block, <span class="fu">crossed_by</span>(strip, quarter))) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(cultivar <span class="sc">~</span> strip,</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>              seeding <span class="sc">~</span> half,</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>              molybdenum <span class="sc">~</span> quarter) </span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Example 10.20"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">cultivar =</span> <span class="dv">3</span>,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">seeding =</span> <span class="fu">c</span>(<span class="st">"conventional"</span>, <span class="st">"no tillage"</span>),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">molybdenum =</span> <span class="fu">c</span>(<span class="st">"applied"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">block =</span> <span class="dv">4</span>,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">strip =</span> <span class="fu">nested_in</span>(block, <span class="dv">3</span>),</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">half =</span> <span class="fu">nested_in</span>(block, <span class="dv">2</span>),</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">quarter =</span> <span class="fu">nested_in</span>(half, <span class="dv">2</span>),</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">plot =</span> <span class="fu">nested_in</span>(block, <span class="fu">crossed_by</span>(strip, quarter))) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(cultivar <span class="sc">~</span> strip,</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>              seeding <span class="sc">~</span> half,</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>              molybdenum <span class="sc">~</span> quarter) </span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Bailey (2008) Example 10.20 
 # An edibble: 48 x 8
-    cultivar      seeding molybdenum     block      strip      half
-    &lt;trt(3)&gt;     &lt;trt(2)&gt;   &lt;trt(2)&gt; &lt;unit(4)&gt; &lt;unit(12)&gt; &lt;unit(8)&gt;
- 1 cultivar3 conventional    none       block1     strip1     half1
- 2 cultivar2 conventional    none       block1     strip2     half1
- 3 cultivar1 conventional    none       block1     strip3     half1
- 4 cultivar3 conventional    applied    block1     strip1     half1
- 5 cultivar2 conventional    applied    block1     strip2     half1
- 6 cultivar1 conventional    applied    block1     strip3     half1
- 7 cultivar3 no tillage      none       block1     strip1     half2
- 8 cultivar2 no tillage      none       block1     strip2     half2
- 9 cultivar1 no tillage      none       block1     strip3     half2
-10 cultivar3 no tillage      applied    block1     strip1     half2
-# ℹ 38 more rows
-# ℹ 2 more variables: quarter &lt;unit(16)&gt;, plot &lt;unit(48)&gt;</code></pre>
+    cultivar     seeding molybdenum  block   strip   half   quarter    plot
+      &lt;T(3)&gt;      &lt;T(2)&gt;     &lt;T(2)&gt; &lt;U(4)&gt; &lt;U(12)&gt; &lt;U(8)&gt;   &lt;U(16)&gt; &lt;U(48)&gt;
+       &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;
+ 1 cultivar3 no tillage…    applied block1 strip01  half1 quarter01  plot01
+ 2 cultivar1 no tillage…    applied block1 strip02  half1 quarter01  plot02
+ 3 cultivar2 no tillage…    applied block1 strip03  half1 quarter01  plot03
+ 4 cultivar3 no tillage…    none    block1 strip01  half1 quarter02  plot04
+ 5 cultivar1 no tillage…    none    block1 strip02  half1 quarter02  plot05
+ 6 cultivar2 no tillage…    none    block1 strip03  half1 quarter02  plot06
+ 7 cultivar3 convention…    none    block1 strip01  half2 quarter03  plot07
+ 8 cultivar1 convention…    none    block1 strip02  half2 quarter03  plot08
+ 9 cultivar2 convention…    none    block1 strip03  half2 quarter03  plot09
+10 cultivar3 convention…    applied block1 strip01  half2 quarter04  plot10
+# ℹ 38 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design_anatomy</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in pstructure.formula(formulae[[1]], keep.order = keep.order, grandMean
 = grandMean, : block:half is aliased with previous terms in the formula and has
@@ -1046,16 +1035,16 @@ Table of information (partially) aliased with previous sources derived from the 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.5"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">feed =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">room =</span> <span class="dv">4</span>,</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sheep =</span> <span class="fu">nested_in</span>(room, <span class="dv">4</span>),</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">period =</span> <span class="dv">4</span>,</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit =</span> <span class="fu">crossed_by</span>(period, sheep)) <span class="sc">%&gt;%</span> </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(feed <span class="sc">~</span> unit)</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co"># anatomy(des)</span></span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(des)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.5"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">feed =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">room =</span> <span class="dv">4</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sheep =</span> <span class="fu">nested_in</span>(room, <span class="dv">4</span>),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">period =</span> <span class="dv">4</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">unit =</span> <span class="fu">crossed_by</span>(period, sheep)) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(feed <span class="sc">~</span> unit)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># anatomy(des)</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(des)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="figures/bailey-10.5-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1072,43 +1061,43 @@ Table of information (partially) aliased with previous sources derived from the 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.6"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">pesticide =</span> <span class="fu">c</span>(<span class="st">"diuron"</span>, <span class="st">"carbofuran"</span>, <span class="st">"chlorpyrifos"</span>, <span class="st">"tributyltin chloride"</span>, </span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"phorate"</span>, <span class="st">"fonofos"</span>),</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">concentration =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_trts</span>(<span class="at">pesticide =</span> <span class="st">"none"</span>, <span class="at">concentration =</span> <span class="cn">NA</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">petri =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">ntrts</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">design</span>(<span class="st">"Bailey (2008) Exercise 10.6"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">pesticide =</span> <span class="fu">c</span>(<span class="st">"diuron"</span>, <span class="st">"carbofuran"</span>, <span class="st">"chlorpyrifos"</span>, <span class="st">"tributyltin chloride"</span>, </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"phorate"</span>, <span class="st">"fonofos"</span>),</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">concentration =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_trts</span>(<span class="at">pesticide =</span> <span class="st">"none"</span>, <span class="at">concentration =</span> <span class="cn">NA</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">petri =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">ntrts</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emylyn's design</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>des1 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"sensory evaluation"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">day =</span> <span class="dv">4</span>,</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">consumer =</span> <span class="fu">nested_in</span>(day, <span class="dv">42</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">cover_story =</span> <span class="fu">c</span>(<span class="st">"yes"</span>, <span class="st">"no"</span>),</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">test_half =</span> <span class="fu">c</span>(<span class="st">"triangle"</span>, <span class="st">"paired"</span>),</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">test_first =</span> <span class="fu">c</span>(<span class="st">"triangle/paired"</span>, <span class="st">"monadic"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(test_half<span class="sc">:</span>cover_story <span class="sc">~</span> day,</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>                         test_first <span class="sc">~</span> consumer, </span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"systematic"</span>, <span class="st">"random"</span>))</span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>des1 <span class="sc">%&gt;%</span> </span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(test_half <span class="sc">==</span> <span class="st">"triangle"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(day, consumer) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do the next design</span></span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">restart_design</span>(<span class="st">"triangle test"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_units</span>(day, consumer) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">allot_units</span>(consumer <span class="sc">~</span> <span class="fu">nested_in</span>(day)) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># finished described relationship - new design variables</span></span>
-<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">edbl_design</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_units</span>(<span class="at">test =</span> <span class="fu">nested_in</span>(consumer, <span class="dv">2</span>), </span>
-<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">product =</span> <span class="fu">nested_in</span>(test, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_trts</span>(<span class="at">spiked =</span> <span class="fu">c</span>(<span class="st">"1/3"</span>, <span class="st">"2/3"</span>),</span>
-<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"XXO"</span>, <span class="st">"XOX"</span>, <span class="st">"OXX"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">allot_table</span>(spiked <span class="sc">~</span> test, </span>
-<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>                pattern <span class="sc">~</span> product)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># emylyn's design</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>des1 <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"sensory evaluation"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_units</span>(<span class="at">day =</span> <span class="dv">4</span>,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">consumer =</span> <span class="fu">nested_in</span>(day, <span class="dv">42</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_trts</span>(<span class="at">cover_story =</span> <span class="fu">c</span>(<span class="st">"yes"</span>, <span class="st">"no"</span>),</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">test_half =</span> <span class="fu">c</span>(<span class="st">"triangle"</span>, <span class="st">"paired"</span>),</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">test_first =</span> <span class="fu">c</span>(<span class="st">"triangle/paired"</span>, <span class="st">"monadic"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">allot_table</span>(test_half<span class="sc">:</span>cover_story <span class="sc">~</span> day,</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>                         test_first <span class="sc">~</span> consumer, </span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"systematic"</span>, <span class="st">"random"</span>))</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>des1 <span class="sc">%&gt;%</span> </span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(test_half <span class="sc">==</span> <span class="st">"triangle"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(day, consumer) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do the next design</span></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">restart_design</span>(<span class="st">"triangle test"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_units</span>(day, consumer) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">allot_units</span>(consumer <span class="sc">~</span> <span class="fu">nested_in</span>(day)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># finished described relationship - new design variables</span></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">edbl_design</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_units</span>(<span class="at">test =</span> <span class="fu">nested_in</span>(consumer, <span class="dv">2</span>), </span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">product =</span> <span class="fu">nested_in</span>(test, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_trts</span>(<span class="at">spiked =</span> <span class="fu">c</span>(<span class="st">"1/3"</span>, <span class="st">"2/3"</span>),</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>             <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"XXO"</span>, <span class="st">"XOX"</span>, <span class="st">"OXX"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">allot_table</span>(spiked <span class="sc">~</span> test, </span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>                pattern <span class="sc">~</span> product)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

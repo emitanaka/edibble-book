@@ -355,7 +355,15 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#to-include-or-not-include-blocking-factors-in-your-model" id="toc-to-include-or-not-include-blocking-factors-in-your-model" class="nav-link active" data-scroll-target="#to-include-or-not-include-blocking-factors-in-your-model"><span class="header-section-number">5.0.1</span> To include or not include blocking factors in your model?</a></li>
+  <li><a href="#the-correct-model" id="toc-the-correct-model" class="nav-link active" data-scroll-target="#the-correct-model"><span class="header-section-number">5.1</span> The “correct” model</a>
+  <ul class="collapse">
+  <li><a href="#to-include-or-not-include-blocking-factors-in-your-model" id="toc-to-include-or-not-include-blocking-factors-in-your-model" class="nav-link" data-scroll-target="#to-include-or-not-include-blocking-factors-in-your-model"><span class="header-section-number">5.1.1</span> To include or not include blocking factors in your model?</a></li>
+  </ul></li>
+  <li><a href="#interpretations" id="toc-interpretations" class="nav-link" data-scroll-target="#interpretations"><span class="header-section-number">5.2</span> Interpretations</a>
+  <ul class="collapse">
+  <li><a href="#logical-fallacies" id="toc-logical-fallacies" class="nav-link" data-scroll-target="#logical-fallacies"><span class="header-section-number">5.2.1</span> Logical fallacies</a></li>
+  <li><a href="#causal-inference" id="toc-causal-inference" class="nav-link" data-scroll-target="#causal-inference"><span class="header-section-number">5.2.2</span> Causal inference</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/emitanaka/edibble-book/edit/master/basics-analysis.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/emitanaka/edibble-book/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -398,12 +406,34 @@ gtag('config', 'G-ZBRNTDT9WG', { 'anonymize_ip': true});
 </div>
 </div>
 <p>Before starting the experiment, it is important to have an analysis plan of the experimental data.</p>
-<section id="to-include-or-not-include-blocking-factors-in-your-model" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="to-include-or-not-include-blocking-factors-in-your-model"><span class="header-section-number">5.0.1</span> To include or not include blocking factors in your model?</h3>
+<section id="the-correct-model" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-correct-model"><span class="header-section-number">5.1</span> The “correct” model</h2>
+<section id="to-include-or-not-include-blocking-factors-in-your-model" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="to-include-or-not-include-blocking-factors-in-your-model"><span class="header-section-number">5.1.1</span> To include or not include blocking factors in your model?</h3>
 <p>The general consensus from the experimental design community is that you should include blocking factors in your model, regardless of whether the effect is significant or not, if the blocking factors were used to generate the experimental design. Some argue that if your aim is prediction, then it is better to remove the insignificant block effects.</p>
 <p>My recommendation is that all factors used to generate the design should be used in your analysis model. If some blocking factors prove to be insignificant, then check to see how your analysis changes if you remove them.</p>
+</section>
+</section>
+<section id="interpretations" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="interpretations"><span class="header-section-number">5.2</span> Interpretations</h2>
+<section id="logical-fallacies" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="logical-fallacies"><span class="header-section-number">5.2.1</span> Logical fallacies</h3>
+</section>
+<section id="causal-inference" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="causal-inference"><span class="header-section-number">5.2.2</span> Causal inference</h3>
+<p>The mantra “correlation does not imply causation” is often heard across many corners of the scientific world. Correlation tells you about <em>association</em> but other evidences are required to be conclusive about the direction of the association.</p>
+<p>One of the well studied causal link is smoking and lung cancer.</p>
+<ul>
+<li>graphical modelling
+<ul>
+<li>directed acyclic graphs</li>
+</ul></li>
+<li>structual equation modelling</li>
+<li>instrumental variables</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
