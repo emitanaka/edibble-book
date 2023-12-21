@@ -537,7 +537,13 @@
     "deggust": {
       "Package": "deggust",
       "Version": "0.0.0.9000",
-      "Source": "unknown",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "deggust",
+      "RemoteUsername": "emitanaka",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "52e105a6c912f67eaf5e76ab1e1d47494fe95d1b",
       "Requirements": [
         "dplyr",
         "edibble",
@@ -548,7 +554,7 @@
         "magrittr",
         "rlang"
       ],
-      "Hash": "bfb4a14d75efe5dc37021f0dbb6e1c4b"
+      "Hash": "5d73a77541d96e0dbd5a2978f22fe9ec"
     },
     "desc": {
       "Package": "desc",
@@ -635,7 +641,13 @@
     "edibble": {
       "Package": "edibble",
       "Version": "1.1.0.9000",
-      "Source": "unknown",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "edibble",
+      "RemoteUsername": "emitanaka",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "15f02092c7606fde733b2f3cb7d2ef62d3ffa5a4",
       "Requirements": [
         "AlgDesign",
         "R",
@@ -653,7 +665,7 @@
         "tidyselect",
         "vctrs"
       ],
-      "Hash": "6b5d8f0c5d2c4fdb1806fb206da40968"
+      "Hash": "569721074d5feb6e7497ba73037624f2"
     },
     "ellipsis": {
       "Package": "ellipsis",
